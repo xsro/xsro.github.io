@@ -1,0 +1,3 @@
+[submodule "themes/ananke"]
+	path = themes/ananke
+	url = https://gitee.com/markhoo/gohugo-theme-ananke.git
