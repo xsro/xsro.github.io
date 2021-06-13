@@ -1,1 +1,68 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on 陈留城下</title><link>https://xsro.github.io/tags/</link><description>Recent content in Tags on 陈留城下</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://xsro.github.io/tags/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on xsro</title>
+    <link>https://xsro.github.io/tags/</link>
+    <description>Recent content in Tags on xsro</description>
+    <image>
+      <url>https://xsro.github.io/papermod-cover.png</url>
+      <link>https://xsro.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://xsro.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>css</title>
+      <link>https://xsro.github.io/tags/css/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://xsro.github.io/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>html</title>
+      <link>https://xsro.github.io/tags/html/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://xsro.github.io/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>markdown</title>
+      <link>https://xsro.github.io/tags/markdown/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://xsro.github.io/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>themes</title>
+      <link>https://xsro.github.io/tags/themes/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://xsro.github.io/tags/themes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>text</title>
+      <link>https://xsro.github.io/tags/text/</link>
+      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://xsro.github.io/tags/text/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>emoji</title>
+      <link>https://xsro.github.io/tags/emoji/</link>
+      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://xsro.github.io/tags/emoji/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
