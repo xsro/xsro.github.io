@@ -61,16 +61,20 @@ params:
 
     profileMode:
         enabled: true
-        title: "Hi Friend"
+        title: "Hi, Friends"
         # imageTitle: my image
         # imageWidth: 120
         # imageHeight: 120
-        subtitle: "☄️ Fast | ☁️ Fluent | 🌙 Smooth | 📱 Responsive"
+        subtitle: "👋I am a student👨‍🎓 studing Automation🤖️ and Control Theory⚙️"
         buttons:
             - name: Blog
               url: posts
-            - name: Tags
-              url: tags
+            # - name: Tags
+            #   url: tags
+            - name: Notes
+              url: https://xsro.gitee.io/college-notes/#/
+            - name: Codes
+              url: https://xsro.github.io/university-learning-code/
 
     homeInfoParams:
         Title: "Hi Friend"
