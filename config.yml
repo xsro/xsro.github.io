@@ -19,19 +19,21 @@ menu:
     main:
         - name: Achives
           url: archives/
-          weight: 5
-        - name: About
-          url: about
-          weight: 5
+          weight: 2
         - name: Tags
-          url: tags
-          weight: 10
+          url: tags/
+          weight: 4
         - name: Categories
-          url: categories
-          weight: 10
-        - name: Series
-          url: series
-          weight: 10
+          url: categories/
+          weight: 3
+        - name: Search
+          url: search/
+          weight: 1
+        - name: About
+          url: about/
+          weight: 5
+
+
 
 
 outputs:
