@@ -8,6 +8,16 @@
       <url>https://xsro.github.io/papermod-cover.png</url>
       <link>https://xsro.github.io/papermod-cover.png</link>
     </image>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://xsro.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 25 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xsro.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>常用技术速查</title>
+      <link>https://xsro.github.io/categories/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF%E9%80%9F%E6%9F%A5/</link>
+      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xsro.github.io/categories/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF%E9%80%9F%E6%9F%A5/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
