@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>陈留城下</title>
+    <link>https://xsro.github.io/cn/</link>
+    <description>Recent content on 陈留城下</description>
+    <image>
+      <url>https://xsro.github.io/papermod-cover.png</url>
+      <link>https://xsro.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 25 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xsro.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git常用拓展知识</title>
+      <link>https://xsro.github.io/cn/posts/notes/git-tips/</link>
+      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xsro.github.io/cn/posts/notes/git-tips/</guid>
+      <description>Some Tips for git links  git commit 提交规范  Conventional Commits 约定式提交: 本文 gitmoji 使用表情来规范commit消息: one fork   LGTM : code review 行话:本文  Tip1: Commit 规范中常用commit类型解释  feat: 新功能、新特性 fix: 修改 bug perf: 更改代码，以提高性能（在不影响代码内部行为的前提下，对程序性能进行优化） refactor: 代码重构（重构，在不影响代码内部行为、功能下的代码修改） docs: 文档修改 style: 代码格式修改, 注意不是 css 修改（例如分号修改） test: 测试用例新增、修改 build: 影响项目构建或依赖项修改 revert: 恢复上一次提交 ci: 持续集成相关文件修改 chore: 其他修改（不在上述类型中的修改） release: 发布新版本 workflow: 工作流相关文件修改 typo：拼写错误等小错误  Tip2：code Review行话  PR: Pull Request. 拉取请求，给其他项目提交代码 LGTM: Looks Good To Me.</description>
+    </item>
+    
+    <item>
+      <title>Markdown 常用拓展语法参考</title>
+      <link>https://xsro.github.io/cn/posts/notes/markdown-tips/</link>
+      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xsro.github.io/cn/posts/notes/markdown-tips/</guid>
+      <description>Markdown 常用拓展语法参考</description>
+    </item>
+    
+    <item>
+      <title>大三学期末总结</title>
+      <link>https://xsro.github.io/cn/posts/diary/20210723/</link>
+      <pubDate>Fri, 23 Jul 2021 10:32:39 +0800</pubDate>
+      
+      <guid>https://xsro.github.io/cn/posts/diary/20210723/</guid>
+      <description>CMIC苏州归来 此次苏州之行，主要任务是CMIC，可以简单地称为PLC比赛，我报名这个比赛的时候，主要是想补充一些我对硬件方面的不足，同时也想借此提高个人能力分。
+我知道科协经历很少的我，实在没有机会学习太多的硬件知识，竞赛经历少得可怜，同时也没有什么科研经历。 虽然课程学习中也会学习一些专业知识，但是平时课程中所需要学习的一些知识比较偏向理论，并没有科协的一些授课“有用”。 由于课程编排的原因，课堂学习与实验往往是没有直接联系的。 课程设计中，我真的很想做成自己的作品，但是我发现非常吃力，而科协的同学往往可以很快完成，并且验收通过。 望着都是良好的课程设计，我想要锻炼一下自己，让理论所学落实到实际操作之中。
+锻炼一下自己，多么冠冕堂皇的理由，和两个队友我们一起踏上了苏州之旅。 16-23正好首尾都有计算机设计大赛的比赛，让我这6天5晚都在煎熬之中，我发现我好像没有办法帮上什么忙，队友都在焦急地比赛，而我却却似乎感觉现在才开始准备已经来不及了，我有些破罐子破摔。 最后当然也没有取得什么奖项，但在奋起直追的过程总我也学到了很多的知识，确实也挺有意思的。
+加油，工控人。</description>
+    </item>
+    
+    <item>
+      <title>关于</title>
+      <link>https://xsro.github.io/cn/about/</link>
+      <pubDate>Sun, 13 Jun 2021 09:33:15 +0800</pubDate>
+      
+      <guid>https://xsro.github.io/cn/about/</guid>
+      <description>陈留城下 一名大三的自动化专业的学生，对世界充满好奇
+联系方式  email📧: xsro@foxmail.com gitee🐎: https://gitee.com/xsro github🐱: https://github.com/xsro  </description>
+    </item>
+    
+    
+    
+  </channel>
+</rss>

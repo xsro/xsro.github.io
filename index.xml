@@ -8,35 +8,7 @@
       <url>https://xsro.github.io/papermod-cover.png</url>
       <link>https://xsro.github.io/papermod-cover.png</link>
     </image>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 25 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xsro.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Git常用拓展知识</title>
-      <link>https://xsro.github.io/posts/notes/git-tips/</link>
-      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://xsro.github.io/posts/notes/git-tips/</guid>
-      <description>Some Tips for git links  git commit 提交规范  Conventional Commits 约定式提交: 本文 gitmoji 使用表情来规范commit消息: one fork   LGTM : code review 行话:本文  Tip1: Commit 规范中常用commit类型解释  feat: 新功能、新特性 fix: 修改 bug perf: 更改代码，以提高性能（在不影响代码内部行为的前提下，对程序性能进行优化） refactor: 代码重构（重构，在不影响代码内部行为、功能下的代码修改） docs: 文档修改 style: 代码格式修改, 注意不是 css 修改（例如分号修改） test: 测试用例新增、修改 build: 影响项目构建或依赖项修改 revert: 恢复上一次提交 ci: 持续集成相关文件修改 chore: 其他修改（不在上述类型中的修改） release: 发布新版本 workflow: 工作流相关文件修改 typo：拼写错误等小错误  Tip2：code Review行话  PR: Pull Request. 拉取请求，给其他项目提交代码 LGTM: Looks Good To Me.</description>
-    </item>
-    
-    <item>
-      <title>Markdown 常用拓展语法参考</title>
-      <link>https://xsro.github.io/posts/notes/markdown-tips/</link>
-      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://xsro.github.io/posts/notes/markdown-tips/</guid>
-      <description>Markdown 常用拓展语法参考</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://xsro.github.io/about.cn/</link>
-      <pubDate>Sun, 13 Jun 2021 09:33:15 +0800</pubDate>
-      
-      <guid>https://xsro.github.io/about.cn/</guid>
-      <description>陈留城下 链接🔗  大学学习代码  </description>
-    </item>
-    
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://xsro.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>https://xsro.github.io/about/</link>
@@ -46,8 +18,6 @@
       <description>Hi👋 I am a junior student in NJUPT. I study Automation and write notes and codes.
 Some of my works💼    project repo description language     university-learning-code gitee my codes in university matlab,python   college-notes gitee my notes in university markdown   MASM/TASM github VSCode extension for MASM typescript    More🧾 During the fight against COVID-19, I became a git user and lover.</description>
     </item>
-    
-    
     
     
     

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>常用技术速查 on 陈留城下</title>
+    <link>https://xsro.github.io/cn/categories/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF%E9%80%9F%E6%9F%A5/</link>
+    <description>Recent content in 常用技术速查 on 陈留城下</description>
+    <image>
+      <url>https://xsro.github.io/papermod-cover.png</url>
+      <link>https://xsro.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 25 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xsro.github.io/cn/categories/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF%E9%80%9F%E6%9F%A5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git常用拓展知识</title>
+      <link>https://xsro.github.io/cn/posts/notes/git-tips/</link>
+      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xsro.github.io/cn/posts/notes/git-tips/</guid>
+      <description>Some Tips for git links  git commit 提交规范  Conventional Commits 约定式提交: 本文 gitmoji 使用表情来规范commit消息: one fork   LGTM : code review 行话:本文  Tip1: Commit 规范中常用commit类型解释  feat: 新功能、新特性 fix: 修改 bug perf: 更改代码，以提高性能（在不影响代码内部行为的前提下，对程序性能进行优化） refactor: 代码重构（重构，在不影响代码内部行为、功能下的代码修改） docs: 文档修改 style: 代码格式修改, 注意不是 css 修改（例如分号修改） test: 测试用例新增、修改 build: 影响项目构建或依赖项修改 revert: 恢复上一次提交 ci: 持续集成相关文件修改 chore: 其他修改（不在上述类型中的修改） release: 发布新版本 workflow: 工作流相关文件修改 typo：拼写错误等小错误  Tip2：code Review行话  PR: Pull Request. 拉取请求，给其他项目提交代码 LGTM: Looks Good To Me.</description>
+    </item>
+    
+    <item>
+      <title>Markdown 常用拓展语法参考</title>
+      <link>https://xsro.github.io/cn/posts/notes/markdown-tips/</link>
+      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xsro.github.io/cn/posts/notes/markdown-tips/</guid>
+      <description>Markdown 常用拓展语法参考</description>
+    </item>
+    
+  </channel>
+</rss>
