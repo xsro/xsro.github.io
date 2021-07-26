@@ -3,7 +3,7 @@ author: xsro
 title: Git常用拓展知识
 date: 2021-07-25
 categories: ["常用技术速查"]
-tag: git
+tags: ["git"]
 ---
 
 # Some Tips for git

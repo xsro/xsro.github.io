@@ -3,7 +3,7 @@ author: xsro
 title: Markdown 常用拓展语法参考
 date: 2021-07-25
 description: Markdown 常用拓展语法参考
-tag: markdown
+tags: ["markdown"]
 categories: ["常用技术速查"]
 math: true
 ShowBreadCrumbs: false

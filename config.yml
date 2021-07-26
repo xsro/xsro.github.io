@@ -15,24 +15,67 @@ minify:
     disableXML: true
     # minifyOutput: true
 
-menu:
-    main:
-        - name: Achives
-          url: archives/
-          weight: 2
-        - name: Tags
-          url: tags/
-          weight: 4
-        - name: Categories
-          url: categories/
-          weight: 3
-        - name: Search
-          url: search/
-          weight: 1
-        - name: About
-          url: about/
-          weight: 5
-
+languages:
+    en:
+      languageName: "English"
+      weight: 1
+      profileMode:
+        enabled: true
+        title: "Hi, Friends"
+        # imageTitle: my image
+        # imageWidth: 120
+        # imageHeight: 120
+        subtitle: "👋I am a student👨‍🎓 studing Automation🤖️ and Control Theory⚙️"
+        buttons:
+            - name: Blog
+              url: posts
+            # - name: Tags
+            #   url: tags
+            - name: Notes
+              url: https://xsro.gitee.io/college-notes/#/
+            - name: Codes
+              url: https://xsro.github.io/university-learning-code/
+      menu:
+          main:
+              - name: Achives
+                url: archives/
+                weight: 2
+              - name: Tags
+                url: tags/
+                weight: 4
+              - name: Categories
+                url: categories/
+                weight: 3
+              - name: Search
+                url: search/
+                weight: 1
+              - name: About
+                url: about/
+                weight: 5
+    cn:
+      languageName: "简体中文"
+      weight: 3
+      title: 陈留城下
+      homeInfoParams:
+          Title: "饮茶先啦 \U0001F44B"
+          Content: Welcome to my website powered by [paperMod](https://github.com/adityatelange/hugo-PaperMod)
+      menu:
+          main:
+            - name: 归档
+              url: archives/
+              weight: 2
+            - name: 标签
+              url: tags/
+              weight: 4
+            - name: 分类
+              url: categories/
+              weight: 3
+            - name: 检索
+              url: search/
+              weight: 1
+            - name: 关于
+              url: about/
+              weight: 5
 
 
 
@@ -61,28 +104,6 @@ params:
     # comments: false
     images: ["papermod-cover.png"]
 
-    profileMode:
-        enabled: true
-        title: "Hi, Friends"
-        # imageTitle: my image
-        # imageWidth: 120
-        # imageHeight: 120
-        subtitle: "👋I am a student👨‍🎓 studing Automation🤖️ and Control Theory⚙️"
-        buttons:
-            - name: Blog
-              url: posts
-            # - name: Tags
-            #   url: tags
-            - name: Notes
-              url: https://xsro.gitee.io/college-notes/#/
-            - name: Codes
-              url: https://xsro.github.io/university-learning-code/
-
-    homeInfoParams:
-        Title: "Hi Friend"
-        Content: >
-            - Welcome to my blogs using hugo's theme PaperMod.
-            - [PaperMod](https://github.com/adityatelange/hugo-PaperMod) is a simple but fast and responsive theme with useful feature-set that enhances UX.
     socialIcons:
         - name: github
           url: "https://github.com/xsro"
