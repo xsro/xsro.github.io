@@ -1,4 +1,4 @@
 [submodule "themes/PaperMod"]
 	path = themes/PaperMod
 	url = https://github.com/adityatelange/hugo-PaperMod.git
-	url = https://gitee.com/positiveoutlook/hugo-PaperMod.git
+	# url = https://gitee.com/positiveoutlook/hugo-PaperMod.git
