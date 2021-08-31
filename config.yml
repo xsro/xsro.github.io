@@ -87,8 +87,8 @@ outputs:
 
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
-    author: Theme PaperMod
+    description: "梦游乡"
+    author: 陈留城下
     # author: ["Me", "You"] # multiple authors
 
     defaultTheme: auto
@@ -109,6 +109,8 @@ params:
           url: "https://github.com/xsro"
         - name: gitee
           url: "https://gitee.com/xsro"
+        - name: email
+          url: "mailto:xsro@foxmail.com"
 
     editPost:
         URL: "https://github.com/xsro/xsro.github.io/content"
