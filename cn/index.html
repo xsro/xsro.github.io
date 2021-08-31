@@ -93,21 +93,40 @@
 <article class=post-entry>
 <header class=entry-header>
 <h2>
+傅里叶、拉普拉斯、Z变换这一串
+</h2>
+</header>
+<section class=entry-content>
+<p>📶 三大变换的数学推导过程 $\mathscr{F,L,Z}$傅里叶变换、拉普拉斯变换、Z 变换这三大变换讨论广泛1。个人理解，这三个变换都是为了简化一些难以在时间域分析的问题而引入的。
+拉普拉斯变换是对傅里叶变换的推广，忽略了时域信号时间为负的部分，使得变换也可以适用于$t\rightarrow +\infty$不为零的信号 Z 变换是拉普拉斯变换针对离散信号的简化，使得表达式更加便于分析 傅里叶变换 拉普拉斯变换 $Z$变换 表达式 $F(\omega)=\int_{-\infty}^{\infty}f(t)e^{-j\omega t}\mathrm{d} t$ $F(s)=\int_0^\infty f(t)e^{-st}\mathrm{d}t$ $F(z)=\sum\limits_{k=0}^{\infty}f(kT)z^{-k}$ 适用范围 狄利克雷条件 狄利克雷条件的前两条 前者+（时间）离散 变换域 频域 复(频)域 $Z$域 对应系统模型 频率特性 传递函数 脉冲传递函数 数学演变过程 周期函数的傅里叶级数 周期为 T 的任一周期函数$f(t)$，若满足下列狄利克雷条件(Dirichlet conditions2）：
+在一个周期内只有有限个不连续点 在一个周期内只有有限个极值点(注：函数连续是条件 1、2 的充分非必要条件) 周期内绝对可积：积分$\int^{\frac{T}{2}}_{-\frac{T}{2}} |f(t)| \mathrm{d}t$ 存在 则$f(t)$可展开为如下的傅里叶级数：
+$$ f(t)=\frac{1}{2} a_0 + \sum\limits_{n=1}^{\infty} (a_n \cos{n\omega_0 t}+b_n\sin{n \omega_0 t}) $$...</p>
+</section>
+<footer class=entry-footer>
+August 30, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Theme PaperMod
+</footer>
+<a class=entry-link aria-label="post link to 傅里叶、拉普拉斯、Z变换这一串" href=https://xsro.github.io/cn/posts/diary/20210830/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>
 控制系统中对信号求导的注意事项
 </h2>
 </header>
 <section class=entry-content>
-<p>线性定常系统的重要特性引发的思考 女朋友在阅读胡寿松第六版《自动控制原理》时有一个困惑。为什么书中P71页表3-2中的阶跃信号1，求导之后消失了，而不是作为单位脉冲信号$\delta(t)$处理。难道这里的1视为常数，这样就与零初始条件矛盾了。
-书中的表3-2 一阶系统对典型输入信号的输出响应如下：
+<p>线性定常系统的重要特性引发的思考 女朋友在阅读胡寿松第六版《自动控制原理》时有一个困惑。为什么书中 P71 页表 3-2 中的阶跃信号1，求导之后消失了，而不是作为单位脉冲信号$\delta(t)$处理。难道这里的1视为常数，这样就与零初始条件矛盾了。
+书中的表 3-2 一阶系统对典型输入信号的输出响应如下：
 输入信号 输出响应 $1(t)$ $1-e^{-t/T}, t \ge 0$ $\delta(t)$ $\frac{1}{T}e^{-t/T}, t\ge 0$ 书中由此得出线性定常系统的一个重要特性：系统对输入信号导数的响应，就等于系统对输入信号响应的导数。
 也就是说第二行脉冲响应应该是第一行阶跃响应的导数，但是这里为什么1对应的导数$\delta(t)$没有了呢？
 答：因为后面的指数项$e^{-t/T},t \ge 0$，在零初始条件下还需要乘以一个$u(t)$，根据求导的乘法公式求导之后会出现一个$\delta(t)$，从而相互抵消。
 将阶跃响应写成如下形式：
 $$ 1-e^{-t/T}(t \ge 0)=1(t)-e^{-t/T}\times 1(t) $$
 对阶跃响应求导：
-$$ \begin{aligned} \frac{\mathrm{d}}{\mathrm{d}t} [&1(t)-e^{-t/T}\times 1(t)] \\=&\delta(t)- \frac{\mathrm{d}}{\mathrm{d}t}[e^{-t/T}1(t)] \\=&\delta(t)- [\frac{\mathrm{d}}{\mathrm{d}t}e^{-t/T}\times1(t)+e^{-t/T}\times \frac{\mathrm{d}}{\mathrm{d}t} 1(t)] \\=&\delta(t) -[-\frac{1}{T}e^{-t/T}\times 1(t)+e^{-t/T}\times \delta(t)] \\=&\delta(t)- [-\frac{1}{T}e^{-t/T}\times 1(t)+\delta(t)] \\=&\frac{1}{T}e^{-t/T}\times1(t) \end{aligned} $$
-结果即为$\frac{1}{T}e^{-t/T}, t\ge 0$。
-一般化 已知线性定常系统的零初始条件下的阶跃响应为$h(t), t\ge 0$，求解系统传递函数....</p>
+$$ \begin{aligned} \frac{\mathrm{d}}{\mathrm{d}t} [&1(t)-e^{-t/T}\times 1(t)] \
+=&\delta(t)- \frac{\mathrm{d}}{\mathrm{d}t}[e^{-t/T}1(t)] \
+=&\delta(t)- [\frac{\mathrm{d}}{\mathrm{d}t}e^{-t/T}\times1(t)+e^{-t/T}\times \frac{\mathrm{d}}{\mathrm{d}t} 1(t)] \
+=&\delta(t) -[-\frac{1}{T}e^{-t/T}\times 1(t)+e^{-t/T}\times \delta(t)] \
+=&\delta(t)- [-\frac{1}{T}e^{-t/T}\times 1(t)+\delta(t)] \...</p>
 </section>
 <footer class=entry-footer>
 August 28, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod
@@ -149,9 +168,9 @@ July 25, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;xsro
 </h2>
 </header>
 <section class=entry-content>
-<p>CMIC苏州归来 此次苏州之行，主要任务是CMIC，可以简单地称为PLC比赛，我报名这个比赛的时候，主要是想补充一些我对硬件方面的不足，同时也想借此提高个人能力分。
+<p>CMIC 苏州归来 此次苏州之行，主要任务是CMIC，可以简单地称为 PLC 比赛，我报名这个比赛的时候，主要是想补充一些我对硬件方面的不足，同时也想借此提高个人能力分。
 我知道科协经历很少的我，实在没有机会学习太多的硬件知识，竞赛经历少得可怜，同时也没有什么科研经历。 虽然课程学习中也会学习一些专业知识，但是平时课程中所需要学习的一些知识比较偏向理论，并没有科协的一些授课“有用”。 由于课程编排的原因，课堂学习与实验往往是没有直接联系的。 课程设计中，我真的很想做成自己的作品，但是我发现非常吃力，而科协的同学往往可以很快完成，并且验收通过。 望着都是良好的课程设计，我想要锻炼一下自己，让理论所学落实到实际操作之中。
-锻炼一下自己，多么冠冕堂皇的理由，和两个队友我们一起踏上了苏州之旅。 16-23正好首尾都有计算机设计大赛的比赛，让我这6天5晚都在煎熬之中，我发现我好像没有办法帮上什么忙，队友都在焦急地比赛，而我却却似乎感觉现在才开始准备已经来不及了，我有些破罐子破摔。 最后当然也没有取得什么奖项，但在奋起直追的过程总我也学到了很多的知识，确实也挺有意思的。
+锻炼一下自己，多么冠冕堂皇的理由，和两个队友我们一起踏上了苏州之旅。 16-23 正好首尾都有计算机设计大赛的比赛，让我这 6 天 5 晚都在煎熬之中，我发现我好像没有办法帮上什么忙，队友都在焦急地比赛，而我却却似乎感觉现在才开始准备已经来不及了，我有些破罐子破摔。 最后当然也没有取得什么奖项，但在奋起直追的过程总我也学到了很多的知识，确实也挺有意思的。
 加油，工控人。</p>
 </section>
 <footer class=entry-footer>
