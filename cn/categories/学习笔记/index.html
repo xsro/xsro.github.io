@@ -5,8 +5,8 @@
 <meta name=robots content="index, follow">
 <title>学习笔记 | 陈留城下</title>
 <meta name=keywords content>
-<meta name=description content="Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod">
-<meta name=author content="Theme PaperMod">
+<meta name=description content="梦游乡">
+<meta name=author content="陈留城下">
 <link rel=canonical href=https://xsro.github.io/cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/>
 <link href=/assets/css/stylesheet.min.746a86b58bb2b052b5e4df8216510494f04f81e62c08d626150c26c69ca929da.css integrity="sha256-dGqGtYuysFK15N+CFlEElPBPgeYsCNYmFQwmxpypKdo=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://xsro.github.io/text.png>
@@ -20,13 +20,13 @@
 <link rel=alternate type=application/rss+xml href=https://xsro.github.io/cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml>
 <link rel=alternate hreflang=cn href=https://xsro.github.io/cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/>
 <meta property="og:title" content="学习笔记">
-<meta property="og:description" content="Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod">
+<meta property="og:description" content="梦游乡">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://xsro.github.io/cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><meta property="og:image" content="https://xsro.github.io/papermod-cover.png"><meta property="og:site_name" content="陈留城下">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://xsro.github.io/papermod-cover.png">
 <meta name=twitter:title content="学习笔记">
-<meta name=twitter:description content="Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod">
+<meta name=twitter:description content="梦游乡">
 </head>
 <body class=list id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -86,6 +86,23 @@
 <article class="post-entry tag-entry">
 <header class=entry-header>
 <h2>
+傅里叶、拉普拉斯、Z变换这一串
+</h2>
+</header>
+<section class=entry-content>
+<p>📶 三大变换的数学推导过程 $\mathscr{F,L,Z}$傅里叶变换、拉普拉斯变换、Z 变换这三大变换讨论广泛1。个人理解，这三个变换都是为了简化一些难以在时间域分析的问题而引入的。
+拉普拉斯变换是对傅里叶变换的推广，忽略了时域信号时间为负的部分，使得变换也可以适用于$t\rightarrow +\infty$不为零的信号 Z 变换是拉普拉斯变换针对离散信号的简化，使得表达式更加便于分析 傅里叶变换 拉普拉斯变换 $Z$变换 表达式 $F(\omega)=\int_{-\infty}^{\infty}f(t)e^{-j\omega t}\mathrm{d} t$ $F(s)=\int_0^\infty f(t)e^{-st}\mathrm{d}t$ $F(z)=\sum\limits_{k=0}^{\infty}f(kT)z^{-k}$ 适用范围 狄利克雷条件 狄利克雷条件的前两条 前者+（时间）离散 变换域 频域 复(频)域 $Z$域 对应系统模型 频率特性 传递函数 脉冲传递函数 数学演变过程 周期函数的傅里叶级数 周期为 T 的任一周期函数$f(t)$，若满足下列狄利克雷条件(Dirichlet conditions2）：
+在一个周期内只有有限个不连续点 在一个周期内只有有限个极值点(注：函数连续是条件 1、2 的充分非必要条件) 周期内绝对可积：积分$\int^{\frac{T}{2}}_{-\frac{T}{2}} |f(t)| \mathrm{d}t$ 存在 则$f(t)$可展开为如下的傅里叶级数：
+$$ f(t)=\frac{1}{2} a_0 + \sum\limits_{n=1}^{\infty} (a_n \cos{n\omega_0 t}+b_n\sin{n \omega_0 t}) $$...</p>
+</section>
+<footer class=entry-footer>
+August 30, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;陈留城下
+</footer>
+<a class=entry-link aria-label="post link to 傅里叶、拉普拉斯、Z变换这一串" href=https://xsro.github.io/cn/posts/diary/20210830/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>
 控制系统中对信号求导的注意事项
 </h2>
 </header>
@@ -105,7 +122,7 @@ $$ \begin{aligned} \frac{\mathrm{d}}{\mathrm{d}t} [&1(t)-e^{-t/T}\times 1(t)] \
 =&\delta(t)- [-\frac{1}{T}e^{-t/T}\times 1(t)+\delta(t)] \...</p>
 </section>
 <footer class=entry-footer>
-August 28, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod
+August 28, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;陈留城下
 </footer>
 <a class=entry-link aria-label="post link to 控制系统中对信号求导的注意事项" href=https://xsro.github.io/cn/posts/diary/20210828/></a>
 </article>
