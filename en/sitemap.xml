@@ -2,6 +2,123 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://xsro.github.io/posts/diary/20210923/</loc>
+    <lastmod>2021-09-23T01:25:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://xsro.github.io/cn/posts/diary/20210923/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xsro.github.io/posts/diary/20210923/"
+                />
+  </url><url>
+    <loc>https://xsro.github.io/categories/</loc>
+    <lastmod>2021-09-23T01:25:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://xsro.github.io/cn/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xsro.github.io/categories/"
+                />
+  </url><url>
+    <loc>https://xsro.github.io/posts/</loc>
+    <lastmod>2021-09-23T01:25:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://xsro.github.io/cn/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xsro.github.io/posts/"
+                />
+  </url><url>
+    <loc>https://xsro.github.io/tags/</loc>
+    <lastmod>2021-09-23T01:25:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://xsro.github.io/cn/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xsro.github.io/tags/"
+                />
+  </url><url>
+    <loc>https://xsro.github.io/</loc>
+    <lastmod>2021-09-23T01:25:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://xsro.github.io/cn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xsro.github.io/"
+                />
+  </url><url>
+    <loc>https://xsro.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2021-09-23T01:25:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://xsro.github.io/cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xsro.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+                />
+  </url><url>
+    <loc>https://xsro.github.io/categories/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/</loc>
+    <lastmod>2021-09-23T01:25:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://xsro.github.io/cn/categories/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xsro.github.io/categories/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/"
+                />
+  </url><url>
+    <loc>https://xsro.github.io/tags/%E6%8F%90%E8%A6%81/</loc>
+    <lastmod>2021-09-23T01:25:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://xsro.github.io/cn/tags/%E6%8F%90%E8%A6%81/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xsro.github.io/tags/%E6%8F%90%E8%A6%81/"
+                />
+  </url><url>
+    <loc>https://xsro.github.io/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2021-09-23T01:25:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://xsro.github.io/cn/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xsro.github.io/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/"
+                />
+  </url><url>
     <loc>https://xsro.github.io/about/</loc>
     <lastmod>2021-06-13T09:33:15+08:00</lastmod>
     <xhtml:link
@@ -27,18 +144,6 @@
                 href="https://xsro.github.io/archives/"
                 />
   </url><url>
-    <loc>https://xsro.github.io/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="https://xsro.github.io/cn/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://xsro.github.io/categories/"
-                />
-  </url><url>
     <loc>https://xsro.github.io/search/</loc>
     <xhtml:link
                 rel="alternate"
@@ -61,30 +166,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://xsro.github.io/series/"
-                />
-  </url><url>
-    <loc>https://xsro.github.io/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="https://xsro.github.io/cn/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://xsro.github.io/tags/"
-                />
-  </url><url>
-    <loc>https://xsro.github.io/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="https://xsro.github.io/cn/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://xsro.github.io/"
                 />
   </url>
 </urlset>
