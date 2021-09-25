@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>学习笔记 on xsro</title>
-    <link>https://xsro.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
-    <description>Recent content in 学习笔记 on xsro</description>
+    <title>Control Theory on xsro</title>
+    <link>https://xsro.github.io/tags/control-theory/</link>
+    <description>Recent content in Control Theory on xsro</description>
     <image>
       <url>https://xsro.github.io/papermod-cover.png</url>
       <link>https://xsro.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 23 Sep 2021 01:25:12 +0800</lastBuildDate><atom:link href="https://xsro.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Sep 2021 01:25:12 +0800</lastBuildDate><atom:link href="https://xsro.github.io/tags/control-theory/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A look-back of automation</title>
       <link>https://xsro.github.io/posts/diary/20210923/</link>
