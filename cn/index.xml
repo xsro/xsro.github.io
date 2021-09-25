@@ -9,7 +9,23 @@
       <link>https://xsro.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 23 Sep 2021 01:25:12 +0800</lastBuildDate><atom:link href="https://xsro.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Sep 2021 11:05:54 +0800</lastBuildDate><atom:link href="https://xsro.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>控制理论导图简介</title>
+      <link>https://xsro.github.io/cn/posts/diary/20210925/</link>
+      <pubDate>Sat, 25 Sep 2021 11:05:54 +0800</pubDate>
+      
+      <guid>https://xsro.github.io/cn/posts/diary/20210925/</guid>
+      <description>The map of Control Theory v5 简析 学习控制理论可以说经常可以看到Brian Douglas的The Map of Control Theory ，如下图所示。在感慨控制理论的博大精深的同时，我也想试着了解一下具体都是哪些内容。其中大部分内容我还没有学过，所以不一定对，仅供参考。
+可以看出 map 包括一个圆和周边的 5 个区域，五个区域分别为
+ 建模与仿真(modeling &amp;amp; simulation) 系统分析(system analysis) 控制方法(control methods) 规划(planning) 状态估计(state estimation)  位于中心的圆 首先，看图片中心的圆，
+ 圆的中心是可以视为控制理论起源的离心式调速器（centrifugal governor）； 调速器上方是经典的反馈控制系统（又叫闭环控制系统），下方是前馈控制器。 圆周左半边是连续(continuous)控制系统和离散(discrete)控制系统，  D2C 即离散系统转化为连续系统，通常使用保持器 C2D 即连续系统转化为离散系统，通常使用采样器   圆周右半边，是分析控制系统的域(domain)  右上为时间域(time) 右下为频率域(frequency)（严格来说，应该叫复频域） 两者之间可以通过拉普拉斯变换(Laplace Transform)进行转化    建模与仿真 位于右下角的是建模与仿真模块(modeling &amp;amp; simulation)，这里讨论如何对控制系统建立模型（通常为数学模型）并进行仿真。
+经典控制理论中的数学模型通常为传递函数(transfer function)。现代控制理论中有线性状态空间(linear state space)方程，以及非线性状态空间(nonlinear state space)方程，可以从表达式中看出，非线性的状态空间方程右侧无法用线性函数表示出来。
+此外还有混杂系统(hybrid system)，通常指同时包含连续和离散动态特性的系统。
+在仿真(simulation)部分，有方框图(block diagrams)、
+ 系统辨识(system id or system identification)：根据输入输出数据辨识出系统的表达式 最小实现(minimum realization or minimal realization)：简化模型 线性化(linearization)：模型线性化 First principles：这个我不懂，不过应该是一种系统仿真方法  系统分析 位于正下方的是控制系统分析(system analysis)部分，控制系统可以从下列角度分析</description>
+    </item>
+    
     <item>
       <title>自动化专业学习回顾</title>
       <link>https://xsro.github.io/cn/posts/diary/20210923/</link>

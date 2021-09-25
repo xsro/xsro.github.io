@@ -3,11 +3,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Categories | 陈留城下</title>
+<title>Map of Control Theory | 陈留城下</title>
 <meta name=keywords content>
 <meta name=description content="梦游乡">
 <meta name=author content="陈留城下">
-<link rel=canonical href=https://xsro.github.io/cn/categories/>
+<link rel=canonical href=https://xsro.github.io/cn/tags/map-of-control-theory/>
 <link href=/assets/css/stylesheet.min.746a86b58bb2b052b5e4df8216510494f04f81e62c08d626150c26c69ca929da.css integrity="sha256-dGqGtYuysFK15N+CFlEElPBPgeYsCNYmFQwmxpypKdo=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://xsro.github.io/text.png>
 <link rel=icon type=image/png sizes=16x16 href=https://xsro.github.io/favicon-16x16.png>
@@ -17,16 +17,15 @@
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.88.1">
-<link rel=alternate type=application/rss+xml href=https://xsro.github.io/cn/categories/index.xml>
-<link rel=alternate hreflang=en href=https://xsro.github.io/categories/>
-<link rel=alternate hreflang=cn href=https://xsro.github.io/cn/categories/>
-<meta property="og:title" content="Categories">
+<link rel=alternate type=application/rss+xml href=https://xsro.github.io/cn/tags/map-of-control-theory/index.xml>
+<link rel=alternate hreflang=cn href=https://xsro.github.io/cn/tags/map-of-control-theory/>
+<meta property="og:title" content="Map of Control Theory">
 <meta property="og:description" content="梦游乡">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://xsro.github.io/cn/categories/"><meta property="og:image" content="https://xsro.github.io/papermod-cover.png"><meta property="og:site_name" content="陈留城下">
+<meta property="og:url" content="https://xsro.github.io/cn/tags/map-of-control-theory/"><meta property="og:image" content="https://xsro.github.io/papermod-cover.png"><meta property="og:site_name" content="陈留城下">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://xsro.github.io/papermod-cover.png">
-<meta name=twitter:title content="Categories">
+<meta name=twitter:title content="Map of Control Theory">
 <meta name=twitter:description content="梦游乡">
 </head>
 <body class=list id=top>
@@ -62,7 +61,7 @@
 </li>
 <li>
 <a href=https://xsro.github.io/cn/categories/ title=分类>
-<span class=active>分类</span>
+<span>分类</span>
 </a>
 </li>
 <li>
@@ -79,22 +78,32 @@
 </header>
 <main class=main>
 <header class=page-header>
-<h1>Categories</h1>
+<div class=breadcrumbs>
+<a href=https://xsro.github.io/cn/>Home</a>&nbsp;»&nbsp;<a href=https://xsro.github.io/cn/tags/>Tags</a>
+</div>
+<h1>Map of Control Theory</h1>
 </header>
-<ul class=terms-tags>
-<li>
-<a href=https://xsro.github.io/cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/>学习笔记 <sup><strong><sup>5</sup></strong></sup> </a>
-</li>
-<li>
-<a href=https://xsro.github.io/cn/categories/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF%E9%80%9F%E6%9F%A5/>常用技术速查 <sup><strong><sup>2</sup></strong></sup> </a>
-</li>
-<li>
-<a href=https://xsro.github.io/cn/categories/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/>控制理论 <sup><strong><sup>5</sup></strong></sup> </a>
-</li>
-<li>
-<a href=https://xsro.github.io/cn/categories/%E6%97%A5%E8%AE%B0/>日记 <sup><strong><sup>1</sup></strong></sup> </a>
-</li>
-</ul>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>
+控制理论导图简介
+</h2>
+</header>
+<section class=entry-content>
+<p>The map of Control Theory v5 简析 学习控制理论可以说经常可以看到Brian Douglas的The Map of Control Theory ，如下图所示。在感慨控制理论的博大精深的同时，我也想试着了解一下具体都是哪些内容。其中大部分内容我还没有学过，所以不一定对，仅供参考。
+可以看出 map 包括一个圆和周边的 5 个区域，五个区域分别为
+建模与仿真(modeling & simulation) 系统分析(system analysis) 控制方法(control methods) 规划(planning) 状态估计(state estimation) 位于中心的圆 首先，看图片中心的圆，
+圆的中心是可以视为控制理论起源的离心式调速器（centrifugal governor）； 调速器上方是经典的反馈控制系统（又叫闭环控制系统），下方是前馈控制器。 圆周左半边是连续(continuous)控制系统和离散(discrete)控制系统， D2C 即离散系统转化为连续系统，通常使用保持器 C2D 即连续系统转化为离散系统，通常使用采样器 圆周右半边，是分析控制系统的域(domain) 右上为时间域(time) 右下为频率域(frequency)（严格来说，应该叫复频域） 两者之间可以通过拉普拉斯变换(Laplace Transform)进行转化 建模与仿真 位于右下角的是建模与仿真模块(modeling & simulation)，这里讨论如何对控制系统建立模型（通常为数学模型）并进行仿真。
+经典控制理论中的数学模型通常为传递函数(transfer function)。现代控制理论中有线性状态空间(linear state space)方程，以及非线性状态空间(nonlinear state space)方程，可以从表达式中看出，非线性的状态空间方程右侧无法用线性函数表示出来。
+此外还有混杂系统(hybrid system)，通常指同时包含连续和离散动态特性的系统。
+在仿真(simulation)部分，有方框图(block diagrams)、
+系统辨识(system id or system identification)：根据输入输出数据辨识出系统的表达式 最小实现(minimum realization or minimal realization)：简化模型 线性化(linearization)：模型线性化 First principles：这个我不懂，不过应该是一种系统仿真方法 系统分析 位于正下方的是控制系统分析(system analysis)部分，控制系统可以从下列角度分析...</p>
+</section>
+<footer class=entry-footer>
+September 25, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;陈留城下
+</footer>
+<a class=entry-link aria-label="post link to 控制理论导图简介" href=https://xsro.github.io/cn/posts/diary/20210925/></a>
+</article>
 </main><footer class=footer>
 <span>&copy; 2021 <a href=https://xsro.github.io/cn/>陈留城下</a></span>
 <span>&#183;</span>
