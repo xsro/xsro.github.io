@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://xsro.github.io/cn/categories/</loc>
-    <lastmod>2021-09-30T01:25:12+08:00</lastmod>
+    <lastmod>2021-10-01T01:35:12+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://xsro.github.io/cn/posts/</loc>
-    <lastmod>2021-09-30T01:25:12+08:00</lastmod>
+    <lastmod>2021-10-01T01:35:12+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://xsro.github.io/cn/tags/</loc>
-    <lastmod>2021-09-30T01:25:12+08:00</lastmod>
+    <lastmod>2021-10-01T01:35:12+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -41,20 +41,20 @@
                 href="https://xsro.github.io/cn/tags/"
                 />
   </url><url>
-    <loc>https://xsro.github.io/cn/posts/life/memories/</loc>
-    <lastmod>2021-09-30T01:25:12+08:00</lastmod>
-  </url><url>
     <loc>https://xsro.github.io/cn/tags/%E5%9B%9E%E5%BF%86/</loc>
-    <lastmod>2021-09-30T01:25:12+08:00</lastmod>
+    <lastmod>2021-10-01T01:35:12+08:00</lastmod>
+  </url><url>
+    <loc>https://xsro.github.io/cn/posts/life/hometown/</loc>
+    <lastmod>2021-10-01T01:35:12+08:00</lastmod>
   </url><url>
     <loc>https://xsro.github.io/cn/categories/%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2021-09-30T01:25:12+08:00</lastmod>
+    <lastmod>2021-10-01T01:35:12+08:00</lastmod>
   </url><url>
     <loc>https://xsro.github.io/cn/tags/%E7%AB%A5%E5%B9%B4/</loc>
-    <lastmod>2021-09-30T01:25:12+08:00</lastmod>
+    <lastmod>2021-10-01T01:35:12+08:00</lastmod>
   </url><url>
     <loc>https://xsro.github.io/cn/</loc>
-    <lastmod>2021-09-30T01:25:12+08:00</lastmod>
+    <lastmod>2021-10-01T01:35:12+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -65,6 +65,9 @@
                 hreflang="cn"
                 href="https://xsro.github.io/cn/"
                 />
+  </url><url>
+    <loc>https://xsro.github.io/cn/posts/life/memories/</loc>
+    <lastmod>2021-09-30T01:25:12+08:00</lastmod>
   </url><url>
     <loc>https://xsro.github.io/cn/tags/map-of-control-theory/</loc>
     <lastmod>2021-09-25T11:05:54+08:00</lastmod>
