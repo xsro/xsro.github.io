@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://xsro.github.io/cn/categories/</loc>
-    <lastmod>2021-09-25T11:05:54+08:00</lastmod>
+    <lastmod>2021-09-30T01:25:12+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -15,11 +15,8 @@
                 href="https://xsro.github.io/cn/categories/"
                 />
   </url><url>
-    <loc>https://xsro.github.io/cn/tags/map-of-control-theory/</loc>
-    <lastmod>2021-09-25T11:05:54+08:00</lastmod>
-  </url><url>
     <loc>https://xsro.github.io/cn/posts/</loc>
-    <lastmod>2021-09-25T11:05:54+08:00</lastmod>
+    <lastmod>2021-09-30T01:25:12+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -32,7 +29,7 @@
                 />
   </url><url>
     <loc>https://xsro.github.io/cn/tags/</loc>
-    <lastmod>2021-09-25T11:05:54+08:00</lastmod>
+    <lastmod>2021-09-30T01:25:12+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -43,6 +40,34 @@
                 hreflang="cn"
                 href="https://xsro.github.io/cn/tags/"
                 />
+  </url><url>
+    <loc>https://xsro.github.io/cn/posts/life/memories/</loc>
+    <lastmod>2021-09-30T01:25:12+08:00</lastmod>
+  </url><url>
+    <loc>https://xsro.github.io/cn/tags/%E5%9B%9E%E5%BF%86/</loc>
+    <lastmod>2021-09-30T01:25:12+08:00</lastmod>
+  </url><url>
+    <loc>https://xsro.github.io/cn/categories/%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2021-09-30T01:25:12+08:00</lastmod>
+  </url><url>
+    <loc>https://xsro.github.io/cn/tags/%E7%AB%A5%E5%B9%B4/</loc>
+    <lastmod>2021-09-30T01:25:12+08:00</lastmod>
+  </url><url>
+    <loc>https://xsro.github.io/cn/</loc>
+    <lastmod>2021-09-30T01:25:12+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xsro.github.io/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://xsro.github.io/cn/"
+                />
+  </url><url>
+    <loc>https://xsro.github.io/cn/tags/map-of-control-theory/</loc>
+    <lastmod>2021-09-25T11:05:54+08:00</lastmod>
   </url><url>
     <loc>https://xsro.github.io/cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2021-09-25T11:05:54+08:00</lastmod>
@@ -59,18 +84,8 @@
     <loc>https://xsro.github.io/cn/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2021-09-25T11:05:54+08:00</lastmod>
   </url><url>
-    <loc>https://xsro.github.io/cn/</loc>
-    <lastmod>2021-09-25T11:05:54+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://xsro.github.io/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="https://xsro.github.io/cn/"
-                />
+    <loc>https://xsro.github.io/cn/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E4%B8%93%E4%B8%9A/</loc>
+    <lastmod>2021-09-23T01:25:12+08:00</lastmod>
   </url><url>
     <loc>https://xsro.github.io/cn/posts/diary/20210923/</loc>
     <lastmod>2021-09-23T01:25:12+08:00</lastmod>
@@ -88,28 +103,16 @@
     <loc>https://xsro.github.io/cn/posts/diary/20210902/</loc>
     <lastmod>2021-09-02T01:25:12+08:00</lastmod>
   </url><url>
-    <loc>https://xsro.github.io/cn/tags/z%E5%8F%98%E6%8D%A2/</loc>
-    <lastmod>2021-08-30T23:34:31+08:00</lastmod>
-  </url><url>
     <loc>https://xsro.github.io/cn/posts/diary/20210830/</loc>
-    <lastmod>2021-08-30T23:34:31+08:00</lastmod>
-  </url><url>
-    <loc>https://xsro.github.io/cn/tags/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/</loc>
     <lastmod>2021-08-30T23:34:31+08:00</lastmod>
   </url><url>
     <loc>https://xsro.github.io/cn/tags/%E5%8F%98%E6%8D%A2%E5%9F%9F%E5%88%86%E6%9E%90/</loc>
     <lastmod>2021-08-30T23:34:31+08:00</lastmod>
   </url><url>
-    <loc>https://xsro.github.io/cn/tags/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2/</loc>
-    <lastmod>2021-08-30T23:34:31+08:00</lastmod>
-  </url><url>
     <loc>https://xsro.github.io/cn/tags/%E6%95%B0%E5%AD%A6%E6%8E%A8%E5%AF%BC/</loc>
     <lastmod>2021-08-30T23:34:31+08:00</lastmod>
   </url><url>
-    <loc>https://xsro.github.io/cn/tags/lti-system/</loc>
-    <lastmod>2021-08-28T10:32:39+08:00</lastmod>
-  </url><url>
-    <loc>https://xsro.github.io/cn/tags/%E4%BF%A1%E5%8F%B7%E6%B1%82%E5%AF%BC/</loc>
+    <loc>https://xsro.github.io/cn/tags/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/</loc>
     <lastmod>2021-08-28T10:32:39+08:00</lastmod>
   </url><url>
     <loc>https://xsro.github.io/cn/posts/diary/20210828/</loc>
@@ -136,7 +139,7 @@
     <loc>https://xsro.github.io/cn/posts/diary/20210723/</loc>
     <lastmod>2021-07-23T10:32:39+08:00</lastmod>
   </url><url>
-    <loc>https://xsro.github.io/cn/categories/%E6%97%A5%E8%AE%B0/</loc>
+    <loc>https://xsro.github.io/cn/tags/%E5%A4%A7%E5%AD%A6%E6%97%A5%E8%AE%B0/</loc>
     <lastmod>2021-07-23T10:32:39+08:00</lastmod>
   </url><url>
     <loc>https://xsro.github.io/cn/about/</loc>
