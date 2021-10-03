@@ -9,7 +9,16 @@
       <link>https://xsro.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 25 Sep 2021 11:05:54 +0800</lastBuildDate><atom:link href="https://xsro.github.io/cn/categories/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 03 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xsro.github.io/cn/categories/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>控制相关资源导航</title>
+      <link>https://xsro.github.io/cn/posts/notes/control-theory-navi/</link>
+      <pubDate>Sun, 03 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xsro.github.io/cn/posts/notes/control-theory-navi/</guid>
+      <description>控制相关资源导航  zhihu J Pan: 纲举目张 bilibili DR_CAN youtube Brian Douglas youtube matlab  </description>
+    </item>
+    
     <item>
       <title>控制理论导图简介</title>
       <link>https://xsro.github.io/cn/posts/diary/20210925/</link>

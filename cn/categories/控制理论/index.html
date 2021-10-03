@@ -86,6 +86,20 @@
 <article class="post-entry tag-entry">
 <header class=entry-header>
 <h2>
+控制相关资源导航
+</h2>
+</header>
+<section class=entry-content>
+<p>控制相关资源导航 zhihu J Pan: 纲举目张 bilibili DR_CAN youtube Brian Douglas youtube matlab </p>
+</section>
+<footer class=entry-footer>
+October 3, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;陈留城下
+</footer>
+<a class=entry-link aria-label="post link to 控制相关资源导航" href=https://xsro.github.io/cn/posts/notes/control-theory-navi/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>
 控制理论导图简介
 </h2>
 </header>
@@ -158,32 +172,11 @@ August 30, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;陈留城下
 </footer>
 <a class=entry-link aria-label="post link to 傅里叶、拉普拉斯、Z变换这一串" href=https://xsro.github.io/cn/posts/diary/20210830/></a>
 </article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>
-控制系统中对信号求导的注意事项
-</h2>
-</header>
-<section class=entry-content>
-<p>线性定常系统的重要特性引发的思考 女朋友在阅读胡寿松第六版《自动控制原理》时有一个困惑。为什么书中 P71 页表 3-2 中的阶跃信号1，求导之后消失了，而不是作为单位脉冲信号$\delta(t)$处理。难道这里的1视为常数，这样就与零初始条件矛盾了。
-书中的表 3-2 一阶系统对典型输入信号的输出响应如下：
-输入信号 输出响应 $1(t)$ $1-e^{-t/T}, t \ge 0$ $\delta(t)$ $\frac{1}{T}e^{-t/T}, t\ge 0$ 书中由此得出线性定常系统的一个重要特性：系统对输入信号导数的响应，就等于系统对输入信号响应的导数。
-也就是说第二行脉冲响应应该是第一行阶跃响应的导数，但是这里为什么1对应的导数$\delta(t)$没有了呢？
-答：因为后面的指数项$e^{-t/T},t \ge 0$，在零初始条件下还需要乘以一个$u(t)$，根据求导的乘法公式求导之后会出现一个$\delta(t)$，从而相互抵消。
-将阶跃响应写成如下形式：
-$$ 1-e^{-t/T}(t \ge 0)=1(t)-e^{-t/T}\times 1(t) $$
-对阶跃响应求导：
-$$ \begin{aligned} \frac{\mathrm{d}}{\mathrm{d}t} [&1(t)-e^{-t/T}\times 1(t)] \
-=&\delta(t)- \frac{\mathrm{d}}{\mathrm{d}t}[e^{-t/T}1(t)] \
-=&\delta(t)- [\frac{\mathrm{d}}{\mathrm{d}t}e^{-t/T}\times1(t)+e^{-t/T}\times \frac{\mathrm{d}}{\mathrm{d}t} 1(t)] \
-=&\delta(t) -[-\frac{1}{T}e^{-t/T}\times 1(t)+e^{-t/T}\times \delta(t)] \
-=&\delta(t)- [-\frac{1}{T}e^{-t/T}\times 1(t)+\delta(t)] \...</p>
-</section>
-<footer class=entry-footer>
-August 28, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;陈留城下
+<footer class=page-footer>
+<nav class=pagination>
+<a class=next href=https://xsro.github.io/cn/categories/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/page/2/>Next Page »</a>
+</nav>
 </footer>
-<a class=entry-link aria-label="post link to 控制系统中对信号求导的注意事项" href=https://xsro.github.io/cn/posts/diary/20210828/></a>
-</article>
 </main><footer class=footer>
 <span>&copy; 2021 <a href=https://xsro.github.io/cn/>陈留城下</a></span>
 <span>&#183;</span>
