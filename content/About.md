@@ -4,12 +4,12 @@ date: 2021-06-13T09:33:15+08:00
 draft: false
 ---
 
-# Hi👋
+# Chen Liu👋
 
-I am a junior student in [NJUPT](http://www.njupt.edu.cn/). 
-I study Automation and write notes and codes.
+I study Automation and write notes and codes. I am interested in Control Theory, Programming skills, DevOps and more.
+I am also a geography and history enthusiast in my spare time.
 
-## Some of my works💼
+## Codes💼
 
 | project                                                                         | repo                                                                  | description               | language      |
 | ------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------- | ------------- |
@@ -17,16 +17,14 @@ I study Automation and write notes and codes.
 | [college-notes](https://xsro.gitee.io/college-notes/#/)                         | [gitee](https://gitee.com/xsro/college-notes)                         | my notes in university    | markdown      |
 | [MASM/TASM](https://marketplace.visualstudio.com/items?itemName=xsro.masm-tasm) | [github](https://github.com/xsro/masm-tasm/)                          | VSCode extension for MASM | typescript    |
 
-## More🧾
+## Education :mortar_board:
 
-During the fight against COVID-19, I became a git user and lover. 
-I use GIT to mantain my codes and notes. 
-Thanks very much to the community.
+- (2018-)  Automation, [College of Automation][College] [Nanjing University of Posts and Telecommunications][NJUPT]
 
-I am interested in Control Theory, Programming, Computer Vision and everything related.
-I want to continue my study and exploration as a postgraduate in in the near future.
+[NJUPT]: http://www.njupt.edu.cn/	"NJUPT"
+[College]: http://coa.njupt.edu.cn	"College of Automation & College of Artificial Intellegence"
 
-## contact
+## Contact
 
 - email📧: <xsro@foxmail.com>
 - gitee🐎: <https://gitee.com/xsro>
