@@ -113,7 +113,7 @@ params:
           url: "mailto:xsro@foxmail.com"
 
     editPost:
-        URL: "https://github.com/xsro/xsro.github.io/content"
+        URL: "https://github.com/xsro/xsro.github.io/edit/hugo/content"
         Text: "Suggest Changes" # edit text
         appendFilePath: true # to append file path to Edit link
 
