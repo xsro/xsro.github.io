@@ -9,11 +9,11 @@
       <link>https://xsro.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 28 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xsro.github.io/categories/control-system-simulation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Dec 2021 10:32:39 +0800</lastBuildDate><atom:link href="https://xsro.github.io/categories/control-system-simulation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Simulate Dynamic Matrix Control with Simupy</title>
       <link>https://xsro.github.io/posts/dmc-with-simupy/</link>
-      <pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 28 Dec 2021 10:32:39 +0800</pubDate>
       
       <guid>https://xsro.github.io/posts/dmc-with-simupy/</guid>
       <description>Simulate Dynamic Matrix Control with Simupy I wrote some code about the symulation of Dynamic Matirx Control with simupy.

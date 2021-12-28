@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://xsro.github.io/categories/</loc>
-    <lastmod>2021-12-28T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-28T10:32:39+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
@@ -16,13 +16,13 @@
                 />
   </url><url>
     <loc>https://xsro.github.io/categories/control-system-simulation/</loc>
-    <lastmod>2021-12-28T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-28T10:32:39+08:00</lastmod>
   </url><url>
     <loc>https://xsro.github.io/tags/control-theory/</loc>
-    <lastmod>2021-12-28T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-28T10:32:39+08:00</lastmod>
   </url><url>
     <loc>https://xsro.github.io/posts/</loc>
-    <lastmod>2021-12-28T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-28T10:32:39+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
@@ -35,10 +35,10 @@
                 />
   </url><url>
     <loc>https://xsro.github.io/posts/dmc-with-simupy/</loc>
-    <lastmod>2021-12-28T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-28T10:32:39+08:00</lastmod>
   </url><url>
     <loc>https://xsro.github.io/tags/</loc>
-    <lastmod>2021-12-28T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-28T10:32:39+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
@@ -51,7 +51,7 @@
                 />
   </url><url>
     <loc>https://xsro.github.io/</loc>
-    <lastmod>2021-12-28T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-28T10:32:39+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
@@ -92,8 +92,6 @@
                 href="https://xsro.github.io/about/"
                 />
   </url><url>
-    <loc>https://xsro.github.io/life/friendswhenchild/</loc>
-  </url><url>
     <loc>https://xsro.github.io/readme/</loc>
     <priority>0</priority>
   </url><url>
@@ -107,18 +105,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://xsro.github.io/archives/"
-                />
-  </url><url>
-    <loc>https://xsro.github.io/life/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="https://xsro.github.io/cn/life/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://xsro.github.io/life/"
                 />
   </url><url>
     <loc>https://xsro.github.io/search/</loc>
