@@ -12,12 +12,12 @@
     <lastBuildDate>Thu, 23 Sep 2021 01:25:12 +0800</lastBuildDate><atom:link href="https://xsro.github.io/cn/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E4%B8%93%E4%B8%9A/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>自动化专业学习回顾</title>
-      <link>https://xsro.github.io/cn/posts/diary/20210923/</link>
+      <link>https://xsro.github.io/cn/posts/look-back_of_automation/</link>
       <pubDate>Thu, 23 Sep 2021 01:25:12 +0800</pubDate>
       
-      <guid>https://xsro.github.io/cn/posts/diary/20210923/</guid>
+      <guid>https://xsro.github.io/cn/posts/look-back_of_automation/</guid>
       <description>加油，软硬兼修、强弱相济的自动化人 🤖 互联网上”全栈“一词比较火热，通常指的是兼具”前端“和”后端“的技术能力丰富的工程人员。 有调侃说，“全栈”应该转化为“软件+硬件”，可以叫“全干工程师”，我想这不正是自动化学科对我们学生的要求嘛， 似乎好像还可以加上一句，强电与弱电相结合。
-自动化学科果然是“大杂烩”，啥都学，啥都不精。 有人称，自动化专业是培养“总工”的专业，我当初也是有一个“大国工匠”之梦，选择自动化专业的。 在一些大学，自动化学院被称为“妈妈”学院，因为它覆盖方向很广，从自动化学院分出了很多细分的学院。
+自动化学科果然是“大杂烩”，啥都学，啥都不精。 有人称，自动化专业是培养“总工”的专业。 在一些大学，自动化学院被称为“妈妈”学院，因为它覆盖方向很广，从自动化学院分出了很多细分的学院。
 自动化专业回顾 在课程逐渐减少，即将毕业的大四学年，我想回顾一下在小破学校学的那些专业课。
 首先我们会学习一些基础理论学科，如：
  高等代数：感觉与经典控制理论最相关的就是积分变换，虽然我们只学了傅里叶变换 线性代数：对于现代控制理论和热门的神经网络的学习非常重要 概率论与数理统计：自动化开始与人工智能积极结合，概率论与数理统计和很多误差理论，人工智能算法有关  之后我们会学习控制理论的相关学科，学习如何进行控制系统建模，仿真，设计如：

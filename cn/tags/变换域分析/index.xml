@@ -12,10 +12,10 @@
     <lastBuildDate>Mon, 30 Aug 2021 23:34:31 +0800</lastBuildDate><atom:link href="https://xsro.github.io/cn/tags/%E5%8F%98%E6%8D%A2%E5%9F%9F%E5%88%86%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>傅里叶、拉普拉斯、Z变换这一串</title>
-      <link>https://xsro.github.io/cn/posts/diary/20210830/</link>
+      <link>https://xsro.github.io/cn/diary/20210830/</link>
       <pubDate>Mon, 30 Aug 2021 23:34:31 +0800</pubDate>
       
-      <guid>https://xsro.github.io/cn/posts/diary/20210830/</guid>
+      <guid>https://xsro.github.io/cn/diary/20210830/</guid>
       <description>📶 三大变换的数学推导过程 $\mathscr{F,L,Z}$傅里叶变换、拉普拉斯变换、Z 变换这三大变换讨论广泛1。个人理解，这三个变换都是为了简化一些难以在时间域分析的问题而引入的。
  拉普拉斯变换是对傅里叶变换的推广，忽略了时域信号时间为负的部分，使得变换也可以适用于$t\rightarrow +\infty$不为零的信号 Z 变换是拉普拉斯变换针对离散信号的简化，使得表达式更加便于分析      傅里叶变换 拉普拉斯变换 $Z$变换     表达式 $F(\omega)=\int_{-\infty}^{\infty}f(t)e^{-j\omega t}\mathrm{d} t$ $F(s)=\int_0^\infty f(t)e^{-st}\mathrm{d}t$ $F(z)=\sum\limits_{k=0}^{\infty}f(kT)z^{-k}$   适用范围 狄利克雷条件 狄利克雷条件的前两条 前者+（时间）离散   变换域 频域 复(频)域 $Z$域   对应系统模型 频率特性 传递函数 脉冲传递函数    数学演变过程 周期函数的傅里叶级数 周期为 T 的任一周期函数$f(t)$，若满足下列狄利克雷条件(Dirichlet conditions2）：
  在一个周期内只有有限个不连续点 在一个周期内只有有限个极值点(注：函数连续是条件 1、2 的充分非必要条件) 周期内绝对可积：积分$\int^{\frac{T}{2}}_{-\frac{T}{2}} |f(t)| \mathrm{d}t$ 存在  则$f(t)$可展开为如下的傅里叶级数：

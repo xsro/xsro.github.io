@@ -9,33 +9,26 @@
       <link>https://xsro.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 23 Sep 2021 01:25:12 +0800</lastBuildDate><atom:link href="https://xsro.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xsro.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simulate Dynamic Matrix Control with Simupy</title>
+      <link>https://xsro.github.io/posts/dmc-with-simupy/</link>
+      <pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xsro.github.io/posts/dmc-with-simupy/</guid>
+      <description>Simulate Dynamic Matrix Control with Simupy I wrote some code about the symulation of Dynamic Matirx Control with simupy.
+ SimuPy is a framework for simulating interconnected dynamical system models and provides an open source, python-based tool that can be used in model- and system- based design and simulation workflows.
+ DMC or Dynamic Matrix Control is a typical Model Predictive Control (MPC) method using the prediction of future steps to control the system.</description>
+    </item>
+    
     <item>
       <title>A look-back of automation</title>
-      <link>https://xsro.github.io/posts/diary/20210923/</link>
+      <link>https://xsro.github.io/posts/look-back_of_automation/</link>
       <pubDate>Thu, 23 Sep 2021 01:25:12 +0800</pubDate>
       
-      <guid>https://xsro.github.io/posts/diary/20210923/</guid>
+      <guid>https://xsro.github.io/posts/look-back_of_automation/</guid>
       <description>Keep fighting, boys and girls from automation 🤖 In the Internet, the word &amp;lsquo;full-stack&amp;rsquo; is very hot. It means &amp;lsquo;front end&amp;rsquo; plus &amp;lsquo;back end&amp;rsquo; mainly for web software developer. We students studing automation should also learn hardware. So we are &amp;lsquo;software&amp;rsquo; plus &amp;lsquo;hardware&amp;rsquo; and &amp;lsquo;strong electricity&amp;rsquo; plus &amp;lsquo;weak electricity&amp;rsquo;.
 I am learning Automation in NJUPT and I am going to graduate. So I want to spend some time to look back on what I have learnt in my university as an automation student.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://xsro.github.io/posts/life/friendswhenchild/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://xsro.github.io/posts/life/friendswhenchild/</guid>
-      <description>童年玩伴 感谢童年的 SenSen,YaoYao,TingTing,QuanJia 少年时的 JunJun，后来的 XiaoLong,WanPing,Xinxin</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://xsro.github.io/posts/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://xsro.github.io/posts/readme/</guid>
-      <description>my posts  life人生感悟：记录我人生的一些片段，回忆与感悟，方便以后回顾我庸碌的人生 diary日记式博客：零零散散的一些技术博客和日记，不会经常回顾的一些日记笔记 notes笔记式技术博客：会去回顾的一些笔记，按照技术门类记录的一些笔记，通常作为速查使用  </description>
     </item>
     
   </channel>

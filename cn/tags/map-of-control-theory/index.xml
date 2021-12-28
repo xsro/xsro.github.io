@@ -12,10 +12,10 @@
     <lastBuildDate>Sat, 25 Sep 2021 11:05:54 +0800</lastBuildDate><atom:link href="https://xsro.github.io/cn/tags/map-of-control-theory/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>控制理论导图简介</title>
-      <link>https://xsro.github.io/cn/posts/diary/20210925/</link>
+      <link>https://xsro.github.io/cn/diary/20210925/</link>
       <pubDate>Sat, 25 Sep 2021 11:05:54 +0800</pubDate>
       
-      <guid>https://xsro.github.io/cn/posts/diary/20210925/</guid>
+      <guid>https://xsro.github.io/cn/diary/20210925/</guid>
       <description>The map of Control Theory v5 简析 学习控制理论可以说经常可以看到Brian Douglas的The Map of Control Theory ，如下图所示。在感慨控制理论的博大精深的同时，我也想试着了解一下具体都是哪些内容。其中大部分内容我还没有学过，所以不一定对，仅供参考。
 可以看出 map 包括一个圆和周边的 5 个区域，五个区域分别为
  建模与仿真(modeling &amp;amp; simulation) 系统分析(system analysis) 控制方法(control methods) 规划(planning) 状态估计(state estimation)  位于中心的圆 首先，看图片中心的圆，
