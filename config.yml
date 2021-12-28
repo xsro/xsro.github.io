@@ -27,13 +27,13 @@ languages:
         # imageHeight: 120
         subtitle: "👋I am a student👨‍🎓 studing Automation🤖️ and Control Theory⚙️"
         buttons:
-            - name: Blog
+            - name: 📚
               url: /cn/posts/
             # - name: Tags
             #   url: tags
-            - name: Notes
+            - name: 📒
               url: https://xsro.gitee.io/college-notes/#/
-            - name: Codes
+            - name: 💻
               url: https://xsro.github.io/university-learning-code/
       menu:
           main:
@@ -58,7 +58,7 @@ languages:
       title: 陈留城下
       homeInfoParams:
           Title: "饮茶先啦 \U0001F44B"
-          Content: Welcome to my website powered by [paperMod](https://github.com/adityatelange/hugo-PaperMod)
+          Content: 使用[paperMod](https://github.com/adityatelange/hugo-PaperMod)构建了这个小网站
       menu:
           main:
             - name: 归档

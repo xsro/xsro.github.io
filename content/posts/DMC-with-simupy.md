@@ -1,6 +1,6 @@
 ---
-title: Simulate Dynamic Matrix Control with Simupy
-date: 2021-12-28
+title: "Simulate Dynamic Matrix Control with Simupy"
+date: 2021-12-28T10:32:39+08:00
 tags: ["Control Theory"]
 categories: ["Control system simulation"]
 math: true
@@ -82,7 +82,7 @@ By running the Code, we can know that
 in this case, the more steps $P$ we predict,
 the better performance we will get.
 
-![](DMC_simlation_with_simupy.png)
+![](/images/DMC_simlation_with_simupy.png)
 
 ## References
 

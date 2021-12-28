@@ -1,9 +1,7 @@
 ---
 title: "记录我的大学时光"
-date: 2021-10-16
 tags: ["回忆", "大学"]
 categories: ["生活"]
-draft: false
 ---
 
 # 我的征途

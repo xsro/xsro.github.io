@@ -1,9 +1,7 @@
 ---
 title: "人生点滴"
-date: 2021-09-30T01:25:12+08:00
 tags: ["回忆", "童年"]
 categories: ["生活"]
-draft: false
 ---
 
 # 人生点滴
