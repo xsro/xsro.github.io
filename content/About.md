@@ -22,7 +22,7 @@ Glad to see you in this glorious time, enjoying technology's development.
 
 ## Contact
 
-Opinions are mine only
+Opinions are mine only. If you are interested in something I make
 
 - email📧: <xsro@foxmail.com>
 - gitee🐎: <https://gitee.com/xsro>
