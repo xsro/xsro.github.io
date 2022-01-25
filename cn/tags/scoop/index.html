@@ -3,11 +3,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Categories | 陈留城下</title>
+<title>SCOOP | 陈留城下</title>
 <meta name=keywords content>
 <meta name=description content="梦游乡">
 <meta name=author content="Leo">
-<link rel=canonical href=https://xsro.github.io/cn/categories/>
+<link rel=canonical href=https://xsro.github.io/cn/tags/scoop/>
 <link href=/assets/css/stylesheet.min.746a86b58bb2b052b5e4df8216510494f04f81e62c08d626150c26c69ca929da.css integrity="sha256-dGqGtYuysFK15N+CFlEElPBPgeYsCNYmFQwmxpypKdo=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://xsro.github.io/text.png>
 <link rel=icon type=image/png sizes=16x16 href=https://xsro.github.io/favicon-16x16.png>
@@ -17,16 +17,15 @@
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.92.0">
-<link rel=alternate type=application/rss+xml href=https://xsro.github.io/cn/categories/index.xml>
-<link rel=alternate hreflang=en href=https://xsro.github.io/categories/>
-<link rel=alternate hreflang=cn href=https://xsro.github.io/cn/categories/>
-<meta property="og:title" content="Categories">
+<link rel=alternate type=application/rss+xml href=https://xsro.github.io/cn/tags/scoop/index.xml>
+<link rel=alternate hreflang=cn href=https://xsro.github.io/cn/tags/scoop/>
+<meta property="og:title" content="SCOOP">
 <meta property="og:description" content="梦游乡">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://xsro.github.io/cn/categories/"><meta property="og:image" content="https://xsro.github.io/papermod-cover.png"><meta property="og:site_name" content="陈留城下">
+<meta property="og:url" content="https://xsro.github.io/cn/tags/scoop/"><meta property="og:image" content="https://xsro.github.io/papermod-cover.png"><meta property="og:site_name" content="陈留城下">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://xsro.github.io/papermod-cover.png">
-<meta name=twitter:title content="Categories">
+<meta name=twitter:title content="SCOOP">
 <meta name=twitter:description content="梦游乡">
 </head>
 <body class=list id=top>
@@ -62,7 +61,7 @@
 </li>
 <li>
 <a href=https://xsro.github.io/cn/categories/ title=分类>
-<span class=active>分类</span>
+<span>分类</span>
 </a>
 </li>
 <li>
@@ -79,22 +78,30 @@
 </header>
 <main class=main>
 <header class=page-header>
-<h1>Categories</h1>
+<div class=breadcrumbs>
+<a href=https://xsro.github.io/cn/>Home</a>&nbsp;»&nbsp;<a href=https://xsro.github.io/cn/tags/>Tags</a>
+</div>
+<h1>SCOOP</h1>
 </header>
-<ul class=terms-tags>
-<li>
-<a href=https://xsro.github.io/cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/>学习笔记 <sup><strong><sup>5</sup></strong></sup> </a>
-</li>
-<li>
-<a href=https://xsro.github.io/cn/categories/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF%E9%80%9F%E6%9F%A5/>常用技术速查 <sup><strong><sup>4</sup></strong></sup> </a>
-</li>
-<li>
-<a href=https://xsro.github.io/cn/categories/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/>控制理论 <sup><strong><sup>5</sup></strong></sup> </a>
-</li>
-<li>
-<a href=https://xsro.github.io/cn/categories/%E7%94%9F%E6%B4%BB/>生活 <sup><strong><sup>5</sup></strong></sup> </a>
-</li>
-</ul>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>
+镜像安装windows环境下安装SCOOP
+</h2>
+</header>
+<section class=entry-content>
+<p>windows系统安装Scoop包管理工具 https://scoop.sh/是一款windows系统下的包管理工具，根据官网只需要以下命令即可安装。
+iwr -useb get.scoop.sh | iex #Note: if you get an error you might need to change the execution policy (i.e. enable Powershell) with Set-ExecutionPolicy RemoteSigned -scope CurrentUser 实际使用中，通常需要镜像加速以及修改安装位置，所以结合文章Windows下Scoop安装、配置与使用，在此，我记录一下我的安装过程。
+安装SCOOP 由于我的C盘空间有限，可以修改安装位置我将目标目录修改为
+#将Scoop安装到自定义目录(命令行方式),默认为C:\Users&lt;user>\scoop $env:SCOOP='D:\Applications\Scoop' [Environment]::SetEnvironmentVariable('SCOOP', $env:SCOOP, 'User') #将Scoop配置为将全局程序安装到自定义目录 SCOOP_GLOBAL(命令行方式),默认为C:\ProgramData\scoop $env:SCOOP_GLOBAL='D:\Applications\GlobalScoopApps' [Environment]::SetEnvironmentVariable('SCOOP_GLOBAL', $env:SCOOP_GLOBAL, 'Machine') 我的网络质量不佳，无法直接使用iwr -useb get.scoop.sh | iex安装，可以借助镜像，来实现安装，下面的脚本会自动替换掉安装脚本中的github的链接。
+#可能需要通过下面的命令设置权限之后再安装 Set-ExecutionPolicy RemoteSigned -scope CurrentUser #iwr -useb get.scoop.sh | iex #网络慢可以使用下面替换为cnpm和fastgit的链接 iwr -useb https://raw.fastgit.org/ScoopInstaller/Scoop/master/bin/install.ps1 | %{$_.Content.replace("github.com","github.com.cnpmjs.org").replace("raw.githubusercontent.com","raw.fastgit.org") | iex 上面这个命令应该可以正常安装scoop程序，但是当需要使用scoop安装其他程序时可能会出现问题， 下面的脚本会修改scoop源码，使得scoop安装其他程序时也自动替换掉github链接。
+$(Get-Content $env:SCOOP\apps\scoop\current\lib\manifest.ps1 -raw)....</p>
+</section>
+<footer class=entry-footer>
+January 25, 2022&nbsp;·&nbsp;2 min&nbsp;·&nbsp;xsro
+</footer>
+<a class=entry-link aria-label="post link to 镜像安装windows环境下安装SCOOP" href=https://xsro.github.io/cn/notes/install_scoop_with_mirror/></a>
+</article>
 </main><footer class=footer>
 <span>&copy; 2022 <a href=https://xsro.github.io/cn/>陈留城下</a></span>
 <span>&#183;</span>

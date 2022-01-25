@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://xsro.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.91.2">
+<meta name=generator content="Hugo 0.92.0">
 <link rel=alternate type=application/rss+xml href=https://xsro.github.io/cn/categories/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF%E9%80%9F%E6%9F%A5/index.xml>
 <link rel=alternate hreflang=cn href=https://xsro.github.io/cn/categories/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF%E9%80%9F%E6%9F%A5/>
 <meta property="og:title" content="常用技术速查">
@@ -86,6 +86,25 @@
 <article class="post-entry tag-entry">
 <header class=entry-header>
 <h2>
+镜像安装windows环境下安装SCOOP
+</h2>
+</header>
+<section class=entry-content>
+<p>windows系统安装Scoop包管理工具 https://scoop.sh/是一款windows系统下的包管理工具，根据官网只需要以下命令即可安装。
+iwr -useb get.scoop.sh | iex #Note: if you get an error you might need to change the execution policy (i.e. enable Powershell) with Set-ExecutionPolicy RemoteSigned -scope CurrentUser 实际使用中，通常需要镜像加速以及修改安装位置，所以结合文章Windows下Scoop安装、配置与使用，在此，我记录一下我的安装过程。
+安装SCOOP 由于我的C盘空间有限，可以修改安装位置我将目标目录修改为
+#将Scoop安装到自定义目录(命令行方式),默认为C:\Users&lt;user>\scoop $env:SCOOP='D:\Applications\Scoop' [Environment]::SetEnvironmentVariable('SCOOP', $env:SCOOP, 'User') #将Scoop配置为将全局程序安装到自定义目录 SCOOP_GLOBAL(命令行方式),默认为C:\ProgramData\scoop $env:SCOOP_GLOBAL='D:\Applications\GlobalScoopApps' [Environment]::SetEnvironmentVariable('SCOOP_GLOBAL', $env:SCOOP_GLOBAL, 'Machine') 我的网络质量不佳，无法直接使用iwr -useb get.scoop.sh | iex安装，可以借助镜像，来实现安装，下面的脚本会自动替换掉安装脚本中的github的链接。
+#可能需要通过下面的命令设置权限之后再安装 Set-ExecutionPolicy RemoteSigned -scope CurrentUser #iwr -useb get.scoop.sh | iex #网络慢可以使用下面替换为cnpm和fastgit的链接 iwr -useb https://raw.fastgit.org/ScoopInstaller/Scoop/master/bin/install.ps1 | %{$_.Content.replace("github.com","github.com.cnpmjs.org").replace("raw.githubusercontent.com","raw.fastgit.org") | iex 上面这个命令应该可以正常安装scoop程序，但是当需要使用scoop安装其他程序时可能会出现问题， 下面的脚本会修改scoop源码，使得scoop安装其他程序时也自动替换掉github链接。
+$(Get-Content $env:SCOOP\apps\scoop\current\lib\manifest.ps1 -raw)....</p>
+</section>
+<footer class=entry-footer>
+January 25, 2022&nbsp;·&nbsp;2 min&nbsp;·&nbsp;xsro
+</footer>
+<a class=entry-link aria-label="post link to 镜像安装windows环境下安装SCOOP" href=https://xsro.github.io/cn/notes/install_scoop_with_mirror/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>
 控制相关资源导航
 </h2>
 </header>
@@ -126,7 +145,7 @@ July 25, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;xsro
 <a class=entry-link aria-label="post link to Markdown 常用拓展语法参考" href=https://xsro.github.io/cn/notes/markdown-tips/></a>
 </article>
 </main><footer class=footer>
-<span>&copy; 2021 <a href=https://xsro.github.io/cn/>陈留城下</a></span>
+<span>&copy; 2022 <a href=https://xsro.github.io/cn/>陈留城下</a></span>
 <span>&#183;</span>
 <span>Powered by <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a></span>
 <span>&#183;</span>
