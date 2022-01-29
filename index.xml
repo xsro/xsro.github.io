@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>xsro</title>
     <link>https://xsro.github.io/</link>
@@ -39,8 +39,17 @@ I am learning Automation in NJUPT and I am going to graduate. So I want to spend
       <guid>https://xsro.github.io/about/</guid>
       <description>👋xsro I am studying Control Theory and its application/simulation, also a learnner of programming skills and a geography/history enthusiast
 Glad to see you in this glorious time, enjoying technology&amp;rsquo;s development.
-Education 🎓  (2015-2018) physics and geography in Senior High School (2018-2022) Automation, College of Automation in Nanjing University of Posts and Telecommunications  Contact Opinions are mine only
- email📧: xsro@foxmail.com gitee🐎: https://gitee.com/xsro github🐱: https://github.com/xsro  😄 Make everyday meaningful and hopeful</description>
+Education 🎓  (2015-2018) physics and geography in Senior High School (2018-2022) Automation, College of Automation in Nanjing University of Posts and Telecommunications  Contact Opinions are mine only. If you are interested in something I make
+ email📧: xsro@foxmail.com gitee🐎: https://gitee.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://xsro.github.io/ad/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xsro.github.io/ad/</guid>
+      <description>AD hknonwoven is a manufactor of nonwoven products located in China&amp;rsquo;s eastern countryside coast. Hope this message can help you.</description>
     </item>
     
     <item>

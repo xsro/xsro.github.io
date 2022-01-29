@@ -92,6 +92,19 @@
                 href="https://xsro.github.io/about/"
                 />
   </url><url>
+    <loc>https://xsro.github.io/ad/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://xsro.github.io/cn/ad/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xsro.github.io/ad/"
+                />
+  </url><url>
     <loc>https://xsro.github.io/readme/</loc>
     <priority>0</priority>
   </url><url>

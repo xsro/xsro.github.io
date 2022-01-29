@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on 陈留城下</title>
     <link>https://xsro.github.io/cn/posts/</link>
@@ -9,7 +9,29 @@
       <link>https://xsro.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 25 Sep 2021 11:05:54 +0800</lastBuildDate><atom:link href="https://xsro.github.io/cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Jan 2022 06:34:27 +0000</lastBuildDate><atom:link href="https://xsro.github.io/cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>windows系统安装Scoop包管理工具</title>
+      <link>https://xsro.github.io/cn/posts/notes/install_scoop_with_mirror/</link>
+      <pubDate>Tue, 25 Jan 2022 06:34:27 +0000</pubDate>
+      
+      <guid>https://xsro.github.io/cn/posts/notes/install_scoop_with_mirror/</guid>
+      <description>windows 系统安装 Scoop 包管理工具 https://scoop.sh/是一款 windows 系统下的包管理工具，根据官网只需要以下命令即可安装。
+iwr -useb get.scoop.sh | iex #Note: if you get an error you might need to change the execution policy (i.e. enable Powershell) with Set-ExecutionPolicy RemoteSigned -scope CurrentUser 实际使用中，通常需要镜像加速以及修改安装位置，所以结合文章Windows 下 Scoop 安装、配置与使用，在此，我记录一下我的安装过程。
+安装 SCOOP 由于我的 C 盘空间有限，可以修改安装位置我将目标目录修改为
+#将Scoop安装到自定义目录(命令行方式),默认为C:\Users&amp;lt;user&amp;gt;\scoop $env:SCOOP=&amp;#39;D:\Applications\Scoop&amp;#39; [Environment]::SetEnvironmentVariable(&amp;#39;SCOOP&amp;#39;, $env:SCOOP, &amp;#39;User&amp;#39;) #将Scoop配置为将全局程序安装到自定义目录 SCOOP_GLOBAL(命令行方式),默认为C:\ProgramData\scoop $env:SCOOP_GLOBAL=&amp;#39;D:\Applications\GlobalScoopApps&amp;#39; [Environment]::SetEnvironmentVariable(&amp;#39;SCOOP_GLOBAL&amp;#39;, $env:SCOOP_GLOBAL, &amp;#39;Machine&amp;#39;) 我的网络质量不佳，无法直接使用iwr -useb get.scoop.sh | iex安装，可以借助镜像，来实现安装，下面的脚本会自动替换掉安装脚本中的 github 的链接。
+#可能需要通过下面的命令设置权限之后再安装 Set-ExecutionPolicy RemoteSigned -scope CurrentUser #iwr -useb get.scoop.sh | iex #网络慢可以使用下面替换为cnpm和fastgit的链接 iwr -useb https://raw.</description>
+    </item>
+    
+    <item>
+      <title>控制相关资源导航</title>
+      <link>https://xsro.github.io/cn/posts/notes/control-theory-navi/</link>
+      <pubDate>Sun, 03 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xsro.github.io/cn/posts/notes/control-theory-navi/</guid>
+      <description>控制相关资源导航  zhihu J Pan: 纲举目张 bilibili DR_CAN youtube Brian Douglas youtube matlab  </description>
+    </item>
+    
     <item>
       <title>控制理论导图简介</title>
       <link>https://xsro.github.io/cn/posts/diary/20210925/</link>
@@ -80,6 +102,24 @@ $$ f(t)=\frac{1}{2} a_0 + \sum\limits_{n=1}^{\infty} (a_n \cos{n\omega_0 t}+b_n\
 $$ 1-e^{-t/T}(t \ge 0)=1(t)-e^{-t/T}\times 1(t) $$
 对阶跃响应求导：
 $$ \begin{aligned} \frac{\mathrm{d}}{\mathrm{d}t} [&amp;amp;1(t)-e^{-t/T}\times 1(t)] \ =&amp;amp;\delta(t)- \frac{\mathrm{d}}{\mathrm{d}t}[e^{-t/T}1(t)] \ =&amp;amp;\delta(t)- [\frac{\mathrm{d}}{\mathrm{d}t}e^{-t/T}\times1(t)+e^{-t/T}\times \frac{\mathrm{d}}{\mathrm{d}t} 1(t)] \ =&amp;amp;\delta(t) -[-\frac{1}{T}e^{-t/T}\times 1(t)+e^{-t/T}\times \delta(t)] \ =&amp;amp;\delta(t)- [-\frac{1}{T}e^{-t/T}\times 1(t)+\delta(t)] \ =&amp;amp;\frac{1}{T}e^{-t/T}\times1(t) \end{aligned} $$</description>
+    </item>
+    
+    <item>
+      <title>Git常用拓展知识</title>
+      <link>https://xsro.github.io/cn/posts/notes/git-tips/</link>
+      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xsro.github.io/cn/posts/notes/git-tips/</guid>
+      <description>Some Tips for git links  git commit 提交规范  Conventional Commits 约定式提交: 本文 gitmoji 使用表情来规范 commit 消息: one fork   LGTM : code review 行话:本文  Tip1: Commit 规范中常用 commit 类型解释  feat: 新功能、新特性 fix: 修改 bug perf: 更改代码，以提高性能（在不影响代码内部行为的前提下，对程序性能进行优化） refactor: 代码重构（重构，在不影响代码内部行为、功能下的代码修改） docs: 文档修改 style: 代码格式修改, 注意不是 css 修改（例如分号修改） test: 测试用例新增、修改 build: 影响项目构建或依赖项修改 revert: 恢复上一次提交 ci: 持续集成相关文件修改 chore: 其他修改（不在上述类型中的修改） release: 发布新版本 workflow: 工作流相关文件修改 typo：拼写错误等小错误  Tip2：code Review 行话  PR: Pull Request.</description>
+    </item>
+    
+    <item>
+      <title>Markdown 常用拓展语法参考</title>
+      <link>https://xsro.github.io/cn/posts/notes/markdown-tips/</link>
+      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xsro.github.io/cn/posts/notes/markdown-tips/</guid>
+      <description>Markdown 常用拓展语法参考</description>
     </item>
     
     <item>

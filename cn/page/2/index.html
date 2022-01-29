@@ -4,11 +4,10 @@
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
 <title>陈留城下</title>
-<meta name=keywords content>
 <meta name=description content="梦游乡">
 <meta name=author content="Leo">
 <link rel=canonical href=https://xsro.github.io/cn/>
-<link href=/assets/css/stylesheet.min.746a86b58bb2b052b5e4df8216510494f04f81e62c08d626150c26c69ca929da.css integrity="sha256-dGqGtYuysFK15N+CFlEElPBPgeYsCNYmFQwmxpypKdo=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://xsro.github.io/text.png>
 <link rel=icon type=image/png sizes=16x16 href=https://xsro.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://xsro.github.io/favicon-32x32.png>
@@ -16,12 +15,15 @@
 <link rel=mask-icon href=https://xsro.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.0">
+<meta name=generator content="Hugo 0.92.1">
 <link rel=alternate type=application/rss+xml href=https://xsro.github.io/cn/index.xml>
 <link rel=alternate type=application/json href=https://xsro.github.io/cn/index.json>
 <link rel=alternate hreflang=en href=https://xsro.github.io/>
 <link rel=alternate hreflang=cn href=https://xsro.github.io/cn/>
-<meta property="og:title" content="陈留城下">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:title" content="陈留城下">
 <meta property="og:description" content="梦游乡">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://xsro.github.io/cn/"><meta property="og:image" content="https://xsro.github.io/papermod-cover.png"><meta property="og:site_name" content="陈留城下">
@@ -33,10 +35,6 @@
 </head>
 <body class=list id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<noscript>
-<style type=text/css>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
 <header class=header>
 <nav class=nav>
 <div class=logo>
@@ -51,7 +49,7 @@
 </ul>
 </span>
 </div>
-<ul id=menu onscroll=menu_on_scroll()>
+<ul id=menu>
 <li>
 <a href=https://xsro.github.io/cn/search/ title=检索>
 <span>检索</span>
@@ -76,14 +74,69 @@
 <a href=https://xsro.github.io/cn/about/ title=关于>
 <span>关于</span>
 </a>
-</li></ul>
+</li>
+</ul>
 </nav>
 </header>
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
-<h2>
-大三学期末总结
+<h2>傅里叶、拉普拉斯、Z变换这一串
+</h2>
+</header>
+<section class=entry-content>
+<p>📶 三大变换的数学推导过程 $\mathscr{F,L,Z}$傅里叶变换、拉普拉斯变换、Z 变换这三大变换讨论广泛1。个人理解，这三个变换都是为了简化一些难以在时间域分析的问题而引入的。
+拉普拉斯变换是对傅里叶变换的推广，忽略了时域信号时间为负的部分，使得变换也可以适用于$t\rightarrow +\infty$不为零的信号 Z 变换是拉普拉斯变换针对离散信号的简化，使得表达式更加便于分析 傅里叶变换 拉普拉斯变换 $Z$变换 表达式 $F(\omega)=\int_{-\infty}^{\infty}f(t)e^{-j\omega t}\mathrm{d} t$ $F(s)=\int_0^\infty f(t)e^{-st}\mathrm{d}t$ $F(z)=\sum\limits_{k=0}^{\infty}f(kT)z^{-k}$ 适用范围 狄利克雷条件 狄利克雷条件的前两条 前者+（时间）离散 变换域 频域 复(频)域 $Z$域 对应系统模型 频率特性 传递函数 脉冲传递函数 数学演变过程 周期函数的傅里叶级数 周期为 T 的任一周期函数$f(t)$，若满足下列狄利克雷条件(Dirichlet conditions2）：
+在一个周期内只有有限个不连续点 在一个周期内只有有限个极值点(注：函数连续是条件 1、2 的充分非必要条件) 周期内绝对可积：积分$\int^{\frac{T}{2}}_{-\frac{T}{2}} |f(t)| \mathrm{d}t$ 存在 则$f(t)$可展开为如下的傅里叶级数：
+$$ f(t)=\frac{1}{2} a_0 + \sum\limits_{n=1}^{\infty} (a_n \cos{n\omega_0 t}+b_n\sin{n \omega_0 t}) $$...</p>
+</section>
+<footer class=entry-footer><span title="2021-08-30 23:34:31 +0800 +0800">August 30, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Leo</footer>
+<a class=entry-link aria-label="post link to 傅里叶、拉普拉斯、Z变换这一串" href=https://xsro.github.io/cn/posts/diary/20210830/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>控制系统中对信号求导的注意事项
+</h2>
+</header>
+<section class=entry-content>
+<p>线性定常系统的重要特性引发的思考 女朋友在阅读胡寿松第六版《自动控制原理》时有一个困惑。为什么书中 P71 页表 3-2 中的阶跃信号1，求导之后消失了，而不是作为单位脉冲信号$\delta(t)$处理。难道这里的1视为常数，这样就与零初始条件矛盾了。
+书中的表 3-2 一阶系统对典型输入信号的输出响应如下：
+输入信号 输出响应 $1(t)$ $1-e^{-t/T}, t \ge 0$ $\delta(t)$ $\frac{1}{T}e^{-t/T}, t\ge 0$ 书中由此得出线性定常系统的一个重要特性：系统对输入信号导数的响应，就等于系统对输入信号响应的导数。
+也就是说第二行脉冲响应应该是第一行阶跃响应的导数，但是这里为什么1对应的导数$\delta(t)$没有了呢？
+答：因为后面的指数项$e^{-t/T},t \ge 0$，在零初始条件下还需要乘以一个$u(t)$，根据求导的乘法公式求导之后会出现一个$\delta(t)$，从而相互抵消。
+将阶跃响应写成如下形式：
+$$ 1-e^{-t/T}(t \ge 0)=1(t)-e^{-t/T}\times 1(t) $$
+对阶跃响应求导：
+$$ \begin{aligned} \frac{\mathrm{d}}{\mathrm{d}t} [&1(t)-e^{-t/T}\times 1(t)] \ =&\delta(t)- \frac{\mathrm{d}}{\mathrm{d}t}[e^{-t/T}1(t)] \ =&\delta(t)- [\frac{\mathrm{d}}{\mathrm{d}t}e^{-t/T}\times1(t)+e^{-t/T}\times \frac{\mathrm{d}}{\mathrm{d}t} 1(t)] \ =&\delta(t) -[-\frac{1}{T}e^{-t/T}\times 1(t)+e^{-t/T}\times \delta(t)] \ =&\delta(t)- [-\frac{1}{T}e^{-t/T}\times 1(t)+\delta(t)] \ =&\frac{1}{T}e^{-t/T}\times1(t) \end{aligned} $$...</p>
+</section>
+<footer class=entry-footer><span title="2021-08-28 10:32:39 +0800 +0800">August 28, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Leo</footer>
+<a class=entry-link aria-label="post link to 控制系统中对信号求导的注意事项" href=https://xsro.github.io/cn/posts/diary/20210828/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Git常用拓展知识
+</h2>
+</header>
+<section class=entry-content>
+<p>Some Tips for git links git commit 提交规范 Conventional Commits 约定式提交: 本文 gitmoji 使用表情来规范 commit 消息: one fork LGTM : code review 行话:本文 Tip1: Commit 规范中常用 commit 类型解释 feat: 新功能、新特性 fix: 修改 bug perf: 更改代码，以提高性能（在不影响代码内部行为的前提下，对程序性能进行优化） refactor: 代码重构（重构，在不影响代码内部行为、功能下的代码修改） docs: 文档修改 style: 代码格式修改, 注意不是 css 修改（例如分号修改） test: 测试用例新增、修改 build: 影响项目构建或依赖项修改 revert: 恢复上一次提交 ci: 持续集成相关文件修改 chore: 其他修改（不在上述类型中的修改） release: 发布新版本 workflow: 工作流相关文件修改 typo：拼写错误等小错误 Tip2：code Review 行话 PR: Pull Request....</p>
+</section>
+<footer class=entry-footer><span title="2021-07-25 00:00:00 +0000 UTC">July 25, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;xsro</footer>
+<a class=entry-link aria-label="post link to Git常用拓展知识" href=https://xsro.github.io/cn/posts/notes/git-tips/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Markdown 常用拓展语法参考
+</h2>
+</header>
+<section class=entry-content>
+<p>Markdown 常用拓展语法参考 常用链接 基本语法 GitHub Flavored Markdown Spec: gfm 比较细致的 markdown 参考资料: https://www.markdownguide.org/ github 上的 markdown 语法速查表: markdown-cheatsheet,Markdown typora中提供的帮助 数学公式$\TeX$：通常 markdown 使用以下两种工具渲染公示 mathjax：typora、知乎等 katex：hugo 等 emoji 参考✌️ emoji 表来自caiyongji/emoji-list emoji-cheat-sheet Mermaid 图表:一般都是使用的 mermaid.js 来渲染的，注意版本 mermaid.js 官方文档：mermaid typora 的相关帮助文档：Draw Diagrams With Markdown (typora.io) Badge 徽章： https://shields.io/ https://forthebadge.com/ 在 gitee 中使用徽标：在 git 仓库主页一次点击管理、仓库挂件即可看到 常用 html 代码 行内 html Raw Markdown Source Output in Live Preview &lt;span style='color:red'>This is red&lt;/span> This is red &lt;ruby> 漢 &lt;rt> ㄏㄢˋ &lt;/rt> &lt;/ruby> 漢 ㄏㄢ ˋ &lt;kbd>Ctrl&lt;/kbd>+&lt;kbd>F9&lt;/kbd> Ctrl+F9 &lt;span style="font-size:2rem; background:yellow;">**Bigger**&lt;/span> Bigger HTML entities like &amp;reg; &amp;#182; HTML entities like ® ¶ 文本注释、隐藏与折叠 注释内容 &lt;!...</p>
+</section>
+<footer class=entry-footer><span title="2021-07-25 00:00:00 +0000 UTC">July 25, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;xsro</footer>
+<a class=entry-link aria-label="post link to Markdown 常用拓展语法参考" href=https://xsro.github.io/cn/posts/notes/markdown-tips/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>大三学期末总结
 </h2>
 </header>
 <section class=entry-content>
@@ -92,9 +145,7 @@
 锻炼一下自己，多么冠冕堂皇的理由，和两个队友我们一起踏上了苏州之旅。 16-23 正好首尾都有计算机设计大赛的比赛，让我这 6 天 5 晚都在煎熬之中，我发现我好像没有办法帮上什么忙，队友都在焦急地比赛，而我却却似乎感觉现在才开始准备已经来不及了，我有些破罐子破摔。 最后当然也没有取得什么奖项，但在奋起直追的过程总我也学到了很多的知识，确实也挺有意思的。
 加油，工控人。</p>
 </section>
-<footer class=entry-footer>
-July 23, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Leo
-</footer>
+<footer class=entry-footer><span title="2021-07-23 10:32:39 +0800 +0800">July 23, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Leo</footer>
 <a class=entry-link aria-label="post link to 大三学期末总结" href=https://xsro.github.io/cn/posts/diary/20210723/></a>
 </article>
 <footer class=page-footer>
@@ -102,18 +153,18 @@ July 23, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Leo
 <a class=prev href=https://xsro.github.io/cn/>« Prev Page</a>
 </nav>
 </footer>
-</main><footer class=footer>
+</main>
+<footer class=footer>
 <span>&copy; 2022 <a href=https://xsro.github.io/cn/>陈留城下</a></span>
-<span>&#183;</span>
-<span>Powered by <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a></span>
-<span>&#183;</span>
-<span>Theme <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
 </footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)">
-<button class=top-link id=top-link type=button accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</button>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
 </a>
-<script>window.onload=function(){localStorage.getItem("menu-scroll-position")&&(document.getElementById('menu').scrollLeft=localStorage.getItem("menu-scroll-position"))};function menu_on_scroll(){localStorage.setItem("menu-scroll-position",document.getElementById('menu').scrollLeft)}document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
 <script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
 <script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
 </body>
