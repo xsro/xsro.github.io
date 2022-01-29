@@ -30,6 +30,8 @@ $$ f(t)=\frac{1}{2} a_0 + \sum\limits_{n=1}^{\infty} (a_n \cos{n\omega_0 t}+b_n\
 <script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js integrity=sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8 crossorigin=anonymous></script>
 <script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js integrity=sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl crossorigin=anonymous></script>
 <script>document.addEventListener("DOMContentLoaded",function(){const a=document.getElementsByClassName("post-content")[0];a.innerHTML=a.innerHTML.replace(/\\\<br\>/g,"\\\\"),renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:!0},{left:'$',right:'$',display:!1}],throwOnError:!0})})</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25JJR3WFM"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-B25JJR3WFM',{anonymize_ip:!1})}</script>
 <meta property="og:title" content="傅里叶、拉普拉斯、Z变换这一串">
 <meta property="og:description" content="📶 三大变换的数学推导过程 $\mathscr{F,L,Z}$傅里叶变换、拉普拉斯变换、Z 变换这三大变换讨论广泛1。个人理解，这三个变换都是为了简化一些难以在时间域分析的问题而引入的。
  拉普拉斯变换是对傅里叶变换的推广，忽略了时域信号时间为负的部分，使得变换也可以适用于$t\rightarrow +\infty$不为零的信号 Z 变换是拉普拉斯变换针对离散信号的简化，使得表达式更加便于分析      傅里叶变换 拉普拉斯变换 $Z$变换     表达式 $F(\omega)=\int_{-\infty}^{\infty}f(t)e^{-j\omega t}\mathrm{d} t$ $F(s)=\int_0^\infty f(t)e^{-st}\mathrm{d}t$ $F(z)=\sum\limits_{k=0}^{\infty}f(kT)z^{-k}$   适用范围 狄利克雷条件 狄利克雷条件的前两条 前者+（时间）离散   变换域 频域 复(频)域 $Z$域   对应系统模型 频率特性 传递函数 脉冲传递函数    数学演变过程 周期函数的傅里叶级数 周期为 T 的任一周期函数$f(t)$，若满足下列狄利克雷条件(Dirichlet conditions2）：
