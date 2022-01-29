@@ -3,12 +3,12 @@ author: xsro
 title: windows系统安装Scoop包管理工具
 date: 2022-01-25T06:34:27.600Z
 categories: ["常用技术速查"]
-tags: ["SCOOP","windows"]
+tags: ["SCOOP", "windows"]
 ---
 
-# windows系统安装Scoop包管理工具
+# windows 系统安装 Scoop 包管理工具
 
-<https://scoop.sh/>是一款windows系统下的包管理工具，根据官网只需要以下命令即可安装。
+<https://scoop.sh/>是一款 windows 系统下的包管理工具，根据官网只需要以下命令即可安装。
 
 ```powershell
 iwr -useb get.scoop.sh | iex
@@ -16,11 +16,11 @@ iwr -useb get.scoop.sh | iex
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 ```
 
-实际使用中，通常需要镜像加速以及修改安装位置，所以结合文章[Windows下Scoop安装、配置与使用](https://blog.csdn.net/luoyooi/article/details/102990113)，在此，我记录一下我的安装过程。
+实际使用中，通常需要镜像加速以及修改安装位置，所以结合文章[Windows 下 Scoop 安装、配置与使用](https://blog.csdn.net/luoyooi/article/details/102990113)，在此，我记录一下我的安装过程。
 
-## 安装SCOOP
+## 安装 SCOOP
 
-由于我的C盘空间有限，[可以修改安装位置](https://github.com/ScoopInstaller/Scoop#installation)我将目标目录修改为
+由于我的 C 盘空间有限，[可以修改安装位置](https://github.com/ScoopInstaller/Scoop#installation)我将目标目录修改为
 
 ```powershell
 #将Scoop安装到自定义目录(命令行方式),默认为C:\Users<user>\scoop
@@ -31,7 +31,7 @@ $env:SCOOP_GLOBAL='D:\Applications\GlobalScoopApps'
 [Environment]::SetEnvironmentVariable('SCOOP_GLOBAL', $env:SCOOP_GLOBAL, 'Machine')
 ```
 
-我的网络质量不佳，无法直接使用`iwr -useb get.scoop.sh | iex`安装，可以借助镜像，来实现安装，下面的脚本会自动替换掉安装脚本中的github的链接。
+我的网络质量不佳，无法直接使用`iwr -useb get.scoop.sh | iex`安装，可以借助镜像，来实现安装，下面的脚本会自动替换掉安装脚本中的 github 的链接。
 
 ```powershell
 #可能需要通过下面的命令设置权限之后再安装
@@ -41,10 +41,19 @@ Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 iwr -useb https://raw.fastgit.org/ScoopInstaller/Scoop/master/bin/install.ps1 | %{$_.Content.replace("github.com","github.com.cnpmjs.org").replace("raw.githubusercontent.com","raw.fastgit.org") | iex
 ```
 
-上面这个命令**应该**可以正常安装scoop程序，但是当需要使用scoop安装其他程序时可能会出现问题，
-下面的脚本会修改scoop源码，使得scoop安装其他程序时也自动替换掉github链接。
+上面这个命令**应该**可以正常安装 scoop 程序，但是当需要使用 scoop 安装其他程序时可能会出现问题，
+可以手动将文件`$env:SCOOP\apps\scoop\current\lib\manifest.ps1`中读取 json 文件的命令(如下 👇🏻 第一条命令)
+替换为下面的第二条命令，从而实现自动替换掉 github 链接。
+
+也可在 powershell 中运行下面的第三条命令修改 scoop 源码，使得 scoop 安装其他程序时自动替换掉 github 链接。
 
 ```powershell
+#1原命令
+Get-Content $path -raw -Encoding UTF8 | convertfrom-json -ea stop
+#2替换为
+$(Get-Content $path -raw -Encoding UTF8).replace("github.com","github.com.cnpmjs.org").replace("raw.githubusercontent.com","raw.fastgit.org") | convertfrom-json -ea stop
+
+#3可以使用下面的命令自动完成替换操作
 $(Get-Content $env:SCOOP\apps\scoop\current\lib\manifest.ps1 -raw).replace('Get-Content $path -raw -Encoding UTF8 | convertfrom-json -ea stop','$(Get-Content $path -raw -Encoding UTF8).replace("github.com","github.com.cnpmjs.org").replace("raw.githubusercontent.com","raw.fastgit.org") | convertfrom-json -ea stop') | Out-File -FilePath $env:SCOOP\apps\scoop\current\lib\manifest.ps1
 ```
 
@@ -59,28 +68,29 @@ $(Get-Content $env:SCOOP\apps\scoop\current\lib\manifest.ps1 -raw).replace('Get-
  scoop config SCOOP_REPO https://gitee.com/squallliu/scoop
 ```
 
-## 安装Git
-scoop使用git来管理软件源列表，所以需要安装git。在上一步安装scoop的时候[安装脚本](https://github.com/ScoopInstaller/Scoop/blob/master/bin/install.ps1#L58-L64) 会自动下载main bucket的压缩包，这个压缩包里面定义了git的安装方法，但是其依赖7zip使用了github的链接，无法访问，会导致安装失败，可以手动修改掉这个链接。
+## 安装 Git
+
+scoop 使用 git 来管理软件源列表，所以需要安装 git。在上一步安装 scoop 的时候[安装脚本](https://github.com/ScoopInstaller/Scoop/blob/master/bin/install.ps1#L58-L64) 会自动下载 main bucket 的压缩包，这个压缩包里面定义了 git 的安装方法，但是其依赖 7zip 使用了 github 的链接，无法访问，会导致安装失败，可以手动修改掉这个链接。
 
 ## 添加软件源 Bucket
 
-scoop通过bucket管理软件源，列表见[github](https://github.com/ScoopInstaller/Scoop#known-application-buckets)
+scoop 通过 bucket 管理软件源，列表见[github](https://github.com/ScoopInstaller/Scoop#known-application-buckets)
 
 - [main](https://github.com/ScoopInstaller/Main) - Default bucket for the most common (mostly CLI) apps
 - [extras](https://github.com/ScoopInstaller/Extras) - Apps that don't fit the main bucket's [criteria](https://github.com/ScoopInstaller/Scoop/wiki/Criteria-for-including-apps-in-the-main-bucket)
 - [games](https://github.com/Calinou/scoop-games) - Open source/freeware games and game-related tools
-- [nerd-fonts](https://github.com/matthewjberger/scoop-nerd-fonts) -  Nerd Fonts
+- [nerd-fonts](https://github.com/matthewjberger/scoop-nerd-fonts) - Nerd Fonts
 - [nirsoft](https://github.com/kodybrown/scoop-nirsoft) - Almost all of the [250+](https://rasa.github.io/scoop-directory/by-apps#kodybrown_scoop-nirsoft) apps from [Nirsoft](https://nirsoft.net)
 - [java](https://github.com/ScoopInstaller/Java) - A collection of Java development kits (JDKs), Java runtime engines (JREs), Java's virtual machine debugging tools and Java based runtime engines.
 - [nonportable](https://github.com/TheRandomLabs/scoop-nonportable) - Non-portable apps (may require UAC)
 - [php](https://github.com/ScoopInstaller/PHP) - Installers for most versions of PHP
 - [versions](https://github.com/ScoopInstaller/Versions) - Alternative versions of apps found in other buckets
 
-此外还可以在[这个网站](https://rasa.github.io/scoop-directory/by-score.html)中查找一些社区维护的bucket：如
+此外还可以在[这个网站](https://rasa.github.io/scoop-directory/by-score.html)中查找一些社区维护的 bucket：如
 
 - [dorado](https://github.com/chawyehsu/dorado):🐟 Yet Another bucket for lovely Scoop
 
-### 常用bucket
+### 常用 bucket
 
 ```powershell
 #scoop bucket remove main
@@ -92,7 +102,8 @@ scoop bucket add java 'https://github.com/ScoopInstaller/Java'
 scoop bucket add dorado https://github.com/chawyehsu/dorado
 scoop bucket add scoopet https://github.com/ivaquero/scoopet
 ```
-### 常用bucket的cnpmjs镜像
+
+### 常用 bucket 的 cnpmjs 镜像
 
 ```powershell
 #scoop bucket remove main
@@ -105,7 +116,7 @@ scoop bucket add dorado 'https://github.com.cnpmjs.org/chawyehsu/dorado'
 scoop bucket add scoopet 'https://github.com.cnpmjs.org/ivaquero/scoopet'
 ```
 
-### 常用bucket的fastgit镜像
+### 常用 bucket 的 fastgit 镜像
 
 ```powershell
 #scoop bucket remove main
@@ -125,9 +136,9 @@ scoop bucket add scoopet 'https://hub.fastgit.org/ivaquero/scoopet'
  git remote set-url origin https://hub.fastgit.org/ScoopInstaller/Main
 ```
 
-## 搜索APP
+## 搜索 APP
 
-可以在网站<https://scoopsearch.github.io/#/apps>中搜索软件是否有bucket搜录。
+可以在网站<https://scoopsearch.github.io/#/apps>中搜索软件是否有 bucket 搜录。
 
 ## 安装推荐的软件
 
@@ -137,9 +148,9 @@ scoop bucket add scoopet 'https://hub.fastgit.org/ivaquero/scoopet'
 scoop install 7zip  innounp  wixtoolset
 ```
 
-注：在修改注册表来支持长路径时需要在管理员模式运行powershell
+注：在修改注册表来支持长路径时需要在管理员模式运行 powershell
 
 ## 参考链接
 
-- [使用 scoop 安装管理 windows 软件（2）：github 加速](https://shenbo.github.io/2021/03/23/apps/%E4%BD%BF%E7%94%A8scoop%E5%AE%89%E8%A3%85%E7%AE%A1%E7%90%86windows%E8%BD%AF%E4%BB%B6(2)-github%E5%8A%A0%E9%80%9F/)
+- [使用 scoop 安装管理 windows 软件（2）：github 加速](<https://shenbo.github.io/2021/03/23/apps/%E4%BD%BF%E7%94%A8scoop%E5%AE%89%E8%A3%85%E7%AE%A1%E7%90%86windows%E8%BD%AF%E4%BB%B6(2)-github%E5%8A%A0%E9%80%9F/>)
 - 这篇博客同时发布在[CSDN](https://blog.csdn.net/weixin_44225025/article/details/117401094)。
