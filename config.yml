@@ -11,6 +11,10 @@ buildExpired: false
 enableEmoji: true
 googleAnalytics: G-B25JJR3WFM
 
+analytics:
+    google:
+        SiteVerificationTag: "G-B25JJR3WFM"
+
 minify:
     disableXML: true
     # minifyOutput: true
