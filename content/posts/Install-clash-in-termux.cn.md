@@ -1,0 +1,117 @@
+---
+title: "借助Termux在安卓手机上运行Clash代理服务"
+date: 2022-02-09T09:33:46+08:00
+---
+
+# 在 Termux 中部署 Clash
+
+日常生活中，手机往往会被我随身携带。
+将 clash 代理服务部署在手机中，在满足自身手机借助代理上网的同时也可以让局域网中所有设备都可以使用代理服务，
+这样往往可以节省开支并减少在多台设备中部署的一些麻烦。
+
+## 相关工具的官网介绍
+
+- [Termux][termux]: an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager.
+- [Clash][clash]: A rule-based tunnel in Go.
+- [Clash Dashboard][clash-dashboard]: Web Dashboard for Clash, now host on ClashX
+
+[termux]: https://termux.com
+[clash]: https://github.com/Dreamacro/clash
+[clash-dashboard]: https://github.com/Dreamacro/clash-dashboard
+
+## 1 安装 Termux
+
+官方推荐从[F-Droid](https://f-droid.org/packages/com.termux/)中安装 Termux，
+可以直接在网页中下载 APK 文件进行安装，也可以安装 F-Droid 以方便及时更新。
+
+## 2 安装 clash
+
+官方提供了 clash 的安装包，你可能需要先运行`termux-change-repo`来[切换软件源](https://mirrors.tuna.tsinghua.edu.cn/help/termux/)
+
+```sh
+pkg install clash
+```
+
+运行 clash 代理需要一个 clash 配置文件，通常是一个 yaml 文件。
+
+```sh
+clash -f <配置文件本地地址>
+```
+
+终端会打印出相应服务运行所在的端口，包括 RESTful API，HTTP 代理，SOCKS 代理端口，
+例如以下信息：
+
+```plainText
+INFO[0000] RESTful API listening at: [::]:9090
+INFO[0000] HTTP proxy listening at: [::]:7890
+INFO[0000] SOCKS proxy listening at: [::]:7891
+```
+
+还需要知道自己设备的端口，通常进入手机的 wifi 设置中可以看到自己手机在局域网中的 wifi 地址，
+可以在 termux 中输入`ip addr`查看，以下命令可能可以帮助查找：
+
+```sh
+ip addr | grep -Eo '192.[0-9]+.[0-9]+.[0-9]+'|head -1
+```
+
+比如我的 ip 地址是`192.168.0.102`，可以到路由器中将 ip 设置为固定 ip（似乎也叫静态 ip，或者叫与 mac 绑定）。
+也可以在手机中将 IP 设置（通常为 DHCP）改为静态并手动设置 IP。
+这个 ip 地址就是我们运行代理服务的代理服务器地址。
+
+## 3 管理 clash
+
+[clash-dashboard][clash-dashboard]是一个 nodejs 程序，使用[pnpm][pnpm]管理依赖，并使用[vite][vite]作为开发工具所以需要先安装以上三个工具。由于 clash 仍然在运行，所以这里可以新建一个 session。
+
+```sh
+#安装nodejs
+pkg install nodejs-lts
+#安装pnpm和vite
+npm install -g pnpm vite
+```
+
+安装完成之后，便可以克隆 clash-dashboard 的代码并进行构建与运行
+
+```sh
+cd YOUR_FOLDER
+git clone https://github.com/Dreamacro/clash-dashboard.git
+cd clash-dashboard
+pnpm i
+vite --host
+```
+
+终端会打印如下内容：
+
+```plainText
+  vite v2.7.13 dev server running at:
+
+  > Local:    http://localhost:3000/
+  > Network:  http://10.65.20.18:3000/
+  > Network:  http://192.168.0.102:3000/
+
+  ready in 3790ms.
+```
+
+在浏览器中打开 network 后面的地址便可以访问管理界面,在打开的界面中填入 clash 服务的 ip 地址和 RESTful API 的端口号即可，进入管理界面。
+
+![](/images/clash-dashboard-config.png)
+
+[pnpm]: https://pnpm.io
+[vite]: https://vitejs.dev
+
+## 4 设置代理
+
+### windows 设置系统代理
+
+（我使用的是 win10）进入`设置`，`网络与Internet`，选择**代理**，在**手动设置代理**中填入代理服务器地址和端口，打开**使用代理服务器**。
+
+### mac 设置 WiFi 代理
+
+打开`设置`，进入`网络`，在 Wi-Fi 中选择高级，进入**代理**选项卡，在网页代理(HTTP)、安全网页代理(HTTPS)、SOCKS 代理中填入相应的代理服务器地址和端口，并应用。**忽略这些主机与域的代理设置**中可以设置如下内容
+
+```plainText
+192.168.0.0/16、10.0.0.0/8、172.16.0.0/12、127.0.0.1、localhost、*.local、timestamp.apple.com、*.cn
+```
+
+### 安卓设置 WiFi 代理
+
+（我使用的 MIUI12）进入 Wi-Fi，点击连接的 Wifi，下滑在`代理`中选择手动，主机名填入代理服务器地址，端口填写 http 代理服务端口。
