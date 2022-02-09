@@ -9,7 +9,17 @@
       <link>https://xsro.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 25 Jan 2022 06:34:27 +0000</lastBuildDate><atom:link href="https://xsro.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Feb 2022 09:33:46 +0800</lastBuildDate><atom:link href="https://xsro.github.io/cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>借助Termux在安卓手机上运行Clash代理服务</title>
+      <link>https://xsro.github.io/cn/posts/install-clash-in-termux/</link>
+      <pubDate>Wed, 09 Feb 2022 09:33:46 +0800</pubDate>
+      
+      <guid>https://xsro.github.io/cn/posts/install-clash-in-termux/</guid>
+      <description>在 Termux 中部署 Clash 日常生活中，手机往往会被我随身携带。 将 clash 代理服务部署在手机中，在满足自身手机借助代理上网的同时也可以让局域网中所有设备都可以使用代理服务， 这样往往可以节省开支并减少在多台设备中部署的一些麻烦。
+相关工具的官网介绍  Termux: an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager. Clash: A rule-based tunnel in Go. Clash Dashboard: Web Dashboard for Clash, now host on ClashX  1 安装 Termux 官方推荐从F-Droid中安装 Termux， 可以直接在网页中下载 APK 文件进行安装，也可以安装 F-Droid 以方便及时更新。</description>
+    </item>
+    
     <item>
       <title>windows系统安装Scoop包管理工具</title>
       <link>https://xsro.github.io/cn/posts/notes/install_scoop_with_mirror/</link>
