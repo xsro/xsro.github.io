@@ -16,11 +16,12 @@
       <pubDate>Tue, 25 Jan 2022 06:34:27 +0000</pubDate>
       
       <guid>https://xsro.github.io/cn/posts/notes/install_scoop_with_mirror/</guid>
-      <description>windows 系统安装 Scoop 包管理工具 https://scoop.sh/是一款 windows 系统下的包管理工具，根据官网只需要以下命令即可安装。
+      <description>该内容似乎已经过时，因为目前似乎github.com.cnpmjs.org 和 hub.fastgit.org 镜像均无法使用
+windows 系统安装 Scoop 包管理工具 https://scoop.sh/是一款 windows 系统下的包管理工具，根据官网只需要以下命令即可安装。
 iwr -useb get.scoop.sh | iex #Note: if you get an error you might need to change the execution policy (i.e. enable Powershell) with Set-ExecutionPolicy RemoteSigned -scope CurrentUser 实际使用中，通常需要镜像加速以及修改安装位置，所以结合文章Windows 下 Scoop 安装、配置与使用，在此，我记录一下我的安装过程。
 安装 SCOOP 由于我的 C 盘空间有限，可以修改安装位置我将目标目录修改为
 #将Scoop安装到自定义目录(命令行方式),默认为C:\Users&amp;lt;user&amp;gt;\scoop $env:SCOOP=&amp;#39;D:\Applications\Scoop&amp;#39; [Environment]::SetEnvironmentVariable(&amp;#39;SCOOP&amp;#39;, $env:SCOOP, &amp;#39;User&amp;#39;) #将Scoop配置为将全局程序安装到自定义目录 SCOOP_GLOBAL(命令行方式),默认为C:\ProgramData\scoop $env:SCOOP_GLOBAL=&amp;#39;D:\Applications\GlobalScoopApps&amp;#39; [Environment]::SetEnvironmentVariable(&amp;#39;SCOOP_GLOBAL&amp;#39;, $env:SCOOP_GLOBAL, &amp;#39;Machine&amp;#39;) 我的网络质量不佳，无法直接使用iwr -useb get.scoop.sh | iex安装，可以借助镜像，来实现安装，下面的脚本会自动替换掉安装脚本中的 github 的链接。
-#可能需要通过下面的命令设置权限之后再安装 Set-ExecutionPolicy RemoteSigned -scope CurrentUser #iwr -useb get.scoop.sh | iex #网络慢可以使用下面替换为cnpm和fastgit的链接 iwr -useb https://raw.</description>
+#可能需要通过下面的命令设置权限之后再安装 Set-ExecutionPolicy RemoteSigned -scope CurrentUser #iwr -useb get.</description>
     </item>
     
   </channel>
