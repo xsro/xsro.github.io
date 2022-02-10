@@ -6,6 +6,8 @@ categories: ["常用技术速查"]
 tags: ["SCOOP", "windows"]
 ---
 
+**该内容似乎已经过时**，因为目前[似乎](https://zhuanlan.zhihu.com/p/360677731)github.com.cnpmjs.org 和 hub.fastgit.org 镜像均无法使用
+
 # windows 系统安装 Scoop 包管理工具
 
 <https://scoop.sh/>是一款 windows 系统下的包管理工具，根据官网只需要以下命令即可安装。
@@ -60,6 +62,8 @@ $(Get-Content $env:SCOOP\apps\scoop\current\lib\manifest.ps1 -raw).replace('Get-
 安装完成之后通过如下命令中的一条修改配置，更新的时候就可以方便许多。
 
 ```powershell
+# https://gitcode.net
+scoop config SCOOP_REPO https://gitcode.net/mirrors/ScoopInstaller/Scoop.git
 #cnpmjs
  scoop config SCOOP_REPO https://github.com.cnpmjs.org/ScoopInstaller/Scoop/
 #fastgit
@@ -101,6 +105,16 @@ scoop bucket add jetbrains 'https://github.com/Ash258/Scoop-JetBrains'
 scoop bucket add java 'https://github.com/ScoopInstaller/Java'
 scoop bucket add dorado https://github.com/chawyehsu/dorado
 scoop bucket add scoopet https://github.com/ivaquero/scoopet
+```
+
+### 常用 bucket 的 gitcode 镜像
+
+```powershell
+#scoop bucket remove main
+scoop bucket add main 'https://gitcode.net/mirrors/ScoopInstaller/Main'
+scoop bucket add extras 'https://gitcode.net/mirrors/ScoopInstaller/scoop-extras'
+scoop bucket add versions 'https://gitcode.net/mirrors/ScoopInstaller/Versions'
+scoop bucket add java 'https://gitcode.net/mirrors/ScoopInstaller/Java'
 ```
 
 ### 常用 bucket 的 cnpmjs 镜像
