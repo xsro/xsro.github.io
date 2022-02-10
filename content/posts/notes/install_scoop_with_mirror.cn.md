@@ -107,6 +107,16 @@ scoop bucket add dorado https://github.com/chawyehsu/dorado
 scoop bucket add scoopet https://github.com/ivaquero/scoopet
 ```
 
+### scoop-apps
+
+scoop-apps([github](https://github.com/kkzzhizhou/scoop-apps),[gitee](https://gitee.com/kkzzhizhou/scoop-apps))合并了目前的大多数软件源bucket，其未对仓库软件来源进行安全检验，请自行甄别恶意软件，或者使用杀毒软件
+
+```powershell
+scoop bucket add apps https://github.com/kkzzhizhou/scoop-apps
+# 国内网络
+scoop bucket add apps https://gitee.com/kkzzhizhou/scoop-apps
+```
+
 ### 常用 bucket 的 gitcode 镜像
 
 ```powershell
