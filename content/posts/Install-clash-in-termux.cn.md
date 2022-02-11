@@ -23,10 +23,12 @@ date: 2022-02-09T09:33:46+08:00
 
 官方推荐从[F-Droid](https://f-droid.org/packages/com.termux/)中安装 Termux，
 可以直接在网页中下载 APK 文件进行安装，也可以安装 F-Droid 以方便及时更新。
+在完成 termux 安装之后最好先运行`termux-change-repo`来[切换软件源](https://mirrors.tuna.tsinghua.edu.cn/help/termux/)，这样之后的下载工作会方便很多。
+为了方便可以在手机上运行 sshd 服务，从而实现在电脑上远程登录。
 
 ## 2 安装 clash
 
-官方提供了 clash 的安装包，你可能需要先运行`termux-change-repo`来[切换软件源](https://mirrors.tuna.tsinghua.edu.cn/help/termux/)
+官方提供了 clash 的安装包，你可能需要
 
 ```sh
 pkg install clash
@@ -60,38 +62,30 @@ ip addr | grep -Eo '192.[0-9]+.[0-9]+.[0-9]+'|head -1
 
 ## 3 管理 clash
 
-[clash-dashboard][clash-dashboard]是一个 nodejs 程序，使用[pnpm][pnpm]管理依赖，并使用[vite][vite]作为开发工具所以需要先安装以上三个工具。由于 clash 仍然在运行，所以这里可以新建一个 session。
+[clash-dashboard][clash-dashboard]是一个 nodejs 程序，使用[pnpm][pnpm]管理依赖，并使用[vite][vite]作为开发工具所以需要先安装以上三个工具。
 
 ```sh
-#安装nodejs
-pkg install nodejs-lts
-#安装pnpm和vite
-npm install -g pnpm vite
-```
+#安装需要使用的软件
+pkg install nodejs-lts npm
+npm install -g pnpm --registry=https://registry.npmmirror.com
 
-安装完成之后，便可以克隆 clash-dashboard 的代码并进行构建与运行
-
-```sh
-cd YOUR_FOLDER
+#克隆基于vue的web应用来提供ui
 git clone https://github.com/Dreamacro/clash-dashboard.git
+#构建ui
 cd clash-dashboard
-pnpm i
-vite --host
+pnpm install
+pnpm build
+cd ..
 ```
 
-终端会打印如下内容：
+构建完成之后，文件位于`dist`目录。
+可以使用通过 clash 的`-ui`参数来将构建好的 web 应用托管到网络中。
 
-```plainText
-  vite v2.7.13 dev server running at:
-
-  > Local:    http://localhost:3000/
-  > Network:  http://10.65.20.18:3000/
-  > Network:  http://192.168.0.102:3000/
-
-  ready in 3790ms.
+```sh
+clash -f <配置文件本地地址> -ext-ui "clash-dashboard/dist"
 ```
 
-在浏览器中打开 network 后面的地址便可以访问管理界面,在打开的界面中填入 clash 服务的 ip 地址和 RESTful API 的端口号即可，进入管理界面。
+在浏览器中打开`<ip地址>:<RESTful Api端口号>/ui`,就应该可以看到管理面板了，在打开的界面中填入 clash 服务的 ip 地址和 RESTful API 的端口号即可，即可进行控制。
 
 ![](/images/clash-dashboard-config.png)
 
