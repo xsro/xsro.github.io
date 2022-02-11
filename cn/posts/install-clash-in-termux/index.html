@@ -6,7 +6,7 @@
 <title>借助Termux在安卓手机上运行Clash代理服务 | 陈留城下</title>
 <meta name=keywords content>
 <meta name=description content="在 Termux 中部署 Clash 日常生活中，手机往往会被我随身携带。 将 clash 代理服务部署在手机中，在满足自身手机借助代理上网的同时也可以让局域网中所有设备都可以使用代理服务， 这样往往可以节省开支并减少在多台设备中部署的一些麻烦。
-相关工具的官网介绍  Termux: an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager. Clash: A rule-based tunnel in Go. Clash Dashboard: Web Dashboard for Clash, now host on ClashX  1 安装 Termux 官方推荐从F-Droid中安装 Termux， 可以直接在网页中下载 APK 文件进行安装，也可以安装 F-Droid 以方便及时更新。">
+相关工具的官网介绍  Termux: an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager. Clash: A rule-based tunnel in Go. Clash Dashboard: Web Dashboard for Clash, now host on ClashX  1 安装 Termux 官方推荐从F-Droid中安装 Termux， 可以直接在网页中下载 APK 文件进行安装，也可以安装 F-Droid 以方便及时更新。 在完成 termux 安装之后最好先运行termux-change-repo来切换软件源，这样之后的下载工作会方便很多。 为了方便可以在手机上运行 sshd 服务，从而实现在电脑上远程登录。">
 <meta name=author content="Leo">
 <link rel=canonical href=https://xsro.github.io/cn/posts/install-clash-in-termux/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
@@ -28,7 +28,7 @@
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-B25JJR3WFM',{anonymize_ip:!1})}</script>
 <meta property="og:title" content="借助Termux在安卓手机上运行Clash代理服务">
 <meta property="og:description" content="在 Termux 中部署 Clash 日常生活中，手机往往会被我随身携带。 将 clash 代理服务部署在手机中，在满足自身手机借助代理上网的同时也可以让局域网中所有设备都可以使用代理服务， 这样往往可以节省开支并减少在多台设备中部署的一些麻烦。
-相关工具的官网介绍  Termux: an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager. Clash: A rule-based tunnel in Go. Clash Dashboard: Web Dashboard for Clash, now host on ClashX  1 安装 Termux 官方推荐从F-Droid中安装 Termux， 可以直接在网页中下载 APK 文件进行安装，也可以安装 F-Droid 以方便及时更新。">
+相关工具的官网介绍  Termux: an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager. Clash: A rule-based tunnel in Go. Clash Dashboard: Web Dashboard for Clash, now host on ClashX  1 安装 Termux 官方推荐从F-Droid中安装 Termux， 可以直接在网页中下载 APK 文件进行安装，也可以安装 F-Droid 以方便及时更新。 在完成 termux 安装之后最好先运行termux-change-repo来切换软件源，这样之后的下载工作会方便很多。 为了方便可以在手机上运行 sshd 服务，从而实现在电脑上远程登录。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://xsro.github.io/cn/posts/install-clash-in-termux/"><meta property="og:image" content="https://xsro.github.io/papermod-cover.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2022-02-09T09:33:46+08:00">
@@ -37,9 +37,9 @@
 <meta name=twitter:image content="https://xsro.github.io/papermod-cover.png">
 <meta name=twitter:title content="借助Termux在安卓手机上运行Clash代理服务">
 <meta name=twitter:description content="在 Termux 中部署 Clash 日常生活中，手机往往会被我随身携带。 将 clash 代理服务部署在手机中，在满足自身手机借助代理上网的同时也可以让局域网中所有设备都可以使用代理服务， 这样往往可以节省开支并减少在多台设备中部署的一些麻烦。
-相关工具的官网介绍  Termux: an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager. Clash: A rule-based tunnel in Go. Clash Dashboard: Web Dashboard for Clash, now host on ClashX  1 安装 Termux 官方推荐从F-Droid中安装 Termux， 可以直接在网页中下载 APK 文件进行安装，也可以安装 F-Droid 以方便及时更新。">
+相关工具的官网介绍  Termux: an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager. Clash: A rule-based tunnel in Go. Clash Dashboard: Web Dashboard for Clash, now host on ClashX  1 安装 Termux 官方推荐从F-Droid中安装 Termux， 可以直接在网页中下载 APK 文件进行安装，也可以安装 F-Droid 以方便及时更新。 在完成 termux 安装之后最好先运行termux-change-repo来切换软件源，这样之后的下载工作会方便很多。 为了方便可以在手机上运行 sshd 服务，从而实现在电脑上远程登录。">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://xsro.github.io/cn/posts/"},{"@type":"ListItem","position":2,"name":"借助Termux在安卓手机上运行Clash代理服务","item":"https://xsro.github.io/cn/posts/install-clash-in-termux/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"借助Termux在安卓手机上运行Clash代理服务","name":"借助Termux在安卓手机上运行Clash代理服务","description":"在 Termux 中部署 Clash 日常生活中，手机往往会被我随身携带。 将 clash 代理服务部署在手机中，在满足自身手机借助代理上网的同时也可以让局域网中所有设备都可以使用代理服务， 这样往往可以节省开支并减少在多台设备中部署的一些麻烦。\n相关工具的官网介绍  Termux: an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager. Clash: A rule-based tunnel in Go. Clash Dashboard: Web Dashboard for Clash, now host on ClashX  1 安装 Termux 官方推荐从F-Droid中安装 Termux， 可以直接在网页中下载 APK 文件进行安装，也可以安装 F-Droid 以方便及时更新。","keywords":[],"articleBody":"在 Termux 中部署 Clash 日常生活中，手机往往会被我随身携带。 将 clash 代理服务部署在手机中，在满足自身手机借助代理上网的同时也可以让局域网中所有设备都可以使用代理服务， 这样往往可以节省开支并减少在多台设备中部署的一些麻烦。\n相关工具的官网介绍  Termux: an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager. Clash: A rule-based tunnel in Go. Clash Dashboard: Web Dashboard for Clash, now host on ClashX  1 安装 Termux 官方推荐从F-Droid中安装 Termux， 可以直接在网页中下载 APK 文件进行安装，也可以安装 F-Droid 以方便及时更新。\n2 安装 clash 官方提供了 clash 的安装包，你可能需要先运行termux-change-repo来切换软件源\npkg install clash 运行 clash 代理需要一个 clash 配置文件，通常是一个 yaml 文件。\nclash -f  终端会打印出相应服务运行所在的端口，包括 RESTful API，HTTP 代理，SOCKS 代理端口， 例如以下信息：\nINFO[0000] RESTful API listening at: [::]:9090 INFO[0000] HTTP proxy listening at: [::]:7890 INFO[0000] SOCKS proxy listening at: [::]:7891 还需要知道自己设备的端口，通常进入手机的 wifi 设置中可以看到自己手机在局域网中的 wifi 地址， 可以在 termux 中输入ip addr查看，以下命令可能可以帮助查找：\nip addr | grep -Eo '192.[0-9]+.[0-9]+.[0-9]+'|head -1 比如我的 ip 地址是192.168.0.102，可以到路由器中将 ip 设置为固定 ip（似乎也叫静态 ip，或者叫与 mac 绑定）。 也可以在手机中将 IP 设置（通常为 DHCP）改为静态并手动设置 IP。 这个 ip 地址就是我们运行代理服务的代理服务器地址。\n3 管理 clash clash-dashboard是一个 nodejs 程序，使用pnpm管理依赖，并使用vite作为开发工具所以需要先安装以上三个工具。由于 clash 仍然在运行，所以这里可以新建一个 session。\n#安装nodejs pkg install nodejs-lts #安装pnpm和vite npm install -g pnpm vite 安装完成之后，便可以克隆 clash-dashboard 的代码并进行构建与运行\ncd YOUR_FOLDER git clone https://github.com/Dreamacro/clash-dashboard.git cd clash-dashboard pnpm i vite --host 终端会打印如下内容：\nvite v2.7.13 dev server running at:  Local: http://localhost:3000/  Network: http://10.65.20.18:3000/  Network: http://192.168.0.102:3000/ ready in 3790ms. 在浏览器中打开 network 后面的地址便可以访问管理界面,在打开的界面中填入 clash 服务的 ip 地址和 RESTful API 的端口号即可，进入管理界面。\n4 设置代理 windows 设置系统代理 （我使用的是 win10）进入设置，网络与Internet，选择代理，在手动设置代理中填入代理服务器地址和端口，打开使用代理服务器。\nmac 设置 WiFi 代理 打开设置，进入网络，在 Wi-Fi 中选择高级，进入代理选项卡，在网页代理(HTTP)、安全网页代理(HTTPS)、SOCKS 代理中填入相应的代理服务器地址和端口，并应用。忽略这些主机与域的代理设置中可以设置如下内容\n192.168.0.0/16、10.0.0.0/8、172.16.0.0/12、127.0.0.1、localhost、*.local、timestamp.apple.com、*.cn 安卓设置 WiFi 代理 （我使用的 MIUI12）进入 Wi-Fi，点击连接的 Wifi，下滑在代理中选择手动，主机名填入代理服务器地址，端口填写 http 代理服务端口。\n","wordCount":"233","inLanguage":"cn","datePublished":"2022-02-09T09:33:46+08:00","dateModified":"2022-02-09T09:33:46+08:00","author":{"@type":"Person","name":"Leo"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://xsro.github.io/cn/posts/install-clash-in-termux/"},"publisher":{"@type":"Organization","name":"陈留城下","logo":{"@type":"ImageObject","url":"https://xsro.github.io/text.png"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"借助Termux在安卓手机上运行Clash代理服务","name":"借助Termux在安卓手机上运行Clash代理服务","description":"在 Termux 中部署 Clash 日常生活中，手机往往会被我随身携带。 将 clash 代理服务部署在手机中，在满足自身手机借助代理上网的同时也可以让局域网中所有设备都可以使用代理服务， 这样往往可以节省开支并减少在多台设备中部署的一些麻烦。\n相关工具的官网介绍  Termux: an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager. Clash: A rule-based tunnel in Go. Clash Dashboard: Web Dashboard for Clash, now host on ClashX  1 安装 Termux 官方推荐从F-Droid中安装 Termux， 可以直接在网页中下载 APK 文件进行安装，也可以安装 F-Droid 以方便及时更新。 在完成 termux 安装之后最好先运行termux-change-repo来切换软件源，这样之后的下载工作会方便很多。 为了方便可以在手机上运行 sshd 服务，从而实现在电脑上远程登录。","keywords":[],"articleBody":"在 Termux 中部署 Clash 日常生活中，手机往往会被我随身携带。 将 clash 代理服务部署在手机中，在满足自身手机借助代理上网的同时也可以让局域网中所有设备都可以使用代理服务， 这样往往可以节省开支并减少在多台设备中部署的一些麻烦。\n相关工具的官网介绍  Termux: an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager. Clash: A rule-based tunnel in Go. Clash Dashboard: Web Dashboard for Clash, now host on ClashX  1 安装 Termux 官方推荐从F-Droid中安装 Termux， 可以直接在网页中下载 APK 文件进行安装，也可以安装 F-Droid 以方便及时更新。 在完成 termux 安装之后最好先运行termux-change-repo来切换软件源，这样之后的下载工作会方便很多。 为了方便可以在手机上运行 sshd 服务，从而实现在电脑上远程登录。\n2 安装 clash 官方提供了 clash 的安装包，你可能需要\npkg install clash 运行 clash 代理需要一个 clash 配置文件，通常是一个 yaml 文件。\nclash -f  终端会打印出相应服务运行所在的端口，包括 RESTful API，HTTP 代理，SOCKS 代理端口， 例如以下信息：\nINFO[0000] RESTful API listening at: [::]:9090 INFO[0000] HTTP proxy listening at: [::]:7890 INFO[0000] SOCKS proxy listening at: [::]:7891 还需要知道自己设备的端口，通常进入手机的 wifi 设置中可以看到自己手机在局域网中的 wifi 地址， 可以在 termux 中输入ip addr查看，以下命令可能可以帮助查找：\nip addr | grep -Eo '192.[0-9]+.[0-9]+.[0-9]+'|head -1 比如我的 ip 地址是192.168.0.102，可以到路由器中将 ip 设置为固定 ip（似乎也叫静态 ip，或者叫与 mac 绑定）。 也可以在手机中将 IP 设置（通常为 DHCP）改为静态并手动设置 IP。 这个 ip 地址就是我们运行代理服务的代理服务器地址。\n3 管理 clash clash-dashboard是一个 nodejs 程序，使用pnpm管理依赖，并使用vite作为开发工具所以需要先安装以上三个工具。\n#安装需要使用的软件 pkg install nodejs-lts npm npm install -g pnpm --registry=https://registry.npmmirror.com #克隆基于vue的web应用来提供ui git clone https://github.com/Dreamacro/clash-dashboard.git #构建ui cd clash-dashboard pnpm install pnpm build cd .. 构建完成之后，文件位于dist目录。 可以使用通过 clash 的-ui参数来将构建好的 web 应用托管到网络中。\nclash -f  -ext-ui \"clash-dashboard/dist\" 在浏览器中打开:/ui,就应该可以看到管理面板了，在打开的界面中填入 clash 服务的 ip 地址和 RESTful API 的端口号即可，即可进行控制。\n4 设置代理 windows 设置系统代理 （我使用的是 win10）进入设置，网络与Internet，选择代理，在手动设置代理中填入代理服务器地址和端口，打开使用代理服务器。\nmac 设置 WiFi 代理 打开设置，进入网络，在 Wi-Fi 中选择高级，进入代理选项卡，在网页代理(HTTP)、安全网页代理(HTTPS)、SOCKS 代理中填入相应的代理服务器地址和端口，并应用。忽略这些主机与域的代理设置中可以设置如下内容\n192.168.0.0/16、10.0.0.0/8、172.16.0.0/12、127.0.0.1、localhost、*.local、timestamp.apple.com、*.cn 安卓设置 WiFi 代理 （我使用的 MIUI12）进入 Wi-Fi，点击连接的 Wifi，下滑在代理中选择手动，主机名填入代理服务器地址，端口填写 http 代理服务端口。\n","wordCount":"226","inLanguage":"cn","datePublished":"2022-02-09T09:33:46+08:00","dateModified":"2022-02-09T09:33:46+08:00","author":{"@type":"Person","name":"Leo"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://xsro.github.io/cn/posts/install-clash-in-termux/"},"publisher":{"@type":"Organization","name":"陈留城下","logo":{"@type":"ImageObject","url":"https://xsro.github.io/text.png"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -140,9 +140,11 @@
 </ul>
 <h2 id=1-安装-termux>1 安装 Termux<a hidden class=anchor aria-hidden=true href=#1-安装-termux>#</a></h2>
 <p>官方推荐从<a href=https://f-droid.org/packages/com.termux/>F-Droid</a>中安装 Termux，
-可以直接在网页中下载 APK 文件进行安装，也可以安装 F-Droid 以方便及时更新。</p>
+可以直接在网页中下载 APK 文件进行安装，也可以安装 F-Droid 以方便及时更新。
+在完成 termux 安装之后最好先运行<code>termux-change-repo</code>来<a href=https://mirrors.tuna.tsinghua.edu.cn/help/termux/>切换软件源</a>，这样之后的下载工作会方便很多。
+为了方便可以在手机上运行 sshd 服务，从而实现在电脑上远程登录。</p>
 <h2 id=2-安装-clash>2 安装 clash<a hidden class=anchor aria-hidden=true href=#2-安装-clash>#</a></h2>
-<p>官方提供了 clash 的安装包，你可能需要先运行<code>termux-change-repo</code>来<a href=https://mirrors.tuna.tsinghua.edu.cn/help/termux/>切换软件源</a></p>
+<p>官方提供了 clash 的安装包，你可能需要</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>pkg install clash
 </code></pre></div><p>运行 clash 代理需要一个 clash 配置文件，通常是一个 yaml 文件。</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>clash -f &lt;配置文件本地地址&gt;
@@ -158,26 +160,22 @@ INFO[0000] SOCKS proxy listening at: [::]:7891
 也可以在手机中将 IP 设置（通常为 DHCP）改为静态并手动设置 IP。
 这个 ip 地址就是我们运行代理服务的代理服务器地址。</p>
 <h2 id=3-管理-clash>3 管理 clash<a hidden class=anchor aria-hidden=true href=#3-管理-clash>#</a></h2>
-<p><a href=https://github.com/Dreamacro/clash-dashboard>clash-dashboard</a>是一个 nodejs 程序，使用<a href=https://pnpm.io>pnpm</a>管理依赖，并使用<a href=https://vitejs.dev>vite</a>作为开发工具所以需要先安装以上三个工具。由于 clash 仍然在运行，所以这里可以新建一个 session。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=color:#75715e>#安装nodejs</span>
-pkg install nodejs-lts
-<span style=color:#75715e>#安装pnpm和vite</span>
-npm install -g pnpm vite
-</code></pre></div><p>安装完成之后，便可以克隆 clash-dashboard 的代码并进行构建与运行</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>cd YOUR_FOLDER
+<p><a href=https://github.com/Dreamacro/clash-dashboard>clash-dashboard</a>是一个 nodejs 程序，使用<a href=https://pnpm.io>pnpm</a>管理依赖，并使用<a href=https://vitejs.dev>vite</a>作为开发工具所以需要先安装以上三个工具。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=color:#75715e>#安装需要使用的软件</span>
+pkg install nodejs-lts npm
+npm install -g pnpm --registry<span style=color:#f92672>=</span>https://registry.npmmirror.com
+
+<span style=color:#75715e>#克隆基于vue的web应用来提供ui</span>
 git clone https://github.com/Dreamacro/clash-dashboard.git
+<span style=color:#75715e>#构建ui</span>
 cd clash-dashboard
-pnpm i
-vite --host
-</code></pre></div><p>终端会打印如下内容：</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plainText data-lang=plainText>  vite v2.7.13 dev server running at:
-
-  &gt; Local:    http://localhost:3000/
-  &gt; Network:  http://10.65.20.18:3000/
-  &gt; Network:  http://192.168.0.102:3000/
-
-  ready in 3790ms.
-</code></pre></div><p>在浏览器中打开 network 后面的地址便可以访问管理界面,在打开的界面中填入 clash 服务的 ip 地址和 RESTful API 的端口号即可，进入管理界面。</p>
+pnpm install
+pnpm build
+cd ..
+</code></pre></div><p>构建完成之后，文件位于<code>dist</code>目录。
+可以使用通过 clash 的<code>-ui</code>参数来将构建好的 web 应用托管到网络中。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>clash -f &lt;配置文件本地地址&gt; -ext-ui <span style=color:#e6db74>&#34;clash-dashboard/dist&#34;</span>
+</code></pre></div><p>在浏览器中打开<code>&lt;ip地址>:&lt;RESTful Api端口号>/ui</code>,就应该可以看到管理面板了，在打开的界面中填入 clash 服务的 ip 地址和 RESTful API 的端口号即可，即可进行控制。</p>
 <p><img loading=lazy src=/images/clash-dashboard-config.png alt>
 </p>
 <h2 id=4-设置代理>4 设置代理<a hidden class=anchor aria-hidden=true href=#4-设置代理>#</a></h2>
