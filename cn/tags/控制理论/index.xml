@@ -16,9 +16,13 @@
       <pubDate>Sun, 03 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://xsro.github.io/cn/posts/notes/control-theory-navi/</guid>
-      <description>控制相关资源导航 博主  zhihu J Pan: 纲举目张 bilibili DR_CAN youtube Brian Douglas youtube matlab zhihu 系统与控制（其 twitterSystem control  思维导图 The Map of Control Theory The Map of Control Theory是 Brian Douglas 绘制的控制领域思维导图。
-brief summary 系统与控制博主绘制了控制领域的常用技术概览，包括多张图。发布在多个平台上
- medium.com twitter 其还绘制有Map of Multi-Agent Control  </description>
+      <description>控制相关资源导航 图文（为主）博主 J Pan 航空工程师，主要在知乎撰写文章，有纲举目张
+ 知乎: J Pan  系统与控制 目前发表或完成相关论文 6 篇，主要研究方向为多智能体系统与复杂网络，业余时间运营知乎网“系统与控制”账号，在国内外相关学者的合作下完成《控制理论结构图》系列工作，整理完成《自动化学科科普手册》系列版本
+ 知乎：系统与控制 主页：https://qdu-zdh.github.io/qdu-zlh/ 推特：System control  视频（为主）博主 DR_CAN Ph.D. in Dynamics and Control 机器人工程师
+ B 站：DR_CAN  Brian Douglas  youtube：Brian Douglas 网站：https://engineeringmedia.com/  另外也推荐matlab
+思维导图 The Map of Control Theory The Map of Control Theory是 Brian Douglas 绘制的控制领域思维导图。
+控制理论结构图 系统与控制博主绘制了控制领域的常用技术概览，包括多张图。发布在 medium.com、 twitter、 github 等多个平台上。
+其中比较著名的有Map of Multi-Agent Control</description>
     </item>
     
   </channel>
