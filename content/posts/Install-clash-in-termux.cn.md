@@ -70,11 +70,8 @@ pkg install nodejs-lts npm
 npm install -g pnpm --registry=https://registry.npmmirror.com
 
 #克隆基于vue的web应用来提供ui
-git clone https://github.com/Dreamacro/clash-dashboard.git
-#构建ui
+git clone -b gh-pages https://github.com/Dreamacro/clash-dashboard.git
 cd clash-dashboard
-pnpm install
-pnpm build
 cd ..
 ```
 
@@ -109,3 +106,4 @@ clash -f <配置文件本地地址> -ext-ui "clash-dashboard/dist"
 ### 安卓设置 WiFi 代理
 
 （我使用的 MIUI12）进入 Wi-Fi，点击连接的 Wifi，下滑在`代理`中选择手动，主机名填入代理服务器地址，端口填写 http 代理服务端口。
+如果想代理手机中的所有用户的流量，应该考虑通过 vpn，如使用软件[SocksDroid](https://play.google.com/store/apps/details?id=net.typeblog.socks)

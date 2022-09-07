@@ -13,9 +13,11 @@ draft: false
 
 - (2015-2018) 选修物地
 - (2018-2022) 自动化, [自动化学院、人工智能学院][college], [南京邮电大学][njupt]
+- (2022-) 航空宇航科学与技术, [山中大学][sysusz]
 
 [njupt]: http://www.njupt.edu.cn/ "NJUPT"
 [college]: http://coa.njupt.edu.cn "College of Automation & College of Artificial Intellegence"
+[sysusz]: https://saa.sysu.edu.cn/ "School of Aeronautics and Astronautics"
 
 ## 联系方式
 
