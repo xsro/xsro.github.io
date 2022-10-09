@@ -1,12 +1,13 @@
 ---
 title: "Computer-Aided Control Systems Design: Introduction and Historical Overview"
-date: 2022-8-9
+date: 2022-08-09
 tags: ["Control Theory", "转载"]
 categories: ["CACSD"]
 ---
 
 ## infomation
 
+- Varga, A. (2020). Computer-Aided Control Systems Design: Introduction and Historical Overview. In: Baillieul, J., Samad, T. (eds) Encyclopedia of Systems and Control. Springer, London. https://doi.org/10.1007/978-1-4471-5102-9_138-3
 - Source: [springer](https://link.springer.com/referenceworkentry/10.1007/978-1-4471-5102-9_138-3), [pdf](https://core.ac.uk/download/pdf/31011908.pdf)
 - First Online: 08 November 2019
 - Author: Andreas Varga
