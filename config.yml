@@ -36,7 +36,7 @@ languages:
             # - name: Tags
             #   url: tags
             - name: 📒
-              url: https://xsro.gitee.io/college-notes/#/
+              url: https://xsro.gitee.io/notes/#/
             - name: 💻
               url: https://xsro.github.io/university-learning-code/
       menu:
