@@ -12,17 +12,18 @@ enableEmoji: true
 googleAnalytics: G-B25JJR3WFM
 
 analytics:
-    google:
-        SiteVerificationTag: "G-B25JJR3WFM"
+  google:
+    SiteVerificationTag: "G-B25JJR3WFM"
 
 minify:
-    disableXML: true
-    # minifyOutput: true
+  disableXML: true
+  # minifyOutput: true
 
 languages:
-    en:
-      languageName: "English"
-      weight: 1
+  en:
+    languageName: "English"
+    weight: 1
+    params:
       profileMode:
         enabled: true
         title: "Hi, Friends"
@@ -31,135 +32,137 @@ languages:
         # imageHeight: 120
         subtitle: "👋I am a student👨‍🎓 studing Automation🤖️ and Control Theory⚙️"
         buttons:
-            - name: 📚
-              url: /cn/posts/
-            # - name: Tags
-            #   url: tags
-            - name: 📒
-              url: https://xsro.gitee.io/notes/#/
-            - name: 💻
-              url: https://xsro.github.io/university-learning-code/
-      menu:
-          main:
-              - name: Achives
-                url: archives/
-                weight: 2
-              - name: Tags
-                url: tags/
-                weight: 4
-              - name: Categories
-                url: categories/
-                weight: 3
-              - name: Search
-                url: search/
-                weight: 1
-              - name: About
-                url: about/
-                weight: 5
-    cn:
-      languageName: "简体中文"
-      weight: 3
-      title: 陈留城下
+          - name: 📚
+            url: /cn/posts/
+          # - name: Tags
+          #   url: tags
+          - name: 📒
+            url: https://xsro.gitee.io/notes/#/
+          - name: 💻
+            url: https://xsro.github.io/university-learning-code/
+    menu:
+      main:
+        - name: Achives
+          url: archives/
+          weight: 2
+        - name: Tags
+          url: tags/
+          weight: 4
+        - name: Categories
+          url: categories/
+          weight: 3
+        - name: Search
+          url: search/
+          weight: 1
+        - name: About
+          url: about/
+          weight: 5
+  cn:
+    languageName: "简体中文"
+    languageCode: "zh-CN"
+    weight: 3
+    title: 陈留城下
+    params:
       homeInfoParams:
-          Title: "饮茶先啦 \U0001F44B"
-          Content: 使用[paperMod](https://github.com/adityatelange/hugo-PaperMod)构建了这个小网站
-      menu:
-          main:
-            - name: 归档
-              url: archives/
-              weight: 2
-            - name: 标签
-              url: tags/
-              weight: 4
-            - name: 分类
-              url: categories/
-              weight: 3
-            - name: 检索
-              url: search/
-              weight: 1
-            - name: 关于
-              url: about/
-              weight: 5
+        Title: "饮茶先啦 \U0001F44B"
+        Content: 使用[paperMod](https://github.com/adityatelange/hugo-PaperMod)构建了这个小网站
+    menu:
+      main:
+      - name: 归档
+        url: archives/
+        weight: 2
+      - name: 标签
+        url: tags/
+        weight: 4
+      - name: 分类
+        url: categories/
+        weight: 3
+      - name: 检索
+        url: search/
+        weight: 1
+      - name: 关于
+        url: about/
+        weight: 5
 
 
 
 outputs:
-    home:
-        - HTML
-        - RSS
-        - JSON
+  home:
+  - HTML
+  - RSS
+  - JSON
 
 params:
-    env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    description: "梦游乡"
-    author: Leo
-    # author: ["Me", "You"] # multiple authors
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  description: "梦游乡"
+  author: Leo
+  # author: ["Me", "You"] # multiple authors
 
-    defaultTheme: auto
-    # disableThemeToggle: true
-    ShowShareButtons: true
-    ShowReadingTime: true
-    # disableSpecial1stPost: true
-    displayFullLangName: true
-    ShowPostNavLinks: true
-    ShowBreadCrumbs: true
-    ShowCodeCopyButtons: true
-    ShowToc: true
-    # comments: false
-    images: ["papermod-cover.png"]
+  defaultTheme: auto
+  # disableThemeToggle: true
+  ShowShareButtons: true
+  ShowReadingTime: true
+  # disableSpecial1stPost: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  # comments: false
+  images: ["papermod-cover.png"]
 
-    socialIcons:
-        - name: github
-          url: "https://github.com/xsro"
-        - name: gitee
-          url: "https://gitee.com/xsro"
-        - name: email
-          url: "mailto:xsro@foxmail.com"
+  socialIcons:
+    - name: github
+      url: "https://github.com/xsro"
+    - name: gitee
+      url: "https://gitee.com/xsro"
+    - name: email
+      url: "mailto:xsro@foxmail.com"
 
-    editPost:
-        URL: "https://github.com/xsro/xsro.github.io/edit/hugo/content"
-        Text: "Suggest Changes" # edit text
-        appendFilePath: true # to append file path to Edit link
+  editPost:
+    URL: "https://github.com/xsro/xsro.github.io/edit/hugo/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
 
-    # label:
-    #     text: "Home"
-    #     icon: icon.png
-    #     iconHeight: 35
+  # label:
+  #     text: "Home"
+  #     icon: icon.png
+  #     iconHeight: 35
 
-    # analytics:
-    #     google:
-    #         SiteVerificationTag: "XYZabc"
+  # analytics:
+  #     google:
+  #         SiteVerificationTag: "XYZabc"
 
-    assets:
-        favicon: "text.png"
-        # favicon16x16: "<link / abs url>"
-        # favicon32x32: "<link / abs url>"
-        # apple_touch_icon: "<link / abs url>"
-        # safari_pinned_tab: "<link / abs url>"
+  assets:
+      favicon: "text.png"
+      # favicon16x16: "<link / abs url>"
+      # favicon32x32: "<link / abs url>"
+      # apple_touch_icon: "<link / abs url>"
+      # safari_pinned_tab: "<link / abs url>"
 
-    # cover:
-    #     hidden: true # hide everywhere but not in structured data
-    #     hiddenInList: true # hide on list pages and home
-    #     hiddenInSingle: true # hide on single page
+  # cover:
+  #     hidden: true # hide everywhere but not in structured data
+  #     hiddenInList: true # hide on list pages and home
+  #     hiddenInSingle: true # hide on single page
 
-    # fuseOpts:
-    #     isCaseSensitive: false
-    #     shouldSort: true
-    #     location: 0
-    #     distance: 1000
-    #     threshold: 0.4
-    #     minMatchCharLength: 0
-    #     keys: ["title", "permalink", "summary", "content"]
+  # fuseOpts:
+  #     isCaseSensitive: false
+  #     shouldSort: true
+  #     location: 0
+  #     distance: 1000
+  #     threshold: 0.4
+  #     minMatchCharLength: 0
+  #     keys: ["title", "permalink", "summary", "content"]
 
 taxonomies:
-    category: categories
-    tag: tags
-    series: series
+  category: categories
+  tag: tags
+  series: series
 
 markup:
-    goldmark:
-        renderer:
-            unsafe: true
+  goldmark:
+    renderer:
+      unsafe: true
 #     highlight:
 #         # anchorLineNos: true
 #         codeFences: true
@@ -169,25 +172,25 @@ markup:
 #         style: monokai
 
 privacy:
-    vimeo:
-        disabled: false
-        simple: true
+  vimeo:
+    disabled: false
+    simple: true
 
-    twitter:
-        disabled: false
-        enableDNT: true
-        simple: true
+  twitter:
+    disabled: false
+    enableDNT: true
+    simple: true
 
-    instagram:
-        disabled: false
-        simple: true
+  instagram:
+    disabled: false
+    simple: true
 
-    youtube:
-        disabled: false
-        privacyEnhanced: true
+  youtube:
+    disabled: false
+    privacyEnhanced: true
 
 services:
-    instagram:
-        disableInlineCSS: true
-    twitter:
-        disableInlineCSS: true
+  instagram:
+    disableInlineCSS: true
+  twitter:
+    disableInlineCSS: true
