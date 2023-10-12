@@ -2,7 +2,7 @@
 title= "t<0是哲学家思考的问题--控制系统分析时一般信号都需要乘上一个阶跃u(t)"
 date = 2021-08-28
 [taxonomies]
-categories = ["控制"]
+categories = ["控制理论"]
 tags = ["线性定常系统", "信号处理"]
 +++
 
@@ -25,9 +25,9 @@ tags = ["线性定常系统", "信号处理"]
 
 将阶跃响应写成如下形式：
 
-$$
+{% katex(block=true) %}
 1-e^{-t/T}(t \ge 0)=1(t)-e^{-t/T}\times 1(t)
-$$
+{% end %}
 
 对阶跃响应求导：
 
@@ -61,29 +61,29 @@ $$
 
 输入和输出的拉氏变换后的象函数分别为
 
-$$
+{% katex(block=true) %}
 R(s)=\frac{1}{s},C(s)=H(s)
-$$
+{% end %}
 
 于是传递函数可以写成：
 
-$$
+{% katex(block=true) %}
 G(s)=\frac{C(s)}{R(s)}=sH(s)
-$$
+{% end %}
 
 #### 系统特性法
 
 对输入输出分别进行求导：
 
-$$
+{% katex(block=true) %}
 r'(t)=\delta(t),c'(t)=\frac{\mathrm{d}}{\mathrm{d}t}[h(t)]=h'(t)
-$$
+{% end %}
 
 对输出信号拉氏变换即为传递函数：
 
-$$
+{% katex(block=true) %}
 G(s)=\mathscr{L}[c'(t)]=sH(s)
-$$
+{% end %}
 
 {% katex(block=true) %}
 \begin{matrix}
