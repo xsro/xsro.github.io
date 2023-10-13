@@ -18,11 +18,11 @@ It usually applies in process control for its requirement for matrix operation i
 
 ## Design Controller
 
-Use the \\(N\\) steps of Finite Step Response(FSR) from the given process \\(G_p\\),
-we can prodict the response in future \\(P\\) steps,
-and apply the first \\(M\\) step's result to the system.
+Use the $N$ steps of Finite Step Response(FSR) from the given process $G_p$,
+we can prodict the response in future $P$ steps,
+and apply the first $M$ step's result to the system.
 
-Usually, \\(M\le P \le N\\) and \\(M=1\\).
+Usually, $M\le P \le N$ and $M=1$.
 
 ```python
 def ModelPredictiveControl(delta_t,N,P,M):
@@ -79,7 +79,7 @@ controller=simupy.systems.SystemFromCallable(
 ## Simulate the result
 
 By running the Code, we can know that
-in this case, the more steps \\(P\\) we predict,
+in this case, the more steps $P$ we predict,
 the better performance we will get.
 
 ![](/images/DMC_simlation_with_simupy.png)
