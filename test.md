@@ -1,7 +1,0 @@
-i$sasdf$ $asdfsa$
-
-$$
-
-asfda
-
-$$

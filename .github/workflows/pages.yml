@@ -5,15 +5,27 @@ on:
     branches:
       - zola
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/zola'
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v2
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-      - name: Build and deploy
-        uses: shalzz/zola-deploy-action@v0.17.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: build 
+        run: |
+          git clone --depth=1 -b xsro https://github.com/xsro/zola.git _zola
+          cd _zola
+          cargo run -- --root .. build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        # If you're changing the branch from main,
+        # also change the `main` in `refs/heads/main`
+        # below accordingly.
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
