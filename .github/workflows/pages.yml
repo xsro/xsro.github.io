@@ -20,6 +20,9 @@ jobs:
           git clone --depth=1 -b xsro https://github.com/xsro/zola.git _zola
           cd _zola
           cargo run -- --root .. build
+          cd ..
+          cargo build --release
+          cp _zola/target/release/zola public/zola
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         # If you're changing the branch from main,
