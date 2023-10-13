@@ -3,7 +3,7 @@ title = "Simulate Dynamic Matrix Control with Simupy"
 date = 2021-12-28
 [taxonomies]
 tags = ["Control Theory"]
-categories = ["Control system simulation"]
+categories = ["控制仿真"]
 +++
 
 # Simulate Dynamic Matrix Control with Simupy

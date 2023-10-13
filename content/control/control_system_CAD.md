@@ -3,7 +3,7 @@ title = "Computer-Aided Control Systems Design = Introduction and Historical Ove
 date = 2022-08-09
 [taxonomies]
 tags = ["Control Theory", "转载"]
-categories = ["CACSD"]
+categories = ["控制仿真"]
 +++
 
 ## infomation

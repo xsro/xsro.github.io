@@ -3,7 +3,7 @@ title = "A look-back of automation"
 date = 2021-09-23
 [taxonomies]
 tags = ["Control Theory"]
-categories = ["Study notes"]
+categories = ["学习笔记", "控制理论"]
 +++
 
 # Keep fighting, boys and girls from automation 🤖

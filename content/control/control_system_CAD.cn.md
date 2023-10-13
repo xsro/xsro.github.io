@@ -3,7 +3,7 @@ title = "计算机辅助控制系统设e = 简介与回顾"
 date = 2022-08-09
 [taxonomies]
 tags = ["Control Theory", "翻译"]
-categories = ["CACSD"]
+categories = ["控制仿真"]
 +++
 
 ## 原文信息

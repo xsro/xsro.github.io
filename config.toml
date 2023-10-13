@@ -33,4 +33,4 @@ highlight_code = true
 [extra]
 # Put all your custom variables here
 katex_enable = true
-even_title = "XSRO"
+even_title = "光侨路笔记"

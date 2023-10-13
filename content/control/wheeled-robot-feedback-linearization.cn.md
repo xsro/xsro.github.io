@@ -1,11 +1,10 @@
 +++
-title = "Wheeled Robot Feedback Linearization"
+title = "通过坐标平移实现非完整约束系统的反馈线性化Wheeled Robot Feedback Linearization"
 date = 2023-10-09T21:43:59+08:00
 [taxonomies]
-tags = ["非完整约束", "反馈线性化", "小车"]
+tags = ["非完整约束", "反馈线性化", "小车",]
+categories = ["控制应用"]
 +++
-
-# 通过坐标平移实现非完整约束系统的反馈线性化
 
 > `YAMAMOTO Y, YUN X, 1992. Coordinating locomotion and manipulation of a mobile manipulator[C/OL]//[1992] Proceedings of the 31st IEEE Conference on Decision and Control. 2643-2648 卷3. DOI:10.1109/CDC.1992.371337.`
 
@@ -152,7 +151,7 @@ $$
 \Phi(q)=J_h(q)S(q)
 $$
 其中$J_h=\frac{\partial h}{\partial q}$是一个$(n-m)\times n$的Jacobian矩阵。
-当$J_h$的行与$A(q)$独立的时候，\Phi(x)$ 是非奇异的
+当$J_h$的行与$A(q)$独立的时候，$\Phi(x)$ 是非奇异的
 
 [20]: https://link.springer.com/book/10.1007/978-1-4757-2101-0
 
@@ -184,8 +183,10 @@ $$
 \dot{z}_1=z_2,\quad \dot{z}_2=v \quad y=z_1
 $$
 系统的不可观测部分为：（代入$z_1=0$和$z_2=0$）
+
 $$
 \dot{z}_3=0
 $$
+
 这个系统显然是Lagrange稳定的但是不是渐近稳定。
 
