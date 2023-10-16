@@ -6,12 +6,11 @@ date = 2028-10-22
 tags = ["pdf"]
 +++
 
-
-# 外部资源 External Resources 
-
-一些平时工作学习中用到的资源，包括但不限于PDF文件，代码，笔记等。
+这里收集了一些平时工作学习中用到的资源，包括PDF文件，代码，笔记等。
 
 <!-- more -->
+
+# 外部资源 External Resources 
 
 ## Notes on Nonlinear Control [nlct](nlct.pdf)
 

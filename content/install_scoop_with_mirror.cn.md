@@ -1,5 +1,5 @@
 +++
-title = "windows系统安装Scoop包管理工具"
+title = "windows 系统安装 Scoop 包管理工具"
 date = 2022-01-25
 [taxonomies]
 categories = ["常用技术速查"]
