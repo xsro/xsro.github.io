@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>xsro&#x27;s blog - pdf</title>
+    <link href="https://xsro.github.io/tags/pdf/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://xsro.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2017-09-22T00:00:00+00:00</updated>
+    <id>https://xsro.github.io/tags/pdf/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Some PDF files</title>
+        <published>2017-09-22T00:00:00+00:00</published>
+        <updated>2017-09-22T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/print/" type="text/html"/>
+        <id>https://xsro.github.io/print/</id>
+        
+        <content type="html">&lt;h1 id=&quot;printable-external-resources&quot;&gt;Printable &amp;amp; External Resources&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;nlct&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;xsro.github.io&#x2F;print&#x2F;nlct.pdf&quot;&gt;nlct&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;(updated 2023-09-22, work in progress) : 
+This is a printable version of the notes for the course &lt;em&gt;Nonlinear Systems and Control&lt;&#x2F;em&gt;.
+It includes some additional material, such as mathematics for control like differential geometry, and some solutions for the ref74(khalil&#x27;s nonlinear systems 3rd edition).
+I originally collect this to provide a supplement for the course, 
+but it is not yet complete.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;notes-in-njupt-auto-hosted-on-gitee&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;xsro.gitee.io&#x2F;notes&#x2F;&quot;&gt;Notes in NJUPT AUTO (hosted on gitee)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;codes-in-njupt-auto-hosted-on-github&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;xsro.github.io&#x2F;university-learning-code&#x2F;&quot;&gt;Codes in NJUPT AUTO (hosted on github)&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+</content>
+        
+    </entry>
+</feed>

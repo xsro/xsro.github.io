@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>xsro&#x27;s blog - Study notes</title>
+    <link href="https://xsro.github.io/categories/study-notes/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://xsro.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-06-14T00:00:00+00:00</updated>
+    <id>https://xsro.github.io/categories/study-notes/atom.xml</id>
+    <entry xml:lang="en">
+        <title>MATLAB 作用域</title>
+        <published>2023-06-14T00:00:00+00:00</published>
+        <updated>2023-06-14T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/code/matlab-global-persistent-cn/" type="text/html"/>
+        <id>https://xsro.github.io/code/matlab-global-persistent-cn/</id>
+        
+        <content type="html">&lt;h1 id=&quot;matlab-zuo-yong-yu-ji-zhi-ce-shi-dai-ma&quot;&gt;MATLAB 作用域机制测试代码&lt;&#x2F;h1&gt;
+&lt;p&gt;MATLAB中的作用域有些奇怪。这里用几个测试代码来分析一下。
+本文所有代码段需要在matlab脚本中运行，不能在命令行中直接运行。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;matlabjiao-ben-ke-yi-fang-wen-gong-zuo-qu-biao-liang-dan-shi-han-shu-bu-ke-yi&quot;&gt;MATLAB脚本可以访问工作区标量，但是函数不可以&lt;&#x2F;h2&gt;
+&lt;p&gt;这是MATLAB方便的地方，可以在Simulink和MATLAB脚本中直接使用工作区的变量。
+但是函数是不能访问工作区的标量的，比如下面的代码会报错。
+函数体里面无法使用变量a，因为a定义在脚本中，运行后会写入工作区。&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;MATLAB&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-MATLAB &quot;&gt;&lt;code class=&quot;language-MATLAB&quot; data-lang=&quot;MATLAB&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;clear &lt;&#x2F;span&gt;&lt;span&gt;all
+&lt;&#x2F;span&gt;&lt;span&gt;a=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;func1();
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;func1&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;disp&lt;&#x2F;span&gt;&lt;span&gt;(a) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;%函数或变量 &amp;#39;a&amp;#39; 无法识别。
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;end
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;那么如何才能访问到a变量呢？&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;fa-1-matlabhan-shu-de-zhong-de-liang-ke-yi-xiang-xia-ceng-han-shu-chuan-di&quot;&gt;法1：MATLAB函数的中的量可以向下层函数传递&lt;&#x2F;h2&gt;
+&lt;p&gt;MATLAB函数的中的量可以向下层函数传递，因此可以通过嵌套函数的方式使得脚本可以达到访问上一层变量的效果&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;MATLAB&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-MATLAB &quot;&gt;&lt;code class=&quot;language-MATLAB&quot; data-lang=&quot;MATLAB&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;func0&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;clear &lt;&#x2F;span&gt;&lt;span&gt;all
+&lt;&#x2F;span&gt;&lt;span&gt;    a=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;    func1();
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;func1&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;disp&lt;&#x2F;span&gt;&lt;span&gt;(a) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;%打印1
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;end
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;end
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;fa-2-shi-yong-globalguan-jian-zi&quot;&gt;法2：使用global关键字&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;code&gt;global&lt;&#x2F;code&gt;关键字可以将变量在全局范围内共享。&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;MATLAB&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-MATLAB &quot;&gt;&lt;code class=&quot;language-MATLAB&quot; data-lang=&quot;MATLAB&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;clear &lt;&#x2F;span&gt;&lt;span&gt;all
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;global &lt;&#x2F;span&gt;&lt;span&gt;a &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;%如果有这一行输出2，没有这一行输出1
+&lt;&#x2F;span&gt;&lt;span&gt;a=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;change()
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;show&lt;&#x2F;span&gt;&lt;span&gt;() 
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;change&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;global &lt;&#x2F;span&gt;&lt;span&gt;a
+&lt;&#x2F;span&gt;&lt;span&gt;    a=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;end
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;show&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;global &lt;&#x2F;span&gt;&lt;span&gt;a
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;disp&lt;&#x2F;span&gt;&lt;span&gt;(a)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;end
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;fu-matlabzhong-de-persistentguan-jian-zi&quot;&gt;附：MATLAB中的persistent关键字&lt;&#x2F;h2&gt;
+&lt;pre data-lang=&quot;MATLAB&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-MATLAB &quot;&gt;&lt;code class=&quot;language-MATLAB&quot; data-lang=&quot;MATLAB&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;%持久变量与全局变量类似，因为 MATLAB 为二者都建立持久存储。二者的区别在于持久变量仅为声明它们的函数所知晓。因此，MATLAB 命令行或其他函数中的代码不能更改持久变量。
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;clear &lt;&#x2F;span&gt;&lt;span&gt;all
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;%persistent a %不支持在脚本中声明持久变量。如果这里用了会报错
+&lt;&#x2F;span&gt;&lt;span&gt;a=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;change()
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;show&lt;&#x2F;span&gt;&lt;span&gt;()&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;%打印1,change函数只改变里面的值
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;change&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;persistent &lt;&#x2F;span&gt;&lt;span&gt;a
+&lt;&#x2F;span&gt;&lt;span&gt;    a=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;end
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;show&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;persistent &lt;&#x2F;span&gt;&lt;span&gt;a
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;disp&lt;&#x2F;span&gt;&lt;span&gt;(a)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;whos &lt;&#x2F;span&gt;&lt;span&gt;a
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;end
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;zong-jie&quot;&gt;总结&lt;&#x2F;h2&gt;
+&lt;p&gt;MATLAB 中函数的作用域可以嵌套，但是不能访问工作区变量。
+global和persistent的主要作用在于，每一次调用都访问的是同一个变量，而不是每次调用都新建一个变量。
+这两个关键字现在其实都不推荐了，因为会导致代码的可读性变差，不利于维护，也不利于matlab的处理。
+global 编辑了的同名变量是一样的，persistent标记的同名变量是互相独立的。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+      
+    
+
+      <title>xsro&#x27;s blog - windows系统安装Scoop包管理工具</title>
+
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/mathtex-script-type.min.js" integrity="sha384-zWYbd0NBwgTsgIdFKVprSfTh1mbMPe5Hz1X3yY4Sd1h/K1cQoUe36OGwAGz/PcDy" crossorigin="anonymous"></script>
+              
+          
+      
+
+      
+          <link rel="stylesheet" href="https://xsro.github.io/site.css">
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">光侨路笔记</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;categories">
+                            Categories
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;xsro.github.io">光侨路笔记</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;categories">
+                                    Categories
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://xsro.github.io/install-scoop-with-mirror-cn/#windows-xi-tong-an-zhuang-scoop-bao-guan-li-gong-ju" class="toc-link">windows 系统安装 Scoop 包管理工具</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/install-scoop-with-mirror-cn/#an-zhuang-scoop" class="toc-link">安装 SCOOP</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/install-scoop-with-mirror-cn/#an-zhuang-git" class="toc-link">安装 Git</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/install-scoop-with-mirror-cn/#tian-jia-ruan-jian-yuan-bucket" class="toc-link">添加软件源 Bucket</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/install-scoop-with-mirror-cn/#sou-suo-app" class="toc-link">搜索 APP</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/install-scoop-with-mirror-cn/#an-zhuang-tui-jian-de-ruan-jian" class="toc-link">安装推荐的软件</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/install-scoop-with-mirror-cn/#can-kao-lian-jie" class="toc-link">参考链接</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;install-scoop-with-mirror-cn&#x2F;">windows系统安装Scoop包管理工具</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2022-01-25</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p><strong>该内容似乎已经过时</strong>，因为目前<a href="https://zhuanlan.zhihu.com/p/360677731">似乎</a>github.com.cnpmjs.org 和 hub.fastgit.org 镜像均无法使用</p>
+<h1 id="windows-xi-tong-an-zhuang-scoop-bao-guan-li-gong-ju">windows 系统安装 Scoop 包管理工具</h1>
+<p><a href="https://scoop.sh/">https://scoop.sh/</a>是一款 windows 系统下的包管理工具，根据官网只需要以下命令即可安装。</p>
+<pre data-lang="powershell" style="background-color:#2b303b;color:#c0c5ce;" class="language-powershell "><code class="language-powershell" data-lang="powershell"><span>iwr -useb get.scoop.sh | iex
+</span><span style="color:#65737e;">#Note = if you get an error you might need to change the execution policy (i.e. enable Powershell) with
+</span><span style="color:#96b5b4;">Set-ExecutionPolicy</span><span> RemoteSigned -scope CurrentUser
+</span></code></pre>
+<p>实际使用中，通常需要镜像加速以及修改安装位置，所以结合文章<a href="https://blog.csdn.net/luoyooi/article/details/102990113">Windows 下 Scoop 安装、配置与使用</a>，在此，我记录一下我的安装过程。</p>
+<h2 id="an-zhuang-scoop">安装 SCOOP</h2>
+<p>由于我的 C 盘空间有限，<a href="https://github.com/ScoopInstaller/Scoop#installation">可以修改安装位置</a>我将目标目录修改为</p>
+<pre data-lang="powershell" style="background-color:#2b303b;color:#c0c5ce;" class="language-powershell "><code class="language-powershell" data-lang="powershell"><span style="color:#65737e;">#将Scoop安装到自定义目录(命令行方式),默认为C:\Users&lt;user&gt;\scoop
+</span><span>$</span><span style="color:#bf616a;">env:SCOOP</span><span>=&#39;</span><span style="color:#a3be8c;">D:\Applications\Scoop</span><span>&#39;
+</span><span>[</span><span style="color:#b48ead;">Environment</span><span>]::SetEnvironmentVariable(&#39;</span><span style="color:#a3be8c;">SCOOP</span><span>&#39;, $</span><span style="color:#bf616a;">env:SCOOP</span><span>, &#39;</span><span style="color:#a3be8c;">User</span><span>&#39;)
+</span><span style="color:#65737e;">#将Scoop配置为将全局程序安装到自定义目录 SCOOP_GLOBAL(命令行方式),默认为C:\ProgramData\scoop
+</span><span>$</span><span style="color:#bf616a;">env:SCOOP_GLOBAL</span><span>=&#39;</span><span style="color:#a3be8c;">D:\Applications\GlobalScoopApps</span><span>&#39;
+</span><span>[</span><span style="color:#b48ead;">Environment</span><span>]::SetEnvironmentVariable(&#39;</span><span style="color:#a3be8c;">SCOOP_GLOBAL</span><span>&#39;, $</span><span style="color:#bf616a;">env:SCOOP_GLOBAL</span><span>, &#39;</span><span style="color:#a3be8c;">Machine</span><span>&#39;)
+</span></code></pre>
+<p>我的网络质量不佳，无法直接使用<code>iwr -useb get.scoop.sh | iex</code>安装，可以借助镜像，来实现安装，下面的脚本会自动替换掉安装脚本中的 github 的链接。</p>
+<pre data-lang="powershell" style="background-color:#2b303b;color:#c0c5ce;" class="language-powershell "><code class="language-powershell" data-lang="powershell"><span style="color:#65737e;">#可能需要通过下面的命令设置权限之后再安装
+</span><span style="color:#96b5b4;">Set-ExecutionPolicy</span><span> RemoteSigned -scope CurrentUser
+</span><span style="color:#65737e;">#iwr -useb get.scoop.sh | iex
+</span><span style="color:#65737e;">#网络慢可以使用下面替换为cnpm和fastgit的链接
+</span><span>iwr -useb https://raw.fastgit.org/ScoopInstaller/Scoop/master/bin/install.ps1 | </span><span style="color:#b48ead;">%</span><span>{$_</span><span style="color:#bf616a;">.Content.replace</span><span>(&quot;</span><span style="color:#a3be8c;">github.com</span><span>&quot;,&quot;</span><span style="color:#a3be8c;">github.com.cnpmjs.org</span><span>&quot;).replace(&quot;</span><span style="color:#a3be8c;">raw.githubusercontent.com</span><span>&quot;,&quot;</span><span style="color:#a3be8c;">raw.fastgit.org</span><span>&quot;) | iex
+</span></code></pre>
+<p>上面这个命令<strong>应该</strong>可以正常安装 scoop 程序，但是当需要使用 scoop 安装其他程序时可能会出现问题，
+可以手动将文件<code>$env:SCOOP\apps\scoop\current\lib\manifest.ps1</code>中读取 json 文件的命令(如下 👇🏻 第一条命令)
+替换为下面的第二条命令，从而实现自动替换掉 github 链接。</p>
+<p>也可在 powershell 中运行下面的第三条命令修改 scoop 源码，使得 scoop 安装其他程序时自动替换掉 github 链接。</p>
+<pre data-lang="powershell" style="background-color:#2b303b;color:#c0c5ce;" class="language-powershell "><code class="language-powershell" data-lang="powershell"><span style="color:#65737e;">#1原命令
+</span><span style="color:#96b5b4;">Get-Content </span><span>$</span><span style="color:#bf616a;">path </span><span>-raw -Encoding UTF8 | </span><span style="color:#96b5b4;">convertfrom-json </span><span>-ea stop
+</span><span style="color:#65737e;">#2替换为
+</span><span>$(</span><span style="color:#96b5b4;">Get-Content </span><span>$</span><span style="color:#bf616a;">path </span><span>-raw -Encoding UTF8).replace(&quot;</span><span style="color:#a3be8c;">github.com</span><span>&quot;,&quot;</span><span style="color:#a3be8c;">github.com.cnpmjs.org</span><span>&quot;).replace(&quot;</span><span style="color:#a3be8c;">raw.githubusercontent.com</span><span>&quot;,&quot;</span><span style="color:#a3be8c;">raw.fastgit.org</span><span>&quot;) | </span><span style="color:#96b5b4;">convertfrom-json </span><span>-ea stop
+</span><span>
+</span><span style="color:#65737e;">#3可以使用下面的命令自动完成替换操作
+</span><span>$(</span><span style="color:#96b5b4;">Get-Content </span><span>$</span><span style="color:#bf616a;">env:SCOOP</span><span>\apps\scoop\current\lib\manifest.ps1 -raw).replace(&#39;</span><span style="color:#a3be8c;">Get-Content $path -raw -Encoding UTF8 | convertfrom-json -ea stop</span><span>&#39;,&#39;</span><span style="color:#a3be8c;">$(Get-Content $path -raw -Encoding UTF8).replace(&quot;github.com&quot;,&quot;github.com.cnpmjs.org&quot;).replace(&quot;raw.githubusercontent.com&quot;,&quot;raw.fastgit.org&quot;) | convertfrom-json -ea stop</span><span>&#39;) | </span><span style="color:#96b5b4;">Out-File </span><span>-FilePath $</span><span style="color:#bf616a;">env:SCOOP</span><span>\apps\scoop\current\lib\manifest.ps1
+</span></code></pre>
+<p>安装完成之后通过如下命令中的一条修改配置，更新的时候就可以方便许多。</p>
+<pre data-lang="powershell" style="background-color:#2b303b;color:#c0c5ce;" class="language-powershell "><code class="language-powershell" data-lang="powershell"><span style="color:#65737e;"># https://gitcode.net
+</span><span>scoop config SCOOP_REPO https://gitcode.net/mirrors/ScoopInstaller/Scoop.git
+</span><span style="color:#65737e;">#cnpmjs
+</span><span> scoop config SCOOP_REPO https://</span><span style="color:#96b5b4;">github.com</span><span>.cnpmjs.org/ScoopInstaller/Scoop/
+</span><span style="color:#65737e;">#fastgit
+</span><span> scoop config SCOOP_REPO https://hub.fastgit.org/ScoopInstaller/Scoop/
+</span><span style="color:#65737e;">#gitee
+</span><span> scoop config SCOOP_REPO https://</span><span style="color:#96b5b4;">gitee.com</span><span>/squallliu/scoop
+</span></code></pre>
+<h2 id="an-zhuang-git">安装 Git</h2>
+<p>scoop 使用 git 来管理软件源列表，所以需要安装 git。在上一步安装 scoop 的时候<a href="https://github.com/ScoopInstaller/Scoop/blob/master/bin/install.ps1#L58-L64">安装脚本</a> 会自动下载 main bucket 的压缩包，这个压缩包里面定义了 git 的安装方法，但是其依赖 7zip 使用了 github 的链接，无法访问，会导致安装失败，可以手动修改掉这个链接。</p>
+<h2 id="tian-jia-ruan-jian-yuan-bucket">添加软件源 Bucket</h2>
+<p>scoop 通过 bucket 管理软件源，列表见<a href="https://github.com/ScoopInstaller/Scoop#known-application-buckets">github</a></p>
+<ul>
+<li><a href="https://github.com/ScoopInstaller/Main">main</a> - Default bucket for the most common (mostly CLI) apps</li>
+<li><a href="https://github.com/ScoopInstaller/Extras">extras</a> - Apps that don't fit the main bucket's <a href="https://github.com/ScoopInstaller/Scoop/wiki/Criteria-for-including-apps-in-the-main-bucket">criteria</a></li>
+<li><a href="https://github.com/Calinou/scoop-games">games</a> - Open source/freeware games and game-related tools</li>
+<li><a href="https://github.com/matthewjberger/scoop-nerd-fonts">nerd-fonts</a> - Nerd Fonts</li>
+<li><a href="https://github.com/kodybrown/scoop-nirsoft">nirsoft</a> - Almost all of the <a href="https://rasa.github.io/scoop-directory/by-apps#kodybrown_scoop-nirsoft">250+</a> apps from <a href="https://nirsoft.net">Nirsoft</a></li>
+<li><a href="https://github.com/ScoopInstaller/Java">java</a> - A collection of Java development kits (JDKs), Java runtime engines (JREs), Java's virtual machine debugging tools and Java based runtime engines.</li>
+<li><a href="https://github.com/TheRandomLabs/scoop-nonportable">nonportable</a> - Non-portable apps (may require UAC)</li>
+<li><a href="https://github.com/ScoopInstaller/PHP">php</a> - Installers for most versions of PHP</li>
+<li><a href="https://github.com/ScoopInstaller/Versions">versions</a> - Alternative versions of apps found in other buckets</li>
+</ul>
+<p>此外还可以在<a href="https://rasa.github.io/scoop-directory/by-score.html">这个网站</a>中查找一些社区维护的 bucket：如</p>
+<ul>
+<li><a href="https://github.com/chawyehsu/dorado">dorado</a>:🐟 Yet Another bucket for lovely Scoop</li>
+</ul>
+<h3 id="chang-yong-bucket">常用 bucket</h3>
+<pre data-lang="powershell" style="background-color:#2b303b;color:#c0c5ce;" class="language-powershell "><code class="language-powershell" data-lang="powershell"><span style="color:#65737e;">#scoop bucket remove main
+</span><span>scoop bucket add main &#39;</span><span style="color:#a3be8c;">https://github.com/ScoopInstaller/Main</span><span>&#39;
+</span><span>scoop bucket add extras &#39;</span><span style="color:#a3be8c;">https://github.com/ScoopInstaller/scoop-extras</span><span>&#39;
+</span><span>scoop bucket add versions &#39;</span><span style="color:#a3be8c;">https://github.com/ScoopInstaller/Versions</span><span>&#39;
+</span><span>scoop bucket add jetbrains &#39;</span><span style="color:#a3be8c;">https://github.com/Ash258/Scoop-JetBrains</span><span>&#39;
+</span><span>scoop bucket add java &#39;</span><span style="color:#a3be8c;">https://github.com/ScoopInstaller/Java</span><span>&#39;
+</span><span>scoop bucket add dorado https://</span><span style="color:#96b5b4;">github.com</span><span>/chawyehsu/dorado
+</span><span>scoop bucket add scoopet https://</span><span style="color:#96b5b4;">github.com</span><span>/ivaquero/scoopet
+</span></code></pre>
+<h3 id="scoop-apps">scoop-apps</h3>
+<p>scoop-apps(<a href="https://github.com/kkzzhizhou/scoop-apps">github</a>,<a href="https://gitee.com/kkzzhizhou/scoop-apps">gitee</a>)合并了目前的大多数软件源bucket，其未对仓库软件来源进行安全检验，请自行甄别恶意软件，或者使用杀毒软件</p>
+<pre data-lang="powershell" style="background-color:#2b303b;color:#c0c5ce;" class="language-powershell "><code class="language-powershell" data-lang="powershell"><span>scoop bucket add apps https://</span><span style="color:#96b5b4;">github.com</span><span>/kkzzhizhou/scoop-apps
+</span><span style="color:#65737e;"># 国内网络
+</span><span>scoop bucket add apps https://</span><span style="color:#96b5b4;">gitee.com</span><span>/kkzzhizhou/scoop-apps
+</span></code></pre>
+<h3 id="chang-yong-bucket-de-gitcode-jing-xiang">常用 bucket 的 gitcode 镜像</h3>
+<pre data-lang="powershell" style="background-color:#2b303b;color:#c0c5ce;" class="language-powershell "><code class="language-powershell" data-lang="powershell"><span style="color:#65737e;">#scoop bucket remove main
+</span><span>scoop bucket add main &#39;</span><span style="color:#a3be8c;">https://gitcode.net/mirrors/ScoopInstaller/Main</span><span>&#39;
+</span><span>scoop bucket add extras &#39;</span><span style="color:#a3be8c;">https://gitcode.net/mirrors/ScoopInstaller/scoop-extras</span><span>&#39;
+</span><span>scoop bucket add versions &#39;</span><span style="color:#a3be8c;">https://gitcode.net/mirrors/ScoopInstaller/Versions</span><span>&#39;
+</span><span>scoop bucket add java &#39;</span><span style="color:#a3be8c;">https://gitcode.net/mirrors/ScoopInstaller/Java</span><span>&#39;
+</span></code></pre>
+<h3 id="chang-yong-bucket-de-cnpmjs-jing-xiang">常用 bucket 的 cnpmjs 镜像</h3>
+<pre data-lang="powershell" style="background-color:#2b303b;color:#c0c5ce;" class="language-powershell "><code class="language-powershell" data-lang="powershell"><span style="color:#65737e;">#scoop bucket remove main
+</span><span>scoop bucket add main &#39;</span><span style="color:#a3be8c;">https://github.com.cnpmjs.org/ScoopInstaller/Main</span><span>&#39;
+</span><span>scoop bucket add extras &#39;</span><span style="color:#a3be8c;">https://github.com.cnpmjs.org/ScoopInstaller/scoop-extras</span><span>&#39;
+</span><span>scoop bucket add versions &#39;</span><span style="color:#a3be8c;">https://github.com.cnpmjs.org/ScoopInstaller/Versions</span><span>&#39;
+</span><span>scoop bucket add jetbrains &#39;</span><span style="color:#a3be8c;">https://github.com.cnpmjs.org/Ash258/Scoop-JetBrains</span><span>&#39;
+</span><span>scoop bucket add java &#39;</span><span style="color:#a3be8c;">https://github.com.cnpmjs.org/ScoopInstaller/Java</span><span>&#39;
+</span><span>scoop bucket add dorado &#39;</span><span style="color:#a3be8c;">https://github.com.cnpmjs.org/chawyehsu/dorado</span><span>&#39;
+</span><span>scoop bucket add scoopet &#39;</span><span style="color:#a3be8c;">https://github.com.cnpmjs.org/ivaquero/scoopet</span><span>&#39;
+</span></code></pre>
+<h3 id="chang-yong-bucket-de-fastgit-jing-xiang">常用 bucket 的 fastgit 镜像</h3>
+<pre data-lang="powershell" style="background-color:#2b303b;color:#c0c5ce;" class="language-powershell "><code class="language-powershell" data-lang="powershell"><span style="color:#65737e;">#scoop bucket remove main
+</span><span>scoop bucket add main &#39;</span><span style="color:#a3be8c;">https://hub.fastgit.org/ScoopInstaller/Main</span><span>&#39;
+</span><span>scoop bucket add extras &#39;</span><span style="color:#a3be8c;">https://hub.fastgit.org/ScoopInstaller/scoop-extras</span><span>&#39;
+</span><span>scoop bucket add versions &#39;</span><span style="color:#a3be8c;">https://hub.fastgit.org/ScoopInstaller/Versions</span><span>&#39;
+</span><span>scoop bucket add jetbrains &#39;</span><span style="color:#a3be8c;">https://hub.fastgit.org/Ash258/Scoop-JetBrains</span><span>&#39;
+</span><span>scoop bucket add java &#39;</span><span style="color:#a3be8c;">https://hub.fastgit.org/ScoopInstaller/Java</span><span>&#39;
+</span><span>scoop bucket add dorado &#39;</span><span style="color:#a3be8c;">https://hub.fastgit.org/chawyehsu/dorado</span><span>&#39;
+</span><span>scoop bucket add scoopet &#39;</span><span style="color:#a3be8c;">https://hub.fastgit.org/ivaquero/scoopet</span><span>&#39;
+</span></code></pre>
+<p>在软件安装过程中通常会自动添加<code>main</code> bucket，可以通过<code>scoop bucket rm main</code>删除之后重新添加。之后修改链接可以使用如下内容：</p>
+<pre data-lang="powershell" style="background-color:#2b303b;color:#c0c5ce;" class="language-powershell "><code class="language-powershell" data-lang="powershell"><span> cd $</span><span style="color:#bf616a;">env:SCOOP</span><span>\buckets\Main
+</span><span> git remote </span><span style="color:#96b5b4;">set-url</span><span> origin https://hub.fastgit.org/ScoopInstaller/Main
+</span></code></pre>
+<h2 id="sou-suo-app">搜索 APP</h2>
+<p>可以在网站<a href="https://scoopsearch.github.io/#/apps">https://scoopsearch.github.io/#/apps</a>中搜索软件是否有 bucket 搜录。</p>
+<h2 id="an-zhuang-tui-jian-de-ruan-jian">安装推荐的软件</h2>
+<p>运行<code> scoop checkup</code>安装提示修改注册表，和安装推荐的软件。通常要求安装以下软件</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>scoop install 7zip  innounp  wixtoolset
+</span></code></pre>
+<p>注：在修改注册表来支持长路径时需要在管理员模式运行 powershell</p>
+<h2 id="can-kao-lian-jie">参考链接</h2>
+<ul>
+<li><a href="https://shenbo.github.io/2021/03/23/apps/%E4%BD%BF%E7%94%A8scoop%E5%AE%89%E8%A3%85%E7%AE%A1%E7%90%86windows%E8%BD%AF%E4%BB%B6(2)-github%E5%8A%A0%E9%80%9F/">使用 scoop 安装管理 windows 软件（2）：github 加速</a></li>
+<li>这篇博客同时发布在<a href="https://blog.csdn.net/weixin_44225025/article/details/117401094">CSDN</a>。</li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https://xsro.github.io/tags/scoop/">#SCOOP</a>
+                    
+                        <a href="https://xsro.github.io/tags/windows/">#windows</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;xsro.github.io&#x2F;proxy-mirror-cn&#x2F;">‹ 常用代理与镜像设置方法</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;xsro.github.io&#x2F;git-tips-cn&#x2F;">Git常用拓展知识 ›</a>
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https://xsro.github.io/even.js" ></script>
+      
+    </body>
+
+</html>

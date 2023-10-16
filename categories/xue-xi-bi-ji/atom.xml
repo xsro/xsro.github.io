@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>xsro&#x27;s blog - 学习笔记</title>
+    <link href="https://xsro.github.io/categories/xue-xi-bi-ji/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://xsro.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-03-04T00:00:00+00:00</updated>
+    <id>https://xsro.github.io/categories/xue-xi-bi-ji/atom.xml</id>
+    <entry xml:lang="en">
+        <title>最优化理论复习</title>
+        <published>2023-03-04T00:00:00+00:00</published>
+        <updated>2023-03-04T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/optimization-cn/" type="text/html"/>
+        <id>https://xsro.github.io/optimization-cn/</id>
+        
+        <content type="html">&lt;p&gt;老师的讲课视频在 B 站&lt;a href=&quot;https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1nB4y137j9&quot;&gt;BV1nB4y137j9&lt;&#x2F;a&gt;。
+主要分为数学基础、局部最优化问题求解和全局局部最优化问题，只讲了局部的部分。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;绪论&lt;&#x2F;li&gt;
+&lt;li&gt;单变量优化问题——线搜索
+&lt;ul&gt;
+&lt;li&gt;黄金分割法&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;多变量优化问题
+&lt;ul&gt;
+&lt;li&gt;梯度法&lt;&#x2F;li&gt;
+&lt;li&gt;共轭梯度法&lt;&#x2F;li&gt;
+&lt;li&gt;牛顿法&lt;&#x2F;li&gt;
+&lt;li&gt;拟牛顿法&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;约束优化问题
+&lt;ul&gt;
+&lt;li&gt;约束问题的最优性条件&lt;&#x2F;li&gt;
+&lt;li&gt;可行方向法&lt;&#x2F;li&gt;
+&lt;li&gt;梯度投影法、简约梯度法&lt;&#x2F;li&gt;
+&lt;li&gt;罚函数法&lt;&#x2F;li&gt;
+&lt;li&gt;乘子法&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;xu-lun&quot;&gt;绪论&lt;&#x2F;h2&gt;
+&lt;p&gt;优化问题的表述：在一定的约束下，调整一组可变参数 x，使设计目标 f(x)达到最小值（或最大值）。
+数学表述可以表示为：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;min\ f(\vec{x})\ s.t.\ \vec{x} \in K&lt;&#x2F;script&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;s.t.&lt;&#x2F;code&gt; 是数学中 subject to (such that) 的缩写，表示受约束的意思&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(\vec{x})&lt;&#x2F;script&gt;
+ 是目标函数（实值函数）&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\vec{x}&lt;&#x2F;script&gt;
+为参数向量，&lt;script type=&quot;math&#x2F;tex&quot;&gt;K&lt;&#x2F;script&gt;
+为可行域，即参数能够许可的取值范围&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;进而可以将最优化问题细分为：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;线性规划和非线性规划&lt;&#x2F;strong&gt;问题：可行集是有限维向量空间的子集&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;组合优化或网络规划&lt;&#x2F;strong&gt;：可行集中的元素是离散的&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;动态规划&lt;&#x2F;strong&gt;：可行集是一个依赖时间的决策序列&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;最优控制&lt;&#x2F;strong&gt;：可行集是无穷维空间中的一个连续子集&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;线性最优化问题（线性函数，线性约束）的情况，最有情况出现在端点。
+课程考虑&lt;strong&gt;非线性规划&#x2F;优化&lt;&#x2F;strong&gt;：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\begin{aligned}
+        &amp; min\ f(\vec{x}) \\
+\ s.t.\ &amp; h_i(\vec{x})=0,i=1,\dots,l, \\
+	&amp; g_i(\vec{x})&lt;0,i=1,\dots m, \\
+\end{aligned}&lt;&#x2F;script&gt;
+&lt;h3 id=&quot;zui-you-hua-wen-ti-qiu-jie-de-yi-ban-si-lu&quot;&gt;最优化问题求解的一般思路&lt;&#x2F;h3&gt;
+&lt;p&gt;无约束问题的一般算法框架：&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;step 0 = 给定初始化参数及初始迭代点&lt;script type=&quot;math&#x2F;tex&quot;&gt;x_0&lt;&#x2F;script&gt;
+, 置&lt;script type=&quot;math&#x2F;tex&quot;&gt;k:=0&lt;&#x2F;script&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;step 1 = 若&lt;script type=&quot;math&#x2F;tex&quot;&gt;x_k&lt;&#x2F;script&gt;
+满足某种终止准则，停止迭代，以&lt;script type=&quot;math&#x2F;tex&quot;&gt;x_k&lt;&#x2F;script&gt;
+作为极小点&lt;&#x2F;li&gt;
+&lt;li&gt;step 2 = 通过求解&lt;script type=&quot;math&#x2F;tex&quot;&gt;x_k&lt;&#x2F;script&gt;
+处的某个子问题确定下降方向&lt;script type=&quot;math&#x2F;tex&quot;&gt;x_k&lt;&#x2F;script&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;step 3 = 通过某种搜索方式确定步长因子&lt;script type=&quot;math&#x2F;tex&quot;&gt;\alpha_k&lt;&#x2F;script&gt;
+，使得&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(x_k+\alpha_k d_k)&lt;f(x_k)&lt;&#x2F;script&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;step 4 = 令&lt;script type=&quot;math&#x2F;tex&quot;&gt;x_{k+1}=x_k+\alpha_k d_k&lt;&#x2F;script&gt;
+，&lt;script type=&quot;math&#x2F;tex&quot;&gt;k:=k+1&lt;&#x2F;script&gt;
+，转步 1&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;zui-you-hua-wen-ti-de-shu-xue-ji-chu&quot;&gt;最优化问题的数学基础&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;xian-xing-dai-shu&quot;&gt;线性代数&lt;&#x2F;h3&gt;
+&lt;p&gt;线性代数的核心内容是 &lt;script type=&quot;math&#x2F;tex&quot;&gt;Ax=b&lt;&#x2F;script&gt;
+ 线性代数方程组解的存在性问题，以及如何求解他的问题，
+以及这样的数学结构的问题。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;矩阵行&lt;&#x2F;strong&gt;的含义，A 的每一行是平面线的法向量（线的表达式系数，二维情况），n 个法向量互相不相关，那么方程有唯一解，相关则可能有无数解（共线）或没有解（平行）&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;矩阵列&lt;&#x2F;strong&gt;的含义，相当于 x 是 A 的列向量的加权系数，加权组合结果为 b&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;矩阵行列式&lt;&#x2F;strong&gt;：&lt;script type=&quot;math&#x2F;tex&quot;&gt;Ax=b&lt;&#x2F;script&gt;
+， 向量 x 被 A 左乘后，变成了向量 b，称为线性变换，矩阵 A 的行列式的绝对值表示经过该矩阵变换前后图形的面积之比；符号表示该图形变换后法向是否翻转了&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;矩阵的秩&lt;&#x2F;strong&gt;：将图形变化为线（秩为 1），面（秩为 2），体（秩为 3）&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;矩阵的逆&lt;&#x2F;strong&gt;：一一映射才有逆，行列式为 0 时，矩阵没有逆&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;fan-shu&quot;&gt;范数&lt;&#x2F;h4&gt;
+&lt;p&gt;迭代求解过程中，如何判断点序列是否收敛，需要通过度量来衡量，
+通常用范数来定义这个度量：&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“言为士则、行为世范”出自南朝宋刘义庆著《世说新语》开篇《德行第一》的第一则第一句，
+意思是说言行足以为士人的法则、举世的示范。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;向量的范数必须满足以下条件：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;非负性 &lt;script type=&quot;math&#x2F;tex&quot;&gt;\Vert x\Vert \geq 0&lt;&#x2F;script&gt;
+, &lt;script type=&quot;math&#x2F;tex&quot;&gt;\Vert x\Vert =0, iff x=0&lt;&#x2F;script&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;线性性 &lt;script type=&quot;math&#x2F;tex&quot;&gt;\lambda \Vert x \Vert =\lambda \Vert x \Vert &lt;&#x2F;script&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;三角不等式（又叫广义加）&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Vert x+y \Vert \leq \Vert x \Vert +\Vert y \Vert&lt;&#x2F;script&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;常用向量的 p 范数，&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Vert x \Vert_p=(\sum_{i=1}^{n} |x_i|^p)^\frac{1}{p}&lt;&#x2F;script&gt;
+。&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\lim_{p\to\infty} \Vert x \Vert^p
+=\Vert x\Vert _{max} \lim_{p\to\infty} \left(\sum_{i}(\frac{\Vert x \Vert}{\Vert x\Vert _{max}})^p\right)^\frac{1}{p}&lt;&#x2F;script&gt;
+&lt;p&gt;由于&lt;script type=&quot;math&#x2F;tex&quot;&gt;1 \leq\sum\limits_{i}(\frac{\Vert x \Vert}{\Vert x\Vert _{max}})^p\leq n&lt;&#x2F;script&gt;
+，根据夹逼原理可以得到极限部分为 1，另一个思路是求和里面只有一个底数为 1，其他均小于 1，可以得到结果。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;矩阵范数&lt;&#x2F;strong&gt;，也需要满足非负性，线性性以及三角不等式。为了体现向量的乘法，增加乘法性质。进一步要求相容性：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;乘法性质 &lt;script type=&quot;math&#x2F;tex&quot;&gt;\Vert AB\Vert \leq \Vert A \Vert \Vert B \Vert&lt;&#x2F;script&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;相容性质 &lt;script type=&quot;math&#x2F;tex&quot;&gt;\Vert Ax \Vert \leq \Vert A \Vert \Vert\vec{x}\Vert&lt;&#x2F;script&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;矩阵范数&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Vert \cdot \Vert _{\mu}&lt;&#x2F;script&gt;
+如果满足下列条件，则称为由向量范数的诱导范数（诱导算子）。&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\Vert A \Vert_\mu =sup_{x\neq0} \frac{\Vert Ax \Vert }{\Vert x \Vert}=max_{x=1}\Vert Ax \Vert&lt;&#x2F;script&gt;
+&lt;p&gt;矩阵范数表示单位圆&#x2F;球&#x2F;超球面上的所有向量 x 经过线性变换后得到的所有向量 Ax 中最长的那个的范数，
+或者说表示任向量经过矩阵 A 所代表的线性变换后得到的所有向量中最长的那个的范数与原向量 x 的范数的比值。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;矩阵范数是矩阵长度（大小）的度量&lt;&#x2F;li&gt;
+&lt;li&gt;可以用来判断矩阵是否相等，判断两个矩阵之间的距离&lt;&#x2F;li&gt;
+&lt;li&gt;矩阵范数可以表达经过变换之后向量范数大小的变化&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;各种范数之间具有等价性：&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;设&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Vert \cdot \Vert&lt;&#x2F;script&gt;
+和&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Vert \cdot \Vert&#x27;&lt;&#x2F;script&gt;
+是定义在&lt;script type=&quot;math&#x2F;tex&quot;&gt;R^n&lt;&#x2F;script&gt;
+上的两个向量范数，则存在两个正数&lt;script type=&quot;math&#x2F;tex&quot;&gt;c_1,c_2&lt;&#x2F;script&gt;
+，对所有&lt;script type=&quot;math&#x2F;tex&quot;&gt;x\in R^n&lt;&#x2F;script&gt;
+ 均成立：&lt;script type=&quot;math&#x2F;tex&quot;&gt;c_1 \Vert x\Vert\leq \Vert x \Vert&#x27; \leq c_2\Vert x \Vert&lt;&#x2F;script&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;设&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Vert \cdot \Vert&lt;&#x2F;script&gt;
+和&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Vert \cdot \Vert&#x27;&lt;&#x2F;script&gt;
+是定义在&lt;script type=&quot;math&#x2F;tex&quot;&gt;R^{n\times n}&lt;&#x2F;script&gt;
+上的两个两个范数，则存在两个正数&lt;script type=&quot;math&#x2F;tex&quot;&gt;c_1,c_2&lt;&#x2F;script&gt;
+，对所有&lt;script type=&quot;math&#x2F;tex&quot;&gt;x\in R^n&lt;&#x2F;script&gt;
+ 均成立：&lt;script type=&quot;math&#x2F;tex&quot;&gt;c_1 \Vert A\Vert\leq \Vert A \Vert&#x27; \leq c_2\Vert A \Vert&lt;&#x2F;script&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h4 id=&quot;xiang-liang-1-fan-shu-tui-dao-ju-zhen-lie-he-fan-shu&quot;&gt;向量 1 范数推导矩阵列和范数&lt;&#x2F;h4&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\begin{aligned}
+\Vert A \Vert_1
+&amp;= \max_{x\neq 0} \frac{\Vert Ax \Vert_1}{\Vert x \Vert_1} \\
+\Vert Ax\Vert_1
+&amp;=\sum_{i=1}^{n}\left|\sum_{j=1}^{n}a_{ij}{x_j}\right|
+\leq \sum_{i=1}^{n}\sum_{j=1}^{n}|a_{ij}{x_j}|\\
+&amp;\leq \sum_{i=1}^{n}\sum_{j=1}^{n}|a_{ij}||{x_j}|
+\leq \max_{1\leq j \leq n}(\sum_{i=1}^{n}|a_{ij}|)\cdot \sum_{j=1}^{n}|x_j|\\
+\end{aligned}&lt;&#x2F;script&gt;
+&lt;h4 id=&quot;xiang-liang-wu-qiong-fan-shu-tui-dao-ju-zhen-xing-he-fan-shu&quot;&gt;向量无穷范数推导矩阵行和范数&lt;&#x2F;h4&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\begin{aligned}
+\Vert A \Vert_1
+&amp;= \max_{x\neq 0} \frac{\Vert Ax \Vert_1}{\Vert x \Vert_1} \\
+\Vert Ax\Vert_1
+&amp;=\max_{i=1,\dots,n}\left|\sum_{j=1}^{n}a_{ij}{x_j}\right|
+\leq\max_{i=1,\dots,n}\sum_{j=1}^{n}|a_{ij}{x_j}|\\
+&amp;\leq \max_{i=1,\dots,n}\sum_{j=1}^{n}|a_{ij}||{x_j}|
+\leq \max_{1\leq i \leq n}(\sum_{i=1}^{n}|a_{ij}|)\cdot \sum_{j=1}^{n}|x_j|\\
+\end{aligned}&lt;&#x2F;script&gt;
+&lt;h4 id=&quot;xiang-liang-2-fan-shu-tui-dao-ju-zhen-pu-fan-shu&quot;&gt;向量 2 范数推导矩阵谱范数&lt;&#x2F;h4&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\|A x\|_2^2=x^T A^T A x=(H x)^T \operatorname{diag}\left(\lambda_i\right)(H x)=\sum_{i=1}^n \lambda_i y_i^2 \leq\left(\max _{1 \leq i \leq n} \lambda_i\right)\|y\|_2^2 .&lt;&#x2F;script&gt;
+&lt;p&gt;&lt;strong&gt;以上推导省略等于号情况&lt;&#x2F;strong&gt;，详细推导可以看&lt;a href=&quot;https:&#x2F;&#x2F;www.cnblogs.com&#x2F;fanlumaster&#x2F;p&#x2F;14509223.html&quot;&gt;模糊计算士&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;duo-yuan-han-shu&quot;&gt;多元函数&lt;&#x2F;h3&gt;
+&lt;p&gt;一维泰勒展开&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;f(x)\approx f_0(x)
+=f(x_0)+
+\textcolor{red}{\left.\frac{\partial f}{\partial x}\right|_{x=x_0}}(x-x_0)
++\frac{1}{2}\textcolor{red}{\left.\frac{\partial^2 f}{\partial x^2}\right|_{x=x_0}}(x-x_0)^2&lt;&#x2F;script&gt;
+&lt;p&gt;二维展开&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;f(\vec{x})\approx f_0(\vec{x})
+=f(\vec{x}_0)+
+\textcolor{red}{\left.\nabla f\right|_{\vec{x}=\vec{x}_0}}(\vec{x}-\vec{x}_0)
++\frac{1}{2}(\vec{x}-\vec{x}_0)^T\textcolor{red}{\left.\nabla^2 f\right|_{\vec{x}=\vec{x}_0}}(\vec{x}-\vec{x}_0)&lt;&#x2F;script&gt;
+&lt;p&gt;若函数 f(x)连续可微，则&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;f(\vec{x})\approx f_0(\vec{x})
+=f(\vec{x}_0)
++\textcolor{red}{\left.\nabla f\right|_{\vec{x}=\vec{x}_0}}(\vec{x}-\vec{x}_0)+\textcolor{green}{o(\Vert \vec{x}-\vec{x}_0\Vert)}&lt;&#x2F;script&gt;
+&lt;p&gt;若函数 f(x)二次连续可微，则&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\begin{aligned}
+f(\vec{x})\approx f_0(\vec{x})
+&amp;=f(\vec{x}_0)\\
+&amp;+\textcolor{red}{\left.\nabla f\right|_{\vec{x}=\vec{x}_0}}(\vec{x}-\vec{x}_0)\\
+&amp;+\frac{1}{2}(\vec{x}-\vec{x}_0)^T\textcolor{red}{\left.\nabla^2 f\right|_{\vec{x}=\vec{x}_0}}(\vec{x}-\vec{x}_0)\\
+&amp;+\textcolor{green}{o(\Vert \vec{x}-\vec{x}_0\Vert^2)}\\
+\end{aligned}&lt;&#x2F;script&gt;
+&lt;p&gt;进一步可以推广到函数 &lt;script type=&quot;math&#x2F;tex&quot;&gt;F:R^n\to R^m&lt;&#x2F;script&gt;
+ 的情况，有时称 F 的 Jacobi 矩阵的转置称为 F 的转置。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;tu-ji-yu-tu-han-shu&quot;&gt;凸集与凸函数&lt;&#x2F;h3&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>自动化专业学习回顾</title>
+        <published>2021-09-23T00:00:00+00:00</published>
+        <updated>2021-09-23T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/control/control-student-fight-cn/" type="text/html"/>
+        <id>https://xsro.github.io/control/control-student-fight-cn/</id>
+        
+        <content type="html">&lt;h1 id=&quot;jia-you-ruan-ying-jian-xiu-qiang-ruo-xiang-ji-de-zi-dong-hua-ren-robot-face&quot;&gt;加油，软硬兼修、强弱相济的自动化人 🤖&lt;&#x2F;h1&gt;
+&lt;p&gt;互联网上”全栈“一词比较火热，通常指的是兼具”前端“和”后端“的技术能力丰富的工程人员。
+有调侃说，“全栈”应该转化为“软件+硬件”，可以叫“全干工程师”，我想这不正是自动化学科对我们学生的要求嘛，
+似乎好像还可以加上一句，强电与弱电相结合。&lt;&#x2F;p&gt;
+&lt;p&gt;自动化学科果然是“大杂烩”，啥都学，啥都不精。
+有人称，自动化专业是培养“总工”的专业。
+在一些大学，自动化学院被称为“妈妈”学院，因为它覆盖方向很广，从自动化学院分出了很多细分的学院。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;zi-dong-hua-zhuan-ye-hui-gu&quot;&gt;自动化专业回顾&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;pic4.zhimg.com&#x2F;80&#x2F;v2-f554bb4b02c039263422c446a61c2883_1440w.jpg&quot; alt=&quot;the map of control Theory&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;在课程逐渐减少，即将毕业的大四学年，我想回顾一下在小破学校学的那些专业课。&lt;&#x2F;p&gt;
+&lt;p&gt;首先我们会学习一些基础理论学科，如：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;高等代数&lt;&#x2F;strong&gt;：感觉与经典控制理论最相关的就是&lt;em&gt;积分变换&lt;&#x2F;em&gt;，虽然我们只学了傅里叶变换&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;线性代数&lt;&#x2F;strong&gt;：对于现代控制理论和热门的神经网络的学习非常重要&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;概率论与数理统计&lt;&#x2F;strong&gt;：自动化开始与人工智能积极结合，概率论与数理统计和很多误差理论，人工智能算法有关&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;之后我们会学习控制理论的相关学科，学习如何进行控制系统建模，仿真，设计如：&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;经典控制理论&lt;&#x2F;strong&gt;：研究线性定常系统，以传递函数为代表&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;现代控制理论&lt;&#x2F;strong&gt;：研究多变量、非线性、实变的系统，以状态空间方程为代表&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;智能控制&lt;&#x2F;strong&gt;：在无人干预的情况下能自主地驱动智能机器实现控制目标的自动控制技术，如模糊控制，专家系统，遗传算法，神经网络等&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;一直穿插着我们会学习设计实现一个控制系统需的技术知识，&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;gss0.baidu.com&#x2F;-vo3dSag_xI4khGko9WTAnF6hhy&#x2F;zhidao&#x2F;pic&#x2F;item&#x2F;7a899e510fb30f2457fe1db7c695d143ad4b0319.jpg&quot; alt=&quot;反馈控制基本框图&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;为了设计&lt;strong&gt;测量环节(检测装置)&lt;&#x2F;strong&gt;，我们学习&lt;strong&gt;传感器技术&lt;&#x2F;strong&gt;；&lt;&#x2F;li&gt;
+&lt;li&gt;为了处理采集的信号，我们学习了&lt;strong&gt;信号分析与处理&lt;&#x2F;strong&gt;，&lt;strong&gt;数字图像与视频处理&lt;&#x2F;strong&gt;，学习&lt;strong&gt;模式识别&lt;&#x2F;strong&gt;；&lt;&#x2F;li&gt;
+&lt;li&gt;为了设计&lt;strong&gt;控制器&lt;&#x2F;strong&gt;
+&lt;ul&gt;
+&lt;li&gt;简单的控制规律可以直接使用电路实现，我们会学习&lt;strong&gt;电路&lt;&#x2F;strong&gt;分析，&lt;strong&gt;模拟电子电路&lt;&#x2F;strong&gt;，&lt;strong&gt;数字电子电路&lt;&#x2F;strong&gt;，FPGA 以及&lt;strong&gt;电工&lt;&#x2F;strong&gt;技术等&lt;&#x2F;li&gt;
+&lt;li&gt;复杂的控制规律目前主要使用&lt;em&gt;微型处理器&lt;&#x2F;em&gt;，我们会学习&lt;strong&gt;微机原理与接口技术&lt;&#x2F;strong&gt;和一些专用的计算机处理器的使用方法如：嵌入式，&lt;strong&gt;单片机&lt;&#x2F;strong&gt;，DSP，PLC 等&lt;&#x2F;li&gt;
+&lt;li&gt;如何确定控制算法，控制参数，如何将控制规律转化为程序而使用离散的控制器控制连续的系统，我们学习&lt;strong&gt;计算机控制系统&lt;&#x2F;strong&gt;，通常会使用&lt;em&gt;MATLAB&lt;&#x2F;em&gt;和&lt;em&gt;Simulink&lt;&#x2F;em&gt;等工具来仿真建模。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;为了设计&lt;strong&gt;执行器&lt;&#x2F;strong&gt;，将控制结果（通常为电压较低的弱电信号）作用到被控对象
+&lt;ul&gt;
+&lt;li&gt;针对快变系统，我们学习&lt;strong&gt;电机与拖动技术&lt;&#x2F;strong&gt;，学习&lt;strong&gt;运动控制系统&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;针对慢变系统，我们学习&lt;strong&gt;过程控制系统和仪器仪表&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;为了控制执行器，将弱电信号转化为强电信号，我们学习&lt;strong&gt;电力电子技术&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;为了使得控制更加智能化，&lt;del&gt;蹭一蹭最近特别火热的人工智能&lt;&#x2F;del&gt;，我们还会学习一些人工智能相关的技术：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;人工智能技术，&lt;strong&gt;机器学习&lt;&#x2F;strong&gt;，深度学习&lt;&#x2F;li&gt;
+&lt;li&gt;大数据技术，数据科学，&lt;strong&gt;数据挖掘&lt;&#x2F;strong&gt;，模式识别等相关内容&lt;&#x2F;li&gt;
+&lt;li&gt;人工智能来自控制理论的发展（确信）&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;zi-dong-hua-zhan-wang&quot;&gt;自动化展望&lt;&#x2F;h2&gt;
+&lt;p&gt;正是因为自动化专业“啥都不精”，于是很多人推荐读研，读研可以在一个领域有更深入的理解，
+也正是因为自动化学习内容多，所以可以选择的方向也是很多的。
+学术型硕士可以报考控制科学与工程，当然也可以转计科，转软件，转仪器，转航空
+专业型硕士可以报考电子信息，能源动力等。&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;0811 控制科学与工程&lt;&#x2F;th&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;081101&lt;&#x2F;td&gt;&lt;td&gt;控制理论与控制工程&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;081102&lt;&#x2F;td&gt;&lt;td&gt;检测技术与自动化装置&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;081103&lt;&#x2F;td&gt;&lt;td&gt;系统工程&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;081104&lt;&#x2F;td&gt;&lt;td&gt;模式识别与智能系统&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;081105&lt;&#x2F;td&gt;&lt;td&gt;导航、制导与控制&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;就业可以从事控制理论的研发岗位，进入软件，硬件，机器人等行业，说不定就能一步一步地成为一名总工。&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;人类研究着控制工程，让工业在人类的指导下运行，
+希望人类可以永远不被外物控制，可以只做自己喜欢的事情，
+不被性能指标要求，不必为了成本做裁剪，不必总是重复他人设计的简单控制规则&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;can-kao&quot;&gt;参考&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.zhihu.com&#x2F;question&#x2F;267266116&quot;&gt;控制科学与工程研究生将来的就业方向是什么？ - 知乎 (zhihu.com)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.zhihu.com&#x2F;question&#x2F;31123817&quot;&gt;学习复变函数与积分变换有什么用途？ - 知乎 (zhihu.com)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;控制理论导图来自：&lt;a href=&quot;https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;134556538&quot;&gt;Map of Control Theory v2 by Brian Douglas 中英 知乎&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>A look-back of automation</title>
+        <published>2021-09-23T00:00:00+00:00</published>
+        <updated>2021-09-23T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/control/control-student-fight/" type="text/html"/>
+        <id>https://xsro.github.io/control/control-student-fight/</id>
+        
+        <content type="html">&lt;h1 id=&quot;keep-fighting-boys-and-girls-from-automation-robot-face&quot;&gt;Keep fighting, boys and girls from automation 🤖&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;images.squarespace-cdn.com&#x2F;content&#x2F;v1&#x2F;5b2d76525cfd790c4a218093&#x2F;1618710257013-K60SMQXQAS7Z57WWX810&#x2F;Control_Map_ver5.png?format=1000w&quot; alt=&quot;map of control theory v5&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;In the Internet, the word &#x27;full-stack&#x27; is very hot. It means &#x27;front end&#x27; plus &#x27;back end&#x27; mainly for web software developer.
+We students studing automation should also learn hardware. So we are &#x27;software&#x27; plus &#x27;hardware&#x27; and &#x27;strong electricity&#x27; plus &#x27;weak electricity&#x27;.&lt;&#x2F;p&gt;
+&lt;p&gt;I am learning Automation in NJUPT and I am going to graduate. So I want to spend some time to look back on what I have learnt in my university as an automation student.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;timeline-of-my-learning-of-automation&quot;&gt;Timeline of my learning of Automation&lt;&#x2F;h2&gt;
+&lt;p&gt;First, we learn some Mathematics&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Advanced Mathematics&lt;&#x2F;strong&gt;: we learn some calculus and math, I think &lt;em&gt;integral transformation&lt;&#x2F;em&gt; is the most important part for understanding some classical control theory&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Linear Algebra and Analytic Geometry&lt;&#x2F;strong&gt;: Modern Control theory use &lt;em&gt;State Space Equation&lt;&#x2F;em&gt; and we need Linear Algebra to analyse it.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Probability and Statistics&lt;&#x2F;strong&gt;: Many AI algorithm use Probability principles&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Then we learn Control theory&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Classic Control Theory&lt;&#x2F;strong&gt;: analyse &lt;em&gt;linear time-invariant(LTI) system&lt;&#x2F;em&gt; and mainly use transfer function&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Modern Control Theory&lt;&#x2F;strong&gt;: analyse &lt;em&gt;multi-variable, non-linear, time-variant&lt;&#x2F;em&gt;system and mainly use state space equation&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Intelligent Control&lt;&#x2F;strong&gt;：a class of control techniques that use various artificial intelligence computing approaches like neural networks, Bayesian probability, fuzzy logic, machine learning, reinforcement learning, evolutionary computation and genetic algorithms.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;we learn most technology for designing and making a control system.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;ledin.com&#x2F;wp-content&#x2F;uploads&#x2F;2014&#x2F;12&#x2F;image018-e1419127604485.png&quot; alt=&quot;close loop control system&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;To detect the signal, we learn &lt;strong&gt;Sensor Technology&lt;&#x2F;strong&gt;;&lt;&#x2F;li&gt;
+&lt;li&gt;To process the signal, we learn &lt;strong&gt;signals &amp;amp; Systems&lt;&#x2F;strong&gt;;&lt;&#x2F;li&gt;
+&lt;li&gt;To design a &lt;em&gt;Controller&lt;&#x2F;em&gt;, we learn
+&lt;ul&gt;
+&lt;li&gt;we implement simple control rule with electronic circuit, we learn &lt;strong&gt;circuits&lt;&#x2F;strong&gt;, &lt;strong&gt;Analog Electronic Circuits&lt;&#x2F;strong&gt;, &lt;strong&gt;digital Electronic Circuits&lt;&#x2F;strong&gt;, FPGA and basis &lt;strong&gt;Experiment&lt;&#x2F;strong&gt; of Electrotechnics and Electronic.&lt;&#x2F;li&gt;
+&lt;li&gt;we implement complex control rule with microprocessor. We learn &lt;strong&gt;Microcomputer Principle and Interface Technology&lt;&#x2F;strong&gt;(x86) and some specific processor like &lt;strong&gt;PLC&lt;&#x2F;strong&gt; and Embeded processor (C51 and ARM) in &lt;strong&gt;Embeded System and Application&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;When use microprocessor, we learn &lt;strong&gt;Computer Control system&lt;&#x2F;strong&gt; for using discrete digital controllor to control a continuous process and learn some programming language like &lt;strong&gt;C&lt;&#x2F;strong&gt; language to implement the control rule.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;To design the &lt;em&gt;Actuator&lt;&#x2F;em&gt; and use the control result to control the object
+&lt;ul&gt;
+&lt;li&gt;To control motor we learn &lt;strong&gt;Basis of Electrical Machine and Drives&lt;&#x2F;strong&gt; and &lt;strong&gt;Motion Control Systems&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;To control continuous production processes, we learn &lt;strong&gt;Process Control&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;To control the power for executor, we learn &lt;strong&gt;Power Electronics&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;For design a more intelligent control system, we learn:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Artificial Intelligence, &lt;strong&gt;Machine Learning&lt;&#x2F;strong&gt;, Deep Learning, Reinforce Learning&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Big Data&lt;&#x2F;strong&gt;, Data Mining, Data Science...&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;miro.medium.com&#x2F;max&#x2F;3840&#x2F;1*cjpGPJaaoc9jUX9TpPI20Q.jpeg&quot; alt=&quot;map of AI&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;prospect-on-automation&quot;&gt;Prospect on Automation&lt;&#x2F;h2&gt;
+&lt;p&gt;Many people recommend us to persue a mater&#x27;s degree because as a bachelor, we learn many but we can&#x27;t learn all of the subjects we need to learn well.&lt;&#x2F;p&gt;
+&lt;p&gt;If we want to find a job, we can do software engineer, hardware engineer, robotic engineer.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Writing after some depression of being rejected from persuing master&#x27;s degree&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We human beings learning Control Theory to help our industry works more efficiently and make more fortune.&lt;&#x2F;p&gt;
+&lt;p&gt;I hope we human beings can never be controlled by some simple rules, be evaluated with many criteria and be optimized for the performance.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.ruodian6.com&#x2F;496.html&quot;&gt;弱电和强电的正确英文翻译是什么【全心网络】 (ruodian6.com)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Intelligent_control&quot;&gt;Intelligent control - Wikipedia&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Block diagram of a feedback control system is from Figure 1.1 of &lt;a href=&quot;https:&#x2F;&#x2F;ledin.com&#x2F;control-systems-basics&#x2F;&quot;&gt;Control System Basics | Ledin Engineering, Inc.&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;map of control theory is from = https:&#x2F;&#x2F;engineeringmedia.com&#x2F;map-of-control&lt;&#x2F;li&gt;
+&lt;li&gt;map of ai is from = &lt;a href=&quot;https:&#x2F;&#x2F;medium.com&#x2F;swlh&#x2F;the-map-of-artificial-intelligence-2020-2c4f446f4e43&quot;&gt;The Map of Artificial Intelligence (2020)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>自动控制原理提要</title>
+        <published>2021-09-02T00:00:00+00:00</published>
+        <updated>2021-09-02T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/control/classical-control-myview/" type="text/html"/>
+        <id>https://xsro.github.io/control/classical-control-myview/</id>
+        
+        <content type="html">&lt;h1 id=&quot;kong-zhi-li-lun-gai-lan&quot;&gt;控制理论概览&lt;&#x2F;h1&gt;
+&lt;p&gt;大三学习了《自动控制原理》、《计算机控制系统》、《现代控制理论》，对控制理论有了一个很粗略的了解，整理如下&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;xian-xing-shi-bu-bian-lian-xu-xi-tong&quot;&gt;线性时不变连续系统&lt;&#x2F;h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;域&lt;&#x2F;th&gt;&lt;th&gt;数学模型&lt;&#x2F;th&gt;&lt;th&gt;分析与判断稳定的方法&lt;&#x2F;th&gt;&lt;th&gt;（性能）指标&lt;&#x2F;th&gt;&lt;th&gt;其他&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;时域&lt;&#x2F;td&gt;&lt;td&gt;微分方程&lt;&#x2F;td&gt;&lt;td&gt;赫尔维茨稳定判据、劳斯稳定判据&lt;&#x2F;td&gt;&lt;td&gt;稳定性：稳态误差；准确性：调节时间、超调量；快速性：上升时间、峰值时间&lt;&#x2F;td&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;复频域&lt;&#x2F;td&gt;&lt;td&gt;传递函数&lt;&#x2F;td&gt;&lt;td&gt;负实部、左半平面&lt;&#x2F;td&gt;&lt;td&gt;阻尼比，衰减系数，阻尼振荡频率&lt;&#x2F;td&gt;&lt;td&gt;根轨迹法&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;频域&lt;&#x2F;td&gt;&lt;td&gt;频率特性&lt;&#x2F;td&gt;&lt;td&gt;奈奎斯特稳定判据&lt;&#x2F;td&gt;&lt;td&gt;稳定裕度、频带宽度&lt;&#x2F;td&gt;&lt;td&gt;系统校正&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;状态空间&lt;&#x2F;td&gt;&lt;td&gt;状态空间方程&lt;&#x2F;td&gt;&lt;td&gt;李雅普诺夫方法&lt;&#x2F;td&gt;&lt;td&gt;能控性，能观性&lt;&#x2F;td&gt;&lt;td&gt;状态反馈（极点配置）、状态观测、调节器设计 等&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;ul&gt;
+&lt;li&gt;数学模型常常也包括：结构图和信号流图&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;xian-xing-shi-bu-bian-chi-san-xi-tong&quot;&gt;线性时不变离散系统&lt;&#x2F;h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;域&lt;&#x2F;th&gt;&lt;th&gt;数学模型&lt;&#x2F;th&gt;&lt;th&gt;分析与判断稳定的方法&lt;&#x2F;th&gt;&lt;th&gt;（性能）指标&lt;&#x2F;th&gt;&lt;th&gt;其他&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;时域&lt;&#x2F;td&gt;&lt;td&gt;差分方程&lt;&#x2F;td&gt;&lt;td&gt;朱利判据、w 变换&lt;&#x2F;td&gt;&lt;td&gt;稳定性：稳态误差；准确性：调节时间、超调量；快速性：上升时间、峰值时间&lt;&#x2F;td&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;复频域&lt;&#x2F;td&gt;&lt;td&gt;脉冲传递函数&lt;&#x2F;td&gt;&lt;td&gt;幅值小于 1、单位圆内&lt;&#x2F;td&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;根轨迹法&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;频域&lt;&#x2F;td&gt;&lt;td&gt;频率特性&lt;&#x2F;td&gt;&lt;td&gt;离散系统奈奎斯特稳定判据&lt;&#x2F;td&gt;&lt;td&gt;稳定裕度&lt;&#x2F;td&gt;&lt;td&gt;系统校正&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;状态空间&lt;&#x2F;td&gt;&lt;td&gt;状态空间方程&lt;&#x2F;td&gt;&lt;td&gt;李雅普诺夫方法&lt;&#x2F;td&gt;&lt;td&gt;能控性，能观性&lt;&#x2F;td&gt;&lt;td&gt;状态反馈（极点配置）、状态观测、调节器设计 等&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;ul&gt;
+&lt;li&gt;离散控制系统的经典设计方法（连续域——离散化、直接离散域）等&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>傅里叶、拉普拉斯、Z变换这一串</title>
+        <published>2021-08-30T00:00:00+00:00</published>
+        <updated>2021-08-30T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/control/transfrom-in-control/" type="text/html"/>
+        <id>https://xsro.github.io/control/transfrom-in-control/</id>
+        
+        <content type="html">&lt;h1 id=&quot;signal-strength-san-da-bian-huan-de-shu-xue-tui-dao-guo-cheng&quot;&gt;📶 三大变换的数学推导过程&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\mathscr{F,L,Z}&lt;&#x2F;script&gt;
+傅里叶变换、拉普拉斯变换、Z 变换这三大变换讨论广泛&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#zhihu&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;。个人理解，这三个变换都是为了简化一些难以在时间域分析的问题而引入的。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;拉普拉斯变换是对傅里叶变换的推广，忽略了时域信号时间为负的部分，使得变换也可以适用于&lt;script type=&quot;math&#x2F;tex&quot;&gt;t\rightarrow +\infty&lt;&#x2F;script&gt;
+不为零的信号&lt;&#x2F;li&gt;
+&lt;li&gt;Z 变换是拉普拉斯变换针对离散信号的简化，使得表达式更加便于分析&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;傅里叶变换&lt;&#x2F;th&gt;&lt;th&gt;拉普拉斯变换&lt;&#x2F;th&gt;&lt;th&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;Z&lt;&#x2F;script&gt;
+变换&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;表达式&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;F(\omega)=\int_{-\infty}^{\infty}f(t)e^{-j\omega t}\mathrm{d} t&lt;&#x2F;script&gt;
+&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;F(s)=\int_0^\infty f(t)e^{-st}\mathrm{d}t&lt;&#x2F;script&gt;
+&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;F(z)=\sum\limits_{k=0}^{\infty}f(kT)z^{-k}&lt;&#x2F;script&gt;
+&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;适用范围&lt;&#x2F;td&gt;&lt;td&gt;狄利克雷条件&lt;&#x2F;td&gt;&lt;td&gt;狄利克雷条件的前两条&lt;&#x2F;td&gt;&lt;td&gt;前者+（时间）离散&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;变换域&lt;&#x2F;td&gt;&lt;td&gt;频域&lt;&#x2F;td&gt;&lt;td&gt;复(频)域&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;Z&lt;&#x2F;script&gt;
+域&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;对应系统模型&lt;&#x2F;td&gt;&lt;td&gt;频率特性&lt;&#x2F;td&gt;&lt;td&gt;传递函数&lt;&#x2F;td&gt;&lt;td&gt;脉冲传递函数&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;zhihu&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;1&lt;&#x2F;sup&gt;
+&lt;p&gt;https:&#x2F;&#x2F;www.zhihu.com&#x2F;question&#x2F;22085329&#x2F;answer&#x2F;26047106&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;shu-xue-yan-bian-guo-cheng&quot;&gt;数学演变过程&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;zhou-qi-han-shu-de-fu-li-xie-ji-shu&quot;&gt;周期函数的傅里叶级数&lt;&#x2F;h3&gt;
+&lt;p&gt;周期为 T 的任一周期函数&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(t)&lt;&#x2F;script&gt;
+，若满足下列&lt;em&gt;狄利克雷条件&lt;&#x2F;em&gt;(Dirichlet conditions&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#dirichlet-conditions&quot;&gt;2&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;）：&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;在一个周期内只有有限个不连续点&lt;&#x2F;li&gt;
+&lt;li&gt;在一个周期内只有有限个极值点(注：函数连续是条件 1、2 的充分非必要条件)&lt;&#x2F;li&gt;
+&lt;li&gt;周期内绝对可积：积分&lt;script type=&quot;math&#x2F;tex&quot;&gt;\int^{\frac{T}{2}}_{-\frac{T}{2}} |f(t)| \mathrm{d}t&lt;&#x2F;script&gt;
+ 存在&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;则&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(t)&lt;&#x2F;script&gt;
+可展开为如下的傅里叶级数：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;f(t)=\frac{1}{2} a_0 + \sum\limits_{n=1}^{\infty} (a_n \cos{n\omega_0 t}+b_n\sin{n \omega_0 t})&lt;&#x2F;script&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;dirichlet-conditions&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;2&lt;&#x2F;sup&gt;
+&lt;p&gt;又叫傅里叶级数收敛条件，&lt;a href=&quot;https:&#x2F;&#x2F;baike.baidu.com&#x2F;item&#x2F;%E7%8B%84%E5%88%A9%E5%85%8B%E9%9B%B7%E6%9D%A1%E4%BB%B6&#x2F;3807787&quot;&gt;百度百科&lt;&#x2F;a&gt; &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Dirichlet_conditions&quot;&gt;wikipedia&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;式中，系数&lt;script type=&quot;math&#x2F;tex&quot;&gt;a_n&lt;&#x2F;script&gt;
+和&lt;script type=&quot;math&#x2F;tex&quot;&gt;b_n&lt;&#x2F;script&gt;
+由&lt;em&gt;欧拉—傅里叶系数公式&lt;&#x2F;em&gt;给出，其中&lt;script type=&quot;math&#x2F;tex&quot;&gt;\omega_0=\frac{2\pi}{T}&lt;&#x2F;script&gt;
+称为角频率。&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;a_n=\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \cos{n \omega_0 t}\mathrm{d} t,
+n=0,1,2,\dots,\infty&lt;&#x2F;script&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;b_n=\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \sin{n \omega_0 t}\mathrm{d} t,
+n=1,2,\dots,\infty&lt;&#x2F;script&gt;
+&lt;p&gt;推导&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#p222&quot;&gt;3&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;：分别对&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(x),f(x)\cos kx, f(x)\sin kx&lt;&#x2F;script&gt;
+在周期&lt;script type=&quot;math&#x2F;tex&quot;&gt;[-\frac{T}{2},\frac{T}{2}]&lt;&#x2F;script&gt;
+上积分。&lt;&#x2F;p&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;p222&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;3&lt;&#x2F;sup&gt;
+&lt;p&gt;赵洪牛.《高等数学》第二版 下册 P222&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h4 id=&quot;fu-li-xie-ji-shu-de-zhi-shu-xing-shi&quot;&gt;傅里叶级数的指数形式&lt;&#x2F;h4&gt;
+&lt;p&gt;周期函数&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(t)&lt;&#x2F;script&gt;
+的傅里叶级数还可以写成复数形式（指数形式）：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;f(t)=\sum_{n=-\infty}^{\infty} \alpha _n e^{jn\omega_0 t}&lt;&#x2F;script&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\alpha_n=\frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}}
+f(t)e^{-jn\omega_0 t} \mathrm{d} t&lt;&#x2F;script&gt;
+&lt;p&gt;推导：运用欧拉公式&lt;script type=&quot;math&#x2F;tex&quot;&gt;e^{i\theta}=\cos\theta + \sin \theta&lt;&#x2F;script&gt;
+&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;fei-zhou-qi-han-shu-de-fu-li-xie-ji-fen-shi-zi&quot;&gt;非周期函数的傅里叶积分式子&lt;&#x2F;h4&gt;
+&lt;p&gt;对于非周期函数，可以认为周期&lt;script type=&quot;math&#x2F;tex&quot;&gt;T\rightarrow \infty&lt;&#x2F;script&gt;
+，此时&lt;script type=&quot;math&#x2F;tex&quot;&gt;\omega_ 0=\frac{2\pi}{T}\rightarrow 0&lt;&#x2F;script&gt;
+，为了方便讨论可以将&lt;script type=&quot;math&#x2F;tex&quot;&gt;n\omega_0&lt;&#x2F;script&gt;
+记为&lt;script type=&quot;math&#x2F;tex&quot;&gt;\omega&lt;&#x2F;script&gt;
+，&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Delta \omega=(n+1)\omega_0-n\omega_0=\omega_0&lt;&#x2F;script&gt;
+，那么傅里叶级数可以写成如下形式：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;f(t)=\int_{-\infty}^{\infty} \alpha _n e^{j\omega t}\mathrm{d}\omega,
+\alpha_n=\frac{\Delta\omega}{2\pi} \int_{-\frac{T}{2}}^{\frac{T}{2}}
+f(t)e^{-j\omega t} \mathrm{d} t&lt;&#x2F;script&gt;
+&lt;p&gt;合并为&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\begin{aligned}
+f(t)=&amp;\sum_{n=-\infty}^{\infty} \frac{\Delta\omega}{2\pi} \left[\int_{-\infty}^{\infty}
+f(t)e^{-j\omega t} \mathrm{d} t\right] e^{j\omega t}
+\\
+=&amp;\frac{1}{2\pi}\sum_{n=-\infty}^{\infty} \left[\int_{-\infty}^{\infty}
+f(t)e^{-j\omega t} \mathrm{d} t\right] e^{j\omega t} \Delta \omega
+\\
+=&amp;\frac{1}{2\pi}\int_{-\infty}^{\infty} \left[\int_{-\infty}^{\infty}
+f(t)e^{-j\omega t} \mathrm{d} t\right] e^{j\omega t} \mathrm{d} \omega
+\end{aligned}&lt;&#x2F;script&gt;
+&lt;p&gt;将中括号中的内容记作&lt;script type=&quot;math&#x2F;tex&quot;&gt;F(\omega)&lt;&#x2F;script&gt;
+即为傅里叶变换式。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;fu-li-xie-bian-huan&quot;&gt;傅里叶变换&lt;&#x2F;h3&gt;
+&lt;p&gt;对于非周期函数，如果满足狄利克雷条件（第三条相应改为&lt;script type=&quot;math&#x2F;tex&quot;&gt;\int^{\infty}_{-\infty} |f(t)| \mathrm{d}t&lt;&#x2F;script&gt;
+），可以进行傅里叶变换：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;F(\omega)=\mathscr{F}[f(t)]=\int_{-\infty}^{\infty}f(t)e^{-j\omega t}\mathrm{d} t&lt;&#x2F;script&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;f(t)=\mathscr{F}^{-1}[F(\omega)]=\frac{1}{2\pi}\int_{-\infty}^{\infty}F(\omega)e^{j\omega t} \mathrm{d} \omega&lt;&#x2F;script&gt;
+&lt;h3 id=&quot;la-pu-la-si-bian-huan&quot;&gt;拉普拉斯变换&lt;&#x2F;h3&gt;
+&lt;p&gt;狄利克雷条件的第三个可积条件，要求函数在&lt;script type=&quot;math&#x2F;tex&quot;&gt;t\rightarrow \infty&lt;&#x2F;script&gt;
+时收敛，而现实中大量信号不满足该条件，为了解决该问题，引入衰减因子&lt;script type=&quot;math&#x2F;tex&quot;&gt;e^{-\sigma t},\sigma&gt;0&lt;&#x2F;script&gt;
+，并只考虑&lt;script type=&quot;math&#x2F;tex&quot;&gt;t\ge 0&lt;&#x2F;script&gt;
+的部分&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#ignore-past&quot;&gt;4&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;，这样函数&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(t)e^{-\sigma t}&lt;&#x2F;script&gt;
+在&lt;script type=&quot;math&#x2F;tex&quot;&gt;t &gt; 0&lt;&#x2F;script&gt;
+下便可以满足可积条件。&lt;&#x2F;p&gt;
+&lt;p&gt;于是有：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;F_\sigma(\omega)
+=\mathscr{F}[f(t)e^{-\sigma t}]
+=\int_{-\infty}^{\infty}f(t)e^{-\sigma t}e^{-j\omega t}\mathrm{d} t&lt;&#x2F;script&gt;
+&lt;p&gt;记&lt;script type=&quot;math&#x2F;tex&quot;&gt;s=\sigma+j\omega&lt;&#x2F;script&gt;
+，&lt;script type=&quot;math&#x2F;tex&quot;&gt;F(s)=F\_\sigma(\frac{s-\sigma}{j})=F_\sigma(\omega)&lt;&#x2F;script&gt;
+，并认为&lt;script type=&quot;math&#x2F;tex&quot;&gt;t&lt;0&lt;&#x2F;script&gt;
+时，函数为零，于是有：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;F(s)=\mathscr{L}[f(t)]=\int_0^\infty f(t)e^{-st}\mathrm{d}t&lt;&#x2F;script&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;f(t)=\mathscr{L}^{-1}[F(s)]=
+\frac{1}{2\pi j}\int_{\sigma-j\infty}^{\sigma + j\infty} f(t) e^{st} \mathrm{d} t&lt;&#x2F;script&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;ignore-past&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;4&lt;&#x2F;sup&gt;
+&lt;p&gt;在控制系统等领域，经常忽略&lt;script type=&quot;math&#x2F;tex&quot;&gt;t&lt;0&lt;&#x2F;script&gt;
+的部分，用&lt;a href=&quot;https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;galieluo&quot;&gt;J Pan&lt;&#x2F;a&gt;的话来说，小于零的部分是哲学家考虑的问题&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h3 id=&quot;z-bian-huan&quot;&gt;Z 变换&lt;&#x2F;h3&gt;
+&lt;p&gt;现实中的信号都可以认为是连续模拟信号，而处理时通常需要将其采样成离散信号。&lt;&#x2F;p&gt;
+&lt;p&gt;通常记&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(t)&lt;&#x2F;script&gt;
+为连续信号，
+&lt;script type=&quot;math&#x2F;tex&quot;&gt;f^\star(t)&lt;&#x2F;script&gt;
+为其对应的离散采样信号，
+对于理想采样情况，采样信号可以表示为：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;f^\star(t)
+=f(t)\times \sum\limits_{k=0}^{\infty}\delta(t-kT)
+=\sum\limits_{k=0}^{\infty}f(kT)\delta(t-kT)&lt;&#x2F;script&gt;
+&lt;p&gt;对采样后的离散信号，进行拉普拉斯变换&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\begin{aligned}
+F^\star(s)&amp;=\mathscr{L}\left[ f^\star(t)\right]
+=\int_0^\infty f^\star(t)e^{-st}\mathrm{d}t\\
+&amp;=\sum\limits_{k=0}^{\infty} f(kT) e^{-skT}\\
+\end{aligned}&lt;&#x2F;script&gt;
+&lt;p&gt;可见 &lt;script type=&quot;math&#x2F;tex&quot;&gt;F^\star(s)&lt;&#x2F;script&gt;
+是 s 的超越函数&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#transcendental-functions&quot;&gt;5&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;（指数函数），难以使用分析。
+故引入变量&lt;script type=&quot;math&#x2F;tex&quot;&gt;z=e^{sT}&lt;&#x2F;script&gt;
+,&lt;script type=&quot;math&#x2F;tex&quot;&gt;s=\frac{1}{T}lnz&lt;&#x2F;script&gt;
+&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;F(z)=F^\star(s)|\_{s=\frac{1}{T}lnz}
+=\sum\limits\_{k=0}^{\infty}f(kT)z^{-k}&lt;&#x2F;script&gt;
+&lt;p&gt;于是便得到 Z 变换的表达式（是 z 的幂函数）。&lt;&#x2F;p&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;transcendental-functions&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;5&lt;&#x2F;sup&gt;
+&lt;p&gt;超越函数 &lt;a href=&quot;https:&#x2F;&#x2F;baike.baidu.com&#x2F;item&#x2F;%E8%B6%85%E8%B6%8A%E5%87%BD%E6%95%B0&#x2F;3365811&quot;&gt;百度百科&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+</content>
+        
+    </entry>
+</feed>

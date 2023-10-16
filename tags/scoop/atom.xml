@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>xsro&#x27;s blog - SCOOP</title>
+    <link href="https://xsro.github.io/tags/scoop/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://xsro.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2022-01-25T00:00:00+00:00</updated>
+    <id>https://xsro.github.io/tags/scoop/atom.xml</id>
+    <entry xml:lang="en">
+        <title>windows系统安装Scoop包管理工具</title>
+        <published>2022-01-25T00:00:00+00:00</published>
+        <updated>2022-01-25T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/install-scoop-with-mirror-cn/" type="text/html"/>
+        <id>https://xsro.github.io/install-scoop-with-mirror-cn/</id>
+        
+        <content type="html">&lt;p&gt;&lt;strong&gt;该内容似乎已经过时&lt;&#x2F;strong&gt;，因为目前&lt;a href=&quot;https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;360677731&quot;&gt;似乎&lt;&#x2F;a&gt;github.com.cnpmjs.org 和 hub.fastgit.org 镜像均无法使用&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;windows-xi-tong-an-zhuang-scoop-bao-guan-li-gong-ju&quot;&gt;windows 系统安装 Scoop 包管理工具&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;scoop.sh&#x2F;&quot;&gt;https:&#x2F;&#x2F;scoop.sh&#x2F;&lt;&#x2F;a&gt;是一款 windows 系统下的包管理工具，根据官网只需要以下命令即可安装。&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span&gt;iwr -useb get.scoop.sh | iex
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#Note = if you get an error you might need to change the execution policy (i.e. enable Powershell) with
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;Set-ExecutionPolicy&lt;&#x2F;span&gt;&lt;span&gt; RemoteSigned -scope CurrentUser
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;实际使用中，通常需要镜像加速以及修改安装位置，所以结合文章&lt;a href=&quot;https:&#x2F;&#x2F;blog.csdn.net&#x2F;luoyooi&#x2F;article&#x2F;details&#x2F;102990113&quot;&gt;Windows 下 Scoop 安装、配置与使用&lt;&#x2F;a&gt;，在此，我记录一下我的安装过程。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;an-zhuang-scoop&quot;&gt;安装 SCOOP&lt;&#x2F;h2&gt;
+&lt;p&gt;由于我的 C 盘空间有限，&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Scoop#installation&quot;&gt;可以修改安装位置&lt;&#x2F;a&gt;我将目标目录修改为&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#将Scoop安装到自定义目录(命令行方式),默认为C:\Users&amp;lt;user&amp;gt;\scoop
+&lt;&#x2F;span&gt;&lt;span&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;env:SCOOP&lt;&#x2F;span&gt;&lt;span&gt;=&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;D:\Applications\Scoop&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;Environment&lt;&#x2F;span&gt;&lt;span&gt;]::SetEnvironmentVariable(&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;SCOOP&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;, $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;env:SCOOP&lt;&#x2F;span&gt;&lt;span&gt;, &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;User&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#将Scoop配置为将全局程序安装到自定义目录 SCOOP_GLOBAL(命令行方式),默认为C:\ProgramData\scoop
+&lt;&#x2F;span&gt;&lt;span&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;env:SCOOP_GLOBAL&lt;&#x2F;span&gt;&lt;span&gt;=&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;D:\Applications\GlobalScoopApps&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;Environment&lt;&#x2F;span&gt;&lt;span&gt;]::SetEnvironmentVariable(&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;SCOOP_GLOBAL&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;, $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;env:SCOOP_GLOBAL&lt;&#x2F;span&gt;&lt;span&gt;, &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;Machine&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;我的网络质量不佳，无法直接使用&lt;code&gt;iwr -useb get.scoop.sh | iex&lt;&#x2F;code&gt;安装，可以借助镜像，来实现安装，下面的脚本会自动替换掉安装脚本中的 github 的链接。&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#可能需要通过下面的命令设置权限之后再安装
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;Set-ExecutionPolicy&lt;&#x2F;span&gt;&lt;span&gt; RemoteSigned -scope CurrentUser
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#iwr -useb get.scoop.sh | iex
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#网络慢可以使用下面替换为cnpm和fastgit的链接
+&lt;&#x2F;span&gt;&lt;span&gt;iwr -useb https:&#x2F;&#x2F;raw.fastgit.org&#x2F;ScoopInstaller&#x2F;Scoop&#x2F;master&#x2F;bin&#x2F;install.ps1 | &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;%&lt;&#x2F;span&gt;&lt;span&gt;{$_&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;.Content.replace&lt;&#x2F;span&gt;&lt;span&gt;(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;github.com&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;,&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;github.com.cnpmjs.org&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;).replace(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;raw.githubusercontent.com&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;,&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;raw.fastgit.org&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;) | iex
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;上面这个命令&lt;strong&gt;应该&lt;&#x2F;strong&gt;可以正常安装 scoop 程序，但是当需要使用 scoop 安装其他程序时可能会出现问题，
+可以手动将文件&lt;code&gt;$env:SCOOP\apps\scoop\current\lib\manifest.ps1&lt;&#x2F;code&gt;中读取 json 文件的命令(如下 👇🏻 第一条命令)
+替换为下面的第二条命令，从而实现自动替换掉 github 链接。&lt;&#x2F;p&gt;
+&lt;p&gt;也可在 powershell 中运行下面的第三条命令修改 scoop 源码，使得 scoop 安装其他程序时自动替换掉 github 链接。&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#1原命令
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;Get-Content &lt;&#x2F;span&gt;&lt;span&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;path &lt;&#x2F;span&gt;&lt;span&gt;-raw -Encoding UTF8 | &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;convertfrom-json &lt;&#x2F;span&gt;&lt;span&gt;-ea stop
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#2替换为
+&lt;&#x2F;span&gt;&lt;span&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;Get-Content &lt;&#x2F;span&gt;&lt;span&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;path &lt;&#x2F;span&gt;&lt;span&gt;-raw -Encoding UTF8).replace(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;github.com&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;,&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;github.com.cnpmjs.org&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;).replace(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;raw.githubusercontent.com&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;,&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;raw.fastgit.org&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;) | &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;convertfrom-json &lt;&#x2F;span&gt;&lt;span&gt;-ea stop
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#3可以使用下面的命令自动完成替换操作
+&lt;&#x2F;span&gt;&lt;span&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;Get-Content &lt;&#x2F;span&gt;&lt;span&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;env:SCOOP&lt;&#x2F;span&gt;&lt;span&gt;\apps\scoop\current\lib\manifest.ps1 -raw).replace(&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;Get-Content $path -raw -Encoding UTF8 | convertfrom-json -ea stop&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;,&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;$(Get-Content $path -raw -Encoding UTF8).replace(&amp;quot;github.com&amp;quot;,&amp;quot;github.com.cnpmjs.org&amp;quot;).replace(&amp;quot;raw.githubusercontent.com&amp;quot;,&amp;quot;raw.fastgit.org&amp;quot;) | convertfrom-json -ea stop&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;) | &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;Out-File &lt;&#x2F;span&gt;&lt;span&gt;-FilePath $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;env:SCOOP&lt;&#x2F;span&gt;&lt;span&gt;\apps\scoop\current\lib\manifest.ps1
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;安装完成之后通过如下命令中的一条修改配置，更新的时候就可以方便许多。&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# https:&#x2F;&#x2F;gitcode.net
+&lt;&#x2F;span&gt;&lt;span&gt;scoop config SCOOP_REPO https:&#x2F;&#x2F;gitcode.net&#x2F;mirrors&#x2F;ScoopInstaller&#x2F;Scoop.git
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#cnpmjs
+&lt;&#x2F;span&gt;&lt;span&gt; scoop config SCOOP_REPO https:&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;github.com&lt;&#x2F;span&gt;&lt;span&gt;.cnpmjs.org&#x2F;ScoopInstaller&#x2F;Scoop&#x2F;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#fastgit
+&lt;&#x2F;span&gt;&lt;span&gt; scoop config SCOOP_REPO https:&#x2F;&#x2F;hub.fastgit.org&#x2F;ScoopInstaller&#x2F;Scoop&#x2F;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#gitee
+&lt;&#x2F;span&gt;&lt;span&gt; scoop config SCOOP_REPO https:&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;gitee.com&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;squallliu&#x2F;scoop
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;an-zhuang-git&quot;&gt;安装 Git&lt;&#x2F;h2&gt;
+&lt;p&gt;scoop 使用 git 来管理软件源列表，所以需要安装 git。在上一步安装 scoop 的时候&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Scoop&#x2F;blob&#x2F;master&#x2F;bin&#x2F;install.ps1#L58-L64&quot;&gt;安装脚本&lt;&#x2F;a&gt; 会自动下载 main bucket 的压缩包，这个压缩包里面定义了 git 的安装方法，但是其依赖 7zip 使用了 github 的链接，无法访问，会导致安装失败，可以手动修改掉这个链接。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;tian-jia-ruan-jian-yuan-bucket&quot;&gt;添加软件源 Bucket&lt;&#x2F;h2&gt;
+&lt;p&gt;scoop 通过 bucket 管理软件源，列表见&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Scoop#known-application-buckets&quot;&gt;github&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Main&quot;&gt;main&lt;&#x2F;a&gt; - Default bucket for the most common (mostly CLI) apps&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Extras&quot;&gt;extras&lt;&#x2F;a&gt; - Apps that don&#x27;t fit the main bucket&#x27;s &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Scoop&#x2F;wiki&#x2F;Criteria-for-including-apps-in-the-main-bucket&quot;&gt;criteria&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Calinou&#x2F;scoop-games&quot;&gt;games&lt;&#x2F;a&gt; - Open source&#x2F;freeware games and game-related tools&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;matthewjberger&#x2F;scoop-nerd-fonts&quot;&gt;nerd-fonts&lt;&#x2F;a&gt; - Nerd Fonts&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;kodybrown&#x2F;scoop-nirsoft&quot;&gt;nirsoft&lt;&#x2F;a&gt; - Almost all of the &lt;a href=&quot;https:&#x2F;&#x2F;rasa.github.io&#x2F;scoop-directory&#x2F;by-apps#kodybrown_scoop-nirsoft&quot;&gt;250+&lt;&#x2F;a&gt; apps from &lt;a href=&quot;https:&#x2F;&#x2F;nirsoft.net&quot;&gt;Nirsoft&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Java&quot;&gt;java&lt;&#x2F;a&gt; - A collection of Java development kits (JDKs), Java runtime engines (JREs), Java&#x27;s virtual machine debugging tools and Java based runtime engines.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;TheRandomLabs&#x2F;scoop-nonportable&quot;&gt;nonportable&lt;&#x2F;a&gt; - Non-portable apps (may require UAC)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;PHP&quot;&gt;php&lt;&#x2F;a&gt; - Installers for most versions of PHP&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Versions&quot;&gt;versions&lt;&#x2F;a&gt; - Alternative versions of apps found in other buckets&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;此外还可以在&lt;a href=&quot;https:&#x2F;&#x2F;rasa.github.io&#x2F;scoop-directory&#x2F;by-score.html&quot;&gt;这个网站&lt;&#x2F;a&gt;中查找一些社区维护的 bucket：如&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;chawyehsu&#x2F;dorado&quot;&gt;dorado&lt;&#x2F;a&gt;:🐟 Yet Another bucket for lovely Scoop&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;chang-yong-bucket&quot;&gt;常用 bucket&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#scoop bucket remove main
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add main &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Main&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add extras &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;scoop-extras&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add versions &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Versions&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add jetbrains &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;Ash258&#x2F;Scoop-JetBrains&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add java &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Java&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add dorado https:&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;github.com&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;chawyehsu&#x2F;dorado
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add scoopet https:&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;github.com&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;ivaquero&#x2F;scoopet
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;scoop-apps&quot;&gt;scoop-apps&lt;&#x2F;h3&gt;
+&lt;p&gt;scoop-apps(&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;kkzzhizhou&#x2F;scoop-apps&quot;&gt;github&lt;&#x2F;a&gt;,&lt;a href=&quot;https:&#x2F;&#x2F;gitee.com&#x2F;kkzzhizhou&#x2F;scoop-apps&quot;&gt;gitee&lt;&#x2F;a&gt;)合并了目前的大多数软件源bucket，其未对仓库软件来源进行安全检验，请自行甄别恶意软件，或者使用杀毒软件&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span&gt;scoop bucket add apps https:&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;github.com&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;kkzzhizhou&#x2F;scoop-apps
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# 国内网络
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add apps https:&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;gitee.com&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;kkzzhizhou&#x2F;scoop-apps
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;chang-yong-bucket-de-gitcode-jing-xiang&quot;&gt;常用 bucket 的 gitcode 镜像&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#scoop bucket remove main
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add main &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;gitcode.net&#x2F;mirrors&#x2F;ScoopInstaller&#x2F;Main&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add extras &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;gitcode.net&#x2F;mirrors&#x2F;ScoopInstaller&#x2F;scoop-extras&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add versions &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;gitcode.net&#x2F;mirrors&#x2F;ScoopInstaller&#x2F;Versions&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add java &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;gitcode.net&#x2F;mirrors&#x2F;ScoopInstaller&#x2F;Java&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;chang-yong-bucket-de-cnpmjs-jing-xiang&quot;&gt;常用 bucket 的 cnpmjs 镜像&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#scoop bucket remove main
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add main &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com.cnpmjs.org&#x2F;ScoopInstaller&#x2F;Main&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add extras &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com.cnpmjs.org&#x2F;ScoopInstaller&#x2F;scoop-extras&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add versions &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com.cnpmjs.org&#x2F;ScoopInstaller&#x2F;Versions&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add jetbrains &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com.cnpmjs.org&#x2F;Ash258&#x2F;Scoop-JetBrains&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add java &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com.cnpmjs.org&#x2F;ScoopInstaller&#x2F;Java&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add dorado &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com.cnpmjs.org&#x2F;chawyehsu&#x2F;dorado&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add scoopet &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com.cnpmjs.org&#x2F;ivaquero&#x2F;scoopet&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;chang-yong-bucket-de-fastgit-jing-xiang&quot;&gt;常用 bucket 的 fastgit 镜像&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#scoop bucket remove main
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add main &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;hub.fastgit.org&#x2F;ScoopInstaller&#x2F;Main&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add extras &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;hub.fastgit.org&#x2F;ScoopInstaller&#x2F;scoop-extras&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add versions &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;hub.fastgit.org&#x2F;ScoopInstaller&#x2F;Versions&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add jetbrains &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;hub.fastgit.org&#x2F;Ash258&#x2F;Scoop-JetBrains&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add java &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;hub.fastgit.org&#x2F;ScoopInstaller&#x2F;Java&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add dorado &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;hub.fastgit.org&#x2F;chawyehsu&#x2F;dorado&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add scoopet &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;hub.fastgit.org&#x2F;ivaquero&#x2F;scoopet&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;在软件安装过程中通常会自动添加&lt;code&gt;main&lt;&#x2F;code&gt; bucket，可以通过&lt;code&gt;scoop bucket rm main&lt;&#x2F;code&gt;删除之后重新添加。之后修改链接可以使用如下内容：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span&gt; cd $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;env:SCOOP&lt;&#x2F;span&gt;&lt;span&gt;\buckets\Main
+&lt;&#x2F;span&gt;&lt;span&gt; git remote &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;set-url&lt;&#x2F;span&gt;&lt;span&gt; origin https:&#x2F;&#x2F;hub.fastgit.org&#x2F;ScoopInstaller&#x2F;Main
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;sou-suo-app&quot;&gt;搜索 APP&lt;&#x2F;h2&gt;
+&lt;p&gt;可以在网站&lt;a href=&quot;https:&#x2F;&#x2F;scoopsearch.github.io&#x2F;#&#x2F;apps&quot;&gt;https:&#x2F;&#x2F;scoopsearch.github.io&#x2F;#&#x2F;apps&lt;&#x2F;a&gt;中搜索软件是否有 bucket 搜录。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;an-zhuang-tui-jian-de-ruan-jian&quot;&gt;安装推荐的软件&lt;&#x2F;h2&gt;
+&lt;p&gt;运行&lt;code&gt; scoop checkup&lt;&#x2F;code&gt;安装提示修改注册表，和安装推荐的软件。通常要求安装以下软件&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;scoop install 7zip  innounp  wixtoolset
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;注：在修改注册表来支持长路径时需要在管理员模式运行 powershell&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;can-kao-lian-jie&quot;&gt;参考链接&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;shenbo.github.io&#x2F;2021&#x2F;03&#x2F;23&#x2F;apps&#x2F;%E4%BD%BF%E7%94%A8scoop%E5%AE%89%E8%A3%85%E7%AE%A1%E7%90%86windows%E8%BD%AF%E4%BB%B6(2)-github%E5%8A%A0%E9%80%9F&#x2F;&quot;&gt;使用 scoop 安装管理 windows 软件（2）：github 加速&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;这篇博客同时发布在&lt;a href=&quot;https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_44225025&#x2F;article&#x2F;details&#x2F;117401094&quot;&gt;CSDN&lt;&#x2F;a&gt;。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

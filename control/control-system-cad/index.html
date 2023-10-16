@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+      
+    
+
+      <title>xsro&#x27;s blog - Computer-Aided Control Systems Design = Introduction and Historical Overview</title>
+
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/mathtex-script-type.min.js" integrity="sha384-zWYbd0NBwgTsgIdFKVprSfTh1mbMPe5Hz1X3yY4Sd1h/K1cQoUe36OGwAGz/PcDy" crossorigin="anonymous"></script>
+              
+          
+      
+
+      
+          <link rel="stylesheet" href="https://xsro.github.io/site.css">
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">光侨路笔记</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;categories">
+                            Categories
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;xsro.github.io">光侨路笔记</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;categories">
+                                    Categories
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://xsro.github.io/control/control-system-cad/#infomation" class="toc-link">infomation</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://xsro.github.io/control/control-system-cad/#abstract" class="toc-link">Abstract</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://xsro.github.io/control/control-system-cad/#introduction" class="toc-link">Introduction</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://xsro.github.io/control/control-system-cad/#development-of-cacsd-tools" class="toc-link">Development of CACSD tools</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/control/control-system-cad/#modelling-and-simulation-tools" class="toc-link">Modelling and simulation tools</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/control/control-system-cad/#numerical-software-tools" class="toc-link">Numerical software tools</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/control/control-system-cad/#interactive-tools" class="toc-link">Interactive tools</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://xsro.github.io/control/control-system-cad/#summary-and-future-directions" class="toc-link">Summary and Future Directions</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://xsro.github.io/control/control-system-cad/#cross-references" class="toc-link">Cross-references</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://xsro.github.io/control/control-system-cad/#recommended-reading" class="toc-link">Recommended reading</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;control&#x2F;control-system-cad&#x2F;">Computer-Aided Control Systems Design = Introduction and Historical Overview</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2022-08-09</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <h2 id="infomation">infomation</h2>
+<ul>
+<li>Varga, A. (2020). Computer-Aided Control Systems Design = Introduction and Historical Overview. In = Baillieul, J., Samad, T. (eds) Encyclopedia of Systems and Control. Springer, London. https://doi.org/10.1007/978-1-4471-5102-9_138-3</li>
+<li>Source = <a href="https://link.springer.com/referenceworkentry/10.1007/978-1-4471-5102-9_138-3">springer</a>, <a href="https://core.ac.uk/download/pdf/31011908.pdf">pdf</a></li>
+<li>First Online = 08 November 2019</li>
+<li>Author = Andreas Varga</li>
+<li>Institution = German Aerospace Center, DLR Oberpfaffenhofen Institute of System Dynamics and Control</li>
+<li>email = Andreas.Varga@dlr.de</li>
+</ul>
+<h2 id="abstract">Abstract</h2>
+<p>Computer-aided control system design (CACSD) encompasses a broad range of methods, tools and technologies
+for system modelling, control system synthesis and tuning, dynamic system analysis and simulation, as well as validation and verification.
+The domain of CACSD enlarged progressively over decades
+from simple collections of algorithms and programs for control system analysis and synthesis,
+to comprehensive tool sets and user-friendly environments supporting all aspects of developing and deploying advanced control systems in various application fields.
+This article gives a brief introduction to CACSD and reviews the evolution of key concepts and technologies underlying the CACSD domain.
+Several cornerstone achievements in developing reliable numerical algorithms, implementing robust numerical software and developing sophisticated integrated modelling, simulation and design environments are highlighted.</p>
+<p><strong>Keywords and Phrases</strong>:
+CACSD,
+simulation,
+modeling,
+numerical analysis,
+software tools</p>
+<h2 id="introduction">Introduction</h2>
+<p>To design a control system for a plant, a typical computer-aided control system design (CACSD) work flow comprises several interlaced activities.</p>
+<p><strong>Model building</strong> is often a necessary first step consisting in developing suitable mathematical models to accurately describe the plant dynamical behaviour.
+High-fidelity physical plant models, obtained for example by using first principles modelling, primarily serve for analysis and validation purposes using appropriate simulation techniques.
+These dynamic models are usually defined by a set of ordinary differential equations (ODEs), differential-algebraic equation (DAEs) or partial differential equations (PDEs).
+However, for control system synthesis purposes simpler models are required, which are derived by simplifying high-fidelity models (e.g., by linearization, discretization, or model reduction) or directly determined in a specific form from input-output measurement data using system identification techniques.
+Frequently used synthesis models are continuous or discrete-time linear time-invariant (LTI) models describing the nominal behaviour of the plant in a specific operating point.
+The more accurate linear parameter varying (LPV) models may serve to account for uncertainties due to various performed approximations, nonlinearities or varying model parameters.</p>
+<p><strong>Simulation</strong> of dynamical systems is a closely related activity to modelling and is concerned with performing virtual experiments on a given plant model to analyse and predict the dynamic behaviour of a physical plant.
+Often modelling and simulation are closely connected parts of dedicated environments, where specific classes of models can be built and appropriate simulation methods can be employed.
+Simulation is also a powerful tool for the validation of mathematical models and their approximations.
+In the context of CACSD, simulation is frequently used as a control system tuning-aid, as, for example, in an optimization-based tuning approach using timedomain performance criteria.</p>
+<p><strong>System analysis and synthesis</strong> are concerned with with the investigation of properties of the underlying synthesis model and in the determination of a control system which fulfills basic requirements for the closed-loop controlled plant, such as stability or various time or frequency response requirements.
+The analysis also serves to check existence conditions for the solvability of synthesis problems, according to established design methodologies.
+An important synthesis goal is the guarantee of the performance robustness.
+To achieve this goal robust control synthesis methodologies often employ optimization-based parameter tuning in conjunction with worst-case analysis techniques.
+A rich collection of reliable numerical algorithms are available to perform such analysis and synthesis tasks.
+These algorithms form the core of CACSD and their development represented one of
+the main motivations for CACSD-related research.</p>
+<p><strong>Performance robustness assessment</strong> of the resulting closed-loop control system is a key aspect of the verification and validation activity.
+For a reliable assessment, simulation-based worst-case analysis represents often the only way to prove the performance robustness of the synthesized control system in the
+presence of parametric uncertainties and variabilities.</p>
+<h2 id="development-of-cacsd-tools">Development of CACSD tools</h2>
+<p>The development of CACSD tools for system analysis and synthesis started around 1960, immediately after general purpose digital computers and new programming languages became available for research and development purposes.
+In what follows we give a historical survey of these developments in the main CACSD areas.</p>
+<h3 id="modelling-and-simulation-tools">Modelling and simulation tools</h3>
+<p>Among the first developments were modelling and simulation tools for continuous-time systems described by differential equations based on dedicated simulation languages.
+Over forty continuous-system simulation languages had been developed as of 1974 <sup class="footnote-reference"><a href="#nilsen1974">1</a></sup>, which evolved out of attempts at digitally emulating the behaviour of widely used analog computers before 1960.
+A notable development in this period was the CSSL standard <sup class="footnote-reference"><a href="#augustin1967">2</a></sup>, which defined a system as an interconnection of blocks corresponding to operators which emulated the main analog simulation blocks and implied the integration of the underlying ODEs using suitable numerical methods.
+For many years, the ACSL preprocessor to Fortran <sup class="footnote-reference"><a href="#mitchel1976">3</a></sup> was one of the most successful implementations of the CSSL-standard.</p>
+<p>A turning point was the development of graphical user interfaces allowing graphical block-diagram based modelling.
+The most important developments were SystemBuild <sup class="footnote-reference"><a href="#shah1985">4</a></sup> and SIMULAB (later marketed as Simulink) <sup class="footnote-reference"><a href="#grace1991">5</a></sup>.
+Both products used a customizable set of block libraries and were seamlessly integrated in, respectively, MATRIXx and MATLAB, two powerful interactive matrix computation environments (see below).
+SystemBuild provided several advanced features such as event management, code generation, and DAE-based modelling and simulation.
+Simulink excelled from the beginning with its intuitive, easy-to-use user interface. Recent extensions of Simulink allow the modelling and simulation of hybrid systems, code generation for real-time applications, and various enhancements of the model building process (e.g., objectoriented modelling).</p>
+<p>The object-oriented paradigm for system modelling was introduced with Dymola <sup class="footnote-reference"><a href="#elmqvist1978">6</a></sup> to support physical system modelling based on interconnections of subsystems.
+The underlying modelling language served as the basis of the first version of Modelica <sup class="footnote-reference"><a href="#elmquist1997">7</a></sup>, a modern equation-based modeling language which was the result of a coordinated effort for the unification and standardization of expertise gained over many years with object-oriented physical modelling.
+The latest developments in this area are comprehensive model libraries for different application domains such
+as mechanical, electrical, electronic, hydraulic, thermal, control, and electric power systems.
+Notable commercial front-ends for Modelica are Dymola, MapleSim and SystemModeler, where the last two are tightly integrated in the symbolic computation environments Maple and Mathematica, respectively.</p>
+<h3 id="numerical-software-tools">Numerical software tools</h3>
+<p>The computational tools for CACSD rely on many numerical algorithms whose development and implementation in computer codes was the primary motivation of this research area since its beginnings.
+The Automatic Synthesis Program (ASP) developed in 1966 <sup class="footnote-reference"><a href="#kalman1966">8</a></sup>, was implemented
+in FAP (Fortran Assembly Program) and ran only on an IBM 7090-7094 machine.
+The Fortran II version of ASP (known as FASP) can be considered to be the first collection of computational CACSD tools ported to several mainframe computers.
+Interestingly, the linear algebra computations were covered by only three routines (diagonal decomposition, inversion and pseudo-inverse) and no routines were used for eigenvalue or polynomial roots computation.
+The main analysis and synthesis functions covered the sampled-data discretization (via matrix exponential), minimal realization, time-varying Riccati equation solution for quadratic control, filtering, and stability analysis.
+The FASP program itself performed the required computational sequences by interpreting
+simple commands with parameters.
+The extensive documentation containing a detailed description of algorithmic approaches and many examples marked the starting point of an intensive research on algorithms and numerical software, which culminated in the development of the high-performance control and systems library SLICOT <sup class="footnote-reference"><a href="#benner1999">9</a></sup> <sup class="footnote-reference"><a href="#huffel2004">10</a></sup>.
+In what follows, we highlight the main achievements along this development process.
+The direct successor of FASP is the Variable Dimension Automatic Synthesis Program (VASP) (implemented in Fortran IV on IBM 360) <sup class="footnote-reference"><a href="#white1971">11</a></sup>, while a further development was ORACLS <sup class="footnote-reference"><a href="#armstrong1978">12</a></sup>, which included several routines from the newly developed eigenvalue package EISPACK <sup class="footnote-reference"><a href="#smith1976">13</a></sup> as well as solvers for linear (Lyapunov, Sylvester) and quadratic (Riccati) matrix equations.
+From this point, the mainstream development of numerical algorithms for linear system analysis and synthesis closely followed the development of algorithms and software for numerical linear algebra.
+A common feature of all subsequent developments was the extensive use of robust linear algebra software with the Basic Linear Algebra Subprograms (BLAS) <sup class="footnote-reference"><a href="#lawson1979">14</a></sup> and the Linear Algebra Package (LINPACK) for solving linear systems <sup class="footnote-reference"><a href="#dongarra1979">15</a></sup>.
+Several control libraries have been developed almost simultaneously, relying on the robust numerical linear algebra core software formed of BLAS, LINPACK and EISPACK.
+Notable examples are:</p>
+<ul>
+<li>RASP (based partly on VASP and ORACLS) <sup class="footnote-reference"><a href="#grubel1983">16</a></sup> – developed originally by the University of Bochum and later by the German Aerospace Center (DLR)</li>
+<li>BIMAS <sup class="footnote-reference"><a href="#varga1985">17</a></sup> and BIMASC <sup class="footnote-reference"><a href="#varga1986">18</a></sup> – two Romanian initiatives;</li>
+<li>SLICOT <sup class="footnote-reference"><a href="#boom1991">19</a></sup> – a Benelux initiative of several universities jointly with the Numerical Algorithm Group (NAG).</li>
+<li>The last development phase was marked by the availability of the Linear Algebra Package (LAPACK)<sup class="footnote-reference"><a href="#anderson1992">20</a></sup>,
+whose declared goal was to make the widely used EISPACK and LINPACK libraries run efficiently on shared-memory vector and parallel processors.</li>
+</ul>
+<p>To minimize the development efforts, several active research teams from Europe started, in the framework of the NICONET Project, a concentrated effort to develop a high-performance numerical software library for CACSD as a new significantly extended version of the original SLICOT.
+The goals of the new library were to cover the main computational needs of CACSD, by relying exclusively on LAPACK and BLAS, and to guarantee similar numerical performance as that of the LAPACK routines.
+The software development used rigorous standards for implementation in Fortran 77, modularization, testing, and documentation (similar to that used in LAPACK).
+The development of the latest versions of RASP and SLICOT eliminated practically any duplication of efforts and led to a library which contained the best software from RASP, SLICOT, BIMAS and BIMASC.
+The current version of SLICOT is fully maintained by the <a href="http://www.niconet-ev.info/en/">NICONET Association</a> and serves as basis for implementing advanced computational functions for CACSD in interactive environments as
+<a href="https://www.mathworks.com">MATLAB</a>,
+<a href="http://www.maplesoft.com/products/maple/">Maple</a>,
+<a href="http://www.scilab.org/">Scilab</a> and
+<a href="http://www.gnu.org/software/octave/">Octave</a>.</p>
+<h3 id="interactive-tools">Interactive tools</h3>
+<p>Early experiments during 1970–1985 included the development of several interactive CACSD tools employing menu-driven interaction, question–answer dialogues or command languages.
+The April 1982 special issue of IEEE Control Systems Magazine was dedicated to CACSD environments and presented software summaries of 20 interactive CACSD packages.
+This development period was marked by the establishment of new standards for programming languages (Fortran 77, C), availability of high-quality
+numerical software libraries (BLAS, EISPACK, LINPACK, ODEPACK), transition from mainframe computers to minicomputers and finally to the nowadaysubiquitous personal computers as computing platforms, spectacular developments in graphical display technologies, and application of sound programming paradigms (e.g., strong data typing).</p>
+<p>A remarkable event in this period was the development of MATLAB, a command language based interactive matrix laboratory <sup class="footnote-reference"><a href="#moler1980">21</a></sup>.
+The original version of MATLAB was written in Fortran 77.
+It was primarily intended as a student teaching tool and provided interactive access to selected subroutines from LINPACK and EISPACK.
+The tool circulated for a while in the public domain and its high flexibility was soon recognized.
+Several CACSD-oriented commercial clones have been implemented in the C language, the most important among them being MATRIXx <sup class="footnote-reference"><a href="#walker1982">22</a></sup> and PC-MATLAB <sup class="footnote-reference"><a href="#moler1985">23</a></sup>.</p>
+<p>The period after 1985 until around 2000 can be seen as a consolidation and expansion period for many commercial and non-commercial tools.
+In an inventory of CACSD-related software issued by the Benelux Working Group on Software (WGS) under the auspices of the IEEE Control Systems Society, there were in 1992 in active development 70 standalone CACSD packages, 21 tools based on or similar to MATLAB, and 27 modelling/simulation environments.
+It is interesting to look more closely at the evolutions of the two main players MATRIXx and MATLAB, which took place under harshly competitive conditions.</p>
+<p><a href="http://www.ni.com/matrixx/">MATRIXx</a> with its main components Xmath, SystemBuild and AutoCode, had over many years a leading role (especially among industrial customers), excelling with a rich functionality in domains such as system identification, control system synthesis, model reduction, modelling, simulation, code generation.
+After 2003, MATRIXx6 became a product of National Instruments Corporation and complements its main product family <a href="http://www.ni.com/labview">LabView</a>, a visual programming language based system-design platform and development environment.</p>
+<p>MATLAB gained broad academic acceptance by integrating many new methodological developments in the control field into several control-related
+toolboxes.
+MATLAB also evolved as a powerful programming language, which allows easy objectoriented manipulation of different system descriptions via operator overloading.
+At present, the CACSD tools of MATLAB and Simulink represent the industrial and academic standard for CACSD.
+The existing CACSD tools are constantly extended and enriched with new model classes, new computational algorithms (e.g., structure-exploiting eigenvalue computations based on SLICOT), dedicated graphical user interfaces (e.g., tuning of PID controllers or control-related visualizations), advanced robust control system synthesis, etc.
+Also many thirdparty toolboxes contribute to the wide usage of this tool.</p>
+<p>Basic CACSD functionality incorporating symbolic processing techniques and higher precision computations is available in the Maple product MapleSim Control Design Toolbox as well as in the Mathematica Control Systems product.
+Free alternatives to MATLAB are the MATLAB-like environments Scilab, a French initiative pioneered by INRIA, and Octave, which has recently added some CACSD functionality.</p>
+<h2 id="summary-and-future-directions">Summary and Future Directions</h2>
+<p>The development and maintenance of integrated CACSD environments, which provide support for all aspects of the CACSD cycle such as modelling, design, and simulation, involve sustained, strongly interdisciplinary efforts.
+Therefore, the CACSD tool development activities must rely on the expertise of many professionals covering such diverse fields as control system engineering, programming languages and techniques, man-machine interaction, numerical methods in linear algebra and control, optimization, computer visualization, and model building techniques.
+This may explain why currently, only a few of the commercial developments of prior years are still in use and actively maintained/developed. Unfortunately, the number of actively developed noncommercial alternative products is even lower. The
+dominance of MATLAB, as a de facto standard for
+both industrial and academic usage of integrated tools
+covering all aspects of the broader area of computer
+aided control engineering (CACE), can not be overseen.
+The new trends in CACSD are partly related to
+handling more complex applications, involving timevarying (e.g., periodic, multi-rate sampled-data, and
+differential-algebraic) linear dynamic systems, nonlinear systems with many parametric uncertainties,
+and large-scale models (e.g., originating from the
+discretization of PDEs). To address many computational aspects of model building (e.g., model reduction of large order systems), optimization-based
+robust controller tuning using multiple-model approaches, or optimization-based robustness assessment using global-optimization techniques, parallel
+computation techniques allow substantial savings in
+computational times and facilitate addressing computational problems for large scale systems. A topic
+which needs further research is the exploitation of the
+benefits of combining numerical and symbolic computations (e.g., in model building and manipulation).</p>
+<h2 id="cross-references">Cross-references</h2>
+<p>CACSD software tools,
+modelling and simulation,
+system identification,
+model reduction,
+optimizationbased design,
+robust synthesis,
+robustness assessment,
+verification and validation</p>
+<h2 id="recommended-reading">Recommended reading</h2>
+<p>The historical development of CACSD concepts and techniques was the subject of several articles in reference works <sup class="footnote-reference"><a href="#rimvall1995">24</a></sup> <sup class="footnote-reference"><a href="#schmid2002">25</a></sup>.
+A selection of papers on numerical algorithms underlying the development of CACSD appeared in <sup class="footnote-reference"><a href="#patel1994">26</a></sup>.
+The special issue No. 2/2004 of the IEEE Control Systems Magazine on Numerical Awareness in Control presents several surveys on different aspects of developing numerical algorithms and software for CACSD.</p>
+<p>The main trends over the last three decades in CACSD related research can be followed in the programs/proceedings of the biannual IEEE Symposia on CACSD from 1981 to 2013 (partly available at http://ieeexplore.ieee.org) as well as of the triennial IFAC Symposia on CACSD from 1979 to 2000.
+Additional information can be found in several CACSD-focused survey articles and special issues (e.g., No. 4/1982; No. 2/2000) of the IEEE Control Systems Magazine.</p>
+<div class="footnote-definition" id="anderson1992"><sup class="footnote-definition-label">20</sup>
+<p>Anderson E, Bai Z, Bishop J, Demmel J, Du Croz J,Greenbaum A, Hammarling S, McKenney A, Ostrouchov S, Sorensen D (1992) LAPACK User’s Guide. SIAM, Philadelphia
+<sup class="footnote-reference"><a href="#armstrong1978">12</a></sup>: Armstrong ES (1978) ORACLS – A System for Linear-Quadratic Gaussian Control Law Design. Technical Paper 1106 96-1, NASA
+<sup class="footnote-reference"><a href="#augustin1967">2</a></sup>: Augustin DC, Strauss JC, Fineberg MS, Johnson BB, Linebarger RN, Sansom FJ (1967) The SCi continuous system simulation language (CSSL). Simulation 9:281–303
+<sup class="footnote-reference"><a href="#benner1999">9</a></sup>: Benner P, Mehrmann V, Sima V, Van Huffel S, Varga A (1999) SLICOT – a subroutine library in systems and control theory. In = Datta BN (ed) Applied and Computational Control, Signals and Circuits, vol 1,Birkhauser, pp 499–539
+<sup class="footnote-reference"><a href="#boom1991">19</a></sup>: Boom A, Brown A, Geurts A, Hammarling S, Kool R, Vanbegin M, Van Dooren P, Huffel SV (1991) SLICOT, a subroutine library in control and systems theory. In = Prepr. 5th IFAC/IMACS Symp. CADCS’91, Swansea, UK, Pergamon Press, Oxford, pp 89–94
+<sup class="footnote-reference"><a href="#dongarra1979">15</a></sup>: Dongarra JJ, Moler CB, Bunch JR, Stewart GW (1979) LINPACK User’s Guide. SIAM Publications, Philadelphia
+<sup class="footnote-reference"><a href="#elmquist1997">7</a></sup>: Elmquist H et al (1997) Modelica – A Unified Object-Oriented Language for Physical Systems Modeling (Version 1). URL http://www.modelica.org/documents/Modelica1.pdf
+<sup class="footnote-reference"><a href="#elmqvist1978">6</a></sup>: Elmqvist H (1978) A structured model language for large continuous systems. PhD thesis, Department of Automatic Control, Lund University, Sweden
+<sup class="footnote-reference"><a href="#garbow1977">27</a></sup>: Garbow BS, Boyle JM, Dongarra JJ, Moler CB (1977) Matrix Eigensystem Routines – EISPACK Guide Extension. Springer-Verlag, Heidelberg
+<sup class="footnote-reference"><a href="#grace1991">5</a></sup>: Grace ACW (1991) SIMULAB, an integrated environment for simulation and control. In = Proc. of American Control Conference, Boston, MA, USA, pp 1015–1020
+<sup class="footnote-reference"><a href="#grubel1983">16</a></sup>: Grubel G (1983) Die regelungstechnische Programm- bibliothek RASP. Regelungstechnik 31:75–81
+<sup class="footnote-reference"><a href="#huffel2004">10</a></sup>: Huffel SV, Sima V, Varga A, Hammarling S, Delebecque F (2004) High-performance numerical software for control. Control Systems Magazine 24:60–76
+<sup class="footnote-reference"><a href="#kalman1966">8</a></sup>: Kalman RE, Englar TS (1966) A User’s Manual for the Automatic Synthesis Program (Program C). Technical Report CR-475, NASA
+<sup class="footnote-reference"><a href="#lawson1979">14</a></sup>: Lawson CL, Hanson RJ, Kincaid DR, Krogh FT (1979) Basic linear algebra subprograms for Fortran usage. ACM Transactions on Mathematical Software 5:308–323
+<sup class="footnote-reference"><a href="#mitchel1976">3</a></sup>: Mitchel EEL, Gauthier JS (1976) Advanced continuous simulation language (ACSL). Simulation 26:72–78
+<sup class="footnote-reference"><a href="#moler1980">21</a></sup>: Moler CB (1980) MATLAB Users’ Guide. Tech. rep., Department of Computer Science, University of New Mexico, Albuquerque, USA
+<sup class="footnote-reference"><a href="#moler1985">23</a></sup>: Moler CB, Little J, Bangert S, Kleinman S (1985) PCMatlab, Users’Guide, Version 2.0. Tech. rep., The MathWorks, Inc, 158 Woodland St, Sherborn, MA USA
+<sup class="footnote-reference"><a href="#nilsen1974">1</a></sup>: Nilsen RN, Karplus WJ (1974) Continuous-system simulation languages = A state-of-the-art survey. Mathematics and Computers in Simulation 16:17–25, DOI http://dx.doi.org/10.1016/S0378- 4754(74)80003-0
+<sup class="footnote-reference"><a href="#patel1994">26</a></sup>: Patel RV, Laub AJ, Van Dooren (Eds) P (1994) Numerical Linear Algebra Techniques for Systems and Control. IEEE Press, Piscataway, NJ, USA
+<sup class="footnote-reference"><a href="#rimvall1995">24</a></sup>: Rimvall C, Jobling CP (1995) Computer-Aided Control Systems Design. In = Levine WS (ed) The CONTROL HANDBOOK, CRC Press, pp 429–442
+<sup class="footnote-reference"><a href="#schmid2002">25</a></sup>: Schmid C (2002) Computer-Aided Control System Engineering Tools. In = Unbehauen H (ed) Control Systems, Robotics and Automation, Encyclopedia of Life Support Systems (EOLSS), URL http://www.eolss.net
+<sup class="footnote-reference"><a href="#shah1985">4</a></sup>: Shah CS, Floyd MA, Lehman LL (1985) MATRIXx = Control design and model building CAE capabilities. In = Jamshidi M, Herget CJ (eds) Advances in Computer Aided Control Systems Engineering, North-Holland, Elsevier Science Publishers, Amsterdam, pp 181–207
+<sup class="footnote-reference"><a href="#smith1976">13</a></sup>: Smith BT, Boyle JM, Dongarra JJ, Garbow BS, Ikebe Y, Klema VC, Moler CB (1976) Matrix Eigensystem Routines - EISPACK Guide, Second Edition, Lecture Notes in Computer Science, vol 6. Springer-Verlag
+<sup class="footnote-reference"><a href="#varga1986">18</a></sup>: Varga A, Davidoviciu A (1986) BIMASC - A package of Fortran subprograms for analysis, modelling, design and simulation of control systems. In = Hansen NE, Larsen PM (eds) Prepr. of 3rd IFAC/IFIP Int. Symposium on Computer Aided Design in Control and Engineering (CADCE’85), Copenhagen, Denmark, Pergamon Press, Oxford, pp 151–156
+<sup class="footnote-reference"><a href="#varga1985">17</a></sup>: Varga A, Sima V (1985) BIMAS - A basic mathematical package for computer aided systems analysis and design. In = Gerter J, Keviczky L (eds) Prepr. of 9th IFAC World Congress, Budapest, Hungary, vol 8, pp 202–207
+<sup class="footnote-reference"><a href="#walker1982">22</a></sup>: Walker R, Gregory C, Shah S (1982) MATRIXx = A data analysis, system identification, control design and simulation package. Control Systems Magazine 2:30–37
+<sup class="footnote-reference"><a href="#white1971">11</a></sup>: White JS, Lee HQ (1971) Users Manual for the Variable Automatic Synthesis Program (VASP). Technical Memorandum TM X-2417, NASA</p>
+</div>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https://xsro.github.io/tags/control-theory/">#Control Theory</a>
+                    
+                        <a href="https://xsro.github.io/tags/zhuan-zai/">#转载</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;xsro.github.io&#x2F;control&#x2F;control-system-cad-cn&#x2F;">‹ 计算机辅助控制系统设e = 简介与回顾</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;xsro.github.io&#x2F;control&#x2F;dmc-with-simupy&#x2F;">Simulate Dynamic Matrix Control with Simupy ›</a>
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https://xsro.github.io/even.js" ></script>
+      
+    </body>
+
+</html>

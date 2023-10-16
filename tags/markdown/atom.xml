@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>xsro&#x27;s blog - markdown</title>
+    <link href="https://xsro.github.io/tags/markdown/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://xsro.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-07-25T00:00:00+00:00</updated>
+    <id>https://xsro.github.io/tags/markdown/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Markdown 常用拓展语法参考</title>
+        <published>2021-07-25T00:00:00+00:00</published>
+        <updated>2021-07-25T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/markdown-tips-cn/" type="text/html"/>
+        <id>https://xsro.github.io/markdown-tips-cn/</id>
+        
+        <content type="html">&lt;h1 id=&quot;markdown-chang-yong-tuo-zhan-yu-fa-can-kao&quot;&gt;Markdown 常用拓展语法参考&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;chang-yong-lian-jie&quot;&gt;常用链接&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;基本语法
+&lt;ol&gt;
+&lt;li&gt;GitHub Flavored Markdown Spec = &lt;a href=&quot;https:&#x2F;&#x2F;github.github.com&#x2F;gfm&#x2F;&quot;&gt;gfm&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;比较细致的 markdown 参考资&lt;script type=&quot;math&#x2F;tex&quot;&gt;1 = &lt;https:&#x2F;&#x2F;www.markdownguide.org&#x2F;&gt;
+  3. github 上的 markdown 语法速查&lt;&#x2F;script&gt;
+1 = &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tchapi&#x2F;markdown-cheatsheet&quot;&gt;markdown-cheatsheet&lt;&#x2F;a&gt;,&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;younghz&#x2F;Markdown&quot;&gt;Markdown&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;typora.io&#x2F;&quot;&gt;typora&lt;&#x2F;a&gt;中提供的&lt;a href=&quot;https:&#x2F;&#x2F;support.typora.io&#x2F;Markdown-Reference&#x2F;&quot;&gt;帮助&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;数学公式&lt;script type=&quot;math&#x2F;tex&quot;&gt;\TeX&lt;&#x2F;script&gt;
+：通常 markdown 使用以下两种工具渲染公示
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;docs.mathjax.org&#x2F;en&#x2F;latest&#x2F;input&#x2F;tex&#x2F;macros&#x2F;index.html&quot;&gt;mathjax&lt;&#x2F;a&gt;：typora、知乎等&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;katex.org&#x2F;docs&#x2F;supported.html&quot;&gt;katex&lt;&#x2F;a&gt;：hugo 等&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;emoji 参考:v:
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;xsro.github.io&#x2F;markdown-tips-cn&#x2F;emoji.md&quot;&gt;emoji 表&lt;&#x2F;a&gt;来自&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;caiyongji&#x2F;emoji-list&quot;&gt;caiyongji&#x2F;emoji-list&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;emoji-cheat-sheet.com&#x2F;&quot;&gt;emoji-cheat-sheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Mermaid 图表:一般都是使用的 mermaid.js 来渲染的，注意版本
+&lt;ol&gt;
+&lt;li&gt;mermaid.js 官方文档：&lt;a href=&quot;https:&#x2F;&#x2F;mermaid-js.github.io&#x2F;mermaid&#x2F;#&quot;&gt;mermaid&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;typora 的相关帮助文档：&lt;a href=&quot;https:&#x2F;&#x2F;support.typora.io&#x2F;Draw-Diagrams-With-Markdown&#x2F;&quot;&gt;Draw Diagrams With Markdown (typora.io)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Badge 徽章：&lt;img src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;github&#x2F;stars&#x2F;xsro?style=flat-square&quot; alt=&quot;star&quot; &#x2F;&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;shields.io&#x2F;&quot;&gt;https:&#x2F;&#x2F;shields.io&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;forthebadge.com&#x2F;&quot;&gt;https:&#x2F;&#x2F;forthebadge.com&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;在 gitee 中使用徽标：在 git 仓库主页一次点击&lt;code&gt;管理&lt;&#x2F;code&gt;、&lt;code&gt;仓库挂件&lt;&#x2F;code&gt;即可看到&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;chang-yong-html-dai-ma&quot;&gt;常用 html 代码&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;xing-nei-html&quot;&gt;行内 html&lt;&#x2F;h3&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Raw Markdown Source&lt;&#x2F;th&gt;&lt;th&gt;Output in Live Preview&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;&amp;lt;span style=&#x27;color:red&#x27;&amp;gt;This is red&amp;lt;&#x2F;span&amp;gt;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;span style=&#x27;color:red&#x27;&gt;This is red&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;&amp;lt;ruby&amp;gt; 漢 &amp;lt;rt&amp;gt; ㄏㄢˋ &amp;lt;&#x2F;rt&amp;gt; &amp;lt;&#x2F;ruby&amp;gt;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;ruby&gt; 漢 &lt;rt&gt; ㄏㄢ ˋ &lt;&#x2F;rt&gt; &lt;&#x2F;ruby&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;&amp;lt;kbd&amp;gt;Ctrl&amp;lt;&#x2F;kbd&amp;gt;+&amp;lt;kbd&amp;gt;F9&amp;lt;&#x2F;kbd&amp;gt;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;F9&lt;&#x2F;kbd&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;&amp;lt;span style=&amp;quot;font-size:2rem; background:yellow;&amp;quot;&amp;gt;**Bigger**&amp;lt;&#x2F;span&amp;gt;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;span style=&quot;font-size:2rem; background:yellow;&quot;&gt;&lt;strong&gt;Bigger&lt;&#x2F;strong&gt;&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;HTML entities like &amp;amp;reg; &amp;amp;#182;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;HTML entities like ® ¶&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;h3 id=&quot;wen-ben-zhu-shi-yin-cang-yu-zhe-die&quot;&gt;文本注释、隐藏与折叠&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;zhu-shi-nei-rong&quot;&gt;注释内容&lt;&#x2F;h4&gt;
+&lt;pre data-lang=&quot;html&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&amp;lt;!--这是注释--&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h4 id=&quot;yin-cang-duan-luo&quot;&gt;隐藏段落&lt;&#x2F;h4&gt;
+&lt;pre data-lang=&quot;html&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;p &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;hidden&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;这是需要隐藏的段落 不可以有空行&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h4 id=&quot;zhe-die&quot;&gt;折叠&lt;&#x2F;h4&gt;
+&lt;pre data-lang=&quot;html&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;details&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;summary&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    I have keys but no locks. I have space but no room. You can enter but can&amp;#39;t
+&lt;&#x2F;span&gt;&lt;span&gt;    leave. What am I?
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;summary&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  A keyboard.
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;details&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;效果：&lt;&#x2F;p&gt;
+&lt;details&gt;
+    &lt;summary&gt;I have keys but no locks. I have space but no room. You can enter but can&#x27;t leave. What am I?&lt;&#x2F;summary&gt;
+    A keyboard.
+&lt;&#x2F;details&gt;
+&lt;h3 id=&quot;yin-shi-pin&quot;&gt;音视频&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;html&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;audio &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;src&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;xxx.mp3&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;audio&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt; &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;video &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;src&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;xxx.mp4&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;video&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h4 id=&quot;jia-zai-bi-li-bi-li-shi-pin&quot;&gt;加载哔哩哔哩视频&lt;&#x2F;h4&gt;
+&lt;pre data-lang=&quot;html&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;iframe
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;src&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&#x2F;&#x2F;player.bilibili.com&#x2F;player.html?aid=66583807&amp;amp;bvid=BV1n441127jG&amp;amp;cid=116735636&amp;amp;page=1&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;scrolling&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;no&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;border&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;frameborder&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;no&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;framespacing&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;allowfullscreen&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;true&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;iframe&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;效果：&lt;&#x2F;p&gt;
+&lt;iframe src=&quot;&#x2F;&#x2F;player.bilibili.com&#x2F;player.html?aid=66583807&amp;bvid=BV1n441127jG&amp;cid=116735636&amp;page=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot;&gt; &lt;&#x2F;iframe&gt;
+&lt;h2 id=&quot;chang-jian-fu-hao&quot;&gt;常见符号&lt;&#x2F;h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Alpha&lt;&#x2F;script&gt;
+ &lt;code&gt;\Alpha&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Beta&lt;&#x2F;script&gt;
+ &lt;code&gt;\Beta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Gamma&lt;&#x2F;script&gt;
+ &lt;code&gt;\Gamma&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Delta&lt;&#x2F;script&gt;
+ &lt;code&gt;\Delta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Epsilon&lt;&#x2F;script&gt;
+ &lt;code&gt;\Epsilon&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Zeta&lt;&#x2F;script&gt;
+ &lt;code&gt;\Zeta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Eta&lt;&#x2F;script&gt;
+ &lt;code&gt;\Eta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Theta&lt;&#x2F;script&gt;
+ &lt;code&gt;\Theta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Iota&lt;&#x2F;script&gt;
+ &lt;code&gt;\Iota&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Kappa&lt;&#x2F;script&gt;
+ &lt;code&gt;\Kappa&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Lambda&lt;&#x2F;script&gt;
+ &lt;code&gt;\Lambda&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Mu&lt;&#x2F;script&gt;
+ &lt;code&gt;\Mu&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Nu&lt;&#x2F;script&gt;
+ &lt;code&gt;\Nu&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Xi&lt;&#x2F;script&gt;
+ &lt;code&gt;\Xi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Omicron&lt;&#x2F;script&gt;
+ &lt;code&gt;\Omicron&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Pi&lt;&#x2F;script&gt;
+ &lt;code&gt;\Pi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Rho&lt;&#x2F;script&gt;
+ &lt;code&gt;\Rho&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Sigma&lt;&#x2F;script&gt;
+ &lt;code&gt;\Sigma&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Tau&lt;&#x2F;script&gt;
+ &lt;code&gt;\Tau&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Upsilon&lt;&#x2F;script&gt;
+ &lt;code&gt;\Upsilon&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Phi&lt;&#x2F;script&gt;
+ &lt;code&gt;\Phi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Chi&lt;&#x2F;script&gt;
+ &lt;code&gt;\Chi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Psi&lt;&#x2F;script&gt;
+ &lt;code&gt;\Psi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Omega&lt;&#x2F;script&gt;
+ &lt;code&gt;\Omega&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varGamma&lt;&#x2F;script&gt;
+ &lt;code&gt;\varGamma&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varDelta&lt;&#x2F;script&gt;
+ &lt;code&gt;\varDelta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varTheta&lt;&#x2F;script&gt;
+ &lt;code&gt;\varTheta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varLambda&lt;&#x2F;script&gt;
+ &lt;code&gt;\varLambda&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varXi&lt;&#x2F;script&gt;
+ &lt;code&gt;\varXi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varPi&lt;&#x2F;script&gt;
+ &lt;code&gt;\varPi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varSigma&lt;&#x2F;script&gt;
+ &lt;code&gt;\varSigma&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varUpsilon&lt;&#x2F;script&gt;
+ &lt;code&gt;\varUpsilon&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varPhi&lt;&#x2F;script&gt;
+ &lt;code&gt;\varPhi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varPsi&lt;&#x2F;script&gt;
+ &lt;code&gt;\varPsi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varOmega&lt;&#x2F;script&gt;
+ &lt;code&gt;\varOmega&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\alpha&lt;&#x2F;script&gt;
+ &lt;code&gt;\alpha&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\beta&lt;&#x2F;script&gt;
+ &lt;code&gt;\beta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\gamma&lt;&#x2F;script&gt;
+ &lt;code&gt;\gamma&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\delta&lt;&#x2F;script&gt;
+ &lt;code&gt;\delta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\epsilon&lt;&#x2F;script&gt;
+ &lt;code&gt;\epsilon&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\zeta&lt;&#x2F;script&gt;
+ &lt;code&gt;\zeta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\eta&lt;&#x2F;script&gt;
+ &lt;code&gt;\eta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\theta&lt;&#x2F;script&gt;
+ &lt;code&gt;\theta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\iota&lt;&#x2F;script&gt;
+ &lt;code&gt;\iota&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\kappa&lt;&#x2F;script&gt;
+ &lt;code&gt;\kappa&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\lambda&lt;&#x2F;script&gt;
+ &lt;code&gt;\lambda&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\mu&lt;&#x2F;script&gt;
+ &lt;code&gt;\mu&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\nu&lt;&#x2F;script&gt;
+ &lt;code&gt;\nu&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\xi&lt;&#x2F;script&gt;
+ &lt;code&gt;\xi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\omicron&lt;&#x2F;script&gt;
+ &lt;code&gt;\omicron&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\pi&lt;&#x2F;script&gt;
+ &lt;code&gt;\pi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\rho&lt;&#x2F;script&gt;
+ &lt;code&gt;\rho&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\sigma&lt;&#x2F;script&gt;
+ &lt;code&gt;\sigma&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\tau&lt;&#x2F;script&gt;
+ &lt;code&gt;\tau&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\upsilon&lt;&#x2F;script&gt;
+ &lt;code&gt;\upsilon&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\phi&lt;&#x2F;script&gt;
+ &lt;code&gt;\phi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\chi&lt;&#x2F;script&gt;
+ &lt;code&gt;\chi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\psi&lt;&#x2F;script&gt;
+ &lt;code&gt;\psi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\omega&lt;&#x2F;script&gt;
+ &lt;code&gt;\omega&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varepsilon&lt;&#x2F;script&gt;
+ &lt;code&gt;\varepsilon&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varkappa&lt;&#x2F;script&gt;
+ &lt;code&gt;\varkappa&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\vartheta&lt;&#x2F;script&gt;
+ &lt;code&gt;\vartheta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\thetasym&lt;&#x2F;script&gt;
+ &lt;code&gt;\thetasym&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varpi&lt;&#x2F;script&gt;
+ &lt;code&gt;\varpi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varrho&lt;&#x2F;script&gt;
+ &lt;code&gt;\varrho&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varsigma&lt;&#x2F;script&gt;
+ &lt;code&gt;\varsigma&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varphi&lt;&#x2F;script&gt;
+ &lt;code&gt;\varphi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\digamma &lt;&#x2F;script&gt;
+ &lt;code&gt;\digamma&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+</content>
+        
+    </entry>
+</feed>

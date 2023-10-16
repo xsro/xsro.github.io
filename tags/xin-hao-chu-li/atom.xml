@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>xsro&#x27;s blog - 信号处理</title>
+    <link href="https://xsro.github.io/tags/xin-hao-chu-li/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://xsro.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-08-28T00:00:00+00:00</updated>
+    <id>https://xsro.github.io/tags/xin-hao-chu-li/atom.xml</id>
+    <entry xml:lang="en">
+        <title>t&lt;0是哲学家思考的问题--控制系统分析时一般信号都需要乘上一个阶跃u(t)</title>
+        <published>2021-08-28T00:00:00+00:00</published>
+        <updated>2021-08-28T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/control/multiply-1t/" type="text/html"/>
+        <id>https://xsro.github.io/control/multiply-1t/</id>
+        
+        <content type="html">&lt;h1 id=&quot;xian-xing-ding-chang-xi-tong-de-zhong-yao-te-xing-yin-fa-de-si-kao&quot;&gt;线性定常系统的重要特性引发的思考&lt;&#x2F;h1&gt;
+&lt;p&gt;女朋友在阅读胡寿松第六版《自动控制原理》时有一个困惑。为什么书中 P71 页表 3-2 中的阶跃信号&lt;code&gt;1&lt;&#x2F;code&gt;，求导之后消失了，而不是作为单位脉冲信号&lt;script type=&quot;math&#x2F;tex&quot;&gt;\delta(t)&lt;&#x2F;script&gt;
+处理。难道这里的&lt;code&gt;1&lt;&#x2F;code&gt;视为常数，这样就与&lt;code&gt;零初始条件&lt;&#x2F;code&gt;矛盾了。&lt;&#x2F;p&gt;
+&lt;p&gt;书中的&lt;strong&gt;表 3-2 一阶系统对典型输入信号的输出响应&lt;&#x2F;strong&gt;如下：&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;输入信号&lt;&#x2F;th&gt;&lt;th&gt;输出响应&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;1(t)&lt;&#x2F;script&gt;
+&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;1-e^{-t&#x2F;T}, t \ge 0&lt;&#x2F;script&gt;
+&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\delta(t)&lt;&#x2F;script&gt;
+&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\frac{1}{T}e^{-t&#x2F;T}, t\ge 0&lt;&#x2F;script&gt;
+&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;书中由此得出线性定常系统的一个重要特性：系统对输入信号导数的响应，就等于系统对输入信号响应的导数。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;也就是说第二行脉冲响应应该是第一行阶跃响应的导数，但是这里为什么&lt;code&gt;1&lt;&#x2F;code&gt;对应的导数&lt;script type=&quot;math&#x2F;tex&quot;&gt;\delta(t)&lt;&#x2F;script&gt;
+没有了呢？&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;答&lt;&#x2F;strong&gt;：因为后面的指数项&lt;script type=&quot;math&#x2F;tex&quot;&gt;e^{-t&#x2F;T},t \ge 0&lt;&#x2F;script&gt;
+，在零初始条件下还需要乘以一个&lt;script type=&quot;math&#x2F;tex&quot;&gt;u(t)&lt;&#x2F;script&gt;
+，根据求导的乘法公式求导之后会出现一个&lt;script type=&quot;math&#x2F;tex&quot;&gt;\delta(t)&lt;&#x2F;script&gt;
+，从而相互抵消。&lt;&#x2F;p&gt;
+&lt;p&gt;将阶跃响应写成如下形式：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;1-e^{-t&#x2F;T}(t \ge 0)=1(t)-e^{-t&#x2F;T}\times 1(t)&lt;&#x2F;script&gt;
+&lt;p&gt;对阶跃响应求导：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\begin{aligned}
+\frac{\mathrm{d}}{\mathrm{d}t}
+[&amp;1(t)-e^{-t&#x2F;T}\times 1(t)] \\
+=&amp;\delta(t)-
+\frac{\mathrm{d}}{\mathrm{d}t}[e^{-t&#x2F;T}1(t)]
+\\
+=&amp;\delta(t)-
+[\frac{\mathrm{d}}{\mathrm{d}t}e^{-t&#x2F;T}\times1(t)+e^{-t&#x2F;T}\times \frac{\mathrm{d}}{\mathrm{d}t} 1(t)]
+\\
+=&amp;\delta(t)
+-[-\frac{1}{T}e^{-t&#x2F;T}\times 1(t)+e^{-t&#x2F;T}\times \delta(t)]
+\\
+=&amp;\delta(t)-
+[-\frac{1}{T}e^{-t&#x2F;T}\times 1(t)+\delta(t)]
+\\
+=&amp;\frac{1}{T}e^{-t&#x2F;T}\times1(t)
+\end{aligned}&lt;&#x2F;script&gt;
+&lt;p&gt;结果即为&lt;script type=&quot;math&#x2F;tex&quot;&gt;\frac{1}{T}e^{-t&#x2F;T}, t\ge 0&lt;&#x2F;script&gt;
+。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;yi-ban-hua&quot;&gt;一般化&lt;&#x2F;h2&gt;
+&lt;p&gt;已知线性定常系统的零初始条件下的阶跃响应为&lt;script type=&quot;math&#x2F;tex&quot;&gt;h(t), t\ge 0&lt;&#x2F;script&gt;
+，求解系统传递函数.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;la-shi-bian-huan-fa&quot;&gt;拉式变换法&lt;&#x2F;h4&gt;
+&lt;p&gt;输入和输出的拉氏变换后的象函数分别为&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;R(s)=\frac{1}{s},C(s)=H(s)&lt;&#x2F;script&gt;
+&lt;p&gt;于是传递函数可以写成：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;G(s)=\frac{C(s)}{R(s)}=sH(s)&lt;&#x2F;script&gt;
+&lt;h4 id=&quot;xi-tong-te-xing-fa&quot;&gt;系统特性法&lt;&#x2F;h4&gt;
+&lt;p&gt;对输入输出分别进行求导：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;r&#x27;(t)=\delta(t),c&#x27;(t)=\frac{\mathrm{d}}{\mathrm{d}t}[h(t)]=h&#x27;(t)&lt;&#x2F;script&gt;
+&lt;p&gt;对输出信号拉氏变换即为传递函数：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;G(s)=\mathscr{L}[c&#x27;(t)]=sH(s)&lt;&#x2F;script&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\begin{matrix}
+   a &amp; b \\
+   c &amp; d
+\end{matrix}&lt;&#x2F;script&gt;
+ </content>
+        
+    </entry>
+</feed>

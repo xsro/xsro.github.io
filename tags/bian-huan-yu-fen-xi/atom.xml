@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>xsro&#x27;s blog - 变换域分析</title>
+    <link href="https://xsro.github.io/tags/bian-huan-yu-fen-xi/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://xsro.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-08-30T00:00:00+00:00</updated>
+    <id>https://xsro.github.io/tags/bian-huan-yu-fen-xi/atom.xml</id>
+    <entry xml:lang="en">
+        <title>傅里叶、拉普拉斯、Z变换这一串</title>
+        <published>2021-08-30T00:00:00+00:00</published>
+        <updated>2021-08-30T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/control/transfrom-in-control/" type="text/html"/>
+        <id>https://xsro.github.io/control/transfrom-in-control/</id>
+        
+        <content type="html">&lt;h1 id=&quot;signal-strength-san-da-bian-huan-de-shu-xue-tui-dao-guo-cheng&quot;&gt;📶 三大变换的数学推导过程&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\mathscr{F,L,Z}&lt;&#x2F;script&gt;
+傅里叶变换、拉普拉斯变换、Z 变换这三大变换讨论广泛&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#zhihu&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;。个人理解，这三个变换都是为了简化一些难以在时间域分析的问题而引入的。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;拉普拉斯变换是对傅里叶变换的推广，忽略了时域信号时间为负的部分，使得变换也可以适用于&lt;script type=&quot;math&#x2F;tex&quot;&gt;t\rightarrow +\infty&lt;&#x2F;script&gt;
+不为零的信号&lt;&#x2F;li&gt;
+&lt;li&gt;Z 变换是拉普拉斯变换针对离散信号的简化，使得表达式更加便于分析&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;傅里叶变换&lt;&#x2F;th&gt;&lt;th&gt;拉普拉斯变换&lt;&#x2F;th&gt;&lt;th&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;Z&lt;&#x2F;script&gt;
+变换&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;表达式&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;F(\omega)=\int_{-\infty}^{\infty}f(t)e^{-j\omega t}\mathrm{d} t&lt;&#x2F;script&gt;
+&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;F(s)=\int_0^\infty f(t)e^{-st}\mathrm{d}t&lt;&#x2F;script&gt;
+&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;F(z)=\sum\limits_{k=0}^{\infty}f(kT)z^{-k}&lt;&#x2F;script&gt;
+&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;适用范围&lt;&#x2F;td&gt;&lt;td&gt;狄利克雷条件&lt;&#x2F;td&gt;&lt;td&gt;狄利克雷条件的前两条&lt;&#x2F;td&gt;&lt;td&gt;前者+（时间）离散&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;变换域&lt;&#x2F;td&gt;&lt;td&gt;频域&lt;&#x2F;td&gt;&lt;td&gt;复(频)域&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;Z&lt;&#x2F;script&gt;
+域&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;对应系统模型&lt;&#x2F;td&gt;&lt;td&gt;频率特性&lt;&#x2F;td&gt;&lt;td&gt;传递函数&lt;&#x2F;td&gt;&lt;td&gt;脉冲传递函数&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;zhihu&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;1&lt;&#x2F;sup&gt;
+&lt;p&gt;https:&#x2F;&#x2F;www.zhihu.com&#x2F;question&#x2F;22085329&#x2F;answer&#x2F;26047106&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;shu-xue-yan-bian-guo-cheng&quot;&gt;数学演变过程&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;zhou-qi-han-shu-de-fu-li-xie-ji-shu&quot;&gt;周期函数的傅里叶级数&lt;&#x2F;h3&gt;
+&lt;p&gt;周期为 T 的任一周期函数&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(t)&lt;&#x2F;script&gt;
+，若满足下列&lt;em&gt;狄利克雷条件&lt;&#x2F;em&gt;(Dirichlet conditions&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#dirichlet-conditions&quot;&gt;2&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;）：&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;在一个周期内只有有限个不连续点&lt;&#x2F;li&gt;
+&lt;li&gt;在一个周期内只有有限个极值点(注：函数连续是条件 1、2 的充分非必要条件)&lt;&#x2F;li&gt;
+&lt;li&gt;周期内绝对可积：积分&lt;script type=&quot;math&#x2F;tex&quot;&gt;\int^{\frac{T}{2}}_{-\frac{T}{2}} |f(t)| \mathrm{d}t&lt;&#x2F;script&gt;
+ 存在&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;则&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(t)&lt;&#x2F;script&gt;
+可展开为如下的傅里叶级数：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;f(t)=\frac{1}{2} a_0 + \sum\limits_{n=1}^{\infty} (a_n \cos{n\omega_0 t}+b_n\sin{n \omega_0 t})&lt;&#x2F;script&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;dirichlet-conditions&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;2&lt;&#x2F;sup&gt;
+&lt;p&gt;又叫傅里叶级数收敛条件，&lt;a href=&quot;https:&#x2F;&#x2F;baike.baidu.com&#x2F;item&#x2F;%E7%8B%84%E5%88%A9%E5%85%8B%E9%9B%B7%E6%9D%A1%E4%BB%B6&#x2F;3807787&quot;&gt;百度百科&lt;&#x2F;a&gt; &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Dirichlet_conditions&quot;&gt;wikipedia&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;式中，系数&lt;script type=&quot;math&#x2F;tex&quot;&gt;a_n&lt;&#x2F;script&gt;
+和&lt;script type=&quot;math&#x2F;tex&quot;&gt;b_n&lt;&#x2F;script&gt;
+由&lt;em&gt;欧拉—傅里叶系数公式&lt;&#x2F;em&gt;给出，其中&lt;script type=&quot;math&#x2F;tex&quot;&gt;\omega_0=\frac{2\pi}{T}&lt;&#x2F;script&gt;
+称为角频率。&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;a_n=\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \cos{n \omega_0 t}\mathrm{d} t,
+n=0,1,2,\dots,\infty&lt;&#x2F;script&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;b_n=\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \sin{n \omega_0 t}\mathrm{d} t,
+n=1,2,\dots,\infty&lt;&#x2F;script&gt;
+&lt;p&gt;推导&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#p222&quot;&gt;3&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;：分别对&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(x),f(x)\cos kx, f(x)\sin kx&lt;&#x2F;script&gt;
+在周期&lt;script type=&quot;math&#x2F;tex&quot;&gt;[-\frac{T}{2},\frac{T}{2}]&lt;&#x2F;script&gt;
+上积分。&lt;&#x2F;p&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;p222&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;3&lt;&#x2F;sup&gt;
+&lt;p&gt;赵洪牛.《高等数学》第二版 下册 P222&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h4 id=&quot;fu-li-xie-ji-shu-de-zhi-shu-xing-shi&quot;&gt;傅里叶级数的指数形式&lt;&#x2F;h4&gt;
+&lt;p&gt;周期函数&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(t)&lt;&#x2F;script&gt;
+的傅里叶级数还可以写成复数形式（指数形式）：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;f(t)=\sum_{n=-\infty}^{\infty} \alpha _n e^{jn\omega_0 t}&lt;&#x2F;script&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\alpha_n=\frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}}
+f(t)e^{-jn\omega_0 t} \mathrm{d} t&lt;&#x2F;script&gt;
+&lt;p&gt;推导：运用欧拉公式&lt;script type=&quot;math&#x2F;tex&quot;&gt;e^{i\theta}=\cos\theta + \sin \theta&lt;&#x2F;script&gt;
+&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;fei-zhou-qi-han-shu-de-fu-li-xie-ji-fen-shi-zi&quot;&gt;非周期函数的傅里叶积分式子&lt;&#x2F;h4&gt;
+&lt;p&gt;对于非周期函数，可以认为周期&lt;script type=&quot;math&#x2F;tex&quot;&gt;T\rightarrow \infty&lt;&#x2F;script&gt;
+，此时&lt;script type=&quot;math&#x2F;tex&quot;&gt;\omega_ 0=\frac{2\pi}{T}\rightarrow 0&lt;&#x2F;script&gt;
+，为了方便讨论可以将&lt;script type=&quot;math&#x2F;tex&quot;&gt;n\omega_0&lt;&#x2F;script&gt;
+记为&lt;script type=&quot;math&#x2F;tex&quot;&gt;\omega&lt;&#x2F;script&gt;
+，&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Delta \omega=(n+1)\omega_0-n\omega_0=\omega_0&lt;&#x2F;script&gt;
+，那么傅里叶级数可以写成如下形式：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;f(t)=\int_{-\infty}^{\infty} \alpha _n e^{j\omega t}\mathrm{d}\omega,
+\alpha_n=\frac{\Delta\omega}{2\pi} \int_{-\frac{T}{2}}^{\frac{T}{2}}
+f(t)e^{-j\omega t} \mathrm{d} t&lt;&#x2F;script&gt;
+&lt;p&gt;合并为&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\begin{aligned}
+f(t)=&amp;\sum_{n=-\infty}^{\infty} \frac{\Delta\omega}{2\pi} \left[\int_{-\infty}^{\infty}
+f(t)e^{-j\omega t} \mathrm{d} t\right] e^{j\omega t}
+\\
+=&amp;\frac{1}{2\pi}\sum_{n=-\infty}^{\infty} \left[\int_{-\infty}^{\infty}
+f(t)e^{-j\omega t} \mathrm{d} t\right] e^{j\omega t} \Delta \omega
+\\
+=&amp;\frac{1}{2\pi}\int_{-\infty}^{\infty} \left[\int_{-\infty}^{\infty}
+f(t)e^{-j\omega t} \mathrm{d} t\right] e^{j\omega t} \mathrm{d} \omega
+\end{aligned}&lt;&#x2F;script&gt;
+&lt;p&gt;将中括号中的内容记作&lt;script type=&quot;math&#x2F;tex&quot;&gt;F(\omega)&lt;&#x2F;script&gt;
+即为傅里叶变换式。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;fu-li-xie-bian-huan&quot;&gt;傅里叶变换&lt;&#x2F;h3&gt;
+&lt;p&gt;对于非周期函数，如果满足狄利克雷条件（第三条相应改为&lt;script type=&quot;math&#x2F;tex&quot;&gt;\int^{\infty}_{-\infty} |f(t)| \mathrm{d}t&lt;&#x2F;script&gt;
+），可以进行傅里叶变换：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;F(\omega)=\mathscr{F}[f(t)]=\int_{-\infty}^{\infty}f(t)e^{-j\omega t}\mathrm{d} t&lt;&#x2F;script&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;f(t)=\mathscr{F}^{-1}[F(\omega)]=\frac{1}{2\pi}\int_{-\infty}^{\infty}F(\omega)e^{j\omega t} \mathrm{d} \omega&lt;&#x2F;script&gt;
+&lt;h3 id=&quot;la-pu-la-si-bian-huan&quot;&gt;拉普拉斯变换&lt;&#x2F;h3&gt;
+&lt;p&gt;狄利克雷条件的第三个可积条件，要求函数在&lt;script type=&quot;math&#x2F;tex&quot;&gt;t\rightarrow \infty&lt;&#x2F;script&gt;
+时收敛，而现实中大量信号不满足该条件，为了解决该问题，引入衰减因子&lt;script type=&quot;math&#x2F;tex&quot;&gt;e^{-\sigma t},\sigma&gt;0&lt;&#x2F;script&gt;
+，并只考虑&lt;script type=&quot;math&#x2F;tex&quot;&gt;t\ge 0&lt;&#x2F;script&gt;
+的部分&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#ignore-past&quot;&gt;4&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;，这样函数&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(t)e^{-\sigma t}&lt;&#x2F;script&gt;
+在&lt;script type=&quot;math&#x2F;tex&quot;&gt;t &gt; 0&lt;&#x2F;script&gt;
+下便可以满足可积条件。&lt;&#x2F;p&gt;
+&lt;p&gt;于是有：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;F_\sigma(\omega)
+=\mathscr{F}[f(t)e^{-\sigma t}]
+=\int_{-\infty}^{\infty}f(t)e^{-\sigma t}e^{-j\omega t}\mathrm{d} t&lt;&#x2F;script&gt;
+&lt;p&gt;记&lt;script type=&quot;math&#x2F;tex&quot;&gt;s=\sigma+j\omega&lt;&#x2F;script&gt;
+，&lt;script type=&quot;math&#x2F;tex&quot;&gt;F(s)=F\_\sigma(\frac{s-\sigma}{j})=F_\sigma(\omega)&lt;&#x2F;script&gt;
+，并认为&lt;script type=&quot;math&#x2F;tex&quot;&gt;t&lt;0&lt;&#x2F;script&gt;
+时，函数为零，于是有：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;F(s)=\mathscr{L}[f(t)]=\int_0^\infty f(t)e^{-st}\mathrm{d}t&lt;&#x2F;script&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;f(t)=\mathscr{L}^{-1}[F(s)]=
+\frac{1}{2\pi j}\int_{\sigma-j\infty}^{\sigma + j\infty} f(t) e^{st} \mathrm{d} t&lt;&#x2F;script&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;ignore-past&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;4&lt;&#x2F;sup&gt;
+&lt;p&gt;在控制系统等领域，经常忽略&lt;script type=&quot;math&#x2F;tex&quot;&gt;t&lt;0&lt;&#x2F;script&gt;
+的部分，用&lt;a href=&quot;https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;galieluo&quot;&gt;J Pan&lt;&#x2F;a&gt;的话来说，小于零的部分是哲学家考虑的问题&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h3 id=&quot;z-bian-huan&quot;&gt;Z 变换&lt;&#x2F;h3&gt;
+&lt;p&gt;现实中的信号都可以认为是连续模拟信号，而处理时通常需要将其采样成离散信号。&lt;&#x2F;p&gt;
+&lt;p&gt;通常记&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(t)&lt;&#x2F;script&gt;
+为连续信号，
+&lt;script type=&quot;math&#x2F;tex&quot;&gt;f^\star(t)&lt;&#x2F;script&gt;
+为其对应的离散采样信号，
+对于理想采样情况，采样信号可以表示为：&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;f^\star(t)
+=f(t)\times \sum\limits_{k=0}^{\infty}\delta(t-kT)
+=\sum\limits_{k=0}^{\infty}f(kT)\delta(t-kT)&lt;&#x2F;script&gt;
+&lt;p&gt;对采样后的离散信号，进行拉普拉斯变换&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\begin{aligned}
+F^\star(s)&amp;=\mathscr{L}\left[ f^\star(t)\right]
+=\int_0^\infty f^\star(t)e^{-st}\mathrm{d}t\\
+&amp;=\sum\limits_{k=0}^{\infty} f(kT) e^{-skT}\\
+\end{aligned}&lt;&#x2F;script&gt;
+&lt;p&gt;可见 &lt;script type=&quot;math&#x2F;tex&quot;&gt;F^\star(s)&lt;&#x2F;script&gt;
+是 s 的超越函数&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#transcendental-functions&quot;&gt;5&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;（指数函数），难以使用分析。
+故引入变量&lt;script type=&quot;math&#x2F;tex&quot;&gt;z=e^{sT}&lt;&#x2F;script&gt;
+,&lt;script type=&quot;math&#x2F;tex&quot;&gt;s=\frac{1}{T}lnz&lt;&#x2F;script&gt;
+&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;F(z)=F^\star(s)|\_{s=\frac{1}{T}lnz}
+=\sum\limits\_{k=0}^{\infty}f(kT)z^{-k}&lt;&#x2F;script&gt;
+&lt;p&gt;于是便得到 Z 变换的表达式（是 z 的幂函数）。&lt;&#x2F;p&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;transcendental-functions&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;5&lt;&#x2F;sup&gt;
+&lt;p&gt;超越函数 &lt;a href=&quot;https:&#x2F;&#x2F;baike.baidu.com&#x2F;item&#x2F;%E8%B6%85%E8%B6%8A%E5%87%BD%E6%95%B0&#x2F;3365811&quot;&gt;百度百科&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+</content>
+        
+    </entry>
+</feed>

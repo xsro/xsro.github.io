@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>xsro&#x27;s blog - 常用技术速查</title>
+    <link href="https://xsro.github.io/categories/chang-yong-ji-zhu-su-cha/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://xsro.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-10-13T00:00:00+00:00</updated>
+    <id>https://xsro.github.io/categories/chang-yong-ji-zhu-su-cha/atom.xml</id>
+    <entry xml:lang="en">
+        <title>我的latex工作流</title>
+        <published>2023-10-13T00:00:00+00:00</published>
+        <updated>2023-10-13T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/tex-workflow/" type="text/html"/>
+        <id>https://xsro.github.io/tex-workflow/</id>
+        
+        <content type="html">&lt;h1 id=&quot;wo-de-latexgong-zuo-liu&quot;&gt;我的latex工作流&lt;&#x2F;h1&gt;
+&lt;p&gt;继WSL&#x2F;gWSL技术使得”windows成为最好的Linux发行版“之后，
+加上overleaf也是运行在linux里面的，
+我发现我们的latex工作流完全可以全部迁移到*nix系统之中了。
+这样的好处是我可以统一用linux的一些规范，避免一些不同系统带来的问题。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;CTAN&#x2F;info&#x2F;install-latex-guide-zh-cn&#x2F;install-latex-guide-zh-cn.pdf&quot;&gt;LATEX安装教程&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;wo-yu-dao-guo-de-cuo-wu&quot;&gt;我遇到过的错误&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;zhao-bu-dao-zi-ti-stix-two-math&quot;&gt;找不到字体STIX TWO MATH&lt;&#x2F;h3&gt;
+&lt;p&gt;ubuntu里面可以直接用&lt;code&gt;sudo apt install fonts-stix&lt;&#x2F;code&gt;安装&lt;code&gt;stix&lt;&#x2F;code&gt;，但是它和所需的不一样。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;stipub&#x2F;stixfonts&#x2F;tree&#x2F;master&#x2F;zipfiles&quot;&gt;stix2字体下载地址&lt;&#x2F;a&gt;: 我用的ttf格式&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;linuxstory.org&#x2F;install-new-fonts&#x2F;&quot;&gt;Linux 安装字体&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>常用代理与镜像设置方法</title>
+        <published>2022-10-04T00:00:00+00:00</published>
+        <updated>2022-10-04T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/proxy-mirror-cn/" type="text/html"/>
+        <id>https://xsro.github.io/proxy-mirror-cn/</id>
+        
+        <content type="html">&lt;h2 id=&quot;git&quot;&gt;GIT&lt;&#x2F;h2&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;# 设置http:
+&lt;&#x2F;span&gt;&lt;span&gt;git config --global http.proxy http:&#x2F;&#x2F;127.0.0.1:1080
+&lt;&#x2F;span&gt;&lt;span&gt;# 设置https:
+&lt;&#x2F;span&gt;&lt;span&gt;git config --global https.proxy http:&#x2F;&#x2F;127.0.0.1:1080
+&lt;&#x2F;span&gt;&lt;span&gt;# 设置socks:
+&lt;&#x2F;span&gt;&lt;span&gt;git config --global http.proxy &amp;#39;socks5:&#x2F;&#x2F;127.0.0.1:1080&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;git config --global https.proxy &amp;#39;socks5:&#x2F;&#x2F;127.0.0.1:1080&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;## 取消
+&lt;&#x2F;span&gt;&lt;span&gt;git config --global --unset http.proxy
+&lt;&#x2F;span&gt;&lt;span&gt;git config --global --unset https.proxy
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;或者通过&lt;code&gt;git config --global -e&lt;&#x2F;code&gt;编辑配置文件&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ini&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-ini &quot;&gt;&lt;code class=&quot;language-ini&quot; data-lang=&quot;ini&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;[https &amp;quot;https:&#x2F;&#x2F;github.com&amp;quot;]
+&lt;&#x2F;span&gt;&lt;span&gt;	&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;proxy &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;socks5:&#x2F;&#x2F;127.0.0.1:7891
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>windows系统安装Scoop包管理工具</title>
+        <published>2022-01-25T00:00:00+00:00</published>
+        <updated>2022-01-25T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/install-scoop-with-mirror-cn/" type="text/html"/>
+        <id>https://xsro.github.io/install-scoop-with-mirror-cn/</id>
+        
+        <content type="html">&lt;p&gt;&lt;strong&gt;该内容似乎已经过时&lt;&#x2F;strong&gt;，因为目前&lt;a href=&quot;https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;360677731&quot;&gt;似乎&lt;&#x2F;a&gt;github.com.cnpmjs.org 和 hub.fastgit.org 镜像均无法使用&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;windows-xi-tong-an-zhuang-scoop-bao-guan-li-gong-ju&quot;&gt;windows 系统安装 Scoop 包管理工具&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;scoop.sh&#x2F;&quot;&gt;https:&#x2F;&#x2F;scoop.sh&#x2F;&lt;&#x2F;a&gt;是一款 windows 系统下的包管理工具，根据官网只需要以下命令即可安装。&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span&gt;iwr -useb get.scoop.sh | iex
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#Note = if you get an error you might need to change the execution policy (i.e. enable Powershell) with
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;Set-ExecutionPolicy&lt;&#x2F;span&gt;&lt;span&gt; RemoteSigned -scope CurrentUser
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;实际使用中，通常需要镜像加速以及修改安装位置，所以结合文章&lt;a href=&quot;https:&#x2F;&#x2F;blog.csdn.net&#x2F;luoyooi&#x2F;article&#x2F;details&#x2F;102990113&quot;&gt;Windows 下 Scoop 安装、配置与使用&lt;&#x2F;a&gt;，在此，我记录一下我的安装过程。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;an-zhuang-scoop&quot;&gt;安装 SCOOP&lt;&#x2F;h2&gt;
+&lt;p&gt;由于我的 C 盘空间有限，&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Scoop#installation&quot;&gt;可以修改安装位置&lt;&#x2F;a&gt;我将目标目录修改为&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#将Scoop安装到自定义目录(命令行方式),默认为C:\Users&amp;lt;user&amp;gt;\scoop
+&lt;&#x2F;span&gt;&lt;span&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;env:SCOOP&lt;&#x2F;span&gt;&lt;span&gt;=&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;D:\Applications\Scoop&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;Environment&lt;&#x2F;span&gt;&lt;span&gt;]::SetEnvironmentVariable(&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;SCOOP&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;, $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;env:SCOOP&lt;&#x2F;span&gt;&lt;span&gt;, &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;User&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#将Scoop配置为将全局程序安装到自定义目录 SCOOP_GLOBAL(命令行方式),默认为C:\ProgramData\scoop
+&lt;&#x2F;span&gt;&lt;span&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;env:SCOOP_GLOBAL&lt;&#x2F;span&gt;&lt;span&gt;=&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;D:\Applications\GlobalScoopApps&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;Environment&lt;&#x2F;span&gt;&lt;span&gt;]::SetEnvironmentVariable(&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;SCOOP_GLOBAL&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;, $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;env:SCOOP_GLOBAL&lt;&#x2F;span&gt;&lt;span&gt;, &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;Machine&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;我的网络质量不佳，无法直接使用&lt;code&gt;iwr -useb get.scoop.sh | iex&lt;&#x2F;code&gt;安装，可以借助镜像，来实现安装，下面的脚本会自动替换掉安装脚本中的 github 的链接。&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#可能需要通过下面的命令设置权限之后再安装
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;Set-ExecutionPolicy&lt;&#x2F;span&gt;&lt;span&gt; RemoteSigned -scope CurrentUser
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#iwr -useb get.scoop.sh | iex
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#网络慢可以使用下面替换为cnpm和fastgit的链接
+&lt;&#x2F;span&gt;&lt;span&gt;iwr -useb https:&#x2F;&#x2F;raw.fastgit.org&#x2F;ScoopInstaller&#x2F;Scoop&#x2F;master&#x2F;bin&#x2F;install.ps1 | &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;%&lt;&#x2F;span&gt;&lt;span&gt;{$_&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;.Content.replace&lt;&#x2F;span&gt;&lt;span&gt;(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;github.com&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;,&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;github.com.cnpmjs.org&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;).replace(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;raw.githubusercontent.com&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;,&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;raw.fastgit.org&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;) | iex
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;上面这个命令&lt;strong&gt;应该&lt;&#x2F;strong&gt;可以正常安装 scoop 程序，但是当需要使用 scoop 安装其他程序时可能会出现问题，
+可以手动将文件&lt;code&gt;$env:SCOOP\apps\scoop\current\lib\manifest.ps1&lt;&#x2F;code&gt;中读取 json 文件的命令(如下 👇🏻 第一条命令)
+替换为下面的第二条命令，从而实现自动替换掉 github 链接。&lt;&#x2F;p&gt;
+&lt;p&gt;也可在 powershell 中运行下面的第三条命令修改 scoop 源码，使得 scoop 安装其他程序时自动替换掉 github 链接。&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#1原命令
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;Get-Content &lt;&#x2F;span&gt;&lt;span&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;path &lt;&#x2F;span&gt;&lt;span&gt;-raw -Encoding UTF8 | &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;convertfrom-json &lt;&#x2F;span&gt;&lt;span&gt;-ea stop
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#2替换为
+&lt;&#x2F;span&gt;&lt;span&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;Get-Content &lt;&#x2F;span&gt;&lt;span&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;path &lt;&#x2F;span&gt;&lt;span&gt;-raw -Encoding UTF8).replace(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;github.com&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;,&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;github.com.cnpmjs.org&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;).replace(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;raw.githubusercontent.com&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;,&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;raw.fastgit.org&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;) | &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;convertfrom-json &lt;&#x2F;span&gt;&lt;span&gt;-ea stop
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#3可以使用下面的命令自动完成替换操作
+&lt;&#x2F;span&gt;&lt;span&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;Get-Content &lt;&#x2F;span&gt;&lt;span&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;env:SCOOP&lt;&#x2F;span&gt;&lt;span&gt;\apps\scoop\current\lib\manifest.ps1 -raw).replace(&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;Get-Content $path -raw -Encoding UTF8 | convertfrom-json -ea stop&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;,&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;$(Get-Content $path -raw -Encoding UTF8).replace(&amp;quot;github.com&amp;quot;,&amp;quot;github.com.cnpmjs.org&amp;quot;).replace(&amp;quot;raw.githubusercontent.com&amp;quot;,&amp;quot;raw.fastgit.org&amp;quot;) | convertfrom-json -ea stop&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;) | &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;Out-File &lt;&#x2F;span&gt;&lt;span&gt;-FilePath $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;env:SCOOP&lt;&#x2F;span&gt;&lt;span&gt;\apps\scoop\current\lib\manifest.ps1
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;安装完成之后通过如下命令中的一条修改配置，更新的时候就可以方便许多。&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# https:&#x2F;&#x2F;gitcode.net
+&lt;&#x2F;span&gt;&lt;span&gt;scoop config SCOOP_REPO https:&#x2F;&#x2F;gitcode.net&#x2F;mirrors&#x2F;ScoopInstaller&#x2F;Scoop.git
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#cnpmjs
+&lt;&#x2F;span&gt;&lt;span&gt; scoop config SCOOP_REPO https:&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;github.com&lt;&#x2F;span&gt;&lt;span&gt;.cnpmjs.org&#x2F;ScoopInstaller&#x2F;Scoop&#x2F;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#fastgit
+&lt;&#x2F;span&gt;&lt;span&gt; scoop config SCOOP_REPO https:&#x2F;&#x2F;hub.fastgit.org&#x2F;ScoopInstaller&#x2F;Scoop&#x2F;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#gitee
+&lt;&#x2F;span&gt;&lt;span&gt; scoop config SCOOP_REPO https:&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;gitee.com&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;squallliu&#x2F;scoop
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;an-zhuang-git&quot;&gt;安装 Git&lt;&#x2F;h2&gt;
+&lt;p&gt;scoop 使用 git 来管理软件源列表，所以需要安装 git。在上一步安装 scoop 的时候&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Scoop&#x2F;blob&#x2F;master&#x2F;bin&#x2F;install.ps1#L58-L64&quot;&gt;安装脚本&lt;&#x2F;a&gt; 会自动下载 main bucket 的压缩包，这个压缩包里面定义了 git 的安装方法，但是其依赖 7zip 使用了 github 的链接，无法访问，会导致安装失败，可以手动修改掉这个链接。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;tian-jia-ruan-jian-yuan-bucket&quot;&gt;添加软件源 Bucket&lt;&#x2F;h2&gt;
+&lt;p&gt;scoop 通过 bucket 管理软件源，列表见&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Scoop#known-application-buckets&quot;&gt;github&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Main&quot;&gt;main&lt;&#x2F;a&gt; - Default bucket for the most common (mostly CLI) apps&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Extras&quot;&gt;extras&lt;&#x2F;a&gt; - Apps that don&#x27;t fit the main bucket&#x27;s &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Scoop&#x2F;wiki&#x2F;Criteria-for-including-apps-in-the-main-bucket&quot;&gt;criteria&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Calinou&#x2F;scoop-games&quot;&gt;games&lt;&#x2F;a&gt; - Open source&#x2F;freeware games and game-related tools&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;matthewjberger&#x2F;scoop-nerd-fonts&quot;&gt;nerd-fonts&lt;&#x2F;a&gt; - Nerd Fonts&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;kodybrown&#x2F;scoop-nirsoft&quot;&gt;nirsoft&lt;&#x2F;a&gt; - Almost all of the &lt;a href=&quot;https:&#x2F;&#x2F;rasa.github.io&#x2F;scoop-directory&#x2F;by-apps#kodybrown_scoop-nirsoft&quot;&gt;250+&lt;&#x2F;a&gt; apps from &lt;a href=&quot;https:&#x2F;&#x2F;nirsoft.net&quot;&gt;Nirsoft&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Java&quot;&gt;java&lt;&#x2F;a&gt; - A collection of Java development kits (JDKs), Java runtime engines (JREs), Java&#x27;s virtual machine debugging tools and Java based runtime engines.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;TheRandomLabs&#x2F;scoop-nonportable&quot;&gt;nonportable&lt;&#x2F;a&gt; - Non-portable apps (may require UAC)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;PHP&quot;&gt;php&lt;&#x2F;a&gt; - Installers for most versions of PHP&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Versions&quot;&gt;versions&lt;&#x2F;a&gt; - Alternative versions of apps found in other buckets&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;此外还可以在&lt;a href=&quot;https:&#x2F;&#x2F;rasa.github.io&#x2F;scoop-directory&#x2F;by-score.html&quot;&gt;这个网站&lt;&#x2F;a&gt;中查找一些社区维护的 bucket：如&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;chawyehsu&#x2F;dorado&quot;&gt;dorado&lt;&#x2F;a&gt;:🐟 Yet Another bucket for lovely Scoop&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;chang-yong-bucket&quot;&gt;常用 bucket&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#scoop bucket remove main
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add main &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Main&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add extras &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;scoop-extras&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add versions &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Versions&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add jetbrains &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;Ash258&#x2F;Scoop-JetBrains&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add java &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Java&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add dorado https:&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;github.com&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;chawyehsu&#x2F;dorado
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add scoopet https:&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;github.com&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;ivaquero&#x2F;scoopet
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;scoop-apps&quot;&gt;scoop-apps&lt;&#x2F;h3&gt;
+&lt;p&gt;scoop-apps(&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;kkzzhizhou&#x2F;scoop-apps&quot;&gt;github&lt;&#x2F;a&gt;,&lt;a href=&quot;https:&#x2F;&#x2F;gitee.com&#x2F;kkzzhizhou&#x2F;scoop-apps&quot;&gt;gitee&lt;&#x2F;a&gt;)合并了目前的大多数软件源bucket，其未对仓库软件来源进行安全检验，请自行甄别恶意软件，或者使用杀毒软件&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span&gt;scoop bucket add apps https:&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;github.com&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;kkzzhizhou&#x2F;scoop-apps
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;# 国内网络
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add apps https:&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;gitee.com&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;kkzzhizhou&#x2F;scoop-apps
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;chang-yong-bucket-de-gitcode-jing-xiang&quot;&gt;常用 bucket 的 gitcode 镜像&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#scoop bucket remove main
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add main &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;gitcode.net&#x2F;mirrors&#x2F;ScoopInstaller&#x2F;Main&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add extras &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;gitcode.net&#x2F;mirrors&#x2F;ScoopInstaller&#x2F;scoop-extras&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add versions &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;gitcode.net&#x2F;mirrors&#x2F;ScoopInstaller&#x2F;Versions&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add java &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;gitcode.net&#x2F;mirrors&#x2F;ScoopInstaller&#x2F;Java&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;chang-yong-bucket-de-cnpmjs-jing-xiang&quot;&gt;常用 bucket 的 cnpmjs 镜像&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#scoop bucket remove main
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add main &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com.cnpmjs.org&#x2F;ScoopInstaller&#x2F;Main&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add extras &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com.cnpmjs.org&#x2F;ScoopInstaller&#x2F;scoop-extras&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add versions &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com.cnpmjs.org&#x2F;ScoopInstaller&#x2F;Versions&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add jetbrains &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com.cnpmjs.org&#x2F;Ash258&#x2F;Scoop-JetBrains&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add java &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com.cnpmjs.org&#x2F;ScoopInstaller&#x2F;Java&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add dorado &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com.cnpmjs.org&#x2F;chawyehsu&#x2F;dorado&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add scoopet &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;github.com.cnpmjs.org&#x2F;ivaquero&#x2F;scoopet&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;chang-yong-bucket-de-fastgit-jing-xiang&quot;&gt;常用 bucket 的 fastgit 镜像&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#scoop bucket remove main
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add main &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;hub.fastgit.org&#x2F;ScoopInstaller&#x2F;Main&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add extras &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;hub.fastgit.org&#x2F;ScoopInstaller&#x2F;scoop-extras&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add versions &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;hub.fastgit.org&#x2F;ScoopInstaller&#x2F;Versions&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add jetbrains &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;hub.fastgit.org&#x2F;Ash258&#x2F;Scoop-JetBrains&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add java &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;hub.fastgit.org&#x2F;ScoopInstaller&#x2F;Java&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add dorado &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;hub.fastgit.org&#x2F;chawyehsu&#x2F;dorado&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;scoop bucket add scoopet &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;hub.fastgit.org&#x2F;ivaquero&#x2F;scoopet&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;在软件安装过程中通常会自动添加&lt;code&gt;main&lt;&#x2F;code&gt; bucket，可以通过&lt;code&gt;scoop bucket rm main&lt;&#x2F;code&gt;删除之后重新添加。之后修改链接可以使用如下内容：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span&gt; cd $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;env:SCOOP&lt;&#x2F;span&gt;&lt;span&gt;\buckets\Main
+&lt;&#x2F;span&gt;&lt;span&gt; git remote &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;set-url&lt;&#x2F;span&gt;&lt;span&gt; origin https:&#x2F;&#x2F;hub.fastgit.org&#x2F;ScoopInstaller&#x2F;Main
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;sou-suo-app&quot;&gt;搜索 APP&lt;&#x2F;h2&gt;
+&lt;p&gt;可以在网站&lt;a href=&quot;https:&#x2F;&#x2F;scoopsearch.github.io&#x2F;#&#x2F;apps&quot;&gt;https:&#x2F;&#x2F;scoopsearch.github.io&#x2F;#&#x2F;apps&lt;&#x2F;a&gt;中搜索软件是否有 bucket 搜录。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;an-zhuang-tui-jian-de-ruan-jian&quot;&gt;安装推荐的软件&lt;&#x2F;h2&gt;
+&lt;p&gt;运行&lt;code&gt; scoop checkup&lt;&#x2F;code&gt;安装提示修改注册表，和安装推荐的软件。通常要求安装以下软件&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;scoop install 7zip  innounp  wixtoolset
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;注：在修改注册表来支持长路径时需要在管理员模式运行 powershell&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;can-kao-lian-jie&quot;&gt;参考链接&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;shenbo.github.io&#x2F;2021&#x2F;03&#x2F;23&#x2F;apps&#x2F;%E4%BD%BF%E7%94%A8scoop%E5%AE%89%E8%A3%85%E7%AE%A1%E7%90%86windows%E8%BD%AF%E4%BB%B6(2)-github%E5%8A%A0%E9%80%9F&#x2F;&quot;&gt;使用 scoop 安装管理 windows 软件（2）：github 加速&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;这篇博客同时发布在&lt;a href=&quot;https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_44225025&#x2F;article&#x2F;details&#x2F;117401094&quot;&gt;CSDN&lt;&#x2F;a&gt;。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>控制相关资源导航</title>
+        <published>2021-10-03T00:00:00+00:00</published>
+        <updated>2021-10-03T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/control/navigation/" type="text/html"/>
+        <id>https://xsro.github.io/control/navigation/</id>
+        
+        <content type="html">&lt;h1 id=&quot;kong-zhi-xiang-guan-zi-yuan-dao-hang&quot;&gt;控制相关资源导航&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;tu-wen-wei-zhu-bo-zhu&quot;&gt;图文（为主）博主&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;j-pan&quot;&gt;J Pan&lt;&#x2F;h3&gt;
+&lt;p&gt;航空工程师，主要在知乎撰写文章，有&lt;a href=&quot;https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;57764200&quot;&gt;纲举目张&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;知乎: &lt;a href=&quot;https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;galieluo&quot;&gt;J Pan&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;xi-tong-yu-kong-zhi&quot;&gt;系统与控制&lt;&#x2F;h3&gt;
+&lt;!-- 赵兰浩 --&gt;
+&lt;p&gt;目前发表或完成相关论文 6 篇，主要研究方向为多智能体系统与复杂网络，业余时间运营知乎网“系统与控制”账号，在国内外相关学者的合作下完成《控制理论结构图》系列工作，整理完成《自动化学科科普手册》系列版本&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;知乎：&lt;a href=&quot;https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;xiang-yi-55-49&quot;&gt;系统与控制&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;主页：&lt;a href=&quot;https:&#x2F;&#x2F;qdu-zdh.github.io&#x2F;qdu-zlh&#x2F;&quot;&gt;https:&#x2F;&#x2F;qdu-zdh.github.io&#x2F;qdu-zlh&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;推特：&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;Lugh562007&quot;&gt;System control&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;shi-pin-wei-zhu-bo-zhu&quot;&gt;视频（为主）博主&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;dr-can&quot;&gt;DR_CAN&lt;&#x2F;h3&gt;
+&lt;p&gt;Ph.D. in Dynamics and Control 机器人工程师&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;B 站：&lt;a href=&quot;https:&#x2F;&#x2F;space.bilibili.com&#x2F;230105574&quot;&gt;DR_CAN&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;brian-douglas&quot;&gt;Brian Douglas&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;youtube：&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCq0imsn84ShAe9PBOFnoIrg&quot;&gt;Brian Douglas&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;网站：&lt;a href=&quot;https:&#x2F;&#x2F;engineeringmedia.com&#x2F;&quot;&gt;https:&#x2F;&#x2F;engineeringmedia.com&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;另外也推荐&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;c&#x2F;matlab&quot;&gt;matlab&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;si-wei-dao-tu&quot;&gt;思维导图&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;the-map-of-control-theory&quot;&gt;The Map of Control Theory&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;engineeringmedia.com&#x2F;map-of-control&quot;&gt;The Map of Control Theory&lt;&#x2F;a&gt;是 Brian Douglas 绘制的控制领域思维导图。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;kong-zhi-li-lun-jie-gou-tu&quot;&gt;控制理论结构图&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;strong&gt;系统与控制&lt;&#x2F;strong&gt;博主绘制了控制领域的常用技术概览，包括多张图。发布在
+&lt;a href=&quot;https:&#x2F;&#x2F;medium.com&#x2F;@939856189&#x2F;visualizing-control-theory-1e12113dc0f2&quot;&gt;medium.com&lt;&#x2F;a&gt;、
+&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;Lugh562007&#x2F;status&#x2F;1361609590824046592&quot;&gt;twitter&lt;&#x2F;a&gt;、
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;lugh56&#x2F;some-chart-of-control-theory&quot;&gt;github&lt;&#x2F;a&gt;
+等多个平台上。&lt;&#x2F;p&gt;
+&lt;p&gt;其中比较著名的有&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;Lugh562007&#x2F;status&#x2F;1519177837282217984&quot;&gt;Map of Multi-Agent Control&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Git常用拓展知识</title>
+        <published>2021-07-25T00:00:00+00:00</published>
+        <updated>2021-07-25T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/git-tips-cn/" type="text/html"/>
+        <id>https://xsro.github.io/git-tips-cn/</id>
+        
+        <content type="html">&lt;h1 id=&quot;some-tips-for-git&quot;&gt;Some Tips for git&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;links&quot;&gt;links&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;git commit 提交规范
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.conventionalcommits.org&#x2F;&quot;&gt;Conventional Commits 约定式提交&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gitmoji.dev&#x2F;&quot;&gt;gitmoji 使用表情来规范 commit 消息&lt;&#x2F;a&gt;: &lt;a href=&quot;https:&#x2F;&#x2F;gitmoji.js.org&#x2F;&quot;&gt;one fork&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jianshu.com&#x2F;p&#x2F;238a1e1f4037&quot;&gt;LGTM : code review 行话&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tip1-commit-gui-fan-zhong-chang-yong-commit-lei-xing-jie-shi&quot;&gt;Tip1 = Commit 规范中常用 commit 类型解释&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;feat&lt;&#x2F;code&gt;: 新功能、新特性&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;fix&lt;&#x2F;code&gt;: 修改 bug&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;perf&lt;&#x2F;code&gt;: 更改代码，以提高性能（在不影响代码内部行为的前提下，对程序性能进行优化）&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;refactor&lt;&#x2F;code&gt;: 代码重构（重构，在不影响代码内部行为、功能下的代码修改）&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;docs&lt;&#x2F;code&gt;: 文档修改&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;style&lt;&#x2F;code&gt;: 代码格式修改, 注意不是 css 修改（例如分号修改）&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;test&lt;&#x2F;code&gt;: 测试用例新增、修改&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;build&lt;&#x2F;code&gt;: 影响项目构建或依赖项修改&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;revert&lt;&#x2F;code&gt;: 恢复上一次提交&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;ci&lt;&#x2F;code&gt;: 持续集成相关文件修改&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;chore&lt;&#x2F;code&gt;: 其他修改（不在上述类型中的修改）&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;release&lt;&#x2F;code&gt;: 发布新版本&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;workflow&lt;&#x2F;code&gt;: 工作流相关文件修改&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;typo&lt;&#x2F;code&gt;：拼写错误等小错误&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tip2-code-review-xing-hua&quot;&gt;Tip2：code Review 行话&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;PR&lt;&#x2F;code&gt;: Pull Request. 拉取请求，给其他项目提交代码&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;LGTM&lt;&#x2F;code&gt;: Looks Good To Me. 朕知道了 代码已经过 review，可以合并&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;SGTM&lt;&#x2F;code&gt;: Sounds Good To Me. 和上面那句意思差不多，也是已经通过了 review 的意思&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;WIP&lt;&#x2F;code&gt;: Work In Progress. 传说中提 PR 的最佳实践是，如果你有个改动很大的 PR，可以在写了一部分的情况下先提交，但是在标题里写- `上 WIP，以告诉项目维护者这个功能还未完成，方便维护者提前 review 部分提交的代码。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;PTAL&lt;&#x2F;code&gt;: Please Take A Look. 你来瞅瞅？用来提示别人来看一下&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;TBR&lt;&#x2F;code&gt;: To Be Reviewed. 提示维护者进行 review&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;TL&lt;&#x2F;code&gt;;DR = Too Long; Didn’t Read. 太长懒得看。也有很多文档在做简略描述之前会写这么一句&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;TBD&lt;&#x2F;code&gt;: To Be Done(or Defined&#x2F;Discussed&#x2F;Decided&#x2F;Determined).根据语境不同意义有所区别，但一般都是还没搞定的意思&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tips3-yi-xie-ge-ren-gan-wu&quot;&gt;Tips3 = 一些个人感悟&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;变量名直观一点，不要害怕太长
+&lt;ol&gt;
+&lt;li&gt;人类创造编程语言，就是为了方便人类编写与理解，大部分语言编译器都会做相关的优化的&lt;&#x2F;li&gt;
+&lt;li&gt;git 仓库也真的不在乎多那么几个字节，github 大小也没有限制，浅克隆问题也不大&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;主分支不用，其他分支少用&lt;code&gt;git push -f&lt;&#x2F;code&gt;，提交历史没有必要太好看
+&lt;ol&gt;
+&lt;li&gt;同上 2，多几个 commit 没什么大不了的&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;个人项目单分支模型就可以了，用太多分支往往徒增烦恼（这条不绝对，要看具体情况）&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Markdown 常用拓展语法参考</title>
+        <published>2021-07-25T00:00:00+00:00</published>
+        <updated>2021-07-25T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/markdown-tips-cn/" type="text/html"/>
+        <id>https://xsro.github.io/markdown-tips-cn/</id>
+        
+        <content type="html">&lt;h1 id=&quot;markdown-chang-yong-tuo-zhan-yu-fa-can-kao&quot;&gt;Markdown 常用拓展语法参考&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;chang-yong-lian-jie&quot;&gt;常用链接&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;基本语法
+&lt;ol&gt;
+&lt;li&gt;GitHub Flavored Markdown Spec = &lt;a href=&quot;https:&#x2F;&#x2F;github.github.com&#x2F;gfm&#x2F;&quot;&gt;gfm&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;比较细致的 markdown 参考资&lt;script type=&quot;math&#x2F;tex&quot;&gt;1 = &lt;https:&#x2F;&#x2F;www.markdownguide.org&#x2F;&gt;
+  3. github 上的 markdown 语法速查&lt;&#x2F;script&gt;
+1 = &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tchapi&#x2F;markdown-cheatsheet&quot;&gt;markdown-cheatsheet&lt;&#x2F;a&gt;,&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;younghz&#x2F;Markdown&quot;&gt;Markdown&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;typora.io&#x2F;&quot;&gt;typora&lt;&#x2F;a&gt;中提供的&lt;a href=&quot;https:&#x2F;&#x2F;support.typora.io&#x2F;Markdown-Reference&#x2F;&quot;&gt;帮助&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;数学公式&lt;script type=&quot;math&#x2F;tex&quot;&gt;\TeX&lt;&#x2F;script&gt;
+：通常 markdown 使用以下两种工具渲染公示
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;docs.mathjax.org&#x2F;en&#x2F;latest&#x2F;input&#x2F;tex&#x2F;macros&#x2F;index.html&quot;&gt;mathjax&lt;&#x2F;a&gt;：typora、知乎等&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;katex.org&#x2F;docs&#x2F;supported.html&quot;&gt;katex&lt;&#x2F;a&gt;：hugo 等&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;emoji 参考:v:
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;xsro.github.io&#x2F;markdown-tips-cn&#x2F;emoji.md&quot;&gt;emoji 表&lt;&#x2F;a&gt;来自&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;caiyongji&#x2F;emoji-list&quot;&gt;caiyongji&#x2F;emoji-list&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;emoji-cheat-sheet.com&#x2F;&quot;&gt;emoji-cheat-sheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Mermaid 图表:一般都是使用的 mermaid.js 来渲染的，注意版本
+&lt;ol&gt;
+&lt;li&gt;mermaid.js 官方文档：&lt;a href=&quot;https:&#x2F;&#x2F;mermaid-js.github.io&#x2F;mermaid&#x2F;#&quot;&gt;mermaid&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;typora 的相关帮助文档：&lt;a href=&quot;https:&#x2F;&#x2F;support.typora.io&#x2F;Draw-Diagrams-With-Markdown&#x2F;&quot;&gt;Draw Diagrams With Markdown (typora.io)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Badge 徽章：&lt;img src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;github&#x2F;stars&#x2F;xsro?style=flat-square&quot; alt=&quot;star&quot; &#x2F;&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;shields.io&#x2F;&quot;&gt;https:&#x2F;&#x2F;shields.io&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;forthebadge.com&#x2F;&quot;&gt;https:&#x2F;&#x2F;forthebadge.com&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;在 gitee 中使用徽标：在 git 仓库主页一次点击&lt;code&gt;管理&lt;&#x2F;code&gt;、&lt;code&gt;仓库挂件&lt;&#x2F;code&gt;即可看到&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;chang-yong-html-dai-ma&quot;&gt;常用 html 代码&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;xing-nei-html&quot;&gt;行内 html&lt;&#x2F;h3&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Raw Markdown Source&lt;&#x2F;th&gt;&lt;th&gt;Output in Live Preview&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;&amp;lt;span style=&#x27;color:red&#x27;&amp;gt;This is red&amp;lt;&#x2F;span&amp;gt;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;span style=&#x27;color:red&#x27;&gt;This is red&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;&amp;lt;ruby&amp;gt; 漢 &amp;lt;rt&amp;gt; ㄏㄢˋ &amp;lt;&#x2F;rt&amp;gt; &amp;lt;&#x2F;ruby&amp;gt;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;ruby&gt; 漢 &lt;rt&gt; ㄏㄢ ˋ &lt;&#x2F;rt&gt; &lt;&#x2F;ruby&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;&amp;lt;kbd&amp;gt;Ctrl&amp;lt;&#x2F;kbd&amp;gt;+&amp;lt;kbd&amp;gt;F9&amp;lt;&#x2F;kbd&amp;gt;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;F9&lt;&#x2F;kbd&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;&amp;lt;span style=&amp;quot;font-size:2rem; background:yellow;&amp;quot;&amp;gt;**Bigger**&amp;lt;&#x2F;span&amp;gt;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;span style=&quot;font-size:2rem; background:yellow;&quot;&gt;&lt;strong&gt;Bigger&lt;&#x2F;strong&gt;&lt;&#x2F;span&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;HTML entities like &amp;amp;reg; &amp;amp;#182;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;HTML entities like ® ¶&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;h3 id=&quot;wen-ben-zhu-shi-yin-cang-yu-zhe-die&quot;&gt;文本注释、隐藏与折叠&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;zhu-shi-nei-rong&quot;&gt;注释内容&lt;&#x2F;h4&gt;
+&lt;pre data-lang=&quot;html&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&amp;lt;!--这是注释--&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h4 id=&quot;yin-cang-duan-luo&quot;&gt;隐藏段落&lt;&#x2F;h4&gt;
+&lt;pre data-lang=&quot;html&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;p &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;hidden&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;这是需要隐藏的段落 不可以有空行&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h4 id=&quot;zhe-die&quot;&gt;折叠&lt;&#x2F;h4&gt;
+&lt;pre data-lang=&quot;html&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;details&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;summary&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    I have keys but no locks. I have space but no room. You can enter but can&amp;#39;t
+&lt;&#x2F;span&gt;&lt;span&gt;    leave. What am I?
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;summary&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  A keyboard.
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;details&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;效果：&lt;&#x2F;p&gt;
+&lt;details&gt;
+    &lt;summary&gt;I have keys but no locks. I have space but no room. You can enter but can&#x27;t leave. What am I?&lt;&#x2F;summary&gt;
+    A keyboard.
+&lt;&#x2F;details&gt;
+&lt;h3 id=&quot;yin-shi-pin&quot;&gt;音视频&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;html&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;audio &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;src&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;xxx.mp3&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;audio&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt; &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;video &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;src&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;xxx.mp4&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;video&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h4 id=&quot;jia-zai-bi-li-bi-li-shi-pin&quot;&gt;加载哔哩哔哩视频&lt;&#x2F;h4&gt;
+&lt;pre data-lang=&quot;html&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;iframe
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;src&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&#x2F;&#x2F;player.bilibili.com&#x2F;player.html?aid=66583807&amp;amp;bvid=BV1n441127jG&amp;amp;cid=116735636&amp;amp;page=1&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;scrolling&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;no&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;border&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;frameborder&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;no&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;framespacing&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;allowfullscreen&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;true&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;iframe&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;效果：&lt;&#x2F;p&gt;
+&lt;iframe src=&quot;&#x2F;&#x2F;player.bilibili.com&#x2F;player.html?aid=66583807&amp;bvid=BV1n441127jG&amp;cid=116735636&amp;page=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot;&gt; &lt;&#x2F;iframe&gt;
+&lt;h2 id=&quot;chang-jian-fu-hao&quot;&gt;常见符号&lt;&#x2F;h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Alpha&lt;&#x2F;script&gt;
+ &lt;code&gt;\Alpha&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Beta&lt;&#x2F;script&gt;
+ &lt;code&gt;\Beta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Gamma&lt;&#x2F;script&gt;
+ &lt;code&gt;\Gamma&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Delta&lt;&#x2F;script&gt;
+ &lt;code&gt;\Delta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Epsilon&lt;&#x2F;script&gt;
+ &lt;code&gt;\Epsilon&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Zeta&lt;&#x2F;script&gt;
+ &lt;code&gt;\Zeta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Eta&lt;&#x2F;script&gt;
+ &lt;code&gt;\Eta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Theta&lt;&#x2F;script&gt;
+ &lt;code&gt;\Theta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Iota&lt;&#x2F;script&gt;
+ &lt;code&gt;\Iota&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Kappa&lt;&#x2F;script&gt;
+ &lt;code&gt;\Kappa&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Lambda&lt;&#x2F;script&gt;
+ &lt;code&gt;\Lambda&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Mu&lt;&#x2F;script&gt;
+ &lt;code&gt;\Mu&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Nu&lt;&#x2F;script&gt;
+ &lt;code&gt;\Nu&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Xi&lt;&#x2F;script&gt;
+ &lt;code&gt;\Xi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Omicron&lt;&#x2F;script&gt;
+ &lt;code&gt;\Omicron&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Pi&lt;&#x2F;script&gt;
+ &lt;code&gt;\Pi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Rho&lt;&#x2F;script&gt;
+ &lt;code&gt;\Rho&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Sigma&lt;&#x2F;script&gt;
+ &lt;code&gt;\Sigma&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Tau&lt;&#x2F;script&gt;
+ &lt;code&gt;\Tau&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Upsilon&lt;&#x2F;script&gt;
+ &lt;code&gt;\Upsilon&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Phi&lt;&#x2F;script&gt;
+ &lt;code&gt;\Phi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Chi&lt;&#x2F;script&gt;
+ &lt;code&gt;\Chi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Psi&lt;&#x2F;script&gt;
+ &lt;code&gt;\Psi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Omega&lt;&#x2F;script&gt;
+ &lt;code&gt;\Omega&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varGamma&lt;&#x2F;script&gt;
+ &lt;code&gt;\varGamma&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varDelta&lt;&#x2F;script&gt;
+ &lt;code&gt;\varDelta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varTheta&lt;&#x2F;script&gt;
+ &lt;code&gt;\varTheta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varLambda&lt;&#x2F;script&gt;
+ &lt;code&gt;\varLambda&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varXi&lt;&#x2F;script&gt;
+ &lt;code&gt;\varXi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varPi&lt;&#x2F;script&gt;
+ &lt;code&gt;\varPi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varSigma&lt;&#x2F;script&gt;
+ &lt;code&gt;\varSigma&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varUpsilon&lt;&#x2F;script&gt;
+ &lt;code&gt;\varUpsilon&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varPhi&lt;&#x2F;script&gt;
+ &lt;code&gt;\varPhi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varPsi&lt;&#x2F;script&gt;
+ &lt;code&gt;\varPsi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varOmega&lt;&#x2F;script&gt;
+ &lt;code&gt;\varOmega&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\alpha&lt;&#x2F;script&gt;
+ &lt;code&gt;\alpha&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\beta&lt;&#x2F;script&gt;
+ &lt;code&gt;\beta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\gamma&lt;&#x2F;script&gt;
+ &lt;code&gt;\gamma&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\delta&lt;&#x2F;script&gt;
+ &lt;code&gt;\delta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\epsilon&lt;&#x2F;script&gt;
+ &lt;code&gt;\epsilon&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\zeta&lt;&#x2F;script&gt;
+ &lt;code&gt;\zeta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\eta&lt;&#x2F;script&gt;
+ &lt;code&gt;\eta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\theta&lt;&#x2F;script&gt;
+ &lt;code&gt;\theta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\iota&lt;&#x2F;script&gt;
+ &lt;code&gt;\iota&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\kappa&lt;&#x2F;script&gt;
+ &lt;code&gt;\kappa&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\lambda&lt;&#x2F;script&gt;
+ &lt;code&gt;\lambda&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\mu&lt;&#x2F;script&gt;
+ &lt;code&gt;\mu&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\nu&lt;&#x2F;script&gt;
+ &lt;code&gt;\nu&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\xi&lt;&#x2F;script&gt;
+ &lt;code&gt;\xi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\omicron&lt;&#x2F;script&gt;
+ &lt;code&gt;\omicron&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\pi&lt;&#x2F;script&gt;
+ &lt;code&gt;\pi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\rho&lt;&#x2F;script&gt;
+ &lt;code&gt;\rho&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\sigma&lt;&#x2F;script&gt;
+ &lt;code&gt;\sigma&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\tau&lt;&#x2F;script&gt;
+ &lt;code&gt;\tau&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\upsilon&lt;&#x2F;script&gt;
+ &lt;code&gt;\upsilon&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\phi&lt;&#x2F;script&gt;
+ &lt;code&gt;\phi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\chi&lt;&#x2F;script&gt;
+ &lt;code&gt;\chi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\psi&lt;&#x2F;script&gt;
+ &lt;code&gt;\psi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\omega&lt;&#x2F;script&gt;
+ &lt;code&gt;\omega&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varepsilon&lt;&#x2F;script&gt;
+ &lt;code&gt;\varepsilon&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varkappa&lt;&#x2F;script&gt;
+ &lt;code&gt;\varkappa&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\vartheta&lt;&#x2F;script&gt;
+ &lt;code&gt;\vartheta&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\thetasym&lt;&#x2F;script&gt;
+ &lt;code&gt;\thetasym&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varpi&lt;&#x2F;script&gt;
+ &lt;code&gt;\varpi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varrho&lt;&#x2F;script&gt;
+ &lt;code&gt;\varrho&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varsigma&lt;&#x2F;script&gt;
+ &lt;code&gt;\varsigma&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\varphi&lt;&#x2F;script&gt;
+ &lt;code&gt;\varphi&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\digamma &lt;&#x2F;script&gt;
+ &lt;code&gt;\digamma&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+</content>
+        
+    </entry>
+</feed>

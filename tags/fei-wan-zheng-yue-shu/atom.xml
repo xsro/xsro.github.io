@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>xsro&#x27;s blog - 非完整约束</title>
+    <link href="https://xsro.github.io/tags/fei-wan-zheng-yue-shu/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://xsro.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-10-09T21:43:59+08:00</updated>
+    <id>https://xsro.github.io/tags/fei-wan-zheng-yue-shu/atom.xml</id>
+    <entry xml:lang="en">
+        <title>通过坐标平移实现非完整约束系统的反馈线性化Wheeled Robot Feedback Linearization</title>
+        <published>2023-10-09T21:43:59+08:00</published>
+        <updated>2023-10-09T21:43:59+08:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/control/wheeled-robot-feedback-linearization-cn/" type="text/html"/>
+        <id>https://xsro.github.io/control/wheeled-robot-feedback-linearization-cn/</id>
+        
+        <content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;YAMAMOTO Y, YUN X, 1992. Coordinating locomotion and manipulation of a mobile manipulator[C&#x2F;OL]&#x2F;&#x2F;[1992] Proceedings of the 31st IEEE Conference on Decision and Control. 2643-2648 卷3. DOI:10.1109&#x2F;CDC.1992.371337.&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;fei-wan-zheng-xi-tong&quot;&gt;非完整系统&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;xi-tong-fang-cheng&quot;&gt;系统方程&lt;&#x2F;h3&gt;
+&lt;p&gt;考虑m个双边约束下具有n个广义坐标q的机械系统，其动力学方程可以通过欧拉拉格朗日方程
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;M(q)\ddot{q}+V(q,\dot{q})=E(q)\tau-A^T(q)\lambda
+\tag{1}&lt;&#x2F;script&gt;
+
+确立，
+其中&lt;script type=&quot;math&#x2F;tex&quot;&gt;M(q)&lt;&#x2F;script&gt;
+是&lt;script type=&quot;math&#x2F;tex&quot;&gt;n\times n&lt;&#x2F;script&gt;
+的惯性矩阵，
+&lt;script type=&quot;math&#x2F;tex&quot;&gt;V(q,\dot{q})&lt;&#x2F;script&gt;
+是关于位置和速度的阻力向量，
+&lt;script type=&quot;math&#x2F;tex&quot;&gt;E(q)&lt;&#x2F;script&gt;
+是&lt;script type=&quot;math&#x2F;tex&quot;&gt;n\times r&lt;&#x2F;script&gt;
+的输入转换矩阵，
+&lt;script type=&quot;math&#x2F;tex&quot;&gt;\tau&lt;&#x2F;script&gt;
+是&lt;script type=&quot;math&#x2F;tex&quot;&gt;r&lt;&#x2F;script&gt;
+维输入向量，
+&lt;script type=&quot;math&#x2F;tex&quot;&gt;A(q)&lt;&#x2F;script&gt;
+是&lt;script type=&quot;math&#x2F;tex&quot;&gt;m\times n&lt;&#x2F;script&gt;
+的雅克比矩阵，
+&lt;script type=&quot;math&#x2F;tex&quot;&gt;\lambda&lt;&#x2F;script&gt;
+是约束力向量。
+该机械系统的&lt;script type=&quot;math&#x2F;tex&quot;&gt;m&lt;&#x2F;script&gt;
+个约束方程可以写成
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;C(q,\dot{q})=0.&lt;&#x2F;script&gt;
+
+如果其中的一个约束方程可以写成，
+或者通过积分可以转化为&lt;script type=&quot;math&#x2F;tex&quot;&gt;C_i(q)=0&lt;&#x2F;script&gt;
+的形式，那么该约束是完整约束。
+否则，该约束为动力学约束（非几何约束），一般称为非完整(nonholonomic)约束。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;假设&lt;&#x2F;strong&gt;有&lt;script type=&quot;math&#x2F;tex&quot;&gt;k&lt;&#x2F;script&gt;
+个完整的以及&lt;script type=&quot;math&#x2F;tex&quot;&gt;m-k&lt;&#x2F;script&gt;
+个非完整的独立约束，他们都可以写成
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;A(q)\dot{q}=0
+\tag{3}&lt;&#x2F;script&gt;
+
+的形式。&lt;&#x2F;p&gt;
+&lt;p&gt;令&lt;script type=&quot;math&#x2F;tex&quot;&gt;s_q(q),\cdots,s_{n-m}(q)&lt;&#x2F;script&gt;
+为&lt;script type=&quot;math&#x2F;tex&quot;&gt;A(q)&lt;&#x2F;script&gt;
+的零空间中的光滑并且线性不相关的向量场，i.e.
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;A(q)s_i(q)=0, \quad i=1,\dots, n-m&lt;&#x2F;script&gt;
+
+令&lt;script type=&quot;math&#x2F;tex&quot;&gt;S(q)&lt;&#x2F;script&gt;
+为由这些向量组成的满秩矩阵
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;S(q)=[s_1(q)\ \cdots\ s_{n-m}(q)]&lt;&#x2F;script&gt;
+
+令&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Delta&lt;&#x2F;script&gt;
+为这些向量场张成的分布
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\Delta=span \{s_1(q), \cdots, s_{n-m}(q)\}&lt;&#x2F;script&gt;
+
+因此，&lt;script type=&quot;math&#x2F;tex&quot;&gt;\dot{q}\in\Delta&lt;&#x2F;script&gt;
+。
+我们无法确定&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Delta&lt;&#x2F;script&gt;
+是否对合(involutive)。
+可以令&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Delta^*&lt;&#x2F;script&gt;
+为包含&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Delta&lt;&#x2F;script&gt;
+的最小的对合分布。
+可知&lt;script type=&quot;math&#x2F;tex&quot;&gt;dim(\Delta)\leq dim(\Delta^*)=k&lt;&#x2F;script&gt;
+。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ieeexplore.ieee.org&#x2F;document&#x2F;261553&quot;&gt;G. Campion 1991&lt;&#x2F;a&gt;发现共由三种情况&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;k=m&lt;&#x2F;script&gt;
+，所有的约束都是完整的，&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Delta&lt;&#x2F;script&gt;
+自身就是对合的&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;k=0&lt;&#x2F;script&gt;
+，所有的约束都是非完整的，&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Delta*&lt;&#x2F;script&gt;
+为整个空间&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;0&lt;k&lt;m&lt;&#x2F;script&gt;
+，&lt;script type=&quot;math&#x2F;tex&quot;&gt;k&lt;&#x2F;script&gt;
+个约束是可积的，并且广义坐标的&lt;script type=&quot;math&#x2F;tex&quot;&gt;k&lt;&#x2F;script&gt;
+个分量可能可以被运动方程消去。这种情况下&lt;script type=&quot;math&#x2F;tex&quot;&gt;dim(\Delta^*)=n-k&lt;&#x2F;script&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;zhuang-tai-kong-jian-biao-da&quot;&gt;状态空间表达&lt;&#x2F;h3&gt;
+&lt;p&gt;考虑由(1)(3)定义与约束的系统，
+由于受约束的速度总是在&lt;script type=&quot;math&#x2F;tex&quot;&gt;A(q)&lt;&#x2F;script&gt;
+的零空间中，
+可以定义&lt;script type=&quot;math&#x2F;tex&quot;&gt;n-m&lt;&#x2F;script&gt;
+个速度&lt;script type=&quot;math&#x2F;tex&quot;&gt;v(t)=[v_1\ v_2\ \cdots \ v_{n-m}]&lt;&#x2F;script&gt;
+使得
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\dot{q}=S(q)v(t)
+\tag{5}&lt;&#x2F;script&gt;
+
+这些速度需要是不可积的。
+对(5)微分，并代入(1)中的&lt;script type=&quot;math&#x2F;tex&quot;&gt;\ddot{q}&lt;&#x2F;script&gt;
+，同时前乘&lt;script type=&quot;math&#x2F;tex&quot;&gt;S^T&lt;&#x2F;script&gt;
+
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;S^T (MS \dot{v}(t)+M\dot{S}v(t)+V)=S^T E \tau&lt;&#x2F;script&gt;
+&lt;&#x2F;p&gt;
+&lt;p&gt;选取状态量&lt;script type=&quot;math&#x2F;tex&quot;&gt;x=[q^T\ v^T]^T&lt;&#x2F;script&gt;
+，可得
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\dot{x}=\begin{bmatrix}
+Sv \\ f_2
+\end{bmatrix}
++\begin{bmatrix}
+0 \\ (S^T M S)^{-1} S^T E
+\end{bmatrix}\tau&lt;&#x2F;script&gt;
+
+其中，&lt;script type=&quot;math&#x2F;tex&quot;&gt;f_2=(S^T M S)^{-1} (-S^T M \dot{S} v-S^T V)&lt;&#x2F;script&gt;
+。
+&lt;strong&gt;假设&lt;&#x2F;strong&gt;执行器的输入数量大于或等于机械系统的自由度(&lt;script type=&quot;math&#x2F;tex&quot;&gt;t\geq n-m&lt;&#x2F;script&gt;
+)
+并且&lt;script type=&quot;math&#x2F;tex&quot;&gt;(S^T M S)^{-1} S^T E&lt;&#x2F;script&gt;
+的秩为&lt;script type=&quot;math&#x2F;tex&quot;&gt;n-m&lt;&#x2F;script&gt;
+，
+我们可能可以应用非线性反馈
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\tau=\left((S^T M S)^{-1} S^T E\right)^+(u-f_2)&lt;&#x2F;script&gt;
+
+其中上标&lt;script type=&quot;math&#x2F;tex&quot;&gt;+&lt;&#x2F;script&gt;
+表示矩阵的广义逆。
+于是状态方程可以简化为
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\dot{x}=f(x)+g(x)u,f(x)
+=\begin{bmatrix}S(q)v\\0\end{bmatrix},
+g(x)=\begin{bmatrix}0\\I\end{bmatrix},&lt;&#x2F;script&gt;
+&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;kong-zhi-shu-xing&quot;&gt;控制属性&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;strong&gt;定理1&lt;&#x2F;strong&gt;: 非完整系统(10)是可控的&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;定理2&lt;&#x2F;strong&gt;：非完整系统的平衡点&lt;script type=&quot;math&#x2F;tex&quot;&gt;x=0&lt;&#x2F;script&gt;
+，通过一个光滑的状态反馈控制，可以使其拉格朗日稳定，
+但是无法使其渐近稳定。&lt;&#x2F;p&gt;
+&lt;p&gt;余下的部分，我们考虑公式(3)同时包含完整约束以及非完整约束的情况。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;定理3&lt;&#x2F;strong&gt;：如果系统(10)存在至少一个约束是非完整的，那么它不是可以通过状态反馈可以输入状态可线性化的&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;&#x2F;strong&gt;：系统如果输入状态可线性化，需要满足两个条件，可以发现对合条件并不满足。&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;the strong accessibility condition&lt;&#x2F;li&gt;
+&lt;li&gt;the involutivity condition&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;定义一组分布
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;D_j = span \{
+    L^i_f g | i=0,1,\dots,j-1\}, j=1,2,\dots&lt;&#x2F;script&gt;
+
+对合性要求&lt;script type=&quot;math&#x2F;tex&quot;&gt;D_1,D_2,\dots,D_{2n-m}&lt;&#x2F;script&gt;
+都是对合的。
+注意系统的状态数为&lt;script type=&quot;math&#x2F;tex&quot;&gt;2n-m&lt;&#x2F;script&gt;
+。
+由于&lt;script type=&quot;math&#x2F;tex&quot;&gt;g&lt;&#x2F;script&gt;
+是常数，所以&lt;script type=&quot;math&#x2F;tex&quot;&gt;D_1=span\{g\}&lt;&#x2F;script&gt;
+是对合的。
+下面计算
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;L_fg=[f,g]=
+ \frac{\partial g}{\partial x}f
+-\frac{\partial f}{\partial x}g
+=-\begin{bmatrix}S(q)\\0\end{bmatrix}&lt;&#x2F;script&gt;
+
+由于由&lt;script type=&quot;math&#x2F;tex&quot;&gt;S(q)&lt;&#x2F;script&gt;
+的列张成的分布&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Delta&lt;&#x2F;script&gt;
+不是对合的，
+分布&lt;script type=&quot;math&#x2F;tex&quot;&gt;D_2=span\{g,L_fg\}&lt;&#x2F;script&gt;
+不是对合的。
+因此，系统不是输入-状态可线性化的。
+&lt;script type=&quot;math&#x2F;tex&quot;&gt;\blacksquare&lt;&#x2F;script&gt;
+&lt;&#x2F;p&gt;
+&lt;p&gt;尽管带有非完整约束的系统不是输入-状态可线性化的，
+如果选取合适的输出方程，他是可以输入-输出线性化的。
+考察系统的位置控制，也就是说输入方程只关于位置量&lt;script type=&quot;math&#x2F;tex&quot;&gt;q&lt;&#x2F;script&gt;
+。
+既然系统的自由度数为&lt;script type=&quot;math&#x2F;tex&quot;&gt;n-m&lt;&#x2F;script&gt;
+，我们可能至多有&lt;script type=&quot;math&#x2F;tex&quot;&gt;n-m&lt;&#x2F;script&gt;
+个独立的位置输出方程。
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;y=h(q)=[h_1(q)\ \cdots \ h_{n-m}(q)]
+\tag{11}&lt;&#x2F;script&gt;
+
+可以输入输出线性化的充要条件为解耦矩阵满秩 &lt;a href=&quot;https:&#x2F;&#x2F;link.springer.com&#x2F;book&#x2F;10.1007&#x2F;978-1-4757-2101-0&quot;&gt;ref20&lt;&#x2F;a&gt;。
+使用(11)的输出方程，系统的解耦矩阵&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Phi(x)&lt;&#x2F;script&gt;
+是&lt;script type=&quot;math&#x2F;tex&quot;&gt;(n-m)\times (n-m)&lt;&#x2F;script&gt;
+的矩阵
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\Phi(q)=J_h(q)S(q)&lt;&#x2F;script&gt;
+
+其中&lt;script type=&quot;math&#x2F;tex&quot;&gt;J_h=\frac{\partial h}{\partial q}&lt;&#x2F;script&gt;
+是一个&lt;script type=&quot;math&#x2F;tex&quot;&gt;(n-m)\times n&lt;&#x2F;script&gt;
+的Jacobian矩阵。
+当&lt;script type=&quot;math&#x2F;tex&quot;&gt;J_h&lt;&#x2F;script&gt;
+的行与&lt;script type=&quot;math&#x2F;tex&quot;&gt;A(q)&lt;&#x2F;script&gt;
+独立的时候，&lt;script type=&quot;math&#x2F;tex&quot;&gt;\Phi(x)&lt;&#x2F;script&gt;
+ 是非奇异的&lt;&#x2F;p&gt;
+&lt;p&gt;为了刻画零动态并且实现输入-输出线性化，引入新的状态变量&lt;script type=&quot;math&#x2F;tex&quot;&gt;z&lt;&#x2F;script&gt;
+
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;z=T(x)=\begin{bmatrix}z_1\\z_2\\z_3\end{bmatrix}
+=\begin{bmatrix}h(q)\\L_f h(q)\\\tilde{h}(q)\end{bmatrix}
+=\begin{bmatrix}h(q)\\\Phi(q) v\\\tilde{h}(q)\end{bmatrix}&lt;&#x2F;script&gt;
+
+其中&lt;script type=&quot;math&#x2F;tex&quot;&gt;\tilde{h}(q)&lt;&#x2F;script&gt;
+是可以使&lt;script type=&quot;math&#x2F;tex&quot;&gt;[J_h^T,J_{\tilde{h}}^T]&lt;&#x2F;script&gt;
+满秩的m维函数。
+可以验证&lt;script type=&quot;math&#x2F;tex&quot;&gt;T(x)&lt;&#x2F;script&gt;
+是微分同胚并且是一个合理的状态变换。
+新的状态&lt;script type=&quot;math&#x2F;tex&quot;&gt;z&lt;&#x2F;script&gt;
+下的系统为：
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\dot{z}_1=\frac{\partial h}{\partial q} \dot{q}=z_2&lt;&#x2F;script&gt;
+
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\dot{z}_2=\dot{\Phi}(q) v + \Phi(q) u&lt;&#x2F;script&gt;
+
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\dot{z}_3=J_{\tilde{h}}S v = J_{\tilde{h}}S(J_h S)^{-1} z_2&lt;&#x2F;script&gt;
+
+使用如下的状态反馈
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;u=\Phi^{-1}(q)(v-\dot{\Phi}(q)v)&lt;&#x2F;script&gt;
+
+我们实现了输入-输出线性化，同时实现了输入-输出解耦。
+系统的可观测部分为
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\dot{z}_1=z_2,\quad \dot{z}_2=v \quad y=z_1&lt;&#x2F;script&gt;
+
+系统的不可观测部分为：（代入&lt;script type=&quot;math&#x2F;tex&quot;&gt;z_1=0&lt;&#x2F;script&gt;
+和&lt;script type=&quot;math&#x2F;tex&quot;&gt;z_2=0&lt;&#x2F;script&gt;
+）&lt;&#x2F;p&gt;
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\dot{z}_3=0&lt;&#x2F;script&gt;
+&lt;p&gt;这个系统显然是Lagrange稳定的但是不是渐近稳定。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

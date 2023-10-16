@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>xsro&#x27;s blog - latex</title>
+    <link href="https://xsro.github.io/tags/latex/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://xsro.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-10-13T00:00:00+00:00</updated>
+    <id>https://xsro.github.io/tags/latex/atom.xml</id>
+    <entry xml:lang="en">
+        <title>我的latex工作流</title>
+        <published>2023-10-13T00:00:00+00:00</published>
+        <updated>2023-10-13T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/tex-workflow/" type="text/html"/>
+        <id>https://xsro.github.io/tex-workflow/</id>
+        
+        <content type="html">&lt;h1 id=&quot;wo-de-latexgong-zuo-liu&quot;&gt;我的latex工作流&lt;&#x2F;h1&gt;
+&lt;p&gt;继WSL&#x2F;gWSL技术使得”windows成为最好的Linux发行版“之后，
+加上overleaf也是运行在linux里面的，
+我发现我们的latex工作流完全可以全部迁移到*nix系统之中了。
+这样的好处是我可以统一用linux的一些规范，避免一些不同系统带来的问题。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;CTAN&#x2F;info&#x2F;install-latex-guide-zh-cn&#x2F;install-latex-guide-zh-cn.pdf&quot;&gt;LATEX安装教程&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;wo-yu-dao-guo-de-cuo-wu&quot;&gt;我遇到过的错误&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;zhao-bu-dao-zi-ti-stix-two-math&quot;&gt;找不到字体STIX TWO MATH&lt;&#x2F;h3&gt;
+&lt;p&gt;ubuntu里面可以直接用&lt;code&gt;sudo apt install fonts-stix&lt;&#x2F;code&gt;安装&lt;code&gt;stix&lt;&#x2F;code&gt;，但是它和所需的不一样。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;stipub&#x2F;stixfonts&#x2F;tree&#x2F;master&#x2F;zipfiles&quot;&gt;stix2字体下载地址&lt;&#x2F;a&gt;: 我用的ttf格式&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;linuxstory.org&#x2F;install-new-fonts&#x2F;&quot;&gt;Linux 安装字体&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

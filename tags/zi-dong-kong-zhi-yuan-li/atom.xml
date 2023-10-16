@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>xsro&#x27;s blog - 自动控制原理</title>
+    <link href="https://xsro.github.io/tags/zi-dong-kong-zhi-yuan-li/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://xsro.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-09-02T00:00:00+00:00</updated>
+    <id>https://xsro.github.io/tags/zi-dong-kong-zhi-yuan-li/atom.xml</id>
+    <entry xml:lang="en">
+        <title>自动控制原理提要</title>
+        <published>2021-09-02T00:00:00+00:00</published>
+        <updated>2021-09-02T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/control/classical-control-myview/" type="text/html"/>
+        <id>https://xsro.github.io/control/classical-control-myview/</id>
+        
+        <content type="html">&lt;h1 id=&quot;kong-zhi-li-lun-gai-lan&quot;&gt;控制理论概览&lt;&#x2F;h1&gt;
+&lt;p&gt;大三学习了《自动控制原理》、《计算机控制系统》、《现代控制理论》，对控制理论有了一个很粗略的了解，整理如下&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;xian-xing-shi-bu-bian-lian-xu-xi-tong&quot;&gt;线性时不变连续系统&lt;&#x2F;h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;域&lt;&#x2F;th&gt;&lt;th&gt;数学模型&lt;&#x2F;th&gt;&lt;th&gt;分析与判断稳定的方法&lt;&#x2F;th&gt;&lt;th&gt;（性能）指标&lt;&#x2F;th&gt;&lt;th&gt;其他&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;时域&lt;&#x2F;td&gt;&lt;td&gt;微分方程&lt;&#x2F;td&gt;&lt;td&gt;赫尔维茨稳定判据、劳斯稳定判据&lt;&#x2F;td&gt;&lt;td&gt;稳定性：稳态误差；准确性：调节时间、超调量；快速性：上升时间、峰值时间&lt;&#x2F;td&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;复频域&lt;&#x2F;td&gt;&lt;td&gt;传递函数&lt;&#x2F;td&gt;&lt;td&gt;负实部、左半平面&lt;&#x2F;td&gt;&lt;td&gt;阻尼比，衰减系数，阻尼振荡频率&lt;&#x2F;td&gt;&lt;td&gt;根轨迹法&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;频域&lt;&#x2F;td&gt;&lt;td&gt;频率特性&lt;&#x2F;td&gt;&lt;td&gt;奈奎斯特稳定判据&lt;&#x2F;td&gt;&lt;td&gt;稳定裕度、频带宽度&lt;&#x2F;td&gt;&lt;td&gt;系统校正&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;状态空间&lt;&#x2F;td&gt;&lt;td&gt;状态空间方程&lt;&#x2F;td&gt;&lt;td&gt;李雅普诺夫方法&lt;&#x2F;td&gt;&lt;td&gt;能控性，能观性&lt;&#x2F;td&gt;&lt;td&gt;状态反馈（极点配置）、状态观测、调节器设计 等&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;ul&gt;
+&lt;li&gt;数学模型常常也包括：结构图和信号流图&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;xian-xing-shi-bu-bian-chi-san-xi-tong&quot;&gt;线性时不变离散系统&lt;&#x2F;h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;域&lt;&#x2F;th&gt;&lt;th&gt;数学模型&lt;&#x2F;th&gt;&lt;th&gt;分析与判断稳定的方法&lt;&#x2F;th&gt;&lt;th&gt;（性能）指标&lt;&#x2F;th&gt;&lt;th&gt;其他&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;时域&lt;&#x2F;td&gt;&lt;td&gt;差分方程&lt;&#x2F;td&gt;&lt;td&gt;朱利判据、w 变换&lt;&#x2F;td&gt;&lt;td&gt;稳定性：稳态误差；准确性：调节时间、超调量；快速性：上升时间、峰值时间&lt;&#x2F;td&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;复频域&lt;&#x2F;td&gt;&lt;td&gt;脉冲传递函数&lt;&#x2F;td&gt;&lt;td&gt;幅值小于 1、单位圆内&lt;&#x2F;td&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;根轨迹法&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;频域&lt;&#x2F;td&gt;&lt;td&gt;频率特性&lt;&#x2F;td&gt;&lt;td&gt;离散系统奈奎斯特稳定判据&lt;&#x2F;td&gt;&lt;td&gt;稳定裕度&lt;&#x2F;td&gt;&lt;td&gt;系统校正&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;状态空间&lt;&#x2F;td&gt;&lt;td&gt;状态空间方程&lt;&#x2F;td&gt;&lt;td&gt;李雅普诺夫方法&lt;&#x2F;td&gt;&lt;td&gt;能控性，能观性&lt;&#x2F;td&gt;&lt;td&gt;状态反馈（极点配置）、状态观测、调节器设计 等&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;ul&gt;
+&lt;li&gt;离散控制系统的经典设计方法（连续域——离散化、直接离散域）等&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

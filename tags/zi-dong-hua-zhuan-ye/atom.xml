@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>xsro&#x27;s blog - 自动化专业</title>
+    <link href="https://xsro.github.io/tags/zi-dong-hua-zhuan-ye/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://xsro.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-09-23T00:00:00+00:00</updated>
+    <id>https://xsro.github.io/tags/zi-dong-hua-zhuan-ye/atom.xml</id>
+    <entry xml:lang="en">
+        <title>自动化专业学习回顾</title>
+        <published>2021-09-23T00:00:00+00:00</published>
+        <updated>2021-09-23T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/control/control-student-fight-cn/" type="text/html"/>
+        <id>https://xsro.github.io/control/control-student-fight-cn/</id>
+        
+        <content type="html">&lt;h1 id=&quot;jia-you-ruan-ying-jian-xiu-qiang-ruo-xiang-ji-de-zi-dong-hua-ren-robot-face&quot;&gt;加油，软硬兼修、强弱相济的自动化人 🤖&lt;&#x2F;h1&gt;
+&lt;p&gt;互联网上”全栈“一词比较火热，通常指的是兼具”前端“和”后端“的技术能力丰富的工程人员。
+有调侃说，“全栈”应该转化为“软件+硬件”，可以叫“全干工程师”，我想这不正是自动化学科对我们学生的要求嘛，
+似乎好像还可以加上一句，强电与弱电相结合。&lt;&#x2F;p&gt;
+&lt;p&gt;自动化学科果然是“大杂烩”，啥都学，啥都不精。
+有人称，自动化专业是培养“总工”的专业。
+在一些大学，自动化学院被称为“妈妈”学院，因为它覆盖方向很广，从自动化学院分出了很多细分的学院。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;zi-dong-hua-zhuan-ye-hui-gu&quot;&gt;自动化专业回顾&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;pic4.zhimg.com&#x2F;80&#x2F;v2-f554bb4b02c039263422c446a61c2883_1440w.jpg&quot; alt=&quot;the map of control Theory&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;在课程逐渐减少，即将毕业的大四学年，我想回顾一下在小破学校学的那些专业课。&lt;&#x2F;p&gt;
+&lt;p&gt;首先我们会学习一些基础理论学科，如：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;高等代数&lt;&#x2F;strong&gt;：感觉与经典控制理论最相关的就是&lt;em&gt;积分变换&lt;&#x2F;em&gt;，虽然我们只学了傅里叶变换&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;线性代数&lt;&#x2F;strong&gt;：对于现代控制理论和热门的神经网络的学习非常重要&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;概率论与数理统计&lt;&#x2F;strong&gt;：自动化开始与人工智能积极结合，概率论与数理统计和很多误差理论，人工智能算法有关&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;之后我们会学习控制理论的相关学科，学习如何进行控制系统建模，仿真，设计如：&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;经典控制理论&lt;&#x2F;strong&gt;：研究线性定常系统，以传递函数为代表&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;现代控制理论&lt;&#x2F;strong&gt;：研究多变量、非线性、实变的系统，以状态空间方程为代表&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;智能控制&lt;&#x2F;strong&gt;：在无人干预的情况下能自主地驱动智能机器实现控制目标的自动控制技术，如模糊控制，专家系统，遗传算法，神经网络等&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;一直穿插着我们会学习设计实现一个控制系统需的技术知识，&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;gss0.baidu.com&#x2F;-vo3dSag_xI4khGko9WTAnF6hhy&#x2F;zhidao&#x2F;pic&#x2F;item&#x2F;7a899e510fb30f2457fe1db7c695d143ad4b0319.jpg&quot; alt=&quot;反馈控制基本框图&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;为了设计&lt;strong&gt;测量环节(检测装置)&lt;&#x2F;strong&gt;，我们学习&lt;strong&gt;传感器技术&lt;&#x2F;strong&gt;；&lt;&#x2F;li&gt;
+&lt;li&gt;为了处理采集的信号，我们学习了&lt;strong&gt;信号分析与处理&lt;&#x2F;strong&gt;，&lt;strong&gt;数字图像与视频处理&lt;&#x2F;strong&gt;，学习&lt;strong&gt;模式识别&lt;&#x2F;strong&gt;；&lt;&#x2F;li&gt;
+&lt;li&gt;为了设计&lt;strong&gt;控制器&lt;&#x2F;strong&gt;
+&lt;ul&gt;
+&lt;li&gt;简单的控制规律可以直接使用电路实现，我们会学习&lt;strong&gt;电路&lt;&#x2F;strong&gt;分析，&lt;strong&gt;模拟电子电路&lt;&#x2F;strong&gt;，&lt;strong&gt;数字电子电路&lt;&#x2F;strong&gt;，FPGA 以及&lt;strong&gt;电工&lt;&#x2F;strong&gt;技术等&lt;&#x2F;li&gt;
+&lt;li&gt;复杂的控制规律目前主要使用&lt;em&gt;微型处理器&lt;&#x2F;em&gt;，我们会学习&lt;strong&gt;微机原理与接口技术&lt;&#x2F;strong&gt;和一些专用的计算机处理器的使用方法如：嵌入式，&lt;strong&gt;单片机&lt;&#x2F;strong&gt;，DSP，PLC 等&lt;&#x2F;li&gt;
+&lt;li&gt;如何确定控制算法，控制参数，如何将控制规律转化为程序而使用离散的控制器控制连续的系统，我们学习&lt;strong&gt;计算机控制系统&lt;&#x2F;strong&gt;，通常会使用&lt;em&gt;MATLAB&lt;&#x2F;em&gt;和&lt;em&gt;Simulink&lt;&#x2F;em&gt;等工具来仿真建模。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;为了设计&lt;strong&gt;执行器&lt;&#x2F;strong&gt;，将控制结果（通常为电压较低的弱电信号）作用到被控对象
+&lt;ul&gt;
+&lt;li&gt;针对快变系统，我们学习&lt;strong&gt;电机与拖动技术&lt;&#x2F;strong&gt;，学习&lt;strong&gt;运动控制系统&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;针对慢变系统，我们学习&lt;strong&gt;过程控制系统和仪器仪表&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;为了控制执行器，将弱电信号转化为强电信号，我们学习&lt;strong&gt;电力电子技术&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;为了使得控制更加智能化，&lt;del&gt;蹭一蹭最近特别火热的人工智能&lt;&#x2F;del&gt;，我们还会学习一些人工智能相关的技术：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;人工智能技术，&lt;strong&gt;机器学习&lt;&#x2F;strong&gt;，深度学习&lt;&#x2F;li&gt;
+&lt;li&gt;大数据技术，数据科学，&lt;strong&gt;数据挖掘&lt;&#x2F;strong&gt;，模式识别等相关内容&lt;&#x2F;li&gt;
+&lt;li&gt;人工智能来自控制理论的发展（确信）&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;zi-dong-hua-zhan-wang&quot;&gt;自动化展望&lt;&#x2F;h2&gt;
+&lt;p&gt;正是因为自动化专业“啥都不精”，于是很多人推荐读研，读研可以在一个领域有更深入的理解，
+也正是因为自动化学习内容多，所以可以选择的方向也是很多的。
+学术型硕士可以报考控制科学与工程，当然也可以转计科，转软件，转仪器，转航空
+专业型硕士可以报考电子信息，能源动力等。&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;0811 控制科学与工程&lt;&#x2F;th&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;081101&lt;&#x2F;td&gt;&lt;td&gt;控制理论与控制工程&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;081102&lt;&#x2F;td&gt;&lt;td&gt;检测技术与自动化装置&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;081103&lt;&#x2F;td&gt;&lt;td&gt;系统工程&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;081104&lt;&#x2F;td&gt;&lt;td&gt;模式识别与智能系统&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;081105&lt;&#x2F;td&gt;&lt;td&gt;导航、制导与控制&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;就业可以从事控制理论的研发岗位，进入软件，硬件，机器人等行业，说不定就能一步一步地成为一名总工。&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;人类研究着控制工程，让工业在人类的指导下运行，
+希望人类可以永远不被外物控制，可以只做自己喜欢的事情，
+不被性能指标要求，不必为了成本做裁剪，不必总是重复他人设计的简单控制规则&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;can-kao&quot;&gt;参考&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.zhihu.com&#x2F;question&#x2F;267266116&quot;&gt;控制科学与工程研究生将来的就业方向是什么？ - 知乎 (zhihu.com)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.zhihu.com&#x2F;question&#x2F;31123817&quot;&gt;学习复变函数与积分变换有什么用途？ - 知乎 (zhihu.com)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;控制理论导图来自：&lt;a href=&quot;https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;134556538&quot;&gt;Map of Control Theory v2 by Brian Douglas 中英 知乎&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

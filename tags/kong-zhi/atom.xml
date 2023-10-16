@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>xsro&#x27;s blog - 控制</title>
+    <link href="https://xsro.github.io/tags/kong-zhi/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://xsro.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-10-03T00:00:00+00:00</updated>
+    <id>https://xsro.github.io/tags/kong-zhi/atom.xml</id>
+    <entry xml:lang="en">
+        <title>控制相关资源导航</title>
+        <published>2021-10-03T00:00:00+00:00</published>
+        <updated>2021-10-03T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/control/navigation/" type="text/html"/>
+        <id>https://xsro.github.io/control/navigation/</id>
+        
+        <content type="html">&lt;h1 id=&quot;kong-zhi-xiang-guan-zi-yuan-dao-hang&quot;&gt;控制相关资源导航&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;tu-wen-wei-zhu-bo-zhu&quot;&gt;图文（为主）博主&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;j-pan&quot;&gt;J Pan&lt;&#x2F;h3&gt;
+&lt;p&gt;航空工程师，主要在知乎撰写文章，有&lt;a href=&quot;https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;57764200&quot;&gt;纲举目张&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;知乎: &lt;a href=&quot;https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;galieluo&quot;&gt;J Pan&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;xi-tong-yu-kong-zhi&quot;&gt;系统与控制&lt;&#x2F;h3&gt;
+&lt;!-- 赵兰浩 --&gt;
+&lt;p&gt;目前发表或完成相关论文 6 篇，主要研究方向为多智能体系统与复杂网络，业余时间运营知乎网“系统与控制”账号，在国内外相关学者的合作下完成《控制理论结构图》系列工作，整理完成《自动化学科科普手册》系列版本&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;知乎：&lt;a href=&quot;https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;xiang-yi-55-49&quot;&gt;系统与控制&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;主页：&lt;a href=&quot;https:&#x2F;&#x2F;qdu-zdh.github.io&#x2F;qdu-zlh&#x2F;&quot;&gt;https:&#x2F;&#x2F;qdu-zdh.github.io&#x2F;qdu-zlh&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;推特：&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;Lugh562007&quot;&gt;System control&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;shi-pin-wei-zhu-bo-zhu&quot;&gt;视频（为主）博主&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;dr-can&quot;&gt;DR_CAN&lt;&#x2F;h3&gt;
+&lt;p&gt;Ph.D. in Dynamics and Control 机器人工程师&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;B 站：&lt;a href=&quot;https:&#x2F;&#x2F;space.bilibili.com&#x2F;230105574&quot;&gt;DR_CAN&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;brian-douglas&quot;&gt;Brian Douglas&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;youtube：&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCq0imsn84ShAe9PBOFnoIrg&quot;&gt;Brian Douglas&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;网站：&lt;a href=&quot;https:&#x2F;&#x2F;engineeringmedia.com&#x2F;&quot;&gt;https:&#x2F;&#x2F;engineeringmedia.com&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;另外也推荐&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;c&#x2F;matlab&quot;&gt;matlab&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;si-wei-dao-tu&quot;&gt;思维导图&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;the-map-of-control-theory&quot;&gt;The Map of Control Theory&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;engineeringmedia.com&#x2F;map-of-control&quot;&gt;The Map of Control Theory&lt;&#x2F;a&gt;是 Brian Douglas 绘制的控制领域思维导图。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;kong-zhi-li-lun-jie-gou-tu&quot;&gt;控制理论结构图&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;strong&gt;系统与控制&lt;&#x2F;strong&gt;博主绘制了控制领域的常用技术概览，包括多张图。发布在
+&lt;a href=&quot;https:&#x2F;&#x2F;medium.com&#x2F;@939856189&#x2F;visualizing-control-theory-1e12113dc0f2&quot;&gt;medium.com&lt;&#x2F;a&gt;、
+&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;Lugh562007&#x2F;status&#x2F;1361609590824046592&quot;&gt;twitter&lt;&#x2F;a&gt;、
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;lugh56&#x2F;some-chart-of-control-theory&quot;&gt;github&lt;&#x2F;a&gt;
+等多个平台上。&lt;&#x2F;p&gt;
+&lt;p&gt;其中比较著名的有&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;Lugh562007&#x2F;status&#x2F;1519177837282217984&quot;&gt;Map of Multi-Agent Control&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

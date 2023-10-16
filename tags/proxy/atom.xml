@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>xsro&#x27;s blog - proxy</title>
+    <link href="https://xsro.github.io/tags/proxy/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://xsro.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2022-10-04T00:00:00+00:00</updated>
+    <id>https://xsro.github.io/tags/proxy/atom.xml</id>
+    <entry xml:lang="en">
+        <title>常用代理与镜像设置方法</title>
+        <published>2022-10-04T00:00:00+00:00</published>
+        <updated>2022-10-04T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://xsro.github.io/proxy-mirror-cn/" type="text/html"/>
+        <id>https://xsro.github.io/proxy-mirror-cn/</id>
+        
+        <content type="html">&lt;h2 id=&quot;git&quot;&gt;GIT&lt;&#x2F;h2&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;# 设置http:
+&lt;&#x2F;span&gt;&lt;span&gt;git config --global http.proxy http:&#x2F;&#x2F;127.0.0.1:1080
+&lt;&#x2F;span&gt;&lt;span&gt;# 设置https:
+&lt;&#x2F;span&gt;&lt;span&gt;git config --global https.proxy http:&#x2F;&#x2F;127.0.0.1:1080
+&lt;&#x2F;span&gt;&lt;span&gt;# 设置socks:
+&lt;&#x2F;span&gt;&lt;span&gt;git config --global http.proxy &amp;#39;socks5:&#x2F;&#x2F;127.0.0.1:1080&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;git config --global https.proxy &amp;#39;socks5:&#x2F;&#x2F;127.0.0.1:1080&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;## 取消
+&lt;&#x2F;span&gt;&lt;span&gt;git config --global --unset http.proxy
+&lt;&#x2F;span&gt;&lt;span&gt;git config --global --unset https.proxy
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;或者通过&lt;code&gt;git config --global -e&lt;&#x2F;code&gt;编辑配置文件&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ini&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-ini &quot;&gt;&lt;code class=&quot;language-ini&quot; data-lang=&quot;ini&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;[https &amp;quot;https:&#x2F;&#x2F;github.com&amp;quot;]
+&lt;&#x2F;span&gt;&lt;span&gt;	&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;proxy &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;socks5:&#x2F;&#x2F;127.0.0.1:7891
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+        
+    </entry>
+</feed>
