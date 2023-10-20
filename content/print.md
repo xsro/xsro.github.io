@@ -1,5 +1,5 @@
 +++
-title = "Some PDF files"
+title = "外部资源列表（pdf和网站）"
 date = 2028-10-22
 
 [taxonomies]
@@ -20,6 +20,11 @@ It includes some additional material, such as mathematics for control like diffe
 I originally collect this to provide a supplement for the course, 
 but it is not yet complete.
 
-## [在南邮的自动化学习笔记 (hosted on gitee)](https://xsro.gitee.io/notes/)
+## 笔记与代码分享
 
-## [在南邮的自动化学习代码 (hosted on github)](https://xsro.github.io/university-learning-code/)
+- [在南邮的自动化学习笔记 (hosted on gitee)](https://xsro.gitee.io/notes/)
+- [在南邮的自动化学习代码 (hosted on github)](https://xsro.github.io/university-learning-code/)
+
+## 自制小网站
+
+- <https://xsro.github.io/nlcts>: 龙格库塔法前端求解常微分方程演示、简单线性系统的分析工具、简单非线性系统控制演示（制作中）
