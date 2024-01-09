@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title>xsro&#x27;s blog - 转载</title>
-    <link href="https://xsro.github.io/tags/zhuan-zai/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://xsro.github.io"/>
+    <link rel="self" type="application/atom+xml" href="https://xsro.github.io/tags/zhuan-zai/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://xsro.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2022-08-09T00:00:00+00:00</updated>
     <id>https://xsro.github.io/tags/zhuan-zai/atom.xml</id>
@@ -10,13 +10,19 @@
         <title>Computer-Aided Control Systems Design = Introduction and Historical Overview</title>
         <published>2022-08-09T00:00:00+00:00</published>
         <updated>2022-08-09T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://xsro.github.io/control/control-system-cad/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/control-system-cad/"/>
         <id>https://xsro.github.io/control/control-system-cad/</id>
         
-        <content type="html">&lt;h2 id=&quot;infomation&quot;&gt;infomation&lt;&#x2F;h2&gt;
+        <content type="html" xml:base="https://xsro.github.io/control/control-system-cad/">&lt;h2 id=&quot;infomation&quot;&gt;infomation&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Varga, A. (2020). Computer-Aided Control Systems Design = Introduction and Historical Overview. In = Baillieul, J., Samad, T. (eds) Encyclopedia of Systems and Control. Springer, London. https:&#x2F;&#x2F;doi.org&#x2F;10.1007&#x2F;978-1-4471-5102-9_138-3&lt;&#x2F;li&gt;
 &lt;li&gt;Source = &lt;a href=&quot;https:&#x2F;&#x2F;link.springer.com&#x2F;referenceworkentry&#x2F;10.1007&#x2F;978-1-4471-5102-9_138-3&quot;&gt;springer&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;core.ac.uk&#x2F;download&#x2F;pdf&#x2F;31011908.pdf&quot;&gt;pdf&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;

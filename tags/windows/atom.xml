@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title>xsro&#x27;s blog - windows</title>
-    <link href="https://xsro.github.io/tags/windows/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://xsro.github.io"/>
+    <link rel="self" type="application/atom+xml" href="https://xsro.github.io/tags/windows/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://xsro.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2022-01-25T00:00:00+00:00</updated>
     <id>https://xsro.github.io/tags/windows/atom.xml</id>
@@ -10,13 +10,19 @@
         <title>windows 系统安装 Scoop 包管理工具</title>
         <published>2022-01-25T00:00:00+00:00</published>
         <updated>2022-01-25T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://xsro.github.io/install-scoop-with-mirror-cn/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/install-scoop-with-mirror-cn/"/>
         <id>https://xsro.github.io/install-scoop-with-mirror-cn/</id>
         
-        <content type="html">&lt;p&gt;&lt;strong&gt;该内容似乎已经过时&lt;&#x2F;strong&gt;，因为目前&lt;a href=&quot;https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;360677731&quot;&gt;似乎&lt;&#x2F;a&gt;github.com.cnpmjs.org 和 hub.fastgit.org 镜像均无法使用&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://xsro.github.io/install-scoop-with-mirror-cn/">&lt;p&gt;&lt;strong&gt;该内容似乎已经过时&lt;&#x2F;strong&gt;，因为目前&lt;a href=&quot;https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;360677731&quot;&gt;似乎&lt;&#x2F;a&gt;github.com.cnpmjs.org 和 hub.fastgit.org 镜像均无法使用&lt;&#x2F;p&gt;
 &lt;h1 id=&quot;windows-xi-tong-an-zhuang-scoop-bao-guan-li-gong-ju&quot;&gt;windows 系统安装 Scoop 包管理工具&lt;&#x2F;h1&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;scoop.sh&#x2F;&quot;&gt;https:&#x2F;&#x2F;scoop.sh&#x2F;&lt;&#x2F;a&gt;是一款 windows 系统下的包管理工具，根据官网只需要以下命令即可安装。&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span&gt;iwr -useb get.scoop.sh | iex

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title>xsro&#x27;s blog - 小车</title>
-    <link href="https://xsro.github.io/tags/xiao-che/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://xsro.github.io"/>
+    <link rel="self" type="application/atom+xml" href="https://xsro.github.io/tags/xiao-che/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://xsro.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2023-10-09T21:43:59+08:00</updated>
     <id>https://xsro.github.io/tags/xiao-che/atom.xml</id>
@@ -10,13 +10,19 @@
         <title>通过坐标平移实现非完整约束系统的反馈线性化Wheeled Robot Feedback Linearization</title>
         <published>2023-10-09T21:43:59+08:00</published>
         <updated>2023-10-09T21:43:59+08:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://xsro.github.io/control/wheeled-robot-feedback-linearization-cn/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/wheeled-robot-feedback-linearization-cn/"/>
         <id>https://xsro.github.io/control/wheeled-robot-feedback-linearization-cn/</id>
         
-        <content type="html">&lt;blockquote&gt;
+        <content type="html" xml:base="https://xsro.github.io/control/wheeled-robot-feedback-linearization-cn/">&lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;YAMAMOTO Y, YUN X, 1992. Coordinating locomotion and manipulation of a mobile manipulator[C&#x2F;OL]&#x2F;&#x2F;[1992] Proceedings of the 31st IEEE Conference on Decision and Control. 2643-2648 卷3. DOI:10.1109&#x2F;CDC.1992.371337.&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;h2 id=&quot;fei-wan-zheng-xi-tong&quot;&gt;非完整系统&lt;&#x2F;h2&gt;

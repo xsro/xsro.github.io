@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title>xsro&#x27;s blog - Control Theory</title>
-    <link href="https://xsro.github.io/tags/control-theory/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://xsro.github.io"/>
+    <link rel="self" type="application/atom+xml" href="https://xsro.github.io/tags/control-theory/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://xsro.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2023-06-14T00:00:00+00:00</updated>
     <id>https://xsro.github.io/tags/control-theory/atom.xml</id>
@@ -10,13 +10,19 @@
         <title>MATLAB 作用域</title>
         <published>2023-06-14T00:00:00+00:00</published>
         <updated>2023-06-14T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://xsro.github.io/code/matlab-global-persistent-cn/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/code/matlab-global-persistent-cn/"/>
         <id>https://xsro.github.io/code/matlab-global-persistent-cn/</id>
         
-        <content type="html">&lt;h1 id=&quot;matlab-zuo-yong-yu-ji-zhi-ce-shi-dai-ma&quot;&gt;MATLAB 作用域机制测试代码&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/code/matlab-global-persistent-cn/">&lt;h1 id=&quot;matlab-zuo-yong-yu-ji-zhi-ce-shi-dai-ma&quot;&gt;MATLAB 作用域机制测试代码&lt;&#x2F;h1&gt;
 &lt;p&gt;MATLAB中的作用域有些奇怪。这里用几个测试代码来分析一下。
 本文所有代码段需要在matlab脚本中运行，不能在命令行中直接运行。&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;matlabjiao-ben-ke-yi-fang-wen-gong-zuo-qu-biao-liang-dan-shi-han-shu-bu-ke-yi&quot;&gt;MATLAB脚本可以访问工作区标量，但是函数不可以&lt;&#x2F;h2&gt;
@@ -96,13 +102,19 @@ global 编辑了的同名变量是一样的，persistent标记的同名变量是
         <title>计算机辅助控制系统设e = 简介与回顾</title>
         <published>2022-08-09T00:00:00+00:00</published>
         <updated>2022-08-09T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://xsro.github.io/control/control-system-cad-cn/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/control-system-cad-cn/"/>
         <id>https://xsro.github.io/control/control-system-cad-cn/</id>
         
-        <content type="html">&lt;h2 id=&quot;yuan-wen-xin-xi&quot;&gt;原文信息&lt;&#x2F;h2&gt;
+        <content type="html" xml:base="https://xsro.github.io/control/control-system-cad-cn/">&lt;h2 id=&quot;yuan-wen-xin-xi&quot;&gt;原文信息&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Varga, A. (2020). Computer-Aided Control Systems Design = Introduction and Historical Overview. In = Baillieul, J., Samad, T. (eds) Encyclopedia of Systems and Control. Springer, London. https:&#x2F;&#x2F;doi.org&#x2F;10.1007&#x2F;978-1-4471-5102-9_138-3&lt;&#x2F;li&gt;
 &lt;li&gt;First Online = 08 November 2019&lt;&#x2F;li&gt;
@@ -136,13 +148,19 @@ CACSD,
         <title>Computer-Aided Control Systems Design = Introduction and Historical Overview</title>
         <published>2022-08-09T00:00:00+00:00</published>
         <updated>2022-08-09T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://xsro.github.io/control/control-system-cad/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/control-system-cad/"/>
         <id>https://xsro.github.io/control/control-system-cad/</id>
         
-        <content type="html">&lt;h2 id=&quot;infomation&quot;&gt;infomation&lt;&#x2F;h2&gt;
+        <content type="html" xml:base="https://xsro.github.io/control/control-system-cad/">&lt;h2 id=&quot;infomation&quot;&gt;infomation&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Varga, A. (2020). Computer-Aided Control Systems Design = Introduction and Historical Overview. In = Baillieul, J., Samad, T. (eds) Encyclopedia of Systems and Control. Springer, London. https:&#x2F;&#x2F;doi.org&#x2F;10.1007&#x2F;978-1-4471-5102-9_138-3&lt;&#x2F;li&gt;
 &lt;li&gt;Source = &lt;a href=&quot;https:&#x2F;&#x2F;link.springer.com&#x2F;referenceworkentry&#x2F;10.1007&#x2F;978-1-4471-5102-9_138-3&quot;&gt;springer&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;core.ac.uk&#x2F;download&#x2F;pdf&#x2F;31011908.pdf&quot;&gt;pdf&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -329,13 +347,19 @@ Additional information can be found in several CACSD-focused survey articles and
         <title>Simulate Dynamic Matrix Control with Simupy</title>
         <published>2021-12-28T00:00:00+00:00</published>
         <updated>2021-12-28T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://xsro.github.io/control/dmc-with-simupy/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/dmc-with-simupy/"/>
         <id>https://xsro.github.io/control/dmc-with-simupy/</id>
         
-        <content type="html">&lt;h1 id=&quot;simulate-dynamic-matrix-control-with-simupy&quot;&gt;Simulate Dynamic Matrix Control with Simupy&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/control/dmc-with-simupy/">&lt;h1 id=&quot;simulate-dynamic-matrix-control-with-simupy&quot;&gt;Simulate Dynamic Matrix Control with Simupy&lt;&#x2F;h1&gt;
 &lt;p&gt;I wrote some &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;xsro&#x2F;university-learning-code&#x2F;blob&#x2F;develop&#x2F;7%E9%A2%84%E6%B5%8B%E6%8E%A7%E5%88%B6&#x2F;DynamicMatrixControl&#x2F;Danamic-Matrix-Control.ipynb&quot;&gt;code&lt;&#x2F;a&gt; about the symulation of Dynamic Matirx Control with &lt;a href=&quot;https:&#x2F;&#x2F;simupy.readthedocs.io&quot;&gt;simupy&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;SimuPy is a framework for simulating interconnected dynamical system models and
@@ -419,13 +443,19 @@ the better performance we will get.&lt;&#x2F;p&gt;
         <title>A look-back of automation</title>
         <published>2021-09-23T00:00:00+00:00</published>
         <updated>2021-09-23T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://xsro.github.io/control/control-student-fight/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/control-student-fight/"/>
         <id>https://xsro.github.io/control/control-student-fight/</id>
         
-        <content type="html">&lt;h1 id=&quot;keep-fighting-boys-and-girls-from-automation-robot-face&quot;&gt;Keep fighting, boys and girls from automation 🤖&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/control/control-student-fight/">&lt;h1 id=&quot;keep-fighting-boys-and-girls-from-automation-robot&quot;&gt;Keep fighting, boys and girls from automation 🤖&lt;&#x2F;h1&gt;
 &lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;images.squarespace-cdn.com&#x2F;content&#x2F;v1&#x2F;5b2d76525cfd790c4a218093&#x2F;1618710257013-K60SMQXQAS7Z57WWX810&#x2F;Control_Map_ver5.png?format=1000w&quot; alt=&quot;map of control theory v5&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;In the Internet, the word &#x27;full-stack&#x27; is very hot. It means &#x27;front end&#x27; plus &#x27;back end&#x27; mainly for web software developer.
 We students studing automation should also learn hardware. So we are &#x27;software&#x27; plus &#x27;hardware&#x27; and &#x27;strong electricity&#x27; plus &#x27;weak electricity&#x27;.&lt;&#x2F;p&gt;

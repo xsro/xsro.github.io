@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title>xsro&#x27;s blog - 常用技术速查</title>
-    <link href="https://xsro.github.io/categories/chang-yong-ji-zhu-su-cha/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://xsro.github.io"/>
+    <link rel="self" type="application/atom+xml" href="https://xsro.github.io/categories/chang-yong-ji-shu-su-cha/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://xsro.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2023-10-13T00:00:00+00:00</updated>
-    <id>https://xsro.github.io/categories/chang-yong-ji-zhu-su-cha/atom.xml</id>
+    <id>https://xsro.github.io/categories/chang-yong-ji-shu-su-cha/atom.xml</id>
     <entry xml:lang="en">
         <title>我的latex工作流</title>
         <published>2023-10-13T00:00:00+00:00</published>
         <updated>2023-10-13T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://xsro.github.io/tex-workflow/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/tex-workflow/"/>
         <id>https://xsro.github.io/tex-workflow/</id>
         
-        <content type="html">&lt;h1 id=&quot;wo-de-latexgong-zuo-liu&quot;&gt;我的latex工作流&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/tex-workflow/">&lt;h1 id=&quot;wo-de-latexgong-zuo-liu&quot;&gt;我的latex工作流&lt;&#x2F;h1&gt;
 &lt;p&gt;继WSL&#x2F;gWSL技术使得”windows成为最好的Linux发行版“之后，
 加上overleaf也是运行在linux里面的，
 我发现我们的latex工作流完全可以全部迁移到*nix系统之中了。
@@ -38,13 +44,19 @@
         <title>常用代理与镜像设置方法</title>
         <published>2022-10-04T00:00:00+00:00</published>
         <updated>2022-10-04T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://xsro.github.io/proxy-mirror-cn/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/proxy-mirror-cn/"/>
         <id>https://xsro.github.io/proxy-mirror-cn/</id>
         
-        <content type="html">&lt;h2 id=&quot;git&quot;&gt;GIT&lt;&#x2F;h2&gt;
+        <content type="html" xml:base="https://xsro.github.io/proxy-mirror-cn/">&lt;h2 id=&quot;git&quot;&gt;GIT&lt;&#x2F;h2&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;# 设置http:
 &lt;&#x2F;span&gt;&lt;span&gt;git config --global http.proxy http:&#x2F;&#x2F;127.0.0.1:1080
 &lt;&#x2F;span&gt;&lt;span&gt;# 设置https:
@@ -67,13 +79,19 @@
         <title>windows 系统安装 Scoop 包管理工具</title>
         <published>2022-01-25T00:00:00+00:00</published>
         <updated>2022-01-25T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://xsro.github.io/install-scoop-with-mirror-cn/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/install-scoop-with-mirror-cn/"/>
         <id>https://xsro.github.io/install-scoop-with-mirror-cn/</id>
         
-        <content type="html">&lt;p&gt;&lt;strong&gt;该内容似乎已经过时&lt;&#x2F;strong&gt;，因为目前&lt;a href=&quot;https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;360677731&quot;&gt;似乎&lt;&#x2F;a&gt;github.com.cnpmjs.org 和 hub.fastgit.org 镜像均无法使用&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://xsro.github.io/install-scoop-with-mirror-cn/">&lt;p&gt;&lt;strong&gt;该内容似乎已经过时&lt;&#x2F;strong&gt;，因为目前&lt;a href=&quot;https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;360677731&quot;&gt;似乎&lt;&#x2F;a&gt;github.com.cnpmjs.org 和 hub.fastgit.org 镜像均无法使用&lt;&#x2F;p&gt;
 &lt;h1 id=&quot;windows-xi-tong-an-zhuang-scoop-bao-guan-li-gong-ju&quot;&gt;windows 系统安装 Scoop 包管理工具&lt;&#x2F;h1&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;scoop.sh&#x2F;&quot;&gt;https:&#x2F;&#x2F;scoop.sh&#x2F;&lt;&#x2F;a&gt;是一款 windows 系统下的包管理工具，根据官网只需要以下命令即可安装。&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span&gt;iwr -useb get.scoop.sh | iex
@@ -204,13 +222,19 @@
         <title>控制相关资源导航</title>
         <published>2021-10-03T00:00:00+00:00</published>
         <updated>2021-10-03T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://xsro.github.io/control/navigation/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/navigation/"/>
         <id>https://xsro.github.io/control/navigation/</id>
         
-        <content type="html">&lt;h1 id=&quot;kong-zhi-xiang-guan-zi-yuan-dao-hang&quot;&gt;控制相关资源导航&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/control/navigation/">&lt;h1 id=&quot;kong-zhi-xiang-guan-zi-yuan-dao-hang&quot;&gt;控制相关资源导航&lt;&#x2F;h1&gt;
 &lt;h2 id=&quot;tu-wen-wei-zhu-bo-zhu&quot;&gt;图文（为主）博主&lt;&#x2F;h2&gt;
 &lt;h3 id=&quot;j-pan&quot;&gt;J Pan&lt;&#x2F;h3&gt;
 &lt;p&gt;航空工程师，主要在知乎撰写文章，有&lt;a href=&quot;https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;57764200&quot;&gt;纲举目张&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -254,13 +278,19 @@
         <title>Git常用拓展知识</title>
         <published>2021-07-25T00:00:00+00:00</published>
         <updated>2021-07-25T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://xsro.github.io/git-tips-cn/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/git-tips-cn/"/>
         <id>https://xsro.github.io/git-tips-cn/</id>
         
-        <content type="html">&lt;h1 id=&quot;some-tips-for-git&quot;&gt;Some Tips for git&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/git-tips-cn/">&lt;h1 id=&quot;some-tips-for-git&quot;&gt;Some Tips for git&lt;&#x2F;h1&gt;
 &lt;h2 id=&quot;links&quot;&gt;links&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;git commit 提交规范
@@ -321,13 +351,19 @@
         <title>Markdown 常用拓展语法参考</title>
         <published>2021-07-25T00:00:00+00:00</published>
         <updated>2021-07-25T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://xsro.github.io/markdown-tips-cn/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/markdown-tips-cn/"/>
         <id>https://xsro.github.io/markdown-tips-cn/</id>
         
-        <content type="html">&lt;h1 id=&quot;markdown-chang-yong-tuo-zhan-yu-fa-can-kao&quot;&gt;Markdown 常用拓展语法参考&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/markdown-tips-cn/">&lt;h1 id=&quot;markdown-chang-yong-tuo-zhan-yu-fa-can-kao&quot;&gt;Markdown 常用拓展语法参考&lt;&#x2F;h1&gt;
 &lt;h2 id=&quot;chang-yong-lian-jie&quot;&gt;常用链接&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;基本语法

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title>xsro&#x27;s blog - 控制理论</title>
-    <link href="https://xsro.github.io/categories/kong-zhi-li-lun/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://xsro.github.io"/>
+    <link rel="self" type="application/atom+xml" href="https://xsro.github.io/categories/kong-zhi-li-lun/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://xsro.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2021-10-03T00:00:00+00:00</updated>
     <id>https://xsro.github.io/categories/kong-zhi-li-lun/atom.xml</id>
@@ -10,13 +10,19 @@
         <title>控制相关资源导航</title>
         <published>2021-10-03T00:00:00+00:00</published>
         <updated>2021-10-03T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://xsro.github.io/control/navigation/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/navigation/"/>
         <id>https://xsro.github.io/control/navigation/</id>
         
-        <content type="html">&lt;h1 id=&quot;kong-zhi-xiang-guan-zi-yuan-dao-hang&quot;&gt;控制相关资源导航&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/control/navigation/">&lt;h1 id=&quot;kong-zhi-xiang-guan-zi-yuan-dao-hang&quot;&gt;控制相关资源导航&lt;&#x2F;h1&gt;
 &lt;h2 id=&quot;tu-wen-wei-zhu-bo-zhu&quot;&gt;图文（为主）博主&lt;&#x2F;h2&gt;
 &lt;h3 id=&quot;j-pan&quot;&gt;J Pan&lt;&#x2F;h3&gt;
 &lt;p&gt;航空工程师，主要在知乎撰写文章，有&lt;a href=&quot;https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;57764200&quot;&gt;纲举目张&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -60,13 +66,19 @@
         <title>自动化专业学习回顾</title>
         <published>2021-09-23T00:00:00+00:00</published>
         <updated>2021-09-23T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://xsro.github.io/control/control-student-fight-cn/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/control-student-fight-cn/"/>
         <id>https://xsro.github.io/control/control-student-fight-cn/</id>
         
-        <content type="html">&lt;h1 id=&quot;jia-you-ruan-ying-jian-xiu-qiang-ruo-xiang-ji-de-zi-dong-hua-ren-robot-face&quot;&gt;加油，软硬兼修、强弱相济的自动化人 🤖&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/control/control-student-fight-cn/">&lt;h1 id=&quot;jia-you-ruan-ying-jian-xiu-qiang-ruo-xiang-ji-de-zi-dong-hua-ren-robot&quot;&gt;加油，软硬兼修、强弱相济的自动化人 🤖&lt;&#x2F;h1&gt;
 &lt;p&gt;互联网上”全栈“一词比较火热，通常指的是兼具”前端“和”后端“的技术能力丰富的工程人员。
 有调侃说，“全栈”应该转化为“软件+硬件”，可以叫“全干工程师”，我想这不正是自动化学科对我们学生的要求嘛，
 似乎好像还可以加上一句，强电与弱电相结合。&lt;&#x2F;p&gt;
@@ -145,13 +157,19 @@
         <title>A look-back of automation</title>
         <published>2021-09-23T00:00:00+00:00</published>
         <updated>2021-09-23T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://xsro.github.io/control/control-student-fight/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/control-student-fight/"/>
         <id>https://xsro.github.io/control/control-student-fight/</id>
         
-        <content type="html">&lt;h1 id=&quot;keep-fighting-boys-and-girls-from-automation-robot-face&quot;&gt;Keep fighting, boys and girls from automation 🤖&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/control/control-student-fight/">&lt;h1 id=&quot;keep-fighting-boys-and-girls-from-automation-robot&quot;&gt;Keep fighting, boys and girls from automation 🤖&lt;&#x2F;h1&gt;
 &lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;images.squarespace-cdn.com&#x2F;content&#x2F;v1&#x2F;5b2d76525cfd790c4a218093&#x2F;1618710257013-K60SMQXQAS7Z57WWX810&#x2F;Control_Map_ver5.png?format=1000w&quot; alt=&quot;map of control theory v5&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;In the Internet, the word &#x27;full-stack&#x27; is very hot. It means &#x27;front end&#x27; plus &#x27;back end&#x27; mainly for web software developer.
 We students studing automation should also learn hardware. So we are &#x27;software&#x27; plus &#x27;hardware&#x27; and &#x27;strong electricity&#x27; plus &#x27;weak electricity&#x27;.&lt;&#x2F;p&gt;
@@ -220,13 +238,19 @@ We students studing automation should also learn hardware. So we are &#x27;softw
         <title>自动控制原理提要</title>
         <published>2021-09-02T00:00:00+00:00</published>
         <updated>2021-09-02T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://xsro.github.io/control/classical-control-myview/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/classical-control-myview/"/>
         <id>https://xsro.github.io/control/classical-control-myview/</id>
         
-        <content type="html">&lt;h1 id=&quot;kong-zhi-li-lun-gai-lan&quot;&gt;控制理论概览&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/control/classical-control-myview/">&lt;h1 id=&quot;kong-zhi-li-lun-gai-lan&quot;&gt;控制理论概览&lt;&#x2F;h1&gt;
 &lt;p&gt;大三学习了《自动控制原理》、《计算机控制系统》、《现代控制理论》，对控制理论有了一个很粗略的了解，整理如下&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;xian-xing-shi-bu-bian-lian-xu-xi-tong&quot;&gt;线性时不变连续系统&lt;&#x2F;h2&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;域&lt;&#x2F;th&gt;&lt;th&gt;数学模型&lt;&#x2F;th&gt;&lt;th&gt;分析与判断稳定的方法&lt;&#x2F;th&gt;&lt;th&gt;（性能）指标&lt;&#x2F;th&gt;&lt;th&gt;其他&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
@@ -255,13 +279,19 @@ We students studing automation should also learn hardware. So we are &#x27;softw
         <title>傅里叶、拉普拉斯、Z变换这一串</title>
         <published>2021-08-30T00:00:00+00:00</published>
         <updated>2021-08-30T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://xsro.github.io/control/transfrom-in-control/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/transfrom-in-control/"/>
         <id>https://xsro.github.io/control/transfrom-in-control/</id>
         
-        <content type="html">&lt;h1 id=&quot;signal-strength-san-da-bian-huan-de-shu-xue-tui-dao-guo-cheng&quot;&gt;📶 三大变换的数学推导过程&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/control/transfrom-in-control/">&lt;h1 id=&quot;signal-strength-san-da-bian-huan-de-shu-xue-tui-dao-guo-cheng&quot;&gt;📶 三大变换的数学推导过程&lt;&#x2F;h1&gt;
 &lt;p&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\mathscr{F,L,Z}&lt;&#x2F;script&gt;
 傅里叶变换、拉普拉斯变换、Z 变换这三大变换讨论广泛&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#zhihu&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;。个人理解，这三个变换都是为了简化一些难以在时间域分析的问题而引入的。&lt;&#x2F;p&gt;
 &lt;ul&gt;
@@ -405,13 +435,19 @@ F^\star(s)&amp;=\mathscr{L}\left[ f^\star(t)\right]
         <title>t&lt;0是哲学家思考的问题--控制系统分析时一般信号都需要乘上一个阶跃u(t)</title>
         <published>2021-08-28T00:00:00+00:00</published>
         <updated>2021-08-28T00:00:00+00:00</updated>
+        
         <author>
-          <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://xsro.github.io/control/multiply-1t/" type="text/html"/>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/multiply-1t/"/>
         <id>https://xsro.github.io/control/multiply-1t/</id>
         
-        <content type="html">&lt;h1 id=&quot;xian-xing-ding-chang-xi-tong-de-zhong-yao-te-xing-yin-fa-de-si-kao&quot;&gt;线性定常系统的重要特性引发的思考&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/control/multiply-1t/">&lt;h1 id=&quot;xian-xing-ding-chang-xi-tong-de-zhong-yao-te-xing-yin-fa-de-si-kao&quot;&gt;线性定常系统的重要特性引发的思考&lt;&#x2F;h1&gt;
 &lt;p&gt;女朋友在阅读胡寿松第六版《自动控制原理》时有一个困惑。为什么书中 P71 页表 3-2 中的阶跃信号&lt;code&gt;1&lt;&#x2F;code&gt;，求导之后消失了，而不是作为单位脉冲信号&lt;script type=&quot;math&#x2F;tex&quot;&gt;\delta(t)&lt;&#x2F;script&gt;
 处理。难道这里的&lt;code&gt;1&lt;&#x2F;code&gt;视为常数，这样就与&lt;code&gt;零初始条件&lt;&#x2F;code&gt;矛盾了。&lt;&#x2F;p&gt;
 &lt;p&gt;书中的&lt;strong&gt;表 3-2 一阶系统对典型输入信号的输出响应&lt;&#x2F;strong&gt;如下：&lt;&#x2F;p&gt;
