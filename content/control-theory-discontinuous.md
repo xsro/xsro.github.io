@@ -6,6 +6,11 @@ tags = ["滑动模态控制"]
 categories = ["控制理论"]
 +++
 
+非线性动态系统理论是滑模控制的重要理论基础，也是我学习滑模的最大障碍。
+我决定花一些时间从本科数学整理非线性动态系统中的一些概念。
+
+<!-- more -->
+
 ## 前言
 
 最近在看滑模控制的文章，其中对于非连续系统的论述多有不解，比如如下Filippov微分包含到底是什么，
@@ -43,11 +48,12 @@ $$
 $$
 > 的解$t\ge t_0$时都在$W$内，那么这个解是$t\ge t_0$的唯一解。
 
-## 回顾：各种连续性
+## 回顾：连续性
 
 那么什么是Lipschitz连续呢，各种连续的关系又是什么呢，我们讨论的非连续动态微分方程又如何定义呢？
+为了简便，这里用的是函数来叙述，如果是多变量函数或者泛函需要使用范数替代绝对值。
 
-### 通过极限描述的连续性
+### 点连续与间断点
 
 > 设函数$y=f(x)$在点$x_0$的某一邻域内有定义，
 > 并且$\lim_{x\to x_0}f(x)=f(x_0)$，
@@ -70,4 +76,146 @@ $$
     1. 震荡间断点：$\lim_{x\to\ x_0} f(x)$振荡不存在
     1. 无穷间断点：$\lim_{x\to\ x_0^+} f(x)=\infty$或$\lim_{x\to\ x_0^-} f(x)=\infty$
 
-### 通过$\epsilon-\delta$描述的连续性
+![https://calcworkshop.com/limits/limits-and-continuity/](/images/4-types-of-discontinuity.png)
+
+
+### 区间连续与区间一致连续
+
+如果在区间上每一点都连续，就称函数在该区间上连续，如果区间包括端点，那么在右端点连续是指左连续，在左端点连续是指右连续。
+
+> 设函数$f(x)$在区间$I$上有定义. 如果对于任意给定的正数$\epsilon$，总存在正数
+> $\delta$，是的对于区间$I$上的任意两点$x_1,x_2$，当$|x_1-x_2|<\delta$时，
+> 有
+$$
+|f(x_1)-f(x_2)|<\epsilon
+$$
+> 那么称函数$f(x)$在区间$I$上**一致连续**。
+
+
+### 绝对连续、Lipschitz连续、Hölder连续
+
+绝对连续表示函数的光滑性质，比连续和一致连续条件都要严格，比Lipschitz条件宽松，是一类极为重要的函数。绝对连续函数几乎处处可微，是它的导函数的广义原函数。
+
+> 设$f(x)$是$[a,b]$上的函数，若对任意$\epsilon>0$，存在$\delta>0$使得对于
+> $[a,b]$中的任意一组分点：
+$$
+a_1<b_1\leq a_2 <b_2 \leq \dots \leq a_n < b_n,
+$$
+> 只要$\sum_{i=1}^n(b_i-a_i)<\delta$，便有
+$$
+\sum_{i=1}^n|f(b_i)-f(a_i)|<\epsilon
+$$
+> 则称$f(x)$是$[a,b]$上**绝对连续**函数，或称$f(x)$在$[a,b]$上绝对连续。
+
+等价的，如果存在一个Lebesgue可积函数$\kappa:[a,b]\to \mathbb{R}$
+使得下式成立，那么$\gamma$是一个绝对连续函数。
+$$
+\gamma(t)=\gamma(a)+\int^t_a \kappa(s)d s,\quad t\in [a,b]
+$$
+
+
+
+> 对于函数$f(x)$，如果存在一个常数L，使得对$f(x)$定义域上（可为实数也可以为复数）的任意两个值满足如下条件：
+$$
+|f(x_1)-f(x_2)|\leq L|x_1-x_2|
+$$
+> 那么称函数$f(x)$满足Lipschitz连续条件，并称L为$f(x)$的lipschitz常数。
+
+- 从局部看：我们可以取两个充分接近的点，如果这个时候斜率的极限存在的话，这个斜率的极限就是这个点的导数。也就是说函数可导，又是Lipschitz连续，那么导数有界。反过来，如果可导函数，导数有界，可以推出函数Lipschitz连续。
+- 从整体看：Lipschitz连续要求函数在无限的区间上不能有超过线性的增长，所以这些x^{2}和e^{2}函数在无限区间上不是Lipschitz连续的。
+
+> 对于函数$f(x)$，如果存在一个非负常数$C,\alpha$，
+> 使得对$f(x)$定义域上（可为实数也可以为复数）的任意两个值满足如下条件：
+$$
+|f(x_1)-f(x_2)|\leq C|x_1-x_2|^\alpha
+$$
+> 那么称函数$f(x)$满足Hölder连续条件。
+> 当$\alpha=0$时表示有界，当$\alpha=1$时表示满足Lipschitz条件
+
+### 区间上连续性的关系
+
+- 绝对连续一定一致连续，反正不一定。
+- 连续可微一定绝对连续，反之不一定
+- 局部Lipschitz连续一定绝对连续，反之不一定。
+
+如下$f_1(x)$一致连续但是不绝对连续:
+$$
+f_1(x)=\begin{cases}
+    0, &x=0\\
+    x \sin\frac{\pi}{x}, &0 < x\leq 1
+    \end{cases}
+$$
+
+如下绝对值函数$f_2(x)$绝对连续但是在0处不连续可微
+$$
+f_2(x)=|x|, x\in [-1,1]
+$$
+
+如下根号函数绝对连续但是在0处不是局部Lipschitz连续的
+$$
+f_3(t)=\sqrt(t),t\in [0,0]
+$$
+
+
+#### 连续函数不一定
+
+### 光滑函数
+
+光滑函数（英语：Smooth function）在数学中特指无穷可导的函数，不存在尖点，也就是说所有的有限阶导数都存在。例如，指数函数就是光滑的，因为指数函数的导数是指数函数本身。
+
+若一函数是连续的，则称其为$C^{0}$函数；
+若函数存在导函数，且其导函数连续，则称为连续可导，记为$C^1$函数；
+若一函数n阶可导，并且其n阶导函数连续，则为$C^{n}$函数（$n\geq 1$）。
+而光滑函数是对所有n都属于$C^{n}$函数，特称其为$C^{\infty }$函数。
+
+## 突破连续可微解 Beyond Continuously Differentiable Solutions 
+
+考虑如下的动态系统
+$$
+\dot{x}(t)=\mathcal{X}(x(t))\ x(t_0)=x_0
+\tag{7}
+$$
+其中$x\in \mathbb{R}^d$， $d$为一个正整数，
+并且$\mathcal{X}:\mathbb{R}^d \to \mathbb{R}^d$ **不需要连续**。
+我们称连续可微的解$t \mapsto x(t)$为经典（classical）解。
+显然，如果$\mathcal{X}$连续，那么方程所有解都是classical的。
+不失一般性，我们认为$t_0=0$，并且只考虑$t>0$的情况。
+
+> 连续可微Continuously differentiable，用泛函表示就是函数$f\in C^1$，意味着函数的导数是连续的，当然可微保证其本身也是连续的。
+
+**Caratheodory解**是classical解的一般话。
+粗略地说，Caratheodory解是满足微分方程(7)的Lebesgue积分形式(8)的绝对连续曲线
+$$
+x(t)=x(t_0)+\int_{t_0}^t X(x(s)) ds,\quad t>t_0
+\tag{8}
+$$
+通过使用积分形式(8)，Caratheodory解不再要求方程解必须所有时间都沿着向量场的方向。
+也就是说，微分方程(7)need bot be satisfied on a set of measure zero.
+
+**Filippov解**使用微分包含式（differential inclusion）来替换微分方程(7)右侧
+$$
+\dot{x}(t)\in \mathcal{F} (x(t))
+$$
+其中$\mathcal{F}:\mathbb{F}^d \to \mathfrak{B}(\mathbb{F}^d)$，
+$\mathfrak{B}(\mathbb{R}^d)$为d维实数空间$\mathbb{R}^d$的所有子集的集合。
+Filippov解是绝对连续曲线。
+对于任意给定的状态$x$，Filippov解不只关注向量场在$x$处的值，
+Filippov解的思想是引入由向量场中$x$的领域决定的一组**方向集合**。
+文献中常常使用集值映射（set-value map），
+也就是说这种映射的值是一个集合，而不像标准的函数（映射）的值只有一个。
+
+> An ordinary differential inclusion says the derivative must lie in a specified set, which may also depend on the function and independent variable. 
+
+Caratheodory解和Filippov解都不能完全解决非连续动态系统的问题，
+围绕存在的问题由**Sample-and-hold**解以及其他的一些描述方法。
+
+
+## 解的存在性和唯一性
+
+对于常微分方程而言，向量场如果只连续不能保证解的唯一性。
+我们说解的一个性质弱，表示不是所有解满足这一性质。
+我们说解的一个性质强，表示所有解满足这一性质。
+所以设计控制器的思路可以是
+
+1. 设计控制器并考虑控制器下的闭环系统
+1. 考虑所有容许控制输入下
