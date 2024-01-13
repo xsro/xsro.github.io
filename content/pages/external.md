@@ -1,9 +1,7 @@
 +++
-title = "外部资源列表（pdf和网站）"
-date = 2028-10-22
-
-[taxonomies]
-tags = ["pdf"]
+title = "可打印"
+path = "external"
+template = "about.html"
 +++
 
 这里收集了一些平时工作学习中用到的资源，包括PDF文件，代码，笔记等。

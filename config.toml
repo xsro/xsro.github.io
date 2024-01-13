@@ -34,3 +34,10 @@ highlight_code = true
 # Put all your custom variables here
 katex_enable = true
 even_title = "光侨路笔记"
+even_menu = [
+    {url = "$BASE_URL", name = "主页"},
+    {url = "$BASE_URL/categories", name = "分类"},
+    {url = "$BASE_URL/tags", name = "标签"},
+    {url = "$BASE_URL/about", name = "关于"},
+    {url = "$BASE_URL/external", name = "外部"},
+]

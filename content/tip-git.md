@@ -5,6 +5,8 @@ date = 2021-07-25
 categories = ["常用技术速查"]
 tags = ["git"]
 +++
+Git 常用的一些拓展知识，例如commit message提交消息的规范， Code Review 行话， 以及一些个人感悟。
+<!-- more -->
 
 # Some Tips for git
 
