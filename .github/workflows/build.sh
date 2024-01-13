@@ -1,3 +1,9 @@
+# compile typst
+cargo install --git https://github.com/typst/typst typst-cli
+cd typst/nlct
+typst compile main.typ ../../static/print/nlct.pdf
+cd ../..
+
 # clone the forked zola project
 git clone --depth=1  https://github.com/xsro/zola.git _zola
 # git clone --depth=1 git@github.com:xsro/zola.git _zola
@@ -34,3 +40,4 @@ else
     ls -R
     cp -r target/ ../public/
 fi
+
