@@ -19,10 +19,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/multiply-1t/"/>
-        <id>https://xsro.github.io/control/multiply-1t/</id>
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control-multiply-1t/"/>
+        <id>https://xsro.github.io/control-multiply-1t/</id>
         
-        <content type="html" xml:base="https://xsro.github.io/control/multiply-1t/">&lt;h1 id=&quot;xian-xing-ding-chang-xi-tong-de-zhong-yao-te-xing-yin-fa-de-si-kao&quot;&gt;线性定常系统的重要特性引发的思考&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/control-multiply-1t/">&lt;h1 id=&quot;xian-xing-ding-chang-xi-tong-de-zhong-yao-te-xing-yin-fa-de-si-kao&quot;&gt;线性定常系统的重要特性引发的思考&lt;&#x2F;h1&gt;
 &lt;p&gt;女朋友在阅读胡寿松第六版《自动控制原理》时有一个困惑。为什么书中 P71 页表 3-2 中的阶跃信号&lt;code&gt;1&lt;&#x2F;code&gt;，求导之后消失了，而不是作为单位脉冲信号&lt;script type=&quot;math&#x2F;tex&quot;&gt;\delta(t)&lt;&#x2F;script&gt;
 处理。难道这里的&lt;code&gt;1&lt;&#x2F;code&gt;视为常数，这样就与&lt;code&gt;零初始条件&lt;&#x2F;code&gt;矛盾了。&lt;&#x2F;p&gt;
 &lt;p&gt;书中的&lt;strong&gt;表 3-2 一阶系统对典型输入信号的输出响应&lt;&#x2F;strong&gt;如下：&lt;&#x2F;p&gt;

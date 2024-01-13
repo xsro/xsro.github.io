@@ -19,10 +19,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/wheeled-robot-feedback-linearization-cn/"/>
-        <id>https://xsro.github.io/control/wheeled-robot-feedback-linearization-cn/</id>
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control-tranx-wheeled-robot-feedback-linearization-cn/"/>
+        <id>https://xsro.github.io/control-tranx-wheeled-robot-feedback-linearization-cn/</id>
         
-        <content type="html" xml:base="https://xsro.github.io/control/wheeled-robot-feedback-linearization-cn/">&lt;blockquote&gt;
+        <content type="html" xml:base="https://xsro.github.io/control-tranx-wheeled-robot-feedback-linearization-cn/">&lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;YAMAMOTO Y, YUN X, 1992. Coordinating locomotion and manipulation of a mobile manipulator[C&#x2F;OL]&#x2F;&#x2F;[1992] Proceedings of the 31st IEEE Conference on Decision and Control. 2643-2648 卷3. DOI:10.1109&#x2F;CDC.1992.371337.&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;h2 id=&quot;fei-wan-zheng-xi-tong&quot;&gt;非完整系统&lt;&#x2F;h2&gt;

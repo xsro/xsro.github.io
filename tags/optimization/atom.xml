@@ -19,10 +19,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/optimization-cn/"/>
-        <id>https://xsro.github.io/optimization-cn/</id>
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/note-optimization/"/>
+        <id>https://xsro.github.io/note-optimization/</id>
         
-        <content type="html" xml:base="https://xsro.github.io/optimization-cn/">&lt;p&gt;老师的讲课视频在 B 站&lt;a href=&quot;https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1nB4y137j9&quot;&gt;BV1nB4y137j9&lt;&#x2F;a&gt;。
+        <content type="html" xml:base="https://xsro.github.io/note-optimization/">&lt;p&gt;老师的讲课视频在 B 站&lt;a href=&quot;https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1nB4y137j9&quot;&gt;BV1nB4y137j9&lt;&#x2F;a&gt;。
 主要分为数学基础、局部最优化问题求解和全局局部最优化问题，只讲了局部的部分。&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;绪论&lt;&#x2F;li&gt;

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+      
+    
+
+      <title>xsro&#x27;s blog - 通过坐标平移实现非完整约束系统的反馈线性化Wheeled Robot Feedback Linearization</title>
+
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/mathtex-script-type.min.js" integrity="sha384-zWYbd0NBwgTsgIdFKVprSfTh1mbMPe5Hz1X3yY4Sd1h/K1cQoUe36OGwAGz/PcDy" crossorigin="anonymous"></script>
+              
+          
+      
+
+      
+          <link rel="stylesheet" href="https://xsro.github.io/site.css">
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">光侨路笔记</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io">
+                            主页
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;categories">
+                            分类
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;tags">
+                            标签
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;about">
+                            关于
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;external">
+                            外部
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;xsro.github.io">光侨路笔记</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io">
+                                    主页
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;categories">
+                                    分类
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;tags">
+                                    标签
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;about">
+                                    关于
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;external">
+                                    外部
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://xsro.github.io/control-tranx-wheeled-robot-feedback-linearization-cn/#fei-wan-zheng-xi-tong" class="toc-link">非完整系统</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/control-tranx-wheeled-robot-feedback-linearization-cn/#xi-tong-fang-cheng" class="toc-link">系统方程</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/control-tranx-wheeled-robot-feedback-linearization-cn/#zhuang-tai-kong-jian-biao-da" class="toc-link">状态空间表达</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/control-tranx-wheeled-robot-feedback-linearization-cn/#kong-zhi-shu-xing" class="toc-link">控制属性</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;control-tranx-wheeled-robot-feedback-linearization-cn&#x2F;">通过坐标平移实现非完整约束系统的反馈线性化Wheeled Robot Feedback Linearization</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2023-10-09</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <blockquote>
+<p><code>YAMAMOTO Y, YUN X, 1992. Coordinating locomotion and manipulation of a mobile manipulator[C/OL]//[1992] Proceedings of the 31st IEEE Conference on Decision and Control. 2643-2648 卷3. DOI:10.1109/CDC.1992.371337.</code></p>
+</blockquote>
+<h2 id="fei-wan-zheng-xi-tong">非完整系统</h2>
+<h3 id="xi-tong-fang-cheng">系统方程</h3>
+<p>考虑m个双边约束下具有n个广义坐标q的机械系统，其动力学方程可以通过欧拉拉格朗日方程
+<script type="math/tex;mode=display">M(q)\ddot{q}+V(q,\dot{q})=E(q)\tau-A^T(q)\lambda
+\tag{1}</script>
+
+确立，
+其中<script type="math/tex">M(q)</script>
+是<script type="math/tex">n\times n</script>
+的惯性矩阵，
+<script type="math/tex">V(q,\dot{q})</script>
+是关于位置和速度的阻力向量，
+<script type="math/tex">E(q)</script>
+是<script type="math/tex">n\times r</script>
+的输入转换矩阵，
+<script type="math/tex">\tau</script>
+是<script type="math/tex">r</script>
+维输入向量，
+<script type="math/tex">A(q)</script>
+是<script type="math/tex">m\times n</script>
+的雅克比矩阵，
+<script type="math/tex">\lambda</script>
+是约束力向量。
+该机械系统的<script type="math/tex">m</script>
+个约束方程可以写成
+<script type="math/tex;mode=display">C(q,\dot{q})=0.</script>
+
+如果其中的一个约束方程可以写成，
+或者通过积分可以转化为<script type="math/tex">C_i(q)=0</script>
+的形式，那么该约束是完整约束。
+否则，该约束为动力学约束（非几何约束），一般称为非完整(nonholonomic)约束。</p>
+<p><strong>假设</strong>有<script type="math/tex">k</script>
+个完整的以及<script type="math/tex">m-k</script>
+个非完整的独立约束，他们都可以写成
+<script type="math/tex;mode=display">A(q)\dot{q}=0
+\tag{3}</script>
+
+的形式。</p>
+<p>令<script type="math/tex">s_q(q),\cdots,s_{n-m}(q)</script>
+为<script type="math/tex">A(q)</script>
+的零空间中的光滑并且线性不相关的向量场，i.e.
+<script type="math/tex;mode=display">A(q)s_i(q)=0, \quad i=1,\dots, n-m</script>
+
+令<script type="math/tex">S(q)</script>
+为由这些向量组成的满秩矩阵
+<script type="math/tex;mode=display">S(q)=[s_1(q)\ \cdots\ s_{n-m}(q)]</script>
+
+令<script type="math/tex">\Delta</script>
+为这些向量场张成的分布
+<script type="math/tex;mode=display">\Delta=span \{s_1(q), \cdots, s_{n-m}(q)\}</script>
+
+因此，<script type="math/tex">\dot{q}\in\Delta</script>
+。
+我们无法确定<script type="math/tex">\Delta</script>
+是否对合(involutive)。
+可以令<script type="math/tex">\Delta^*</script>
+为包含<script type="math/tex">\Delta</script>
+的最小的对合分布。
+可知<script type="math/tex">dim(\Delta)\leq dim(\Delta^*)=k</script>
+。</p>
+<p><a href="https://ieeexplore.ieee.org/document/261553">G. Campion 1991</a>发现共由三种情况</p>
+<ol>
+<li><script type="math/tex">k=m</script>
+，所有的约束都是完整的，<script type="math/tex">\Delta</script>
+自身就是对合的</li>
+<li><script type="math/tex">k=0</script>
+，所有的约束都是非完整的，<script type="math/tex">\Delta*</script>
+为整个空间</li>
+<li><script type="math/tex">0<k<m</script>
+，<script type="math/tex">k</script>
+个约束是可积的，并且广义坐标的<script type="math/tex">k</script>
+个分量可能可以被运动方程消去。这种情况下<script type="math/tex">dim(\Delta^*)=n-k</script>
+</li>
+</ol>
+<h3 id="zhuang-tai-kong-jian-biao-da">状态空间表达</h3>
+<p>考虑由(1)(3)定义与约束的系统，
+由于受约束的速度总是在<script type="math/tex">A(q)</script>
+的零空间中，
+可以定义<script type="math/tex">n-m</script>
+个速度<script type="math/tex">v(t)=[v_1\ v_2\ \cdots \ v_{n-m}]</script>
+使得
+<script type="math/tex;mode=display">\dot{q}=S(q)v(t)
+\tag{5}</script>
+
+这些速度需要是不可积的。
+对(5)微分，并代入(1)中的<script type="math/tex">\ddot{q}</script>
+，同时前乘<script type="math/tex">S^T</script>
+
+<script type="math/tex;mode=display">S^T (MS \dot{v}(t)+M\dot{S}v(t)+V)=S^T E \tau</script>
+</p>
+<p>选取状态量<script type="math/tex">x=[q^T\ v^T]^T</script>
+，可得
+<script type="math/tex;mode=display">\dot{x}=\begin{bmatrix}
+Sv \\ f_2
+\end{bmatrix}
++\begin{bmatrix}
+0 \\ (S^T M S)^{-1} S^T E
+\end{bmatrix}\tau</script>
+
+其中，<script type="math/tex">f_2=(S^T M S)^{-1} (-S^T M \dot{S} v-S^T V)</script>
+。
+<strong>假设</strong>执行器的输入数量大于或等于机械系统的自由度(<script type="math/tex">t\geq n-m</script>
+)
+并且<script type="math/tex">(S^T M S)^{-1} S^T E</script>
+的秩为<script type="math/tex">n-m</script>
+，
+我们可能可以应用非线性反馈
+<script type="math/tex;mode=display">\tau=\left((S^T M S)^{-1} S^T E\right)^+(u-f_2)</script>
+
+其中上标<script type="math/tex">+</script>
+表示矩阵的广义逆。
+于是状态方程可以简化为
+<script type="math/tex;mode=display">\dot{x}=f(x)+g(x)u,f(x)
+=\begin{bmatrix}S(q)v\\0\end{bmatrix},
+g(x)=\begin{bmatrix}0\\I\end{bmatrix},</script>
+</p>
+<h3 id="kong-zhi-shu-xing">控制属性</h3>
+<p><strong>定理1</strong>: 非完整系统(10)是可控的</p>
+<p><strong>定理2</strong>：非完整系统的平衡点<script type="math/tex">x=0</script>
+，通过一个光滑的状态反馈控制，可以使其拉格朗日稳定，
+但是无法使其渐近稳定。</p>
+<p>余下的部分，我们考虑公式(3)同时包含完整约束以及非完整约束的情况。</p>
+<p><strong>定理3</strong>：如果系统(10)存在至少一个约束是非完整的，那么它不是可以通过状态反馈可以输入状态可线性化的</p>
+<p><strong>证明</strong>：系统如果输入状态可线性化，需要满足两个条件，可以发现对合条件并不满足。</p>
+<ol>
+<li>the strong accessibility condition</li>
+<li>the involutivity condition</li>
+</ol>
+<p>定义一组分布
+<script type="math/tex;mode=display">D_j = span \{
+    L^i_f g | i=0,1,\dots,j-1\}, j=1,2,\dots</script>
+
+对合性要求<script type="math/tex">D_1,D_2,\dots,D_{2n-m}</script>
+都是对合的。
+注意系统的状态数为<script type="math/tex">2n-m</script>
+。
+由于<script type="math/tex">g</script>
+是常数，所以<script type="math/tex">D_1=span\{g\}</script>
+是对合的。
+下面计算
+<script type="math/tex;mode=display">L_fg=[f,g]=
+ \frac{\partial g}{\partial x}f
+-\frac{\partial f}{\partial x}g
+=-\begin{bmatrix}S(q)\\0\end{bmatrix}</script>
+
+由于由<script type="math/tex">S(q)</script>
+的列张成的分布<script type="math/tex">\Delta</script>
+不是对合的，
+分布<script type="math/tex">D_2=span\{g,L_fg\}</script>
+不是对合的。
+因此，系统不是输入-状态可线性化的。
+<script type="math/tex">\blacksquare</script>
+</p>
+<p>尽管带有非完整约束的系统不是输入-状态可线性化的，
+如果选取合适的输出方程，他是可以输入-输出线性化的。
+考察系统的位置控制，也就是说输入方程只关于位置量<script type="math/tex">q</script>
+。
+既然系统的自由度数为<script type="math/tex">n-m</script>
+，我们可能至多有<script type="math/tex">n-m</script>
+个独立的位置输出方程。
+<script type="math/tex;mode=display">y=h(q)=[h_1(q)\ \cdots \ h_{n-m}(q)]
+\tag{11}</script>
+
+可以输入输出线性化的充要条件为解耦矩阵满秩 <a href="https://link.springer.com/book/10.1007/978-1-4757-2101-0">ref20</a>。
+使用(11)的输出方程，系统的解耦矩阵<script type="math/tex">\Phi(x)</script>
+是<script type="math/tex">(n-m)\times (n-m)</script>
+的矩阵
+<script type="math/tex;mode=display">\Phi(q)=J_h(q)S(q)</script>
+
+其中<script type="math/tex">J_h=\frac{\partial h}{\partial q}</script>
+是一个<script type="math/tex">(n-m)\times n</script>
+的Jacobian矩阵。
+当<script type="math/tex">J_h</script>
+的行与<script type="math/tex">A(q)</script>
+独立的时候，<script type="math/tex">\Phi(x)</script>
+ 是非奇异的</p>
+<p>为了刻画零动态并且实现输入-输出线性化，引入新的状态变量<script type="math/tex">z</script>
+
+<script type="math/tex;mode=display">z=T(x)=\begin{bmatrix}z_1\\z_2\\z_3\end{bmatrix}
+=\begin{bmatrix}h(q)\\L_f h(q)\\\tilde{h}(q)\end{bmatrix}
+=\begin{bmatrix}h(q)\\\Phi(q) v\\\tilde{h}(q)\end{bmatrix}</script>
+
+其中<script type="math/tex">\tilde{h}(q)</script>
+是可以使<script type="math/tex">[J_h^T,J_{\tilde{h}}^T]</script>
+满秩的m维函数。
+可以验证<script type="math/tex">T(x)</script>
+是微分同胚并且是一个合理的状态变换。
+新的状态<script type="math/tex">z</script>
+下的系统为：
+<script type="math/tex;mode=display">\dot{z}_1=\frac{\partial h}{\partial q} \dot{q}=z_2</script>
+
+<script type="math/tex;mode=display">\dot{z}_2=\dot{\Phi}(q) v + \Phi(q) u</script>
+
+<script type="math/tex;mode=display">\dot{z}_3=J_{\tilde{h}}S v = J_{\tilde{h}}S(J_h S)^{-1} z_2</script>
+
+使用如下的状态反馈
+<script type="math/tex;mode=display">u=\Phi^{-1}(q)(v-\dot{\Phi}(q)v)</script>
+
+我们实现了输入-输出线性化，同时实现了输入-输出解耦。
+系统的可观测部分为
+<script type="math/tex;mode=display">\dot{z}_1=z_2,\quad \dot{z}_2=v \quad y=z_1</script>
+
+系统的不可观测部分为：（代入<script type="math/tex">z_1=0</script>
+和<script type="math/tex">z_2=0</script>
+）</p>
+<script type="math/tex;mode=display">\dot{z}_3=0</script>
+<p>这个系统显然是Lagrange稳定的但是不是渐近稳定。</p>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https://xsro.github.io/tags/fei-wan-zheng-yue-shu/">#非完整约束</a>
+                    
+                        <a href="https://xsro.github.io/tags/fan-kui-xian-xing-hua/">#反馈线性化</a>
+                    
+                        <a href="https://xsro.github.io/tags/xiao-che/">#小车</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;xsro.github.io&#x2F;tip-tex&#x2F;">‹ 我的latex工作流</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;xsro.github.io&#x2F;matlab-global-persistent-cn&#x2F;">MATLAB 作用域 ›</a>
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https://xsro.github.io/even.js" ></script>
+      
+    </body>
+
+</html>

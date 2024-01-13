@@ -19,10 +19,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/tex-workflow/"/>
-        <id>https://xsro.github.io/tex-workflow/</id>
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/tip-tex/"/>
+        <id>https://xsro.github.io/tip-tex/</id>
         
-        <content type="html" xml:base="https://xsro.github.io/tex-workflow/">&lt;h1 id=&quot;wo-de-latexgong-zuo-liu&quot;&gt;我的latex工作流&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/tip-tex/">&lt;h1 id=&quot;wo-de-latexgong-zuo-liu&quot;&gt;我的latex工作流&lt;&#x2F;h1&gt;
 &lt;p&gt;继WSL&#x2F;gWSL技术使得”windows成为最好的Linux发行版“之后，
 加上overleaf也是运行在linux里面的，
 我发现我们的latex工作流完全可以全部迁移到*nix系统之中了。
@@ -53,10 +53,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/proxy-mirror-cn/"/>
-        <id>https://xsro.github.io/proxy-mirror-cn/</id>
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/collection-proxy-mirror-cn/"/>
+        <id>https://xsro.github.io/collection-proxy-mirror-cn/</id>
         
-        <content type="html" xml:base="https://xsro.github.io/proxy-mirror-cn/">&lt;h2 id=&quot;git&quot;&gt;GIT&lt;&#x2F;h2&gt;
+        <content type="html" xml:base="https://xsro.github.io/collection-proxy-mirror-cn/">&lt;h2 id=&quot;git&quot;&gt;GIT&lt;&#x2F;h2&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;# 设置http:
 &lt;&#x2F;span&gt;&lt;span&gt;git config --global http.proxy http:&#x2F;&#x2F;127.0.0.1:1080
 &lt;&#x2F;span&gt;&lt;span&gt;# 设置https:
@@ -88,10 +88,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/install-scoop-with-mirror-cn/"/>
-        <id>https://xsro.github.io/install-scoop-with-mirror-cn/</id>
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/tip-scoop/"/>
+        <id>https://xsro.github.io/tip-scoop/</id>
         
-        <content type="html" xml:base="https://xsro.github.io/install-scoop-with-mirror-cn/">&lt;p&gt;&lt;strong&gt;该内容似乎已经过时&lt;&#x2F;strong&gt;，因为目前&lt;a href=&quot;https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;360677731&quot;&gt;似乎&lt;&#x2F;a&gt;github.com.cnpmjs.org 和 hub.fastgit.org 镜像均无法使用&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://xsro.github.io/tip-scoop/">&lt;p&gt;&lt;strong&gt;该内容似乎已经过时&lt;&#x2F;strong&gt;，因为目前&lt;a href=&quot;https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;360677731&quot;&gt;似乎&lt;&#x2F;a&gt;github.com.cnpmjs.org 和 hub.fastgit.org 镜像均无法使用&lt;&#x2F;p&gt;
 &lt;h1 id=&quot;windows-xi-tong-an-zhuang-scoop-bao-guan-li-gong-ju&quot;&gt;windows 系统安装 Scoop 包管理工具&lt;&#x2F;h1&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;scoop.sh&#x2F;&quot;&gt;https:&#x2F;&#x2F;scoop.sh&#x2F;&lt;&#x2F;a&gt;是一款 windows 系统下的包管理工具，根据官网只需要以下命令即可安装。&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;powershell&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-powershell &quot;&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span&gt;iwr -useb get.scoop.sh | iex
@@ -231,10 +231,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/navigation/"/>
-        <id>https://xsro.github.io/control/navigation/</id>
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control-navi/"/>
+        <id>https://xsro.github.io/control-navi/</id>
         
-        <content type="html" xml:base="https://xsro.github.io/control/navigation/">&lt;h1 id=&quot;kong-zhi-xiang-guan-zi-yuan-dao-hang&quot;&gt;控制相关资源导航&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/control-navi/">&lt;h1 id=&quot;kong-zhi-xiang-guan-zi-yuan-dao-hang&quot;&gt;控制相关资源导航&lt;&#x2F;h1&gt;
 &lt;h2 id=&quot;tu-wen-wei-zhu-bo-zhu&quot;&gt;图文（为主）博主&lt;&#x2F;h2&gt;
 &lt;h3 id=&quot;j-pan&quot;&gt;J Pan&lt;&#x2F;h3&gt;
 &lt;p&gt;航空工程师，主要在知乎撰写文章，有&lt;a href=&quot;https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;57764200&quot;&gt;纲举目张&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -287,64 +287,11 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/git-tips-cn/"/>
-        <id>https://xsro.github.io/git-tips-cn/</id>
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/tip-git/"/>
+        <id>https://xsro.github.io/tip-git/</id>
         
-        <content type="html" xml:base="https://xsro.github.io/git-tips-cn/">&lt;h1 id=&quot;some-tips-for-git&quot;&gt;Some Tips for git&lt;&#x2F;h1&gt;
-&lt;h2 id=&quot;links&quot;&gt;links&lt;&#x2F;h2&gt;
-&lt;ul&gt;
-&lt;li&gt;git commit 提交规范
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.conventionalcommits.org&#x2F;&quot;&gt;Conventional Commits 约定式提交&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gitmoji.dev&#x2F;&quot;&gt;gitmoji 使用表情来规范 commit 消息&lt;&#x2F;a&gt;: &lt;a href=&quot;https:&#x2F;&#x2F;gitmoji.js.org&#x2F;&quot;&gt;one fork&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jianshu.com&#x2F;p&#x2F;238a1e1f4037&quot;&gt;LGTM : code review 行话&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;tip1-commit-gui-fan-zhong-chang-yong-commit-lei-xing-jie-shi&quot;&gt;Tip1 = Commit 规范中常用 commit 类型解释&lt;&#x2F;h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;feat&lt;&#x2F;code&gt;: 新功能、新特性&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;fix&lt;&#x2F;code&gt;: 修改 bug&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;perf&lt;&#x2F;code&gt;: 更改代码，以提高性能（在不影响代码内部行为的前提下，对程序性能进行优化）&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;refactor&lt;&#x2F;code&gt;: 代码重构（重构，在不影响代码内部行为、功能下的代码修改）&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;docs&lt;&#x2F;code&gt;: 文档修改&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;style&lt;&#x2F;code&gt;: 代码格式修改, 注意不是 css 修改（例如分号修改）&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;test&lt;&#x2F;code&gt;: 测试用例新增、修改&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;build&lt;&#x2F;code&gt;: 影响项目构建或依赖项修改&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;revert&lt;&#x2F;code&gt;: 恢复上一次提交&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;ci&lt;&#x2F;code&gt;: 持续集成相关文件修改&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;chore&lt;&#x2F;code&gt;: 其他修改（不在上述类型中的修改）&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;release&lt;&#x2F;code&gt;: 发布新版本&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;workflow&lt;&#x2F;code&gt;: 工作流相关文件修改&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;typo&lt;&#x2F;code&gt;：拼写错误等小错误&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;tip2-code-review-xing-hua&quot;&gt;Tip2：code Review 行话&lt;&#x2F;h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;PR&lt;&#x2F;code&gt;: Pull Request. 拉取请求，给其他项目提交代码&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;LGTM&lt;&#x2F;code&gt;: Looks Good To Me. 朕知道了 代码已经过 review，可以合并&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;SGTM&lt;&#x2F;code&gt;: Sounds Good To Me. 和上面那句意思差不多，也是已经通过了 review 的意思&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;WIP&lt;&#x2F;code&gt;: Work In Progress. 传说中提 PR 的最佳实践是，如果你有个改动很大的 PR，可以在写了一部分的情况下先提交，但是在标题里写- `上 WIP，以告诉项目维护者这个功能还未完成，方便维护者提前 review 部分提交的代码。&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;PTAL&lt;&#x2F;code&gt;: Please Take A Look. 你来瞅瞅？用来提示别人来看一下&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;TBR&lt;&#x2F;code&gt;: To Be Reviewed. 提示维护者进行 review&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;TL&lt;&#x2F;code&gt;;DR = Too Long; Didn’t Read. 太长懒得看。也有很多文档在做简略描述之前会写这么一句&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;TBD&lt;&#x2F;code&gt;: To Be Done(or Defined&#x2F;Discussed&#x2F;Decided&#x2F;Determined).根据语境不同意义有所区别，但一般都是还没搞定的意思&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;tips3-yi-xie-ge-ren-gan-wu&quot;&gt;Tips3 = 一些个人感悟&lt;&#x2F;h2&gt;
-&lt;ol&gt;
-&lt;li&gt;变量名直观一点，不要害怕太长
-&lt;ol&gt;
-&lt;li&gt;人类创造编程语言，就是为了方便人类编写与理解，大部分语言编译器都会做相关的优化的&lt;&#x2F;li&gt;
-&lt;li&gt;git 仓库也真的不在乎多那么几个字节，github 大小也没有限制，浅克隆问题也不大&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;主分支不用，其他分支少用&lt;code&gt;git push -f&lt;&#x2F;code&gt;，提交历史没有必要太好看
-&lt;ol&gt;
-&lt;li&gt;同上 2，多几个 commit 没什么大不了的&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;个人项目单分支模型就可以了，用太多分支往往徒增烦恼（这条不绝对，要看具体情况）&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-</content>
+        <summary type="html">&lt;p&gt;Git 常用的一些拓展知识，例如commit message提交消息的规范， Code Review 行话， 以及一些个人感悟。&lt;&#x2F;p&gt;
+</summary>
         
     </entry>
     <entry xml:lang="en">
@@ -360,10 +307,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/markdown-tips-cn/"/>
-        <id>https://xsro.github.io/markdown-tips-cn/</id>
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/tip-markdown/"/>
+        <id>https://xsro.github.io/tip-markdown/</id>
         
-        <content type="html" xml:base="https://xsro.github.io/markdown-tips-cn/">&lt;h1 id=&quot;markdown-chang-yong-tuo-zhan-yu-fa-can-kao&quot;&gt;Markdown 常用拓展语法参考&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/tip-markdown/">&lt;h1 id=&quot;markdown-chang-yong-tuo-zhan-yu-fa-can-kao&quot;&gt;Markdown 常用拓展语法参考&lt;&#x2F;h1&gt;
 &lt;h2 id=&quot;chang-yong-lian-jie&quot;&gt;常用链接&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;基本语法
@@ -384,7 +331,7 @@
 &lt;&#x2F;li&gt;
 &lt;li&gt;emoji 参考:v:
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;xsro.github.io&#x2F;markdown-tips-cn&#x2F;emoji.md&quot;&gt;emoji 表&lt;&#x2F;a&gt;来自&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;caiyongji&#x2F;emoji-list&quot;&gt;caiyongji&#x2F;emoji-list&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;xsro.github.io&#x2F;tip-markdown&#x2F;emoji.md&quot;&gt;emoji 表&lt;&#x2F;a&gt;来自&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;caiyongji&#x2F;emoji-list&quot;&gt;caiyongji&#x2F;emoji-list&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;emoji-cheat-sheet.com&#x2F;&quot;&gt;emoji-cheat-sheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ol&gt;
 &lt;&#x2F;li&gt;

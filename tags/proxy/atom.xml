@@ -19,10 +19,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/proxy-mirror-cn/"/>
-        <id>https://xsro.github.io/proxy-mirror-cn/</id>
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/collection-proxy-mirror-cn/"/>
+        <id>https://xsro.github.io/collection-proxy-mirror-cn/</id>
         
-        <content type="html" xml:base="https://xsro.github.io/proxy-mirror-cn/">&lt;h2 id=&quot;git&quot;&gt;GIT&lt;&#x2F;h2&gt;
+        <content type="html" xml:base="https://xsro.github.io/collection-proxy-mirror-cn/">&lt;h2 id=&quot;git&quot;&gt;GIT&lt;&#x2F;h2&gt;
 &lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;# 设置http:
 &lt;&#x2F;span&gt;&lt;span&gt;git config --global http.proxy http:&#x2F;&#x2F;127.0.0.1:1080
 &lt;&#x2F;span&gt;&lt;span&gt;# 设置https:

@@ -19,10 +19,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/tex-workflow/"/>
-        <id>https://xsro.github.io/tex-workflow/</id>
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/tip-tex/"/>
+        <id>https://xsro.github.io/tip-tex/</id>
         
-        <content type="html" xml:base="https://xsro.github.io/tex-workflow/">&lt;h1 id=&quot;wo-de-latexgong-zuo-liu&quot;&gt;我的latex工作流&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/tip-tex/">&lt;h1 id=&quot;wo-de-latexgong-zuo-liu&quot;&gt;我的latex工作流&lt;&#x2F;h1&gt;
 &lt;p&gt;继WSL&#x2F;gWSL技术使得”windows成为最好的Linux发行版“之后，
 加上overleaf也是运行在linux里面的，
 我发现我们的latex工作流完全可以全部迁移到*nix系统之中了。

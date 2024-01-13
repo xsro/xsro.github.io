@@ -19,10 +19,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/code/matlab-global-persistent-cn/"/>
-        <id>https://xsro.github.io/code/matlab-global-persistent-cn/</id>
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/matlab-global-persistent-cn/"/>
+        <id>https://xsro.github.io/matlab-global-persistent-cn/</id>
         
-        <content type="html" xml:base="https://xsro.github.io/code/matlab-global-persistent-cn/">&lt;h1 id=&quot;matlab-zuo-yong-yu-ji-zhi-ce-shi-dai-ma&quot;&gt;MATLAB 作用域机制测试代码&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/matlab-global-persistent-cn/">&lt;h1 id=&quot;matlab-zuo-yong-yu-ji-zhi-ce-shi-dai-ma&quot;&gt;MATLAB 作用域机制测试代码&lt;&#x2F;h1&gt;
 &lt;p&gt;MATLAB中的作用域有些奇怪。这里用几个测试代码来分析一下。
 本文所有代码段需要在matlab脚本中运行，不能在命令行中直接运行。&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;matlabjiao-ben-ke-yi-fang-wen-gong-zuo-qu-biao-liang-dan-shi-han-shu-bu-ke-yi&quot;&gt;MATLAB脚本可以访问工作区标量，但是函数不可以&lt;&#x2F;h2&gt;

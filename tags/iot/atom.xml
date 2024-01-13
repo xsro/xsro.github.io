@@ -19,10 +19,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/iot/install-clash-in-termux-cn/"/>
-        <id>https://xsro.github.io/iot/install-clash-in-termux-cn/</id>
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/backup/iot-termux-clash/"/>
+        <id>https://xsro.github.io/backup/iot-termux-clash/</id>
         
-        <content type="html" xml:base="https://xsro.github.io/iot/install-clash-in-termux-cn/">&lt;h1 id=&quot;zai-termux-zhong-bu-shu-clash-bing-shi-xian-pang-lu-you&quot;&gt;在 Termux 中部署 Clash 并实现旁路由&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/backup/iot-termux-clash/">&lt;h1 id=&quot;zai-termux-zhong-bu-shu-clash-bing-shi-xian-pang-lu-you&quot;&gt;在 Termux 中部署 Clash 并实现旁路由&lt;&#x2F;h1&gt;
 &lt;p&gt;魅族提供了 root 权限，但是开启之后就意味着放弃以后官方维护的可能性了。
 经过几天的折腾，我吧我的魅蓝 6（人生第一部手机）作为家庭软路由，满足一些上网需求。&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;xiang-guan-gong-ju-de-guan-wang-jie-shao&quot;&gt;相关工具的官网介绍&lt;&#x2F;h2&gt;

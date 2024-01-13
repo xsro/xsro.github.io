@@ -4,8 +4,135 @@
     <link rel="self" type="application/atom+xml" href="https://xsro.github.io/categories/kong-zhi-li-lun/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://xsro.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2021-10-03T00:00:00+00:00</updated>
+    <updated>2024-01-13T00:00:00+00:00</updated>
     <id>https://xsro.github.io/categories/kong-zhi-li-lun/atom.xml</id>
+    <entry xml:lang="en">
+        <title>非连续动态系统分析——Filippov</title>
+        <published>2024-01-13T00:00:00+00:00</published>
+        <updated>2024-01-13T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control-theory-discontinuous/"/>
+        <id>https://xsro.github.io/control-theory-discontinuous/</id>
+        
+        <content type="html" xml:base="https://xsro.github.io/control-theory-discontinuous/">&lt;h2 id=&quot;qian-yan&quot;&gt;前言&lt;&#x2F;h2&gt;
+&lt;p&gt;最近在看滑模控制的文章，其中对于非连续系统的论述多有不解，比如如下Filippov微分包含到底是什么，
+结合一下材料，打算整理一下所学内容&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;定义 2.2&lt;&#x2F;strong&gt;
+A  &lt;script type=&quot;math&#x2F;tex&quot;&gt;\dot{x}\in F(x), x\in R^n&lt;&#x2F;script&gt;
+,
+is called a &lt;em&gt;Filippov differential inclusion&lt;&#x2F;em&gt; 
+当一个向量场（vector-set field）&lt;script type=&quot;math&#x2F;tex&quot;&gt;F(x)&lt;&#x2F;script&gt;
+具有如下性质的时候，
+称一个微分包含（differential inclusion）&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;noempty 非空, &lt;&#x2F;li&gt;
+&lt;li&gt;closed+locally bounded=compact 紧集（有界闭集）, &lt;&#x2F;li&gt;
+&lt;li&gt;convex 图集,&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;and the set-value map &lt;script type=&quot;math&#x2F;tex&quot;&gt;F&lt;&#x2F;script&gt;
+ is upper-semi-continuous(the maximal distance of the point of &lt;script type=&quot;math&#x2F;tex&quot;&gt;F(x)&lt;&#x2F;script&gt;
+ and &lt;script type=&quot;math&#x2F;tex&quot;&gt;F(y)&lt;&#x2F;script&gt;
+vanishes when &lt;script type=&quot;math&#x2F;tex&quot;&gt;x\to y&lt;&#x2F;script&gt;
+).Solutions are defined as absolutely continuous functions of time satisfying the inclusion almost everywhere.&lt;&#x2F;p&gt;
+&lt;p&gt;Filippov 微分包含的解的所有广为人知的性质(existence,extendability etc)但是不包含唯一性(uniqueness)&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;知乎讨论：请问filippov解大概是什么意思？是怎么定义的？有什么作用？ &lt;a href=&quot;https:&#x2F;&#x2F;www.zhihu.com&#x2F;question&#x2F;55951952&quot;&gt;https:&#x2F;&#x2F;www.zhihu.com&#x2F;question&#x2F;55951952&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;主要是翻译的这个文献：CORTES J. Discontinuous dynamical systems[J&#x2F;OL]. IEEE Control Systems Magazine, 2008, 28(3): 36-73. DOI:10.1109&#x2F;MCS.2008.919306.&lt;&#x2F;li&gt;
+&lt;li&gt;HAN Z, CAI X, HUANG J. Theory of control systems described by differential inclusions[M&#x2F;OL]. Berlin, Heidelberg: Springer Berlin Heidelberg, 2016[2023-12-17]. http:&#x2F;&#x2F;link.springer.com&#x2F;10.1007&#x2F;978-3-662-49245-1. DOI:10.1007&#x2F;978-3-662-49245-1.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;hui-gu-jing-dian-fei-xian-xing-xi-tong-jie-de-tiao-jian&quot;&gt;回顾：经典非线性系统解的条件&lt;&#x2F;h2&gt;
+&lt;p&gt;经典非线性系统的解存在性和唯一性需要微分方程右端Lipschitz连续，
+一个使用较多的数学表述是khalil的非线性控制的&lt;strong&gt;引理1.3&lt;&#x2F;strong&gt;：&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(t,x)&lt;&#x2F;script&gt;
+关于&lt;script type=&quot;math&#x2F;tex&quot;&gt;t&lt;&#x2F;script&gt;
+是&lt;strong&gt;分段连续&lt;&#x2F;strong&gt;的，
+并且对所有&lt;script type=&quot;math&#x2F;tex&quot;&gt;t\ge t_0&lt;&#x2F;script&gt;
+，在关于&lt;script type=&quot;math&#x2F;tex&quot;&gt;x&lt;&#x2F;script&gt;
+的区域&lt;script type=&quot;math&#x2F;tex&quot;&gt;D\subset \mathbb{R}^n&lt;&#x2F;script&gt;
+上&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(t,x)&lt;&#x2F;script&gt;
+是局部&lt;strong&gt;Lipschitz连续&lt;&#x2F;strong&gt;的。
+设&lt;script type=&quot;math&#x2F;tex&quot;&gt;W&lt;&#x2F;script&gt;
+是&lt;script type=&quot;math&#x2F;tex&quot;&gt;D&lt;&#x2F;script&gt;
+中的一个紧子集，&lt;script type=&quot;math&#x2F;tex&quot;&gt;x_0\in W&lt;&#x2F;script&gt;
+，并进一步设
+&lt;script type=&quot;math&#x2F;tex;mode=display&quot;&gt;\dot{x}=f(t,x),x(t_0)=x_0&lt;&#x2F;script&gt;
+
+的解&lt;script type=&quot;math&#x2F;tex&quot;&gt;t\ge t_0&lt;&#x2F;script&gt;
+时都在&lt;script type=&quot;math&#x2F;tex&quot;&gt;W&lt;&#x2F;script&gt;
+内，那么这个解是&lt;script type=&quot;math&#x2F;tex&quot;&gt;t\ge t_0&lt;&#x2F;script&gt;
+的唯一解。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;hui-gu-ge-chong-lian-xu-xing&quot;&gt;回顾：各种连续性&lt;&#x2F;h2&gt;
+&lt;p&gt;那么什么是Lipschitz连续呢，各种连续的关系又是什么呢，我们讨论的非连续动态微分方程又如何定义呢？&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;tong-guo-ji-xian-miao-shu-de-lian-xu-xing&quot;&gt;通过极限描述的连续性&lt;&#x2F;h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设函数&lt;script type=&quot;math&#x2F;tex&quot;&gt;y=f(x)&lt;&#x2F;script&gt;
+在点&lt;script type=&quot;math&#x2F;tex&quot;&gt;x_0&lt;&#x2F;script&gt;
+的某一邻域内有定义，
+并且&lt;script type=&quot;math&#x2F;tex&quot;&gt;\lim_{x\to x_0}f(x)=f(x_0)&lt;&#x2F;script&gt;
+，
+那么就称函数&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(x)&lt;&#x2F;script&gt;
+在点&lt;script type=&quot;math&#x2F;tex&quot;&gt;x_0&lt;&#x2F;script&gt;
+处连续。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;借此可以定义函数不连续和间断点的概念：&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设函数&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(x)&lt;&#x2F;script&gt;
+在点&lt;script type=&quot;math&#x2F;tex&quot;&gt;x_0&lt;&#x2F;script&gt;
+的某&lt;strong&gt;去心&lt;&#x2F;strong&gt;领域内有定义，
+在此前提下，如果函数&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(x)&lt;&#x2F;script&gt;
+有一下三种情形之一&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;在&lt;script type=&quot;math&#x2F;tex&quot;&gt;x=x_0&lt;&#x2F;script&gt;
+处没有定义&lt;&#x2F;li&gt;
+&lt;li&gt;在&lt;script type=&quot;math&#x2F;tex&quot;&gt;x=x_0&lt;&#x2F;script&gt;
+处有定义，但&lt;script type=&quot;math&#x2F;tex&quot;&gt;\lim_{x\to x_0} f(x)&lt;&#x2F;script&gt;
+不存在&lt;&#x2F;li&gt;
+&lt;li&gt;在&lt;script type=&quot;math&#x2F;tex&quot;&gt;x=x_0&lt;&#x2F;script&gt;
+处有定义，&lt;script type=&quot;math&#x2F;tex&quot;&gt;\lim_{x\to x_0} f(x)&lt;&#x2F;script&gt;
+存在,但&lt;script type=&quot;math&#x2F;tex&quot;&gt;\lim_{x\to x_0}\neq f(x_0)&lt;&#x2F;script&gt;
+
+那么函数&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(x)&lt;&#x2F;script&gt;
+在点&lt;script type=&quot;math&#x2F;tex&quot;&gt;x_0&lt;&#x2F;script&gt;
+为不连续，&lt;script type=&quot;math&#x2F;tex&quot;&gt;x_0&lt;&#x2F;script&gt;
+是函数&lt;script type=&quot;math&#x2F;tex&quot;&gt;f(x)&lt;&#x2F;script&gt;
+的&lt;strong&gt;间断点&lt;&#x2F;strong&gt;。&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;函数的间断点可以分为&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;第一类间断点：左右极限都存在
+&lt;ol&gt;
+&lt;li&gt;可去间断点：左右极限都存在且相等&lt;&#x2F;li&gt;
+&lt;li&gt;跳跃间断点：左右极限都存在但不等&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;第二类间断点：左右极限至少有一个不存在
+&lt;ol&gt;
+&lt;li&gt;震荡间断点：&lt;script type=&quot;math&#x2F;tex&quot;&gt;\lim_{x\to\ x_0} f(x)&lt;&#x2F;script&gt;
+振荡不存在&lt;&#x2F;li&gt;
+&lt;li&gt;无穷间断点：&lt;script type=&quot;math&#x2F;tex&quot;&gt;\lim_{x\to\ x_0^+} f(x)=\infty&lt;&#x2F;script&gt;
+或&lt;script type=&quot;math&#x2F;tex&quot;&gt;\lim_{x\to\ x_0^-} f(x)=\infty&lt;&#x2F;script&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;tong-guo-miao-shu-de-lian-xu-xing&quot;&gt;通过&lt;script type=&quot;math&#x2F;tex&quot;&gt;\epsilon-\delta&lt;&#x2F;script&gt;
+描述的连续性&lt;&#x2F;h3&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>控制相关资源导航</title>
         <published>2021-10-03T00:00:00+00:00</published>
@@ -19,10 +146,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/navigation/"/>
-        <id>https://xsro.github.io/control/navigation/</id>
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control-navi/"/>
+        <id>https://xsro.github.io/control-navi/</id>
         
-        <content type="html" xml:base="https://xsro.github.io/control/navigation/">&lt;h1 id=&quot;kong-zhi-xiang-guan-zi-yuan-dao-hang&quot;&gt;控制相关资源导航&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/control-navi/">&lt;h1 id=&quot;kong-zhi-xiang-guan-zi-yuan-dao-hang&quot;&gt;控制相关资源导航&lt;&#x2F;h1&gt;
 &lt;h2 id=&quot;tu-wen-wei-zhu-bo-zhu&quot;&gt;图文（为主）博主&lt;&#x2F;h2&gt;
 &lt;h3 id=&quot;j-pan&quot;&gt;J Pan&lt;&#x2F;h3&gt;
 &lt;p&gt;航空工程师，主要在知乎撰写文章，有&lt;a href=&quot;https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;57764200&quot;&gt;纲举目张&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -63,6 +190,87 @@
         
     </entry>
     <entry xml:lang="en">
+        <title>A look-back of automation</title>
+        <published>2021-09-23T00:00:00+00:00</published>
+        <updated>2021-09-23T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control-bachelor-en/"/>
+        <id>https://xsro.github.io/control-bachelor-en/</id>
+        
+        <content type="html" xml:base="https://xsro.github.io/control-bachelor-en/">&lt;h1 id=&quot;keep-fighting-boys-and-girls-from-automation-robot&quot;&gt;Keep fighting, boys and girls from automation 🤖&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;images.squarespace-cdn.com&#x2F;content&#x2F;v1&#x2F;5b2d76525cfd790c4a218093&#x2F;1618710257013-K60SMQXQAS7Z57WWX810&#x2F;Control_Map_ver5.png?format=1000w&quot; alt=&quot;map of control theory v5&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;In the Internet, the word &#x27;full-stack&#x27; is very hot. It means &#x27;front end&#x27; plus &#x27;back end&#x27; mainly for web software developer.
+We students studing automation should also learn hardware. So we are &#x27;software&#x27; plus &#x27;hardware&#x27; and &#x27;strong electricity&#x27; plus &#x27;weak electricity&#x27;.&lt;&#x2F;p&gt;
+&lt;p&gt;I am learning Automation in NJUPT and I am going to graduate. So I want to spend some time to look back on what I have learnt in my university as an automation student.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;timeline-of-my-learning-of-automation&quot;&gt;Timeline of my learning of Automation&lt;&#x2F;h2&gt;
+&lt;p&gt;First, we learn some Mathematics&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Advanced Mathematics&lt;&#x2F;strong&gt;: we learn some calculus and math, I think &lt;em&gt;integral transformation&lt;&#x2F;em&gt; is the most important part for understanding some classical control theory&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Linear Algebra and Analytic Geometry&lt;&#x2F;strong&gt;: Modern Control theory use &lt;em&gt;State Space Equation&lt;&#x2F;em&gt; and we need Linear Algebra to analyse it.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Probability and Statistics&lt;&#x2F;strong&gt;: Many AI algorithm use Probability principles&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Then we learn Control theory&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Classic Control Theory&lt;&#x2F;strong&gt;: analyse &lt;em&gt;linear time-invariant(LTI) system&lt;&#x2F;em&gt; and mainly use transfer function&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Modern Control Theory&lt;&#x2F;strong&gt;: analyse &lt;em&gt;multi-variable, non-linear, time-variant&lt;&#x2F;em&gt;system and mainly use state space equation&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Intelligent Control&lt;&#x2F;strong&gt;：a class of control techniques that use various artificial intelligence computing approaches like neural networks, Bayesian probability, fuzzy logic, machine learning, reinforcement learning, evolutionary computation and genetic algorithms.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;we learn most technology for designing and making a control system.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;ledin.com&#x2F;wp-content&#x2F;uploads&#x2F;2014&#x2F;12&#x2F;image018-e1419127604485.png&quot; alt=&quot;close loop control system&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;To detect the signal, we learn &lt;strong&gt;Sensor Technology&lt;&#x2F;strong&gt;;&lt;&#x2F;li&gt;
+&lt;li&gt;To process the signal, we learn &lt;strong&gt;signals &amp;amp; Systems&lt;&#x2F;strong&gt;;&lt;&#x2F;li&gt;
+&lt;li&gt;To design a &lt;em&gt;Controller&lt;&#x2F;em&gt;, we learn
+&lt;ul&gt;
+&lt;li&gt;we implement simple control rule with electronic circuit, we learn &lt;strong&gt;circuits&lt;&#x2F;strong&gt;, &lt;strong&gt;Analog Electronic Circuits&lt;&#x2F;strong&gt;, &lt;strong&gt;digital Electronic Circuits&lt;&#x2F;strong&gt;, FPGA and basis &lt;strong&gt;Experiment&lt;&#x2F;strong&gt; of Electrotechnics and Electronic.&lt;&#x2F;li&gt;
+&lt;li&gt;we implement complex control rule with microprocessor. We learn &lt;strong&gt;Microcomputer Principle and Interface Technology&lt;&#x2F;strong&gt;(x86) and some specific processor like &lt;strong&gt;PLC&lt;&#x2F;strong&gt; and Embeded processor (C51 and ARM) in &lt;strong&gt;Embeded System and Application&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;When use microprocessor, we learn &lt;strong&gt;Computer Control system&lt;&#x2F;strong&gt; for using discrete digital controllor to control a continuous process and learn some programming language like &lt;strong&gt;C&lt;&#x2F;strong&gt; language to implement the control rule.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;To design the &lt;em&gt;Actuator&lt;&#x2F;em&gt; and use the control result to control the object
+&lt;ul&gt;
+&lt;li&gt;To control motor we learn &lt;strong&gt;Basis of Electrical Machine and Drives&lt;&#x2F;strong&gt; and &lt;strong&gt;Motion Control Systems&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;To control continuous production processes, we learn &lt;strong&gt;Process Control&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;To control the power for executor, we learn &lt;strong&gt;Power Electronics&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;For design a more intelligent control system, we learn:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Artificial Intelligence, &lt;strong&gt;Machine Learning&lt;&#x2F;strong&gt;, Deep Learning, Reinforce Learning&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Big Data&lt;&#x2F;strong&gt;, Data Mining, Data Science...&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;miro.medium.com&#x2F;max&#x2F;3840&#x2F;1*cjpGPJaaoc9jUX9TpPI20Q.jpeg&quot; alt=&quot;map of AI&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;prospect-on-automation&quot;&gt;Prospect on Automation&lt;&#x2F;h2&gt;
+&lt;p&gt;Many people recommend us to persue a mater&#x27;s degree because as a bachelor, we learn many but we can&#x27;t learn all of the subjects we need to learn well.&lt;&#x2F;p&gt;
+&lt;p&gt;If we want to find a job, we can do software engineer, hardware engineer, robotic engineer.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Writing after some depression of being rejected from persuing master&#x27;s degree&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We human beings learning Control Theory to help our industry works more efficiently and make more fortune.&lt;&#x2F;p&gt;
+&lt;p&gt;I hope we human beings can never be controlled by some simple rules, be evaluated with many criteria and be optimized for the performance.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.ruodian6.com&#x2F;496.html&quot;&gt;弱电和强电的正确英文翻译是什么【全心网络】 (ruodian6.com)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Intelligent_control&quot;&gt;Intelligent control - Wikipedia&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Block diagram of a feedback control system is from Figure 1.1 of &lt;a href=&quot;https:&#x2F;&#x2F;ledin.com&#x2F;control-systems-basics&#x2F;&quot;&gt;Control System Basics | Ledin Engineering, Inc.&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;map of control theory is from = https:&#x2F;&#x2F;engineeringmedia.com&#x2F;map-of-control&lt;&#x2F;li&gt;
+&lt;li&gt;map of ai is from = &lt;a href=&quot;https:&#x2F;&#x2F;medium.com&#x2F;swlh&#x2F;the-map-of-artificial-intelligence-2020-2c4f446f4e43&quot;&gt;The Map of Artificial Intelligence (2020)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>自动化专业学习回顾</title>
         <published>2021-09-23T00:00:00+00:00</published>
         <updated>2021-09-23T00:00:00+00:00</updated>
@@ -75,10 +283,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/control-student-fight-cn/"/>
-        <id>https://xsro.github.io/control/control-student-fight-cn/</id>
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control-bachelor/"/>
+        <id>https://xsro.github.io/control-bachelor/</id>
         
-        <content type="html" xml:base="https://xsro.github.io/control/control-student-fight-cn/">&lt;h1 id=&quot;jia-you-ruan-ying-jian-xiu-qiang-ruo-xiang-ji-de-zi-dong-hua-ren-robot&quot;&gt;加油，软硬兼修、强弱相济的自动化人 🤖&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/control-bachelor/">&lt;h1 id=&quot;jia-you-ruan-ying-jian-xiu-qiang-ruo-xiang-ji-de-zi-dong-hua-ren-robot&quot;&gt;加油，软硬兼修、强弱相济的自动化人 🤖&lt;&#x2F;h1&gt;
 &lt;p&gt;互联网上”全栈“一词比较火热，通常指的是兼具”前端“和”后端“的技术能力丰富的工程人员。
 有调侃说，“全栈”应该转化为“软件+硬件”，可以叫“全干工程师”，我想这不正是自动化学科对我们学生的要求嘛，
 似乎好像还可以加上一句，强电与弱电相结合。&lt;&#x2F;p&gt;
@@ -154,87 +362,6 @@
         
     </entry>
     <entry xml:lang="en">
-        <title>A look-back of automation</title>
-        <published>2021-09-23T00:00:00+00:00</published>
-        <updated>2021-09-23T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/control-student-fight/"/>
-        <id>https://xsro.github.io/control/control-student-fight/</id>
-        
-        <content type="html" xml:base="https://xsro.github.io/control/control-student-fight/">&lt;h1 id=&quot;keep-fighting-boys-and-girls-from-automation-robot&quot;&gt;Keep fighting, boys and girls from automation 🤖&lt;&#x2F;h1&gt;
-&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;images.squarespace-cdn.com&#x2F;content&#x2F;v1&#x2F;5b2d76525cfd790c4a218093&#x2F;1618710257013-K60SMQXQAS7Z57WWX810&#x2F;Control_Map_ver5.png?format=1000w&quot; alt=&quot;map of control theory v5&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;In the Internet, the word &#x27;full-stack&#x27; is very hot. It means &#x27;front end&#x27; plus &#x27;back end&#x27; mainly for web software developer.
-We students studing automation should also learn hardware. So we are &#x27;software&#x27; plus &#x27;hardware&#x27; and &#x27;strong electricity&#x27; plus &#x27;weak electricity&#x27;.&lt;&#x2F;p&gt;
-&lt;p&gt;I am learning Automation in NJUPT and I am going to graduate. So I want to spend some time to look back on what I have learnt in my university as an automation student.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;timeline-of-my-learning-of-automation&quot;&gt;Timeline of my learning of Automation&lt;&#x2F;h2&gt;
-&lt;p&gt;First, we learn some Mathematics&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Advanced Mathematics&lt;&#x2F;strong&gt;: we learn some calculus and math, I think &lt;em&gt;integral transformation&lt;&#x2F;em&gt; is the most important part for understanding some classical control theory&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Linear Algebra and Analytic Geometry&lt;&#x2F;strong&gt;: Modern Control theory use &lt;em&gt;State Space Equation&lt;&#x2F;em&gt; and we need Linear Algebra to analyse it.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Probability and Statistics&lt;&#x2F;strong&gt;: Many AI algorithm use Probability principles&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;Then we learn Control theory&lt;&#x2F;p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Classic Control Theory&lt;&#x2F;strong&gt;: analyse &lt;em&gt;linear time-invariant(LTI) system&lt;&#x2F;em&gt; and mainly use transfer function&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Modern Control Theory&lt;&#x2F;strong&gt;: analyse &lt;em&gt;multi-variable, non-linear, time-variant&lt;&#x2F;em&gt;system and mainly use state space equation&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Intelligent Control&lt;&#x2F;strong&gt;：a class of control techniques that use various artificial intelligence computing approaches like neural networks, Bayesian probability, fuzzy logic, machine learning, reinforcement learning, evolutionary computation and genetic algorithms.&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;p&gt;we learn most technology for designing and making a control system.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;ledin.com&#x2F;wp-content&#x2F;uploads&#x2F;2014&#x2F;12&#x2F;image018-e1419127604485.png&quot; alt=&quot;close loop control system&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;To detect the signal, we learn &lt;strong&gt;Sensor Technology&lt;&#x2F;strong&gt;;&lt;&#x2F;li&gt;
-&lt;li&gt;To process the signal, we learn &lt;strong&gt;signals &amp;amp; Systems&lt;&#x2F;strong&gt;;&lt;&#x2F;li&gt;
-&lt;li&gt;To design a &lt;em&gt;Controller&lt;&#x2F;em&gt;, we learn
-&lt;ul&gt;
-&lt;li&gt;we implement simple control rule with electronic circuit, we learn &lt;strong&gt;circuits&lt;&#x2F;strong&gt;, &lt;strong&gt;Analog Electronic Circuits&lt;&#x2F;strong&gt;, &lt;strong&gt;digital Electronic Circuits&lt;&#x2F;strong&gt;, FPGA and basis &lt;strong&gt;Experiment&lt;&#x2F;strong&gt; of Electrotechnics and Electronic.&lt;&#x2F;li&gt;
-&lt;li&gt;we implement complex control rule with microprocessor. We learn &lt;strong&gt;Microcomputer Principle and Interface Technology&lt;&#x2F;strong&gt;(x86) and some specific processor like &lt;strong&gt;PLC&lt;&#x2F;strong&gt; and Embeded processor (C51 and ARM) in &lt;strong&gt;Embeded System and Application&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;When use microprocessor, we learn &lt;strong&gt;Computer Control system&lt;&#x2F;strong&gt; for using discrete digital controllor to control a continuous process and learn some programming language like &lt;strong&gt;C&lt;&#x2F;strong&gt; language to implement the control rule.&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;To design the &lt;em&gt;Actuator&lt;&#x2F;em&gt; and use the control result to control the object
-&lt;ul&gt;
-&lt;li&gt;To control motor we learn &lt;strong&gt;Basis of Electrical Machine and Drives&lt;&#x2F;strong&gt; and &lt;strong&gt;Motion Control Systems&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;To control continuous production processes, we learn &lt;strong&gt;Process Control&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;To control the power for executor, we learn &lt;strong&gt;Power Electronics&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;For design a more intelligent control system, we learn:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;Artificial Intelligence, &lt;strong&gt;Machine Learning&lt;&#x2F;strong&gt;, Deep Learning, Reinforce Learning&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Big Data&lt;&#x2F;strong&gt;, Data Mining, Data Science...&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;miro.medium.com&#x2F;max&#x2F;3840&#x2F;1*cjpGPJaaoc9jUX9TpPI20Q.jpeg&quot; alt=&quot;map of AI&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;prospect-on-automation&quot;&gt;Prospect on Automation&lt;&#x2F;h2&gt;
-&lt;p&gt;Many people recommend us to persue a mater&#x27;s degree because as a bachelor, we learn many but we can&#x27;t learn all of the subjects we need to learn well.&lt;&#x2F;p&gt;
-&lt;p&gt;If we want to find a job, we can do software engineer, hardware engineer, robotic engineer.&lt;&#x2F;p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Writing after some depression of being rejected from persuing master&#x27;s degree&lt;&#x2F;p&gt;
-&lt;&#x2F;blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;We human beings learning Control Theory to help our industry works more efficiently and make more fortune.&lt;&#x2F;p&gt;
-&lt;p&gt;I hope we human beings can never be controlled by some simple rules, be evaluated with many criteria and be optimized for the performance.&lt;&#x2F;p&gt;
-&lt;&#x2F;blockquote&gt;
-&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.ruodian6.com&#x2F;496.html&quot;&gt;弱电和强电的正确英文翻译是什么【全心网络】 (ruodian6.com)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Intelligent_control&quot;&gt;Intelligent control - Wikipedia&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;Block diagram of a feedback control system is from Figure 1.1 of &lt;a href=&quot;https:&#x2F;&#x2F;ledin.com&#x2F;control-systems-basics&#x2F;&quot;&gt;Control System Basics | Ledin Engineering, Inc.&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;map of control theory is from = https:&#x2F;&#x2F;engineeringmedia.com&#x2F;map-of-control&lt;&#x2F;li&gt;
-&lt;li&gt;map of ai is from = &lt;a href=&quot;https:&#x2F;&#x2F;medium.com&#x2F;swlh&#x2F;the-map-of-artificial-intelligence-2020-2c4f446f4e43&quot;&gt;The Map of Artificial Intelligence (2020)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-</content>
-        
-    </entry>
-    <entry xml:lang="en">
         <title>自动控制原理提要</title>
         <published>2021-09-02T00:00:00+00:00</published>
         <updated>2021-09-02T00:00:00+00:00</updated>
@@ -247,10 +374,10 @@ We students studing automation should also learn hardware. So we are &#x27;softw
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/classical-control-myview/"/>
-        <id>https://xsro.github.io/control/classical-control-myview/</id>
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control-classical/"/>
+        <id>https://xsro.github.io/control-classical/</id>
         
-        <content type="html" xml:base="https://xsro.github.io/control/classical-control-myview/">&lt;h1 id=&quot;kong-zhi-li-lun-gai-lan&quot;&gt;控制理论概览&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/control-classical/">&lt;h1 id=&quot;kong-zhi-li-lun-gai-lan&quot;&gt;控制理论概览&lt;&#x2F;h1&gt;
 &lt;p&gt;大三学习了《自动控制原理》、《计算机控制系统》、《现代控制理论》，对控制理论有了一个很粗略的了解，整理如下&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;xian-xing-shi-bu-bian-lian-xu-xi-tong&quot;&gt;线性时不变连续系统&lt;&#x2F;h2&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;域&lt;&#x2F;th&gt;&lt;th&gt;数学模型&lt;&#x2F;th&gt;&lt;th&gt;分析与判断稳定的方法&lt;&#x2F;th&gt;&lt;th&gt;（性能）指标&lt;&#x2F;th&gt;&lt;th&gt;其他&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
@@ -288,10 +415,10 @@ We students studing automation should also learn hardware. So we are &#x27;softw
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/transfrom-in-control/"/>
-        <id>https://xsro.github.io/control/transfrom-in-control/</id>
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control-flz-transform/"/>
+        <id>https://xsro.github.io/control-flz-transform/</id>
         
-        <content type="html" xml:base="https://xsro.github.io/control/transfrom-in-control/">&lt;h1 id=&quot;signal-strength-san-da-bian-huan-de-shu-xue-tui-dao-guo-cheng&quot;&gt;📶 三大变换的数学推导过程&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/control-flz-transform/">&lt;h1 id=&quot;signal-strength-san-da-bian-huan-de-shu-xue-tui-dao-guo-cheng&quot;&gt;📶 三大变换的数学推导过程&lt;&#x2F;h1&gt;
 &lt;p&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\mathscr{F,L,Z}&lt;&#x2F;script&gt;
 傅里叶变换、拉普拉斯变换、Z 变换这三大变换讨论广泛&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#zhihu&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;。个人理解，这三个变换都是为了简化一些难以在时间域分析的问题而引入的。&lt;&#x2F;p&gt;
 &lt;ul&gt;
@@ -444,10 +571,10 @@ F^\star(s)&amp;=\mathscr{L}\left[ f^\star(t)\right]
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/multiply-1t/"/>
-        <id>https://xsro.github.io/control/multiply-1t/</id>
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control-multiply-1t/"/>
+        <id>https://xsro.github.io/control-multiply-1t/</id>
         
-        <content type="html" xml:base="https://xsro.github.io/control/multiply-1t/">&lt;h1 id=&quot;xian-xing-ding-chang-xi-tong-de-zhong-yao-te-xing-yin-fa-de-si-kao&quot;&gt;线性定常系统的重要特性引发的思考&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/control-multiply-1t/">&lt;h1 id=&quot;xian-xing-ding-chang-xi-tong-de-zhong-yao-te-xing-yin-fa-de-si-kao&quot;&gt;线性定常系统的重要特性引发的思考&lt;&#x2F;h1&gt;
 &lt;p&gt;女朋友在阅读胡寿松第六版《自动控制原理》时有一个困惑。为什么书中 P71 页表 3-2 中的阶跃信号&lt;code&gt;1&lt;&#x2F;code&gt;，求导之后消失了，而不是作为单位脉冲信号&lt;script type=&quot;math&#x2F;tex&quot;&gt;\delta(t)&lt;&#x2F;script&gt;
 处理。难道这里的&lt;code&gt;1&lt;&#x2F;code&gt;视为常数，这样就与&lt;code&gt;零初始条件&lt;&#x2F;code&gt;矛盾了。&lt;&#x2F;p&gt;
 &lt;p&gt;书中的&lt;strong&gt;表 3-2 一阶系统对典型输入信号的输出响应&lt;&#x2F;strong&gt;如下：&lt;&#x2F;p&gt;

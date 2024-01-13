@@ -7,6 +7,20 @@
         <loc>https://xsro.github.io/about/</loc>
     </url>
     <url>
+        <loc>https://xsro.github.io/backup/</loc>
+    </url>
+    <url>
+        <loc>https://xsro.github.io/backup/control-system-cad-en/</loc>
+        <lastmod>2022-08-09</lastmod>
+    </url>
+    <url>
+        <loc>https://xsro.github.io/backup/iot-termux-clash/</loc>
+        <lastmod>2022-02-09</lastmod>
+    </url>
+    <url>
+        <loc>https://xsro.github.io/backup/page/1/</loc>
+    </url>
+    <url>
         <loc>https://xsro.github.io/categories/</loc>
     </url>
     <url>
@@ -22,112 +36,92 @@
         <loc>https://xsro.github.io/categories/kong-zhi-ying-yong/</loc>
     </url>
     <url>
+        <loc>https://xsro.github.io/categories/sheng-huo/</loc>
+    </url>
+    <url>
         <loc>https://xsro.github.io/categories/study-notes/</loc>
     </url>
     <url>
         <loc>https://xsro.github.io/categories/xue-xi-bi-ji/</loc>
     </url>
     <url>
-        <loc>https://xsro.github.io/code/</loc>
+        <loc>https://xsro.github.io/collection-proxy-mirror-cn/</loc>
+        <lastmod>2022-10-04</lastmod>
     </url>
     <url>
-        <loc>https://xsro.github.io/code/matlab-global-persistent-cn/</loc>
-        <lastmod>2023-06-14</lastmod>
+        <loc>https://xsro.github.io/control-bachelor-en/</loc>
+        <lastmod>2021-09-23</lastmod>
     </url>
     <url>
-        <loc>https://xsro.github.io/code/page/1/</loc>
+        <loc>https://xsro.github.io/control-bachelor/</loc>
+        <lastmod>2021-09-23</lastmod>
     </url>
     <url>
-        <loc>https://xsro.github.io/control/</loc>
-    </url>
-    <url>
-        <loc>https://xsro.github.io/control/classical-control-myview/</loc>
+        <loc>https://xsro.github.io/control-classical/</loc>
         <lastmod>2021-09-02</lastmod>
     </url>
     <url>
-        <loc>https://xsro.github.io/control/control-student-fight-cn/</loc>
-        <lastmod>2021-09-23</lastmod>
-    </url>
-    <url>
-        <loc>https://xsro.github.io/control/control-student-fight/</loc>
-        <lastmod>2021-09-23</lastmod>
-    </url>
-    <url>
-        <loc>https://xsro.github.io/control/control-system-cad-cn/</loc>
-        <lastmod>2022-08-09</lastmod>
-    </url>
-    <url>
-        <loc>https://xsro.github.io/control/control-system-cad/</loc>
-        <lastmod>2022-08-09</lastmod>
-    </url>
-    <url>
-        <loc>https://xsro.github.io/control/dmc-with-simupy/</loc>
+        <loc>https://xsro.github.io/control-dmc-with-simupy/</loc>
         <lastmod>2021-12-28</lastmod>
     </url>
     <url>
-        <loc>https://xsro.github.io/control/multiply-1t/</loc>
-        <lastmod>2021-08-28</lastmod>
-    </url>
-    <url>
-        <loc>https://xsro.github.io/control/navigation/</loc>
-        <lastmod>2021-10-03</lastmod>
-    </url>
-    <url>
-        <loc>https://xsro.github.io/control/page/1/</loc>
-    </url>
-    <url>
-        <loc>https://xsro.github.io/control/page/2/</loc>
-    </url>
-    <url>
-        <loc>https://xsro.github.io/control/page/3/</loc>
-    </url>
-    <url>
-        <loc>https://xsro.github.io/control/page/4/</loc>
-    </url>
-    <url>
-        <loc>https://xsro.github.io/control/transfrom-in-control/</loc>
+        <loc>https://xsro.github.io/control-flz-transform/</loc>
         <lastmod>2021-08-30</lastmod>
     </url>
     <url>
-        <loc>https://xsro.github.io/control/wheeled-robot-feedback-linearization-cn/</loc>
+        <loc>https://xsro.github.io/control-multiply-1t/</loc>
+        <lastmod>2021-08-28</lastmod>
+    </url>
+    <url>
+        <loc>https://xsro.github.io/control-navi/</loc>
+        <lastmod>2021-10-03</lastmod>
+    </url>
+    <url>
+        <loc>https://xsro.github.io/control-theory-discontinuous/</loc>
+        <lastmod>2024-01-13</lastmod>
+    </url>
+    <url>
+        <loc>https://xsro.github.io/control-tranx-wheeled-robot-feedback-linearization-cn/</loc>
         <lastmod>2023-10-09T21:43:59+08:00</lastmod>
     </url>
     <url>
-        <loc>https://xsro.github.io/git-tips-cn/</loc>
-        <lastmod>2021-07-25</lastmod>
+        <loc>https://xsro.github.io/external/</loc>
     </url>
     <url>
-        <loc>https://xsro.github.io/install-scoop-with-mirror-cn/</loc>
-        <lastmod>2022-01-25</lastmod>
+        <loc>https://xsro.github.io/log/</loc>
     </url>
     <url>
-        <loc>https://xsro.github.io/iot/</loc>
+        <loc>https://xsro.github.io/log/20210723-cn/</loc>
+        <lastmod>2021-07-23T10:32:39+08:00</lastmod>
     </url>
     <url>
-        <loc>https://xsro.github.io/iot/install-clash-in-termux-cn/</loc>
-        <lastmod>2022-02-09</lastmod>
+        <loc>https://xsro.github.io/log/grandpa-cn/</loc>
     </url>
     <url>
-        <loc>https://xsro.github.io/iot/page/1/</loc>
+        <loc>https://xsro.github.io/log/hometown-cn/</loc>
     </url>
     <url>
-        <loc>https://xsro.github.io/markdown-tips-cn/</loc>
-        <lastmod>2021-07-25</lastmod>
+        <loc>https://xsro.github.io/log/memories-cn/</loc>
     </url>
     <url>
-        <loc>https://xsro.github.io/optimization-cn/</loc>
+        <loc>https://xsro.github.io/log/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://xsro.github.io/log/university-cn/</loc>
+    </url>
+    <url>
+        <loc>https://xsro.github.io/matlab-global-persistent-cn/</loc>
+        <lastmod>2023-06-14</lastmod>
+    </url>
+    <url>
+        <loc>https://xsro.github.io/note-optimization/</loc>
         <lastmod>2023-03-04</lastmod>
     </url>
     <url>
         <loc>https://xsro.github.io/page/1/</loc>
     </url>
     <url>
-        <loc>https://xsro.github.io/print/</loc>
-        <lastmod>2028-10-22</lastmod>
-    </url>
-    <url>
-        <loc>https://xsro.github.io/proxy-mirror-cn/</loc>
-        <lastmod>2022-10-04</lastmod>
+        <loc>https://xsro.github.io/page/2/</loc>
     </url>
     <url>
         <loc>https://xsro.github.io/tags/</loc>
@@ -139,16 +133,19 @@
         <loc>https://xsro.github.io/tags/control-theory/</loc>
     </url>
     <url>
-        <loc>https://xsro.github.io/tags/fan-kui-xian-xing-hua/</loc>
+        <loc>https://xsro.github.io/tags/da-xue-ri-ji/</loc>
     </url>
     <url>
-        <loc>https://xsro.github.io/tags/fan-yi/</loc>
+        <loc>https://xsro.github.io/tags/fan-kui-xian-xing-hua/</loc>
     </url>
     <url>
         <loc>https://xsro.github.io/tags/fei-wan-zheng-yue-shu/</loc>
     </url>
     <url>
         <loc>https://xsro.github.io/tags/git/</loc>
+    </url>
+    <url>
+        <loc>https://xsro.github.io/tags/hua-dong-mo-tai-kong-zhi/</loc>
     </url>
     <url>
         <loc>https://xsro.github.io/tags/iot/</loc>
@@ -167,9 +164,6 @@
     </url>
     <url>
         <loc>https://xsro.github.io/tags/pai-ban-gong-ju/</loc>
-    </url>
-    <url>
-        <loc>https://xsro.github.io/tags/pdf/</loc>
     </url>
     <url>
         <loc>https://xsro.github.io/tags/proxy/</loc>
@@ -208,7 +202,19 @@
         <loc>https://xsro.github.io/tags/zi-dong-kong-zhi-yuan-li/</loc>
     </url>
     <url>
-        <loc>https://xsro.github.io/tex-workflow/</loc>
+        <loc>https://xsro.github.io/tip-git/</loc>
+        <lastmod>2021-07-25</lastmod>
+    </url>
+    <url>
+        <loc>https://xsro.github.io/tip-markdown/</loc>
+        <lastmod>2021-07-25</lastmod>
+    </url>
+    <url>
+        <loc>https://xsro.github.io/tip-scoop/</loc>
+        <lastmod>2022-01-25</lastmod>
+    </url>
+    <url>
+        <loc>https://xsro.github.io/tip-tex/</loc>
         <lastmod>2023-10-13</lastmod>
     </url>
 </urlset>

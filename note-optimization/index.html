@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+      
+    
+
+      <title>xsro&#x27;s blog - 最优化理论复习</title>
+
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/mathtex-script-type.min.js" integrity="sha384-zWYbd0NBwgTsgIdFKVprSfTh1mbMPe5Hz1X3yY4Sd1h/K1cQoUe36OGwAGz/PcDy" crossorigin="anonymous"></script>
+              
+          
+      
+
+      
+          <link rel="stylesheet" href="https://xsro.github.io/site.css">
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">光侨路笔记</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io">
+                            主页
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;categories">
+                            分类
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;tags">
+                            标签
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;about">
+                            关于
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;external">
+                            外部
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;xsro.github.io">光侨路笔记</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io">
+                                    主页
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;categories">
+                                    分类
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;tags">
+                                    标签
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;about">
+                                    关于
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;external">
+                                    外部
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://xsro.github.io/note-optimization/#xu-lun" class="toc-link">绪论</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/note-optimization/#zui-you-hua-wen-ti-qiu-jie-de-yi-ban-si-lu" class="toc-link">最优化问题求解的一般思路</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://xsro.github.io/note-optimization/#zui-you-hua-wen-ti-de-shu-xue-ji-chu" class="toc-link">最优化问题的数学基础</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/note-optimization/#xian-xing-dai-shu" class="toc-link">线性代数</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/note-optimization/#duo-yuan-han-shu" class="toc-link">多元函数</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/note-optimization/#tu-ji-yu-tu-han-shu" class="toc-link">凸集与凸函数</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;note-optimization&#x2F;">最优化理论复习</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2023-03-04</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>老师的讲课视频在 B 站<a href="https://www.bilibili.com/video/BV1nB4y137j9">BV1nB4y137j9</a>。
+主要分为数学基础、局部最优化问题求解和全局局部最优化问题，只讲了局部的部分。</p>
+<ul>
+<li>绪论</li>
+<li>单变量优化问题——线搜索
+<ul>
+<li>黄金分割法</li>
+</ul>
+</li>
+<li>多变量优化问题
+<ul>
+<li>梯度法</li>
+<li>共轭梯度法</li>
+<li>牛顿法</li>
+<li>拟牛顿法</li>
+</ul>
+</li>
+<li>约束优化问题
+<ul>
+<li>约束问题的最优性条件</li>
+<li>可行方向法</li>
+<li>梯度投影法、简约梯度法</li>
+<li>罚函数法</li>
+<li>乘子法</li>
+</ul>
+</li>
+</ul>
+<h2 id="xu-lun">绪论</h2>
+<p>优化问题的表述：在一定的约束下，调整一组可变参数 x，使设计目标 f(x)达到最小值（或最大值）。
+数学表述可以表示为：</p>
+<script type="math/tex;mode=display">min\ f(\vec{x})\ s.t.\ \vec{x} \in K</script>
+<ul>
+<li><code>s.t.</code> 是数学中 subject to (such that) 的缩写，表示受约束的意思</li>
+<li><script type="math/tex">f(\vec{x})</script>
+ 是目标函数（实值函数）</li>
+<li><script type="math/tex">\vec{x}</script>
+为参数向量，<script type="math/tex">K</script>
+为可行域，即参数能够许可的取值范围</li>
+</ul>
+<p>进而可以将最优化问题细分为：</p>
+<ul>
+<li><strong>线性规划和非线性规划</strong>问题：可行集是有限维向量空间的子集</li>
+<li><strong>组合优化或网络规划</strong>：可行集中的元素是离散的</li>
+<li><strong>动态规划</strong>：可行集是一个依赖时间的决策序列</li>
+<li><strong>最优控制</strong>：可行集是无穷维空间中的一个连续子集</li>
+</ul>
+<p>线性最优化问题（线性函数，线性约束）的情况，最有情况出现在端点。
+课程考虑<strong>非线性规划/优化</strong>：</p>
+<script type="math/tex;mode=display">\begin{aligned}
+        & min\ f(\vec{x}) \\
+\ s.t.\ & h_i(\vec{x})=0,i=1,\dots,l, \\
+	& g_i(\vec{x})<0,i=1,\dots m, \\
+\end{aligned}</script>
+<h3 id="zui-you-hua-wen-ti-qiu-jie-de-yi-ban-si-lu">最优化问题求解的一般思路</h3>
+<p>无约束问题的一般算法框架：</p>
+<ol>
+<li>step 0 = 给定初始化参数及初始迭代点<script type="math/tex">x_0</script>
+, 置<script type="math/tex">k:=0</script>
+</li>
+<li>step 1 = 若<script type="math/tex">x_k</script>
+满足某种终止准则，停止迭代，以<script type="math/tex">x_k</script>
+作为极小点</li>
+<li>step 2 = 通过求解<script type="math/tex">x_k</script>
+处的某个子问题确定下降方向<script type="math/tex">x_k</script>
+</li>
+<li>step 3 = 通过某种搜索方式确定步长因子<script type="math/tex">\alpha_k</script>
+，使得<script type="math/tex">f(x_k+\alpha_k d_k)<f(x_k)</script>
+</li>
+<li>step 4 = 令<script type="math/tex">x_{k+1}=x_k+\alpha_k d_k</script>
+，<script type="math/tex">k:=k+1</script>
+，转步 1</li>
+</ol>
+<h2 id="zui-you-hua-wen-ti-de-shu-xue-ji-chu">最优化问题的数学基础</h2>
+<h3 id="xian-xing-dai-shu">线性代数</h3>
+<p>线性代数的核心内容是 <script type="math/tex">Ax=b</script>
+ 线性代数方程组解的存在性问题，以及如何求解他的问题，
+以及这样的数学结构的问题。</p>
+<ul>
+<li><strong>矩阵行</strong>的含义，A 的每一行是平面线的法向量（线的表达式系数，二维情况），n 个法向量互相不相关，那么方程有唯一解，相关则可能有无数解（共线）或没有解（平行）</li>
+<li><strong>矩阵列</strong>的含义，相当于 x 是 A 的列向量的加权系数，加权组合结果为 b</li>
+<li><strong>矩阵行列式</strong>：<script type="math/tex">Ax=b</script>
+， 向量 x 被 A 左乘后，变成了向量 b，称为线性变换，矩阵 A 的行列式的绝对值表示经过该矩阵变换前后图形的面积之比；符号表示该图形变换后法向是否翻转了</li>
+<li><strong>矩阵的秩</strong>：将图形变化为线（秩为 1），面（秩为 2），体（秩为 3）</li>
+<li><strong>矩阵的逆</strong>：一一映射才有逆，行列式为 0 时，矩阵没有逆</li>
+</ul>
+<h4 id="fan-shu">范数</h4>
+<p>迭代求解过程中，如何判断点序列是否收敛，需要通过度量来衡量，
+通常用范数来定义这个度量：</p>
+<blockquote>
+<p>“言为士则、行为世范”出自南朝宋刘义庆著《世说新语》开篇《德行第一》的第一则第一句，
+意思是说言行足以为士人的法则、举世的示范。</p>
+</blockquote>
+<p>向量的范数必须满足以下条件：</p>
+<ul>
+<li>非负性 <script type="math/tex">\Vert x\Vert \geq 0</script>
+, <script type="math/tex">\Vert x\Vert =0, iff x=0</script>
+</li>
+<li>线性性 <script type="math/tex">\lambda \Vert x \Vert =\lambda \Vert x \Vert </script>
+</li>
+<li>三角不等式（又叫广义加）<script type="math/tex">\Vert x+y \Vert \leq \Vert x \Vert +\Vert y \Vert</script>
+</li>
+</ul>
+<p>常用向量的 p 范数，<script type="math/tex">\Vert x \Vert_p=(\sum_{i=1}^{n} |x_i|^p)^\frac{1}{p}</script>
+。</p>
+<script type="math/tex;mode=display">\lim_{p\to\infty} \Vert x \Vert^p
+=\Vert x\Vert _{max} \lim_{p\to\infty} \left(\sum_{i}(\frac{\Vert x \Vert}{\Vert x\Vert _{max}})^p\right)^\frac{1}{p}</script>
+<p>由于<script type="math/tex">1 \leq\sum\limits_{i}(\frac{\Vert x \Vert}{\Vert x\Vert _{max}})^p\leq n</script>
+，根据夹逼原理可以得到极限部分为 1，另一个思路是求和里面只有一个底数为 1，其他均小于 1，可以得到结果。</p>
+<p><strong>矩阵范数</strong>，也需要满足非负性，线性性以及三角不等式。为了体现向量的乘法，增加乘法性质。进一步要求相容性：</p>
+<ul>
+<li>乘法性质 <script type="math/tex">\Vert AB\Vert \leq \Vert A \Vert \Vert B \Vert</script>
+</li>
+<li>相容性质 <script type="math/tex">\Vert Ax \Vert \leq \Vert A \Vert \Vert\vec{x}\Vert</script>
+</li>
+</ul>
+<p>矩阵范数<script type="math/tex">\Vert \cdot \Vert _{\mu}</script>
+如果满足下列条件，则称为由向量范数的诱导范数（诱导算子）。</p>
+<script type="math/tex;mode=display">\Vert A \Vert_\mu =sup_{x\neq0} \frac{\Vert Ax \Vert }{\Vert x \Vert}=max_{x=1}\Vert Ax \Vert</script>
+<p>矩阵范数表示单位圆/球/超球面上的所有向量 x 经过线性变换后得到的所有向量 Ax 中最长的那个的范数，
+或者说表示任向量经过矩阵 A 所代表的线性变换后得到的所有向量中最长的那个的范数与原向量 x 的范数的比值。</p>
+<ul>
+<li>矩阵范数是矩阵长度（大小）的度量</li>
+<li>可以用来判断矩阵是否相等，判断两个矩阵之间的距离</li>
+<li>矩阵范数可以表达经过变换之后向量范数大小的变化</li>
+</ul>
+<p>各种范数之间具有等价性：</p>
+<ol>
+<li>设<script type="math/tex">\Vert \cdot \Vert</script>
+和<script type="math/tex">\Vert \cdot \Vert'</script>
+是定义在<script type="math/tex">R^n</script>
+上的两个向量范数，则存在两个正数<script type="math/tex">c_1,c_2</script>
+，对所有<script type="math/tex">x\in R^n</script>
+ 均成立：<script type="math/tex">c_1 \Vert x\Vert\leq \Vert x \Vert' \leq c_2\Vert x \Vert</script>
+</li>
+<li>设<script type="math/tex">\Vert \cdot \Vert</script>
+和<script type="math/tex">\Vert \cdot \Vert'</script>
+是定义在<script type="math/tex">R^{n\times n}</script>
+上的两个两个范数，则存在两个正数<script type="math/tex">c_1,c_2</script>
+，对所有<script type="math/tex">x\in R^n</script>
+ 均成立：<script type="math/tex">c_1 \Vert A\Vert\leq \Vert A \Vert' \leq c_2\Vert A \Vert</script>
+</li>
+</ol>
+<h4 id="xiang-liang-1-fan-shu-tui-dao-ju-zhen-lie-he-fan-shu">向量 1 范数推导矩阵列和范数</h4>
+<script type="math/tex;mode=display">\begin{aligned}
+\Vert A \Vert_1
+&= \max_{x\neq 0} \frac{\Vert Ax \Vert_1}{\Vert x \Vert_1} \\
+\Vert Ax\Vert_1
+&=\sum_{i=1}^{n}\left|\sum_{j=1}^{n}a_{ij}{x_j}\right|
+\leq \sum_{i=1}^{n}\sum_{j=1}^{n}|a_{ij}{x_j}|\\
+&\leq \sum_{i=1}^{n}\sum_{j=1}^{n}|a_{ij}||{x_j}|
+\leq \max_{1\leq j \leq n}(\sum_{i=1}^{n}|a_{ij}|)\cdot \sum_{j=1}^{n}|x_j|\\
+\end{aligned}</script>
+<h4 id="xiang-liang-wu-qiong-fan-shu-tui-dao-ju-zhen-xing-he-fan-shu">向量无穷范数推导矩阵行和范数</h4>
+<script type="math/tex;mode=display">\begin{aligned}
+\Vert A \Vert_1
+&= \max_{x\neq 0} \frac{\Vert Ax \Vert_1}{\Vert x \Vert_1} \\
+\Vert Ax\Vert_1
+&=\max_{i=1,\dots,n}\left|\sum_{j=1}^{n}a_{ij}{x_j}\right|
+\leq\max_{i=1,\dots,n}\sum_{j=1}^{n}|a_{ij}{x_j}|\\
+&\leq \max_{i=1,\dots,n}\sum_{j=1}^{n}|a_{ij}||{x_j}|
+\leq \max_{1\leq i \leq n}(\sum_{i=1}^{n}|a_{ij}|)\cdot \sum_{j=1}^{n}|x_j|\\
+\end{aligned}</script>
+<h4 id="xiang-liang-2-fan-shu-tui-dao-ju-zhen-pu-fan-shu">向量 2 范数推导矩阵谱范数</h4>
+<script type="math/tex;mode=display">\|A x\|_2^2=x^T A^T A x=(H x)^T \operatorname{diag}\left(\lambda_i\right)(H x)=\sum_{i=1}^n \lambda_i y_i^2 \leq\left(\max _{1 \leq i \leq n} \lambda_i\right)\|y\|_2^2 .</script>
+<p><strong>以上推导省略等于号情况</strong>，详细推导可以看<a href="https://www.cnblogs.com/fanlumaster/p/14509223.html">模糊计算士</a></p>
+<h3 id="duo-yuan-han-shu">多元函数</h3>
+<p>一维泰勒展开</p>
+<script type="math/tex;mode=display">f(x)\approx f_0(x)
+=f(x_0)+
+\textcolor{red}{\left.\frac{\partial f}{\partial x}\right|_{x=x_0}}(x-x_0)
++\frac{1}{2}\textcolor{red}{\left.\frac{\partial^2 f}{\partial x^2}\right|_{x=x_0}}(x-x_0)^2</script>
+<p>二维展开</p>
+<script type="math/tex;mode=display">f(\vec{x})\approx f_0(\vec{x})
+=f(\vec{x}_0)+
+\textcolor{red}{\left.\nabla f\right|_{\vec{x}=\vec{x}_0}}(\vec{x}-\vec{x}_0)
++\frac{1}{2}(\vec{x}-\vec{x}_0)^T\textcolor{red}{\left.\nabla^2 f\right|_{\vec{x}=\vec{x}_0}}(\vec{x}-\vec{x}_0)</script>
+<p>若函数 f(x)连续可微，则</p>
+<script type="math/tex;mode=display">f(\vec{x})\approx f_0(\vec{x})
+=f(\vec{x}_0)
++\textcolor{red}{\left.\nabla f\right|_{\vec{x}=\vec{x}_0}}(\vec{x}-\vec{x}_0)+\textcolor{green}{o(\Vert \vec{x}-\vec{x}_0\Vert)}</script>
+<p>若函数 f(x)二次连续可微，则</p>
+<script type="math/tex;mode=display">\begin{aligned}
+f(\vec{x})\approx f_0(\vec{x})
+&=f(\vec{x}_0)\\
+&+\textcolor{red}{\left.\nabla f\right|_{\vec{x}=\vec{x}_0}}(\vec{x}-\vec{x}_0)\\
+&+\frac{1}{2}(\vec{x}-\vec{x}_0)^T\textcolor{red}{\left.\nabla^2 f\right|_{\vec{x}=\vec{x}_0}}(\vec{x}-\vec{x}_0)\\
+&+\textcolor{green}{o(\Vert \vec{x}-\vec{x}_0\Vert^2)}\\
+\end{aligned}</script>
+<p>进一步可以推广到函数 <script type="math/tex">F:R^n\to R^m</script>
+ 的情况，有时称 F 的 Jacobi 矩阵的转置称为 F 的转置。</p>
+<h3 id="tu-ji-yu-tu-han-shu">凸集与凸函数</h3>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https://xsro.github.io/tags/optimization/">#Optimization</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;xsro.github.io&#x2F;matlab-global-persistent-cn&#x2F;">‹ MATLAB 作用域</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;xsro.github.io&#x2F;collection-proxy-mirror-cn&#x2F;">常用代理与镜像设置方法 ›</a>
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https://xsro.github.io/even.js" ></script>
+      
+    </body>
+
+</html>

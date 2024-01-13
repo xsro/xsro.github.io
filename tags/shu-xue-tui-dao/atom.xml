@@ -19,10 +19,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/control/transfrom-in-control/"/>
-        <id>https://xsro.github.io/control/transfrom-in-control/</id>
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control-flz-transform/"/>
+        <id>https://xsro.github.io/control-flz-transform/</id>
         
-        <content type="html" xml:base="https://xsro.github.io/control/transfrom-in-control/">&lt;h1 id=&quot;signal-strength-san-da-bian-huan-de-shu-xue-tui-dao-guo-cheng&quot;&gt;📶 三大变换的数学推导过程&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/control-flz-transform/">&lt;h1 id=&quot;signal-strength-san-da-bian-huan-de-shu-xue-tui-dao-guo-cheng&quot;&gt;📶 三大变换的数学推导过程&lt;&#x2F;h1&gt;
 &lt;p&gt;&lt;script type=&quot;math&#x2F;tex&quot;&gt;\mathscr{F,L,Z}&lt;&#x2F;script&gt;
 傅里叶变换、拉普拉斯变换、Z 变换这三大变换讨论广泛&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#zhihu&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;。个人理解，这三个变换都是为了简化一些难以在时间域分析的问题而引入的。&lt;&#x2F;p&gt;
 &lt;ul&gt;

@@ -19,10 +19,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://xsro.github.io/markdown-tips-cn/"/>
-        <id>https://xsro.github.io/markdown-tips-cn/</id>
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/tip-markdown/"/>
+        <id>https://xsro.github.io/tip-markdown/</id>
         
-        <content type="html" xml:base="https://xsro.github.io/markdown-tips-cn/">&lt;h1 id=&quot;markdown-chang-yong-tuo-zhan-yu-fa-can-kao&quot;&gt;Markdown 常用拓展语法参考&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://xsro.github.io/tip-markdown/">&lt;h1 id=&quot;markdown-chang-yong-tuo-zhan-yu-fa-can-kao&quot;&gt;Markdown 常用拓展语法参考&lt;&#x2F;h1&gt;
 &lt;h2 id=&quot;chang-yong-lian-jie&quot;&gt;常用链接&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;基本语法
@@ -43,7 +43,7 @@
 &lt;&#x2F;li&gt;
 &lt;li&gt;emoji 参考:v:
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;xsro.github.io&#x2F;markdown-tips-cn&#x2F;emoji.md&quot;&gt;emoji 表&lt;&#x2F;a&gt;来自&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;caiyongji&#x2F;emoji-list&quot;&gt;caiyongji&#x2F;emoji-list&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;xsro.github.io&#x2F;tip-markdown&#x2F;emoji.md&quot;&gt;emoji 表&lt;&#x2F;a&gt;来自&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;caiyongji&#x2F;emoji-list&quot;&gt;caiyongji&#x2F;emoji-list&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;emoji-cheat-sheet.com&#x2F;&quot;&gt;emoji-cheat-sheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ol&gt;
 &lt;&#x2F;li&gt;
