@@ -148,19 +148,41 @@
                 </li>
                 
                 <li>
-                    <a href="https://xsro.github.io/control-theory-discontinuous/#hui-gu-ge-chong-lian-xu-xing" class="toc-link">回顾：各种连续性</a>
+                    <a href="https://xsro.github.io/control-theory-discontinuous/#hui-gu-lian-xu-xing" class="toc-link">回顾：连续性</a>
                     
                     <ul>
                         
                         <li>
-                            <a href="https://xsro.github.io/control-theory-discontinuous/#tong-guo-ji-xian-miao-shu-de-lian-xu-xing" class="toc-link">通过极限描述的连续性</a>
+                            <a href="https://xsro.github.io/control-theory-discontinuous/#dian-lian-xu-yu-jian-duan-dian" class="toc-link">点连续与间断点</a>
                         </li>
                         
                         <li>
-                            <a href="https://xsro.github.io/control-theory-discontinuous/#tong-guo-miao-shu-de-lian-xu-xing" class="toc-link">通过描述的连续性</a>
+                            <a href="https://xsro.github.io/control-theory-discontinuous/#qu-jian-lian-xu-yu-qu-jian-yi-zhi-lian-xu" class="toc-link">区间连续与区间一致连续</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/control-theory-discontinuous/#jue-dui-lian-xu-lipschitzlian-xu-holderlian-xu" class="toc-link">绝对连续、Lipschitz连续、Hölder连续</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/control-theory-discontinuous/#qu-jian-shang-lian-xu-xing-de-guan-xi" class="toc-link">区间上连续性的关系</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/control-theory-discontinuous/#guang-hua-han-shu" class="toc-link">光滑函数</a>
                         </li>
                         
                     </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://xsro.github.io/control-theory-discontinuous/#tu-po-lian-xu-ke-wei-jie-beyond-continuously-differentiable-solutions" class="toc-link">突破连续可微解 Beyond Continuously Differentiable Solutions</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://xsro.github.io/control-theory-discontinuous/#jie-de-cun-zai-xing-he-wei-yi-xing" class="toc-link">解的存在性和唯一性</a>
                     
                 </li>
                 
@@ -183,7 +205,9 @@
     </header>
 
     <div class="post-content">
-      <h2 id="qian-yan">前言</h2>
+      <p>非线性动态系统理论是滑模控制的重要理论基础，也是我学习滑模的最大障碍。
+我决定花一些时间从本科数学整理非线性动态系统中的一些概念。</p>
+<span id="continue-reading"></span><h2 id="qian-yan">前言</h2>
 <p>最近在看滑模控制的文章，其中对于非连续系统的论述多有不解，比如如下Filippov微分包含到底是什么，
 结合一下材料，打算整理一下所学内容</p>
 <blockquote>
@@ -234,9 +258,10 @@ vanishes when <script type="math/tex">x\to y</script>
 内，那么这个解是<script type="math/tex">t\ge t_0</script>
 的唯一解。</p>
 </blockquote>
-<h2 id="hui-gu-ge-chong-lian-xu-xing">回顾：各种连续性</h2>
-<p>那么什么是Lipschitz连续呢，各种连续的关系又是什么呢，我们讨论的非连续动态微分方程又如何定义呢？</p>
-<h3 id="tong-guo-ji-xian-miao-shu-de-lian-xu-xing">通过极限描述的连续性</h3>
+<h2 id="hui-gu-lian-xu-xing">回顾：连续性</h2>
+<p>那么什么是Lipschitz连续呢，各种连续的关系又是什么呢，我们讨论的非连续动态微分方程又如何定义呢？
+为了简便，这里用的是函数来叙述，如果是多变量函数或者泛函需要使用范数替代绝对值。</p>
+<h3 id="dian-lian-xu-yu-jian-duan-dian">点连续与间断点</h3>
 <blockquote>
 <p>设函数<script type="math/tex">y=f(x)</script>
 在点<script type="math/tex">x_0</script>
@@ -289,8 +314,173 @@ vanishes when <script type="math/tex">x\to y</script>
 </ol>
 </li>
 </ol>
-<h3 id="tong-guo-miao-shu-de-lian-xu-xing">通过<script type="math/tex">\epsilon-\delta</script>
-描述的连续性</h3>
+<p><img src="/images/4-types-of-discontinuity.png" alt="https://calcworkshop.com/limits/limits-and-continuity/" /></p>
+<h3 id="qu-jian-lian-xu-yu-qu-jian-yi-zhi-lian-xu">区间连续与区间一致连续</h3>
+<p>如果在区间上每一点都连续，就称函数在该区间上连续，如果区间包括端点，那么在右端点连续是指左连续，在左端点连续是指右连续。</p>
+<blockquote>
+<p>设函数<script type="math/tex">f(x)</script>
+在区间<script type="math/tex">I</script>
+上有定义. 如果对于任意给定的正数<script type="math/tex">\epsilon</script>
+，总存在正数
+<script type="math/tex">\delta</script>
+，是的对于区间<script type="math/tex">I</script>
+上的任意两点<script type="math/tex">x_1,x_2</script>
+，当<script type="math/tex">|x_1-x_2|<\delta</script>
+时，
+有
+<script type="math/tex;mode=display">|f(x_1)-f(x_2)|<\epsilon</script>
+
+那么称函数<script type="math/tex">f(x)</script>
+在区间<script type="math/tex">I</script>
+上<strong>一致连续</strong>。</p>
+</blockquote>
+<h3 id="jue-dui-lian-xu-lipschitzlian-xu-holderlian-xu">绝对连续、Lipschitz连续、Hölder连续</h3>
+<p>绝对连续表示函数的光滑性质，比连续和一致连续条件都要严格，比Lipschitz条件宽松，是一类极为重要的函数。绝对连续函数几乎处处可微，是它的导函数的广义原函数。</p>
+<blockquote>
+<p>设<script type="math/tex">f(x)</script>
+是<script type="math/tex">[a,b]</script>
+上的函数，若对任意<script type="math/tex">\epsilon>0</script>
+，存在<script type="math/tex">\delta>0</script>
+使得对于
+<script type="math/tex">[a,b]</script>
+中的任意一组分点：
+<script type="math/tex;mode=display">a_1<b_1\leq a_2 <b_2 \leq \dots \leq a_n < b_n,</script>
+
+只要<script type="math/tex">\sum_{i=1}^n(b_i-a_i)<\delta</script>
+，便有
+<script type="math/tex;mode=display">\sum_{i=1}^n|f(b_i)-f(a_i)|<\epsilon</script>
+
+则称<script type="math/tex">f(x)</script>
+是<script type="math/tex">[a,b]</script>
+上<strong>绝对连续</strong>函数，或称<script type="math/tex">f(x)</script>
+在<script type="math/tex">[a,b]</script>
+上绝对连续。</p>
+</blockquote>
+<p>等价的，如果存在一个Lebesgue可积函数<script type="math/tex">\kappa:[a,b]\to \mathbb{R}</script>
+
+使得下式成立，那么<script type="math/tex">\gamma</script>
+是一个绝对连续函数。
+<script type="math/tex;mode=display">\gamma(t)=\gamma(a)+\int^t_a \kappa(s)d s,\quad t\in [a,b]</script>
+</p>
+<blockquote>
+<p>对于函数<script type="math/tex">f(x)</script>
+，如果存在一个常数L，使得对<script type="math/tex">f(x)</script>
+定义域上（可为实数也可以为复数）的任意两个值满足如下条件：
+<script type="math/tex;mode=display">|f(x_1)-f(x_2)|\leq L|x_1-x_2|</script>
+
+那么称函数<script type="math/tex">f(x)</script>
+满足Lipschitz连续条件，并称L为<script type="math/tex">f(x)</script>
+的lipschitz常数。</p>
+</blockquote>
+<ul>
+<li>从局部看：我们可以取两个充分接近的点，如果这个时候斜率的极限存在的话，这个斜率的极限就是这个点的导数。也就是说函数可导，又是Lipschitz连续，那么导数有界。反过来，如果可导函数，导数有界，可以推出函数Lipschitz连续。</li>
+<li>从整体看：Lipschitz连续要求函数在无限的区间上不能有超过线性的增长，所以这些x^{2}和e^{2}函数在无限区间上不是Lipschitz连续的。</li>
+</ul>
+<blockquote>
+<p>对于函数<script type="math/tex">f(x)</script>
+，如果存在一个非负常数<script type="math/tex">C,\alpha</script>
+，
+使得对<script type="math/tex">f(x)</script>
+定义域上（可为实数也可以为复数）的任意两个值满足如下条件：
+<script type="math/tex;mode=display">|f(x_1)-f(x_2)|\leq C|x_1-x_2|^\alpha</script>
+
+那么称函数<script type="math/tex">f(x)</script>
+满足Hölder连续条件。
+当<script type="math/tex">\alpha=0</script>
+时表示有界，当<script type="math/tex">\alpha=1</script>
+时表示满足Lipschitz条件</p>
+</blockquote>
+<h3 id="qu-jian-shang-lian-xu-xing-de-guan-xi">区间上连续性的关系</h3>
+<ul>
+<li>绝对连续一定一致连续，反正不一定。</li>
+<li>连续可微一定绝对连续，反之不一定</li>
+<li>局部Lipschitz连续一定绝对连续，反之不一定。</li>
+</ul>
+<p>如下<script type="math/tex">f_1(x)</script>
+一致连续但是不绝对连续:
+<script type="math/tex;mode=display">f_1(x)=\begin{cases}
+    0, &x=0\\
+    x \sin\frac{\pi}{x}, &0 < x\leq 1
+    \end{cases}</script>
+</p>
+<p>如下绝对值函数<script type="math/tex">f_2(x)</script>
+绝对连续但是在0处不连续可微
+<script type="math/tex;mode=display">f_2(x)=|x|, x\in [-1,1]</script>
+</p>
+<p>如下根号函数绝对连续但是在0处不是局部Lipschitz连续的
+<script type="math/tex;mode=display">f_3(t)=\sqrt(t),t\in [0,0]</script>
+</p>
+<h4 id="lian-xu-han-shu-bu-yi-ding">连续函数不一定</h4>
+<h3 id="guang-hua-han-shu">光滑函数</h3>
+<p>光滑函数（英语：Smooth function）在数学中特指无穷可导的函数，不存在尖点，也就是说所有的有限阶导数都存在。例如，指数函数就是光滑的，因为指数函数的导数是指数函数本身。</p>
+<p>若一函数是连续的，则称其为<script type="math/tex">C^{0}</script>
+函数；
+若函数存在导函数，且其导函数连续，则称为连续可导，记为<script type="math/tex">C^1</script>
+函数；
+若一函数n阶可导，并且其n阶导函数连续，则为<script type="math/tex">C^{n}</script>
+函数（<script type="math/tex">n\geq 1</script>
+）。
+而光滑函数是对所有n都属于<script type="math/tex">C^{n}</script>
+函数，特称其为<script type="math/tex">C^{\infty }</script>
+函数。</p>
+<h2 id="tu-po-lian-xu-ke-wei-jie-beyond-continuously-differentiable-solutions">突破连续可微解 Beyond Continuously Differentiable Solutions</h2>
+<p>考虑如下的动态系统
+<script type="math/tex;mode=display">\dot{x}(t)=\mathcal{X}(x(t))\ x(t_0)=x_0
+\tag{7}</script>
+
+其中<script type="math/tex">x\in \mathbb{R}^d</script>
+， <script type="math/tex">d</script>
+为一个正整数，
+并且<script type="math/tex">\mathcal{X}:\mathbb{R}^d \to \mathbb{R}^d</script>
+ <strong>不需要连续</strong>。
+我们称连续可微的解<script type="math/tex">t \mapsto x(t)</script>
+为经典（classical）解。
+显然，如果<script type="math/tex">\mathcal{X}</script>
+连续，那么方程所有解都是classical的。
+不失一般性，我们认为<script type="math/tex">t_0=0</script>
+，并且只考虑<script type="math/tex">t>0</script>
+的情况。</p>
+<blockquote>
+<p>连续可微Continuously differentiable，用泛函表示就是函数<script type="math/tex">f\in C^1</script>
+，意味着函数的导数是连续的，当然可微保证其本身也是连续的。</p>
+</blockquote>
+<p><strong>Caratheodory解</strong>是classical解的一般话。
+粗略地说，Caratheodory解是满足微分方程(7)的Lebesgue积分形式(8)的绝对连续曲线
+<script type="math/tex;mode=display">x(t)=x(t_0)+\int_{t_0}^t X(x(s)) ds,\quad t>t_0
+\tag{8}</script>
+
+通过使用积分形式(8)，Caratheodory解不再要求方程解必须所有时间都沿着向量场的方向。
+也就是说，微分方程(7)need bot be satisfied on a set of measure zero.</p>
+<p><strong>Filippov解</strong>使用微分包含式（differential inclusion）来替换微分方程(7)右侧
+<script type="math/tex;mode=display">\dot{x}(t)\in \mathcal{F} (x(t))</script>
+
+其中<script type="math/tex">\mathcal{F}:\mathbb{F}^d \to \mathfrak{B}(\mathbb{F}^d)</script>
+，
+<script type="math/tex">\mathfrak{B}(\mathbb{R}^d)</script>
+为d维实数空间<script type="math/tex">\mathbb{R}^d</script>
+的所有子集的集合。
+Filippov解是绝对连续曲线。
+对于任意给定的状态<script type="math/tex">x</script>
+，Filippov解不只关注向量场在<script type="math/tex">x</script>
+处的值，
+Filippov解的思想是引入由向量场中<script type="math/tex">x</script>
+的领域决定的一组<strong>方向集合</strong>。
+文献中常常使用集值映射（set-value map），
+也就是说这种映射的值是一个集合，而不像标准的函数（映射）的值只有一个。</p>
+<blockquote>
+<p>An ordinary differential inclusion says the derivative must lie in a specified set, which may also depend on the function and independent variable. </p>
+</blockquote>
+<p>Caratheodory解和Filippov解都不能完全解决非连续动态系统的问题，
+围绕存在的问题由<strong>Sample-and-hold</strong>解以及其他的一些描述方法。</p>
+<h2 id="jie-de-cun-zai-xing-he-wei-yi-xing">解的存在性和唯一性</h2>
+<p>对于常微分方程而言，向量场如果只连续不能保证解的唯一性。
+我们说解的一个性质弱，表示不是所有解满足这一性质。
+我们说解的一个性质强，表示所有解满足这一性质。
+所以设计控制器的思路可以是</p>
+<ol>
+<li>设计控制器并考虑控制器下的闭环系统</li>
+<li>考虑所有容许控制输入下</li>
+</ol>
 
     </div>
 
