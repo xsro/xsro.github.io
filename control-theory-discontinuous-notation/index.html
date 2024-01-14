@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+      
+    
+
+      <title>xsro&#x27;s blog - 非连续动态系统分析——绝对连续的Caratheodory解</title>
+
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/mathtex-script-type.min.js" integrity="sha384-zWYbd0NBwgTsgIdFKVprSfTh1mbMPe5Hz1X3yY4Sd1h/K1cQoUe36OGwAGz/PcDy" crossorigin="anonymous"></script>
+              
+          
+      
+
+      
+          <link rel="stylesheet" href="https://xsro.github.io/site.css">
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">光侨路笔记</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io">
+                            主页
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;categories">
+                            分类
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;tags">
+                            标签
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;about">
+                            关于
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;external">
+                            外部
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;xsro.github.io">光侨路笔记</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io">
+                                    主页
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;categories">
+                                    分类
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;tags">
+                                    标签
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;about">
+                                    关于
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;external">
+                                    外部
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://xsro.github.io/control-theory-discontinuous-notation/#caratheodoryjie" class="toc-link">Caratheodory解</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/control-theory-discontinuous-notation/#shu-xue-ding-yi" class="toc-link">数学定义</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/control-theory-discontinuous-notation/#caratheodoryjie-cun-zai-de-chong-fen-xing-tiao-jian" class="toc-link">Caratheodory解存在的充分性条件</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://xsro.github.io/control-theory-discontinuous-notation/#filippovjie" class="toc-link">Filippov解</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;control-theory-discontinuous-notation&#x2F;">非连续动态系统分析——绝对连续的Caratheodory解</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2024-01-14</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p><a href="../control-theory-discontinuous">前文</a>已经说明了在考虑非连续的向量场的时候，classical解具有非常大的局限性。
+为了处理微分方程的不连续部分，
+我们首先放宽解必须始终沿着向量场方向的要求。
+数学中对应的就是<strong>绝对连续的Caratheodory解</strong>。</p>
+<p>Caratheodory解不足以保证解的存在性。
+由于向量场的非连续性，
+他的值在任意靠近一个点的时候可能表现出显著的振荡。
+这种不匹配可能导致无法构造一个Caratheodory解。</p>
+<p>Filippov解的思路是不再只考虑向量场上的各个点，
+而是考虑向量场上各个点邻域。</p>
+<span id="continue-reading"></span><h2 id="caratheodoryjie">Caratheodory解</h2>
+<h3 id="shu-xue-ding-yi">数学定义</h3>
+<p>考虑微分方程：
+<script type="math/tex;mode=display">\dot{x}(t)=X(x(t)),\quad x(0)=x_0.
+\tag{10}</script>
+
+微分方程(10) 的定义在<script type="math/tex">[0,t_1]\subset \mathbb{R}</script>
+的<strong>Caratheodory解</strong>是一个绝对连续映射。
+该映射在几乎(almost)所有时间<script type="math/tex">t\in [0,t_1]</script>
+上满足微分方程(10)。
+这里说的“几乎”是在Lebesgue测度的意义上的。
+也就是说，Caratheodory解只在Lebesgue测度为0的时刻集合上没有沿着向量场的方向。
+也可以等价地说，Caratheodory解是满足微分方程(10)的Lebesgue积分形式(16)的绝对连续解。
+<script type="math/tex;mode=display">x(t)=x(t_0)+\int_{t_0}^t X(x(s)) ds,\quad t>t_0
+\tag{16}</script>
+
+当然，所有的classical解都是Caratheodory解。</p>
+<blockquote>
+<p><strong>Example 9</strong>: 具有Caratheodory解，但是没有classical 解的系统
+<script type="math/tex;mode=display">X(x)=\begin{cases}
+1,  & x>0,\\
+\frac{1}{2}, & x=0,\\
+-1, & x<0\\
+\end{cases}</script>
+
+该系统由两个从<script type="math/tex">x(0)=0</script>
+出发的Caratheodory解，分别是
+<script type="math/tex">x_1(t)=t,t\in [0,\infty)</script>
+和<script type="math/tex">x_1(t)=-t,t\in [0,\infty)</script>
+。
+这两个解在<script type="math/tex">t=0</script>
+时，都不满足向量场，也就是
+<script type="math/tex">\dot{x}_1(0) \neq X(x_1(0))</script>
+ 和
+<script type="math/tex">\dot{x}_2(0) \neq X(x_2(0))</script>
+ 。</p>
+</blockquote>
+<p>然而，可以找到很多不接受Caratheodory解的系统，这其中一些可以用Filippov解理解。</p>
+<h3 id="caratheodoryjie-cun-zai-de-chong-fen-xing-tiao-jian">Caratheodory解存在的充分性条件</h3>
+<p>对于时变的向量场，Caratheodory解存在的条件应用到时不变系统与classical解类似。
+所以研究主要集中在时不变的向量场，如directionally continuous 和 Patchy vector fields，
+详情参看原文。</p>
+<h2 id="filippovjie">Filippov解</h2>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https://xsro.github.io/tags/kong-zhi-li-lun/">#控制理论</a>
+                    
+                        <a href="https://xsro.github.io/tags/fei-guang-hua/">#非光滑</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;xsro.github.io&#x2F;control-theory-discontinuous&#x2F;">非连续动态系统分析——连续性定义与连续可微的classical解 ›</a>
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https://xsro.github.io/even.js" ></script>
+      
+    </body>
+
+</html>
