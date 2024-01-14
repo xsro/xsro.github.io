@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>xsro&#x27;s blog - 非光滑</title>
+    <link rel="self" type="application/atom+xml" href="https://xsro.github.io/tags/fei-guang-hua/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://xsro.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-01-13T00:00:00+00:00</updated>
+    <id>https://xsro.github.io/tags/fei-guang-hua/atom.xml</id>
+    <entry xml:lang="en">
+        <title>非连续动态系统分析——连续性定义与连续可微的classical解</title>
+        <published>2024-01-13T00:00:00+00:00</published>
+        <updated>2024-01-13T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://xsro.github.io/control-theory-discontinuous/"/>
+        <id>https://xsro.github.io/control-theory-discontinuous/</id>
+        
+        <summary type="html">&lt;p&gt;非线性动态系统理论是滑模控制的重要理论基础，也是我学习滑模的最大障碍。
+我决定花一些时间从工科本科数学知识出发整理非线性动态系统中的一些概念。
+这篇笔记主要回顾连续性的定义，同时介绍传统的连续可微的classical解在应对非连续系统时存在性与唯一性的缺陷。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+</feed>

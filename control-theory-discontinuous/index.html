@@ -11,7 +11,7 @@
       
     
 
-      <title>xsro&#x27;s blog - 非连续动态系统分析——Filippov</title>
+      <title>xsro&#x27;s blog - 非连续动态系统分析——连续性定义与连续可微的classical解</title>
 
       
 
@@ -212,7 +212,7 @@
     
     <header class="post__header">
         <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;control-theory-discontinuous&#x2F;">非连续动态系统分析——Filippov</a>
+            <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;control-theory-discontinuous&#x2F;">非连续动态系统分析——连续性定义与连续可微的classical解</a>
         </h1>
         <div class="post__meta">
             <span class="post__time">2024-01-13</span>
@@ -222,7 +222,8 @@
 
     <div class="post-content">
       <p>非线性动态系统理论是滑模控制的重要理论基础，也是我学习滑模的最大障碍。
-我决定花一些时间从工科本科数学知识出发整理非线性动态系统中的一些概念。</p>
+我决定花一些时间从工科本科数学知识出发整理非线性动态系统中的一些概念。
+这篇笔记主要回顾连续性的定义，同时介绍传统的连续可微的classical解在应对非连续系统时存在性与唯一性的缺陷。</p>
 <span id="continue-reading"></span><h2 id="qian-yan">前言</h2>
 <p>最近在看滑模控制的文章，其中对于非连续系统的论述多有不解，比如如下Filippov微分包含到底是什么，
 结合一下材料，打算整理一下所学内容</p>
@@ -450,8 +451,8 @@ vanishes when <script type="math/tex">x\to y</script>
 为一个正整数，
 并且<script type="math/tex">\mathcal{X}:\mathbb{R}^d \to \mathbb{R}^d</script>
  <strong>不需要连续</strong>。
-我们称连续可微的解<script type="math/tex">t \mapsto x(t)</script>
-为经典（classical）解。
+我们称<strong>连续可微的解<script type="math/tex">t \mapsto x(t)</script>
+为经典（classical）解</strong>。
 显然，如果<script type="math/tex">\mathcal{X}</script>
 连续，那么方程所有解都是classical的。
 不失一般性，我们认为<script type="math/tex">t_0=0</script>
@@ -575,6 +576,69 @@ Filippov解的思想是引入由向量场中<script type="math/tex">x</script>
 </blockquote>
 <p>下面的例子说明如果向量场不连续，那么(10)也可能存在经典解。</p>
 <blockquote>
+<p>考虑向量场<script type="math/tex">X:\mathbb{R}\to\mathbb{R}</script>
+
+<script type="math/tex;mode=display">X(x)=-\mathrm{sign}(x)=\begin{cases}
+-1, & x>0,\\
+0,   & x=0,\\
+1,   & x<0,
+\end{cases}</script>
+
+唯一最大解为：
+<script type="math/tex;mode=display">\begin{aligned}
+    &x(t)=x(0)-t, 
+    t\in [0,x(0)) 
+    &\textrm{if}
+    \ x(0)>0, \\
+    &x(t)=0,  t\in [0,\infty)
+    &\textrm{if}\ x(0)=0 
+   \\
+    &x(t)=x(0)+t,  t\in [0,-x(0))
+    &\textrm{if}\ 
+    x(0)<0,
+\end{aligned}</script>
+</p>
+</blockquote>
+<p>下面例子说明连续但是不是单侧Lipschitz连续的向量场可能有多个classical解</p>
+<blockquote>
+<p>考虑向量场<script type="math/tex">X:\mathbb{R}\to\mathbb{R}</script>
+
+<script type="math/tex;mode=display">X(s)=\sqrt{|x|}</script>
+
+这个向量场处处连续，并在<script type="math/tex">\mathbb{R}/\{0\}</script>
+局部Lipschitz连续，
+但是在零处不局部连续，在零的领域也不单侧Lipschitz连续。
+从<script type="math/tex">x(0)=0</script>
+开始，该动态系统有许多最大解，具体而言为：
+对所有<script type="math/tex">a>0</script>
+，<script type="math/tex">x_a:[0,\infty)\to \mathbb{R}</script>
+，表达式为：
+<script type="math/tex;mode=display">x_a(t)=\begin{cases}
+0, & 0\leq t \leq a,\\
+(t-a)^2/4, & t\geq a
+\end{cases}</script>
+</p>
+</blockquote>
+<p>下面例子说明连续但是不是单侧Lipschitz连续的向量场只有一个classical解</p>
+<blockquote>
+<p>考虑向量场<script type="math/tex">X:\mathbb{R}\to\mathbb{R}</script>
+
+<script type="math/tex;mode=display">X(s)=\begin{cases}
+-x \mathrm{log} x, & x>0\\
+0,                            & x=0,\\
+x \mathrm{log}(-x),& x<0,
+\end{cases}</script>
+
+唯一最大解为：
+<script type="math/tex;mode=display">\begin{aligned}
+    &x(t)=-\exp(\log (-x(0)) \exp(t)), 
+    &\textrm{if}\ x(0)<0 \\
+    &x(t)=0, 
+    &\textrm{if}\ x(0)=0 \\
+    &x(t)=\exp(\log x(0) \exp(-t)), 
+    &\textrm{if}\ x(0)>0
+\end{aligned}</script>
+</p>
 </blockquote>
 
     </div>
@@ -587,7 +651,9 @@ Filippov解的思想是引入由向量场中<script type="math/tex">x</script>
             
                 <div class="post-tags">
                     
-                        <a href="https://xsro.github.io/tags/hua-dong-mo-tai-kong-zhi/">#滑动模态控制</a>
+                        <a href="https://xsro.github.io/tags/kong-zhi-li-lun/">#控制理论</a>
+                    
+                        <a href="https://xsro.github.io/tags/fei-guang-hua/">#非光滑</a>
                     
                 </div>
             
