@@ -1,3 +1,5 @@
+#set text(font: ("Noto Serif CJK SC","Noto Serif CJK SC"))
+
 #set page(background: rotate(24deg,
 [
   #text(180pt, fill: gray.lighten(80%))[
