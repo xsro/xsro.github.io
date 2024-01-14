@@ -185,7 +185,7 @@ $$
 
 > 连续可微Continuously differentiable，用泛函表示就是函数$f\in C^1$，意味着函数的导数是连续的，当然可微保证其本身也是连续的。
 
-**Caratheodory解**是classical解的一般话。
+**Caratheodory解**是classical解的一般化。
 粗略地说，Caratheodory解是满足微分方程(7)的Lebesgue积分形式(8)的绝对连续曲线
 $$
 x(t)=x(t_0)+\int_{t_0}^t X(x(s)) ds,\quad t>t_0
