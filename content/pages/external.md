@@ -10,7 +10,7 @@ template = "about.html"
 
 # 外部资源 External Resources 
 
-## Notes on Nonlinear Control [nlct](nlct.pdf)
+## Notes on Nonlinear Control [nlct](/print/nlct.pdf)
 
 (updated 2023-09-22, work in progress) : 
 This is a printable version of the notes for the course *Nonlinear Systems and Control*.

@@ -11,9 +11,9 @@ categories = ["常用技术速查"]
 ## 常用链接
 
 - 基本语法
-  1. GitHub Flavored Markdown Spec = [gfm](https://github.github.com/gfm/)
-  2. 比较细致的 markdown 参考资$1 = <https://www.markdownguide.org/>
-  3. github 上的 markdown 语法速查$1 = [markdown-cheatsheet](https://github.com/tchapi/markdown-cheatsheet),[Markdown](https://github.com/younghz/Markdown)
+  1. GitHub Flavored Markdown Spec  [gfm](https://github.github.com/gfm/)
+  2. 比较细致的 markdown 参考资料 [www.markdownguide.org](https://www.markdownguide.org/)
+  3. github 上的 markdown 语法速查 [markdown-cheatsheet](https://github.com/tchapi/markdown-cheatsheet),[Markdown](https://github.com/younghz/Markdown)
   4. [typora](http://typora.io/)中提供的[帮助](https://support.typora.io/Markdown-Reference/)
 - 数学公式$\TeX$：通常 markdown 使用以下两种工具渲染公示
   1. [mathjax](http://docs.mathjax.org/en/latest/input/tex/macros/index.html)：typora、知乎等
