@@ -27,10 +27,9 @@
 &lt;ul&gt;
 &lt;li&gt;基本语法
 &lt;ol&gt;
-&lt;li&gt;GitHub Flavored Markdown Spec = &lt;a href=&quot;https:&#x2F;&#x2F;github.github.com&#x2F;gfm&#x2F;&quot;&gt;gfm&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;比较细致的 markdown 参考资&lt;script type=&quot;math&#x2F;tex&quot;&gt;1 = &lt;https:&#x2F;&#x2F;www.markdownguide.org&#x2F;&gt;
-  3. github 上的 markdown 语法速查&lt;&#x2F;script&gt;
-1 = &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tchapi&#x2F;markdown-cheatsheet&quot;&gt;markdown-cheatsheet&lt;&#x2F;a&gt;,&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;younghz&#x2F;Markdown&quot;&gt;Markdown&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;GitHub Flavored Markdown Spec  &lt;a href=&quot;https:&#x2F;&#x2F;github.github.com&#x2F;gfm&#x2F;&quot;&gt;gfm&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;比较细致的 markdown 参考资料 &lt;a href=&quot;https:&#x2F;&#x2F;www.markdownguide.org&#x2F;&quot;&gt;www.markdownguide.org&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;github 上的 markdown 语法速查 &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tchapi&#x2F;markdown-cheatsheet&quot;&gt;markdown-cheatsheet&lt;&#x2F;a&gt;,&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;younghz&#x2F;Markdown&quot;&gt;Markdown&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;typora.io&#x2F;&quot;&gt;typora&lt;&#x2F;a&gt;中提供的&lt;a href=&quot;https:&#x2F;&#x2F;support.typora.io&#x2F;Markdown-Reference&#x2F;&quot;&gt;帮助&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ol&gt;
 &lt;&#x2F;li&gt;
