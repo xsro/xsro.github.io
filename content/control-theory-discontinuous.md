@@ -1,13 +1,14 @@
 +++
-title = "非连续动态系统分析——Filippov"
+title = "非连续动态系统分析——连续性定义与连续可微的classical解"
 date = 2024-01-13
 [taxonomies]
-tags = ["滑动模态控制"]
-categories = ["控制理论"]
+tags = ["控制理论","非光滑"]
+categories = ["非连续动态系统分析"]
 +++
 
 非线性动态系统理论是滑模控制的重要理论基础，也是我学习滑模的最大障碍。
 我决定花一些时间从工科本科数学知识出发整理非线性动态系统中的一些概念。
+这篇笔记主要回顾连续性的定义，同时介绍传统的连续可微的classical解在应对非连续系统时存在性与唯一性的缺陷。
 
 <!-- more -->
 
@@ -178,7 +179,7 @@ $$
 $$
 其中$x\in \mathbb{R}^d$， $d$为一个正整数，
 并且$\mathcal{X}:\mathbb{R}^d \to \mathbb{R}^d$ **不需要连续**。
-我们称连续可微的解$t \mapsto x(t)$为经典（classical）解。
+我们称**连续可微的解$t \mapsto x(t)$为经典（classical）解**。
 显然，如果$\mathcal{X}$连续，那么方程所有解都是classical的。
 不失一般性，我们认为$t_0=0$，并且只考虑$t>0$的情况。
 
@@ -272,6 +273,64 @@ $$
 
 下面的例子说明如果向量场不连续，那么(10)也可能存在经典解。
 
->
->
->
+> 考虑向量场$X:\mathbb{R}\to\mathbb{R}$
+$$
+X(x)=-\mathrm{sign}(x)=\begin{cases}
+-1, & x>0,\\
+0,   & x=0,\\
+1,   & x<0,
+\end{cases}
+$$
+> 唯一最大解为：
+$$
+\begin{aligned}
+    &x(t)=x(0)-t, 
+    t\in [0,x(0)) 
+    &\textrm{if}
+    \ x(0)>0, \\
+    &x(t)=0,  t\in [0,\infty)
+    &\textrm{if}\ x(0)=0 
+   \\
+    &x(t)=x(0)+t,  t\in [0,-x(0))
+    &\textrm{if}\ 
+    x(0)<0,
+\end{aligned}
+$$
+
+下面例子说明连续但是不是单侧Lipschitz连续的向量场可能有多个classical解
+
+> 考虑向量场$X:\mathbb{R}\to\mathbb{R}$
+$$
+X(s)=\sqrt{|x|}
+$$
+> 这个向量场处处连续，并在$\mathbb{R}/\{0\}$局部Lipschitz连续，
+> 但是在零处不局部连续，在零的领域也不单侧Lipschitz连续。
+> 从$x(0)=0$开始，该动态系统有许多最大解，具体而言为：
+> 对所有$a>0$，$x_a:[0,\infty)\to \mathbb{R}$，表达式为：
+$$
+x_a(t)=\begin{cases}
+0, & 0\leq t \leq a,\\
+(t-a)^2/4, & t\geq a
+\end{cases}
+$$
+
+下面例子说明连续但是不是单侧Lipschitz连续的向量场只有一个classical解
+> 考虑向量场$X:\mathbb{R}\to\mathbb{R}$
+$$
+X(s)=\begin{cases}
+-x \mathrm{log} x, & x>0\\
+0,                            & x=0,\\
+x \mathrm{log}(-x),& x<0,
+\end{cases}
+$$
+> 唯一最大解为：
+$$
+\begin{aligned}
+    &x(t)=-\exp(\log (-x(0)) \exp(t)), 
+    &\textrm{if}\ x(0)<0 \\
+    &x(t)=0, 
+    &\textrm{if}\ x(0)=0 \\
+    &x(t)=\exp(\log x(0) \exp(-t)), 
+    &\textrm{if}\ x(0)>0
+\end{aligned}
+$$
