@@ -11,7 +11,7 @@
       
     
 
-      <title>xsro&#x27;s blog - 非连续动态系统分析——绝对连续的Caratheodory解</title>
+      <title>xsro&#x27;s blog - 非连续动态系统分析——绝对连续的Caratheodory解和Filippov解</title>
 
       
 
@@ -21,7 +21,7 @@
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
 
           <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
-          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/mathtex-script-type.min.js" integrity="sha384-zWYbd0NBwgTsgIdFKVprSfTh1mbMPe5Hz1X3yY4Sd1h/K1cQoUe36OGwAGz/PcDy" crossorigin="anonymous"></script>
+          <script defer src="/mathtex-script-type.js"></script>
               
           
       
@@ -157,6 +157,14 @@
                 <li>
                     <a href="https://xsro.github.io/control-theory-discontinuous-notation/#filippovjie" class="toc-link">Filippov解</a>
                     
+                    <ul>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/control-theory-discontinuous-notation/#filippovjie-de-shu-xue-ding-yi" class="toc-link">Filippov解的数学定义</a>
+                        </li>
+                        
+                    </ul>
+                    
                 </li>
                 
             </ul>
@@ -169,7 +177,7 @@
     
     <header class="post__header">
         <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;control-theory-discontinuous-notation&#x2F;">非连续动态系统分析——绝对连续的Caratheodory解</a>
+            <a href="https:&#x2F;&#x2F;xsro.github.io&#x2F;control-theory-discontinuous-notation&#x2F;">非连续动态系统分析——绝对连续的Caratheodory解和Filippov解</a>
         </h1>
         <div class="post__meta">
             <span class="post__time">2024-01-14</span>
@@ -226,11 +234,73 @@
  。</p>
 </blockquote>
 <p>然而，可以找到很多不接受Caratheodory解的系统，这其中一些可以用Filippov解理解。</p>
+<blockquote>
+<p><strong>Example 9</strong>: 不具有Caratheodory解的系统
+<script type="math/tex;mode=display">X(x)=\begin{cases}
+-1,  & x\geq 0,\\
+ 1, & x<0\\
+\end{cases}</script>
+
+该系统的解会沿着<script type="math/tex">x=0</script>
+处反复振荡，所以不具有Caratheodory解，而需要使用Filippov解</p>
+</blockquote>
 <h3 id="caratheodoryjie-cun-zai-de-chong-fen-xing-tiao-jian">Caratheodory解存在的充分性条件</h3>
 <p>对于时变的向量场，Caratheodory解存在的条件应用到时不变系统与classical解类似。
 所以研究主要集中在时不变的向量场，如directionally continuous 和 Patchy vector fields，
 详情参看原文。</p>
 <h2 id="filippovjie">Filippov解</h2>
+<p>Filippov解使用集值映射来替换原来的系统的右侧方程。
+似乎可以这一理解：
+微分方程的 Filippov 解就是用Filippov集值映射替换微分方程右侧后新的方程的 Caratheodory 解。</p>
+<h3 id="filippovjie-de-shu-xue-ding-yi">Filippov解的数学定义</h3>
+<p>令<script type="math/tex">\mathfrak{B}(\mathbb{R}^d)</script>
+表示<script type="math/tex">\mathbb{R}^d</script>
+中的所有子集的集合。
+对于映射<script type="math/tex">X:\mathbb{R}^d\to \mathbb{R}^d</script>
+，定义Filippov集值映射(Filippov set-valued map)<script type="math/tex">F[X]:\mathbb{R}^d \to \mathfrak{B}(\mathbb{R}^d)</script>
+为
+<script type="math/tex;mode=display">F[X](x)\triangleq 
+\bigcap_{\delta > 0}
+\bigcap_{\mu(S)=0}
+\overline{\mathrm{co}}
+\{X(B(x,\delta) \backslash S)\}
+\tag{19}</script>
+
+这里的<script type="math/tex">\overline{\mathrm{co}}</script>
+表示凸包(convex closure)，
+这里的<script type="math/tex">\backslash</script>
+运算符，是集合的<a href="https://en.wikipedia.org/wiki/Complement_(set_theory)">补集</a>，<script type="math/tex">B\backslash A =B\cap A^C=\{x\in B | x\notin A\}</script>
+，
+这里的<script type="math/tex">\mu</script>
+表示Lebesgue测度。
+根据Filippov集值映射的定义，<script type="math/tex">F[X]</script>
+在点<script type="math/tex">x</script>
+的值<script type="math/tex">F[X](x)</script>
+与向量场<script type="math/tex">X</script>
+在<script type="math/tex">x</script>
+的值<script type="math/tex">X(x)</script>
+无关（由<script type="math/tex">x</script>
+领域上值决定）。</p>
+<p>于是微分方程(10) <script type="math/tex">\dot{x}=X(x(t))</script>
+可以使用如下的微分包含（differential inclusion）表示
+<script type="math/tex;mode=display">\dot{x}(t)\in F[X](x(t)).
+\tag{21}</script>
+
+微分方程(10)在<script type="math/tex">[0,t_1]\subset \mathbb{R}</script>
+的Filippov解
+是几户满足所有时间<script type="math/tex">t\in [0,t_1]</script>
+的(21)的绝对连续解。
+等价地，(10)的一个Filippov解是微分包含(21)的一个Caratheodory解。</p>
+<p>微分包含(21)如果满足以下条件那么称为Filippov微分包含（Filippov DI）</p>
+<blockquote>
+<p><strong>Proposition 3</strong>
+令<script type="math/tex">X:\mathbb{R}^d\to\mathbb{R}^d</script>
+是一个可测的、局部本性有界的映射。
+然后，对于所有<script type="math/tex">x_0\in \mathbb{R}^d</script>
+，存在一个从<script type="math/tex">x(0)=x_0</script>
+开始的(10)的Filippov解。</p>
+</blockquote>
+<p>这里局部本性有界（locally essentially bounded）指在每个点的有界邻域上都有界，这里的邻域要排除测度为零的集合。</p>
 
     </div>
 
