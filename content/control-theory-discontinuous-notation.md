@@ -75,15 +75,33 @@ $$
 所以研究主要集中在时不变的向量场，如directionally continuous 和 Patchy vector fields，
 详情参看原文。
 
-### 微分包含
+## 微分包含的Caratheodory解
 
-数学分析中的微分包含式（Differential inclusion）是指具有如下形式的常微分方程式：
+数学分析中的**微分包含**式（Differential inclusion）是指具有如下形式的常微分方程式：
 $$
 \dot{x}(t)\in \mathcal{F}(t,x(t))
 \tag{S2}
 $$
 其中$\mathcal{F}(t,x(t))$表示一个集合，而非$\mathbb{R}^d$空间中的一个点。
-而映射$\mathcal{F}: [0,\infty)\times \mathbb{R}^d \to \mathfrak{B}(\mathbb{R}^d)$称为集值映射（set-valued map）。
+而映射$\mathcal{F}: [0,\infty)\times \mathbb{R}^d \to \mathfrak{B}(\mathbb{R}^d)$称为**集值映射**（set-valued map）。
+
+### 集值映射
+
+- 如果对于任意$\epsilon \in (0,\infty)$，存在$\delta \in (0,\infty)$使得$\mathcal{F}(y) \subseteq \mathcal{F}(x)+B(0,\epsilon)$对所有$y\in B(x,\delta)$成立，那么称集值映射$\mathcal{F}:[0,\infty)\to \mathfrak{B}(\mathbb{R}^d)$在$x\in \mathbb{R}^d$是上半连续的。
+- 如果对于任意$\epsilon \in (0,\infty)$，存在$\delta \in (0,\infty)$使得$\mathcal{F}(x) \subseteq \mathcal{F}(y)+B(0,\epsilon)$对所有$y\in B(x,\delta)$成立，那么称集值映射$\mathcal{F}:[0,\infty)\to \mathfrak{B}(\mathbb{R}^d)$在$x\in \mathbb{R}^d$是下半连续的。
+- 如果集值映射$\mathcal{F}:\mathbb{R}^d\to\mathfrak(\mathbb{R}^d)$ 在$x\in \mathbb{R}^d$既是上半连续和下半连续的，那么称其在$x\in \mathbb{R}^d$连续的。
+  
+最后，如果存在一个常数$L_x$以及$\epsilon\in (0,\infty)$使得
+$$
+\mathcal{F}(y')\subseteq 
+\mathcal{F}(y)
++L_x \Vert y-y'\Vert_2 \overline{B}(0,1)
+$$
+对所有$y,y' \in B(x,\epsilon)$成立，
+那么称集值映射$\mathcal{F}:\mathbb{R}^d\to \mathfrak{B}(\mathbb{R}^d)$在$x\in \mathbb{R}^d$局部Lipschitz连续。
+在$x\in \mathbb{R}^d$局部Lipschitz连续的集值映射是上半连续的，反之不成立。
+
+### 微分包含的Caratheodory解
 
 如果$0\in \mathcal{F}(t,x_e)$对所有的$t\in [0,\infty)$成立，
 那么称点$x_e\in \mathbb{R}^d$是微分包含的平衡点。
@@ -96,16 +114,23 @@ $$
 > 存在一个初值为$x(t_0)=x_0$的caratheodory解 
 
 
-- 如果对于任意$\epsilon \in (0,\infty)$，存在$\delta \in (0,\infty)$使得$\mathcal{F}(y) \subseteq \mathcal{F}(x)+B(0,\epsilon)$对所有$y\in B(x,\delta)$成立，那么称集值映射$\mathcal{F}:[0,\infty)\to \mathfrak{B}(\mathbb{R}^d)$在$x\in \mathbb{R}^d$是上半连续的。
-- 如果对于任意$\epsilon \in (0,\infty)$，存在$\delta \in (0,\infty)$使得$\mathcal{F}(x) \subseteq \mathcal{F}(y)+B(0,\epsilon)$对所有$y\in B(x,\delta)$成立，那么称集值映射$\mathcal{F}:[0,\infty)\to \mathfrak{B}(\mathbb{R}^d)$在$x\in \mathbb{R}^d$是下半连续的。
+> **Proposition S3**
+> 在Proposition S2的基础上，假设，对所有的$x\in \mathbb{R}^d$，存在$\epsilon \in (0,\infty)$和一个积分函数$L_x: \mathbb{R}\to (0,\infty)$使得
+$$
+(v-w)^T(y-y')\leq L_x(t) \Vert y-y'\Vert^2_2,
+$$
+> 对几乎所有$y,y'\in B(x,\epsilon)$和所有$t\in [0,\infty)$，所有$v\in \mathcal{F}(t,y)$和所有$w\in \mathcal{F}(t,y')$
 
+以下的集值映射是上半连续的，但是不是下半连续的，也就是说不是连续的，
+因此他满足caratheodory解的存在性条件。
+由于$y$和$y'$非零，$\mathcal{F}$满足caratheodory解的唯一性条件。
+$$
+\mathcal{F}(x)=\begin{cases}
+0, & x\neq 0,\\
+[-1,1], &x=0
+\end{cases}
+$$
 
-### 微分包含的Caratheodory解
-
-前面解说的Caratheodory解针对的是一般的微分方程，
-
->
->
 
 ## Filippov解
 
