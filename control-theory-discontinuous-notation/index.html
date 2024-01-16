@@ -150,12 +150,21 @@
                             <a href="https://xsro.github.io/control-theory-discontinuous-notation/#caratheodoryjie-cun-zai-de-chong-fen-xing-tiao-jian" class="toc-link">Caratheodory解存在的充分性条件</a>
                         </li>
                         
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://xsro.github.io/control-theory-discontinuous-notation/#wei-fen-bao-han-de-caratheodoryjie" class="toc-link">微分包含的Caratheodory解</a>
+                    
+                    <ul>
+                        
                         <li>
-                            <a href="https://xsro.github.io/control-theory-discontinuous-notation/#wei-fen-bao-han" class="toc-link">微分包含</a>
+                            <a href="https://xsro.github.io/control-theory-discontinuous-notation/#ji-zhi-ying-she" class="toc-link">集值映射</a>
                         </li>
                         
                         <li>
-                            <a href="https://xsro.github.io/control-theory-discontinuous-notation/#wei-fen-bao-han-de-caratheodoryjie" class="toc-link">微分包含的Caratheodory解</a>
+                            <a href="https://xsro.github.io/control-theory-discontinuous-notation/#wei-fen-bao-han-de-caratheodoryjie-1" class="toc-link">微分包含的Caratheodory解</a>
                         </li>
                         
                     </ul>
@@ -258,8 +267,8 @@
 <p>对于时变的向量场，Caratheodory解存在的条件应用到时不变系统与classical解类似。
 所以研究主要集中在时不变的向量场，如directionally continuous 和 Patchy vector fields，
 详情参看原文。</p>
-<h3 id="wei-fen-bao-han">微分包含</h3>
-<p>数学分析中的微分包含式（Differential inclusion）是指具有如下形式的常微分方程式：
+<h2 id="wei-fen-bao-han-de-caratheodoryjie">微分包含的Caratheodory解</h2>
+<p>数学分析中的<strong>微分包含</strong>式（Differential inclusion）是指具有如下形式的常微分方程式：
 <script type="math/tex;mode=display">\dot{x}(t)\in \mathcal{F}(t,x(t))
 \tag{S2}</script>
 
@@ -267,7 +276,43 @@
 表示一个集合，而非<script type="math/tex">\mathbb{R}^d</script>
 空间中的一个点。
 而映射<script type="math/tex">\mathcal{F}: [0,\infty)\times \mathbb{R}^d \to \mathfrak{B}(\mathbb{R}^d)</script>
-称为集值映射（set-valued map）。</p>
+称为<strong>集值映射</strong>（set-valued map）。</p>
+<h3 id="ji-zhi-ying-she">集值映射</h3>
+<ul>
+<li>如果对于任意<script type="math/tex">\epsilon \in (0,\infty)</script>
+，存在<script type="math/tex">\delta \in (0,\infty)</script>
+使得<script type="math/tex">\mathcal{F}(y) \subseteq \mathcal{F}(x)+B(0,\epsilon)</script>
+对所有<script type="math/tex">y\in B(x,\delta)</script>
+成立，那么称集值映射<script type="math/tex">\mathcal{F}:[0,\infty)\to \mathfrak{B}(\mathbb{R}^d)</script>
+在<script type="math/tex">x\in \mathbb{R}^d</script>
+是上半连续的。</li>
+<li>如果对于任意<script type="math/tex">\epsilon \in (0,\infty)</script>
+，存在<script type="math/tex">\delta \in (0,\infty)</script>
+使得<script type="math/tex">\mathcal{F}(x) \subseteq \mathcal{F}(y)+B(0,\epsilon)</script>
+对所有<script type="math/tex">y\in B(x,\delta)</script>
+成立，那么称集值映射<script type="math/tex">\mathcal{F}:[0,\infty)\to \mathfrak{B}(\mathbb{R}^d)</script>
+在<script type="math/tex">x\in \mathbb{R}^d</script>
+是下半连续的。</li>
+<li>如果集值映射<script type="math/tex">\mathcal{F}:\mathbb{R}^d\to\mathfrak(\mathbb{R}^d)</script>
+ 在<script type="math/tex">x\in \mathbb{R}^d</script>
+既是上半连续和下半连续的，那么称其在<script type="math/tex">x\in \mathbb{R}^d</script>
+连续的。</li>
+</ul>
+<p>最后，如果存在一个常数<script type="math/tex">L_x</script>
+以及<script type="math/tex">\epsilon\in (0,\infty)</script>
+使得
+<script type="math/tex;mode=display">\mathcal{F}(y')\subseteq 
+\mathcal{F}(y)
++L_x \Vert y-y'\Vert_2 \overline{B}(0,1)</script>
+
+对所有<script type="math/tex">y,y' \in B(x,\epsilon)</script>
+成立，
+那么称集值映射<script type="math/tex">\mathcal{F}:\mathbb{R}^d\to \mathfrak{B}(\mathbb{R}^d)</script>
+在<script type="math/tex">x\in \mathbb{R}^d</script>
+局部Lipschitz连续。
+在<script type="math/tex">x\in \mathbb{R}^d</script>
+局部Lipschitz连续的集值映射是上半连续的，反之不成立。</p>
+<h3 id="wei-fen-bao-han-de-caratheodoryjie-1">微分包含的Caratheodory解</h3>
 <p>如果<script type="math/tex">0\in \mathcal{F}(t,x_e)</script>
 对所有的<script type="math/tex">t\in [0,\infty)</script>
 成立，
@@ -289,26 +334,31 @@
 存在一个初值为<script type="math/tex">x(t_0)=x_0</script>
 的caratheodory解 </p>
 </blockquote>
-<ul>
-<li>如果对于任意<script type="math/tex">\epsilon \in (0,\infty)</script>
-，存在<script type="math/tex">\delta \in (0,\infty)</script>
-使得<script type="math/tex">\mathcal{F}(y) \subseteq \mathcal{F}(x)+B(0,\epsilon)</script>
-对所有<script type="math/tex">y\in B(x,\delta)</script>
-成立，那么称集值映射<script type="math/tex">\mathcal{F}:[0,\infty)\to \mathfrak{B}(\mathbb{R}^d)</script>
-在<script type="math/tex">x\in \mathbb{R}^d</script>
-是上半连续的。</li>
-<li>如果对于任意<script type="math/tex">\epsilon \in (0,\infty)</script>
-，存在<script type="math/tex">\delta \in (0,\infty)</script>
-使得<script type="math/tex">\mathcal{F}(x) \subseteq \mathcal{F}(y)+B(0,\epsilon)</script>
-对所有<script type="math/tex">y\in B(x,\delta)</script>
-成立，那么称集值映射<script type="math/tex">\mathcal{F}:[0,\infty)\to \mathfrak{B}(\mathbb{R}^d)</script>
-在<script type="math/tex">x\in \mathbb{R}^d</script>
-是下半连续的。</li>
-</ul>
-<h3 id="wei-fen-bao-han-de-caratheodoryjie">微分包含的Caratheodory解</h3>
-<p>前面解说的Caratheodory解针对的是一般的微分方程，</p>
 <blockquote>
+<p><strong>Proposition S3</strong>
+在Proposition S2的基础上，假设，对所有的<script type="math/tex">x\in \mathbb{R}^d</script>
+，存在<script type="math/tex">\epsilon \in (0,\infty)</script>
+和一个积分函数<script type="math/tex">L_x: \mathbb{R}\to (0,\infty)</script>
+使得
+<script type="math/tex;mode=display">(v-w)^T(y-y')\leq L_x(t) \Vert y-y'\Vert^2_2,</script>
+
+对几乎所有<script type="math/tex">y,y'\in B(x,\epsilon)</script>
+和所有<script type="math/tex">t\in [0,\infty)</script>
+，所有<script type="math/tex">v\in \mathcal{F}(t,y)</script>
+和所有<script type="math/tex">w\in \mathcal{F}(t,y')</script>
+</p>
 </blockquote>
+<p>以下的集值映射是上半连续的，但是不是下半连续的，也就是说不是连续的，
+因此他满足caratheodory解的存在性条件。
+由于<script type="math/tex">y</script>
+和<script type="math/tex">y'</script>
+非零，<script type="math/tex">\mathcal{F}</script>
+满足caratheodory解的唯一性条件。
+<script type="math/tex;mode=display">\mathcal{F}(x)=\begin{cases}
+0, & x\neq 0,\\
+[-1,1], &x=0
+\end{cases}</script>
+</p>
 <h2 id="filippovjie">Filippov解</h2>
 <p>Filippov解使用集值映射来替换原来的系统的右侧方程。
 似乎可以这一理解：
