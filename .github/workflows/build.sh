@@ -3,10 +3,15 @@ PROJECT_ROOT=`pwd -P`
 # compile typst
 git clone  https://github.com/typst/typst _typst
 cd _typst
-cargo run compile --font-path $PROJECT_ROOT/_typst/assets/fonts/ \
-    $PROJECT_ROOT/typst/nlct/main.typ \
-    $PROJECT_ROOT/static/print/nlct.pdf
+cargo build --release
 cd ..
+typst_bin="$PROJECT_ROOT/_typst/target/release/typst"
+chmod +x "$typst_bin"
+export TYPST_FONT_PATHS="$PROJECT_ROOT/_typst/assets/fonts/"
+TYPST_COMPILE="$typst_bin compile " bash -x typst/cp.sh
+
+
+bash typst/cp.sh
 
 # clone the forked zola project
 git clone --depth=1  https://github.com/xsro/zola.git _zola

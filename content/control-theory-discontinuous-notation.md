@@ -21,6 +21,8 @@ Filippov解的思路是不再只考虑向量场上的各个点，
 
 <!-- more -->
 
+![](/print/control-theory-discontinuous-ternary.png)
+
 ## Caratheodory解
 ### 数学定义
 
@@ -85,7 +87,45 @@ $$
 其中$\mathcal{F}(t,x(t))$表示一个集合，而非$\mathbb{R}^d$空间中的一个点。
 而映射$\mathcal{F}: [0,\infty)\times \mathbb{R}^d \to \mathfrak{B}(\mathbb{R}^d)$称为**集值映射**（set-valued map）。
 
-### 集值映射
+### 集值映射的有界性
+
+如果存在
+$\epsilon,\delta \in (0,\infty)$
+和一个可积函数
+$m:[t,t+\delta]\to (0,\infty)$
+使得
+$\Vert z \Vert_2\leq m(s)$
+对所有的
+$z\in \mathcal{F}(s,y)$、
+所有的
+$s\in [t,t+t+\delta]$
+和所有的$y\in B(x,\epsilon)$
+成立，
+那么称集值映射
+$\mathcal{F}:[0,\infty)\to \mathfrak{B}(\mathbb{R}^d)$
+在
+$(t,x)\in [0,\infty)\times \mathbb{R}^d$
+**局部有界**（locally bounded）。
+
+如果存在
+$\epsilon,\delta \in (0,\infty)$
+和一个可积函数
+$m:[t,t+\delta]\to (0,\infty)$
+使得
+$\Vert z \Vert_2\leq m(s)$
+对所有的
+$z\in \mathcal{F}(s,y)$、
+所有的
+$s\in [t,t+t+\delta]$
+和**几乎**所有的$y\in B(x,\epsilon)$
+在Lebesgue测度意义上成立，
+那么称集值映射
+$\mathcal{F}:[0,\infty)\to \mathfrak{B}(\mathbb{R}^d)$
+在
+$(t,x)\in [0,\infty)\times \mathbb{R}^d$
+**局部本性有界**（locally essentially bounded）。
+
+### 集值映射的连续性
 
 - 如果对于任意$\epsilon \in (0,\infty)$，存在$\delta \in (0,\infty)$使得$\mathcal{F}(y) \subseteq \mathcal{F}(x)+B(0,\epsilon)$对所有$y\in B(x,\delta)$成立，那么称集值映射$\mathcal{F}:[0,\infty)\to \mathfrak{B}(\mathbb{R}^d)$在$x\in \mathbb{R}^d$是上半连续的。
 - 如果对于任意$\epsilon \in (0,\infty)$，存在$\delta \in (0,\infty)$使得$\mathcal{F}(x) \subseteq \mathcal{F}(y)+B(0,\epsilon)$对所有$y\in B(x,\delta)$成立，那么称集值映射$\mathcal{F}:[0,\infty)\to \mathfrak{B}(\mathbb{R}^d)$在$x\in \mathbb{R}^d$是下半连续的。
@@ -135,8 +175,8 @@ $$
 ## Filippov解
 
 Filippov解使用集值映射来替换原来的系统的右侧方程。
-似乎可以这一理解：
-微分方程的 Filippov 解就是用Filippov集值映射替换微分方程右侧后新的方程的 Caratheodory 解。
+微分方程的 Filippov 解就是用Filippov集值映射替换微分方程右侧后得到的微分包含的 Caratheodory 解。
+但是Caratheodory解和Filippov解总体上并没有什么关系
 
 ### Filippov解的数学定义
 
