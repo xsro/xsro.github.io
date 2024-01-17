@@ -160,7 +160,11 @@
                     <ul>
                         
                         <li>
-                            <a href="https://xsro.github.io/control-theory-discontinuous-notation/#ji-zhi-ying-she" class="toc-link">集值映射</a>
+                            <a href="https://xsro.github.io/control-theory-discontinuous-notation/#ji-zhi-ying-she-de-you-jie-xing" class="toc-link">集值映射的有界性</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://xsro.github.io/control-theory-discontinuous-notation/#ji-zhi-ying-she-de-lian-xu-xing" class="toc-link">集值映射的连续性</a>
                         </li>
                         
                         <li>
@@ -217,7 +221,9 @@
 这种不匹配可能导致无法构造一个Caratheodory解。</p>
 <p>Filippov解的思路是不再只考虑向量场上的各个点，
 而是考虑向量场上各个点邻域。</p>
-<span id="continue-reading"></span><h2 id="caratheodoryjie">Caratheodory解</h2>
+<span id="continue-reading"></span>
+<p><img src="/print/control-theory-discontinuous-ternary.png" alt="" /></p>
+<h2 id="caratheodoryjie">Caratheodory解</h2>
 <h3 id="shu-xue-ding-yi">数学定义</h3>
 <p>考虑微分方程：</p>
 <script type="math/tex;mode=display">\dot{x}(t)=X(x(t)),\quad x(0)=x_0.
@@ -277,7 +283,58 @@
 空间中的一个点。
 而映射<script type="math/tex">\mathcal{F}: [0,\infty)\times \mathbb{R}^d \to \mathfrak{B}(\mathbb{R}^d)</script>
 称为<strong>集值映射</strong>（set-valued map）。</p>
-<h3 id="ji-zhi-ying-she">集值映射</h3>
+<h3 id="ji-zhi-ying-she-de-you-jie-xing">集值映射的有界性</h3>
+<p>如果存在
+<script type="math/tex">\epsilon,\delta \in (0,\infty)</script>
+
+和一个可积函数
+<script type="math/tex">m:[t,t+\delta]\to (0,\infty)</script>
+
+使得
+<script type="math/tex">\Vert z \Vert_2\leq m(s)</script>
+
+对所有的
+<script type="math/tex">z\in \mathcal{F}(s,y)</script>
+、
+所有的
+<script type="math/tex">s\in [t,t+t+\delta]</script>
+
+和所有的<script type="math/tex">y\in B(x,\epsilon)</script>
+
+成立，
+那么称集值映射
+<script type="math/tex">\mathcal{F}:[0,\infty)\to \mathfrak{B}(\mathbb{R}^d)</script>
+
+在
+<script type="math/tex">(t,x)\in [0,\infty)\times \mathbb{R}^d</script>
+
+<strong>局部有界</strong>（locally bounded）。</p>
+<p>如果存在
+<script type="math/tex">\epsilon,\delta \in (0,\infty)</script>
+
+和一个可积函数
+<script type="math/tex">m:[t,t+\delta]\to (0,\infty)</script>
+
+使得
+<script type="math/tex">\Vert z \Vert_2\leq m(s)</script>
+
+对所有的
+<script type="math/tex">z\in \mathcal{F}(s,y)</script>
+、
+所有的
+<script type="math/tex">s\in [t,t+t+\delta]</script>
+
+和<strong>几乎</strong>所有的<script type="math/tex">y\in B(x,\epsilon)</script>
+
+在Lebesgue测度意义上成立，
+那么称集值映射
+<script type="math/tex">\mathcal{F}:[0,\infty)\to \mathfrak{B}(\mathbb{R}^d)</script>
+
+在
+<script type="math/tex">(t,x)\in [0,\infty)\times \mathbb{R}^d</script>
+
+<strong>局部本性有界</strong>（locally essentially bounded）。</p>
+<h3 id="ji-zhi-ying-she-de-lian-xu-xing">集值映射的连续性</h3>
 <ul>
 <li>如果对于任意<script type="math/tex">\epsilon \in (0,\infty)</script>
 ，存在<script type="math/tex">\delta \in (0,\infty)</script>
@@ -361,8 +418,8 @@
 </p>
 <h2 id="filippovjie">Filippov解</h2>
 <p>Filippov解使用集值映射来替换原来的系统的右侧方程。
-似乎可以这一理解：
-微分方程的 Filippov 解就是用Filippov集值映射替换微分方程右侧后新的方程的 Caratheodory 解。</p>
+微分方程的 Filippov 解就是用Filippov集值映射替换微分方程右侧后得到的微分包含的 Caratheodory 解。
+但是Caratheodory解和Filippov解总体上并没有什么关系</p>
 <h3 id="filippovjie-de-shu-xue-ding-yi">Filippov解的数学定义</h3>
 <p>令<script type="math/tex">\mathfrak{B}(\mathbb{R}^d)</script>
 表示<script type="math/tex">\mathbb{R}^d</script>
