@@ -12,5 +12,9 @@ $TYPST_COMPILE \
 
 $TYPST_COMPILE \
     ./misc/control-theory-discontinuous-ternary.typ \
-    ../static/print/control-theory-discontinuous-ternary.png
+    ../static/print/control-theory-discontinuous-ternary-{n}.png
+
+$TYPST_COMPILE \
+    ./misc/control-theory-discontinuous-ternary.typ \
+    ../static/print/control-theory-discontinuous-ternary.pdf
 

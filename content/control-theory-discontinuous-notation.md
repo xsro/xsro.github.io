@@ -21,7 +21,8 @@ Filippov解的思路是不再只考虑向量场上的各个点，
 
 <!-- more -->
 
-![](/print/control-theory-discontinuous-ternary.png)
+![](/print/control-theory-discontinuous-ternary-1.png)
+![](/print/control-theory-discontinuous-ternary-2.png)
 
 ## Caratheodory解
 ### 数学定义
@@ -204,17 +205,17 @@ $$
 是几户满足所有时间$t\in [0,t_1]$的(21)的绝对连续解。
 等价地，(10)的一个Filippov解是微分包含(21)的一个Caratheodory解。
 
-### Filippov解的存在性
-
-由于Filippov解是将原来的
-
 微分包含(21)如果满足以下两个条件那么称为Filippov微分包含（Filippov DI）
 
 - $F[X](x(t))\subset T_x \mathbb{R}^d$ 对于任意$x$是**非空紧凸集**（non-empty, compact and convex for any x）, $ T_x\mathbb{R}^d$为切空间；
-- 映射$F[X]$是上半连续集值映射（upper-semicontinuous set function）：如果$x\to y$，集合$F[X](x)$中的间与$F[X](y)$中的点距离区域零
+- 映射$F[X]$是上半连续集值映射（upper-semicontinuous set function）：如果$x\to y$，集合$F[X](x)$中的间与$F[X](y)$中的点距离趋于零
+
+### Filippov解的存在性
 
 > **Proposition 3**
->  令$X:\mathbb{R}^d\to\mathbb{R}^d$是一个可测的、局部本性有界的映射。
+>  令$X:\mathbb{R}^d\to\mathbb{R}^d$是一个**可测的、局部本性有界**的映射。
 > 然后，对于所有$x_0\in \mathbb{R}^d$，存在一个从$x(0)=x_0$开始的(10)的Filippov解。
 
 这里局部本性有界（locally essentially bounded）指在每个点的有界邻域上都有界，这里的邻域要排除测度为零的集合。
+该条件等价于微分包含的caratheodory解条件。
+也就是说满足该条件的微分方程可以通过(19)转换为Filippov微分包含。
