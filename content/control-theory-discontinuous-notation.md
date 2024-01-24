@@ -21,8 +21,8 @@ Filippov解的思路是不再只考虑向量场上的各个点，
 
 <!-- more -->
 
-![](/print/control-theory-discontinuous-ternary-1.png)
-![](/print/control-theory-discontinuous-ternary-2.png)
+![](/print/control-3.png)
+![](/print/control-4.png)
 
 ## Caratheodory解
 ### 数学定义

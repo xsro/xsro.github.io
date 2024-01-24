@@ -13,14 +13,11 @@ TYPYST_FILES="""
 nlct/main.typ
 nlct.pdf
 
-smc/main.typ
-smc.pdf
+control/main.typ
+control.pdf
 
-misc/control-theory-discontinuous-ternary.typ
-control-theory-discontinuous-ternary-{n}.png
-
-misc/control-theory-discontinuous-ternary.typ
-control-theory-discontinuous-ternary.pdf
+control/main.typ
+control-{n}.png
 """
 
 def parse_args():
@@ -70,4 +67,6 @@ if __name__=="__main__":
         cmd=make_command(src,dst,bin=bin,fonts=font_path)
         print("run",cmd)
         subprocess.run(cmd)
+    
+
 

@@ -1,18 +1,8 @@
 #import "@preview/cetz:0.2.0"
 
-#text(size: 1cm)[Illustrations for Sliding Mode Control]
-
-#outline()
-#pagebreak()
-
-#set figure.caption(position: top)
 #set page(width: 210mm,height: auto,margin: 1cm)
-= Chattering Elimination: Quasi-Sliding Mode
+#set figure.caption(position: top)
 
-In many practical control systems, including DC motors and aircraft control, 
-it is important to avoid control chattering by providing continuous/smooth signals.
-One obvious solution to make the control function continuous/smooth is to approximate the discontinuous function $v(sigma)=-rho "sign" (sigma)$ by some continuous/smooth function.
-For instance, it could be replaced by a "sigmoid function"
 
 #let plot_sign()={
   cetz.canvas({
@@ -36,7 +26,7 @@ For instance, it could be replaced by a "sigmoid function"
 })
 }
 
-#figure(
+#let sigmoid()=figure(
   table(
     columns: 6,
     [], 
@@ -71,5 +61,4 @@ For instance, it could be replaced by a "sigmoid function"
   ),
   caption: [replaced $"sign"$ by a “sigmoid function”],
 )
-
-#pagebreak()
+#sigmoid()

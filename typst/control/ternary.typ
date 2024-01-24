@@ -1,8 +1,5 @@
-#set page(width: auto,height: auto,margin: 1cm)
-#set figure.caption(position: top)
-
-#figure(table(
-  columns: (auto, auto, 8cm,10cm,8cm),
+#let ternary()=figure(table(
+  columns: (auto, auto, auto,auto,auto),
   inset: 10pt,
   align: horizon+left,
   [*differetial* \ *equation*], [*differetial inclusion*], [*classical solution*],[*caratheodory solution*],[*Filippov solution*],
@@ -95,30 +92,8 @@
   ]
 ),caption:"solutions to ternary differential equations")
 
-#pagebreak()
-#figure(
-  table(
-    columns: (auto, auto, 6cm,6cm),
-    inset: 10pt,
-    align: horizon,
-    [],
-    "solution",
-    "existence",
-    "uniqueness",
-    //classical
-    "classical",
-    [continuously differentiable],
-    [$X: RR^d arrow RR^d$ is continuous ],
-     [essentially one-sided Lipschitz on $B(x, epsilon)$,
-    #footnote([
-      Every vector field that is locally Lipschitz at $x$ 
-      satisfies the one-sided Lipschitz condition on a neighborhood of $x$, but the converse is not true.
-    ])],
-    //Filippov
-    "Filippov",
-    "absolutely continuous",
-     [$X: RR^d arrow RR^d$ is measurable and locally essentially bounded ],
-     [essentially one-sided Lipschitz on $B(x, epsilon)$],
-  ),
-  caption:[conditions of solutions to $dot(x)=X(x(t))$]
-)
+#let m=1
+
+#set page(width: auto,height: auto,margin: 1cm)
+#set figure.caption(position: top)
+#ternary()

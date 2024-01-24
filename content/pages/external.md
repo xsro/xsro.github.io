@@ -10,6 +10,10 @@ template = "about.html"
 
 # 外部资源 External Resources 
 
+## 使用图表梳理知识点 [control](/print/control.pdf)
+
+[![](/print/control-1.png)](/print/control.pdf)
+
 ## Notes on Nonlinear Control [nlct](/print/nlct.pdf)
 
 (updated 2023-09-22, work in progress) : 
