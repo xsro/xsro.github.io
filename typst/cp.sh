@@ -11,6 +11,10 @@ $TYPST_COMPILE \
     ../static/print/nlct.pdf
 
 $TYPST_COMPILE \
+    ./smc/main.typ \
+    ../static/print/smc.pdf
+
+$TYPST_COMPILE \
     ./misc/control-theory-discontinuous-ternary.typ \
     ../static/print/control-theory-discontinuous-ternary-{n}.png
 
