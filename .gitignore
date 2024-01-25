@@ -2,4 +2,4 @@
 public
 _*/
 static/print/
-typst/*/*.pdf
+typst/**/*.pdf

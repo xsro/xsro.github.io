@@ -10,17 +10,29 @@ In many practical control systems, including DC motors and aircraft control,
 it is important to avoid control chattering by providing continuous/smooth signals.
 One obvious solution to make the control function continuous/smooth is to approximate the discontinuous function $v(sigma)=-rho "sign" (sigma)$ by some continuous/smooth function.
 For instance, it could be replaced by a "sigmoid function".
-#import "quasi-sliding.typ":sigmoid
+#import "smc/quasi-sliding.typ":sigmoid
 #sigmoid()
 #pagebreak()
 
 = Ternary Differential Equations' Solutions
 #set text(size:7pt)
-#import "ternary.typ": ternary
+#import "smc/ternary.typ": ternary
 #ternary()
 #pagebreak()
 #set text(size:11pt)
 
 = Conditions for Existence and Uniqueness of Classical, Caratheodory, Filippov Solutions
-#import "solution-existence-uniqueness.typ": solution
+#import "smc/solution-existence-uniqueness.typ": solution
 #solution()
+#pagebreak()
+
+= Sliding Mode Control Algorithms
+Consider the system $dot.double(y)=u+f$, design $u$ to regulate $y$ to track $y_c$.
+define error variable $e=y_c-y$, then $dot.double(e)=dot.double(y)_c-f-u$.
+see @shtesselSlidingModeControl2014 for convergence requirements and analysis.
+#import "smc/smc-regulation.typ": main 
+#main()
+#pagebreak()
+
+
+#bibliography("ref.bib")
