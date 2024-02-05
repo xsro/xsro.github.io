@@ -25,6 +25,7 @@ def parse_args():
     parser.add_argument('--bin', type=str, help='my typst binary to run')
     parser.add_argument('--dev', type=str, help='path to source code of typst')
     parser.add_argument('--font-path', type=str, help='path to load fonts')
+    parser.add_argument('--watch', action="store_true", help='watch files')
     return parser.parse_args()
 
 def make_command(src:Path,dst:Path,bin="typst",fonts=None,):
@@ -65,7 +66,7 @@ if __name__=="__main__":
         src=TYPST_ROOT.joinpath(f[1])
         dst=PRINT_ROOT.joinpath(f[2])
         cmd=make_command(src,dst,bin=bin,fonts=font_path)
-        print("run",cmd)
+        print("run"," ".join(cmd))
         subprocess.run(cmd)
     
 

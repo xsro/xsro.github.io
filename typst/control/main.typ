@@ -29,10 +29,11 @@ For instance, it could be replaced by a "sigmoid function".
 = Sliding Mode Control Algorithms
 Consider the system $dot.double(y)=u+f$, design $u$ to regulate $y$ to track $y_c$.
 define error variable $e=y_c-y$, then $dot.double(e)=dot.double(y)_c-f-u$.
-see @shtesselSlidingModeControl2014 for convergence requirements and analysis.
+Convergence requirements and analysis can be found at
+@shtesselSlidingModeControl2014 for SMC ,
+@xianContinuousAsymptoticTracking2004 for RISE
 #import "smc/smc-regulation.typ": main 
 #main()
 #pagebreak()
+#bibliography("ref.bib",style: "gb-7714-2015-author-date")
 
-
-#bibliography("ref.bib")
