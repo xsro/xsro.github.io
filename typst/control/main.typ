@@ -35,5 +35,34 @@ Convergence requirements and analysis can be found at
 #import "smc/smc-regulation.typ": main 
 #main()
 #pagebreak()
+
+= Fractional power feedback
+
+From @polyakov_generalized_2020, we can find solutions of the system
+$dot(x)=-x^(v)$ has some good properties.
+Due to the definition of power function, usually we extend the function's 
+definition to the whole rational field $RR$ as $dot(x)=- "sign"(x) |x|^v, v>=0$.
+In some books like @polyakov_generalized_2020, a condition on $v$ is used.
+#footnote([
+  I haven't figure out this condition yet.
+  The condition write $v$ as $v=p/q$ and says 
+  $p$ should be an odd integer and $q$ is an even natual number.
+  I think both $p$ and $q$ should be odd natural number and $q!=0$.
+])
+The general solution to this system is
+$
+x(t)=(x(0)^(-v+1)+(v-1)t)^(1/(-v+1)) "sign"(x(0))
+=x(0)/(1+(v-1)t|x(0)|^(v-1))^(1/(v-1))  "if" v!=1.
+$
+
+#import "homogenetity/fracpower.typ": main 
+#set text(size:7pt)
+#main
+#set text(size:11pt)
+
+
+#pagebreak()
+
+
 #bibliography("ref.bib",style: "gb-7714-2015-author-date")
 
