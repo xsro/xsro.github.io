@@ -10,7 +10,7 @@ template = "about.html"
 
 # 外部资源 External Resources 
 
-## 使用图表梳理知识点 [control](/print/control.pdf)
+## 使用图表梳理知识点 [Illustrations for Control Theory](/print/control.pdf)
 
 [![](/print/control-1.png)](/print/control.pdf)
 

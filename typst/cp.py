@@ -67,7 +67,10 @@ if __name__=="__main__":
         dst=PRINT_ROOT.joinpath(f[2])
         cmd=make_command(src,dst,bin=bin,fonts=font_path)
         print("run"," ".join(cmd))
-        subprocess.run(cmd)
+        try:
+            subprocess.run(cmd)
+        except Exception as e:
+            print(e)
     
 
 

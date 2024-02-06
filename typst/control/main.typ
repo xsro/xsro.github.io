@@ -1,5 +1,6 @@
 #set page(width: 210mm,height: auto,margin: 1cm)
 #text(size: 1cm)[Illustrations for Control Theory]
+#text(size:0.5cm)[build at: #datetime.today().display()]
 #outline()
 #pagebreak()
 
@@ -55,10 +56,23 @@ x(t)=(x(0)^(-v+1)+(v-1)t)^(1/(-v+1)) "sign"(x(0))
 =x(0)/(1+(v-1)t|x(0)|^(v-1))^(1/(v-1))  "if" v!=1.
 $
 
-#import "homogenetity/fracpower.typ": main 
+#import "homogenetity/fracpower.typ": main,main2
 #set text(size:7pt)
 #main
 #set text(size:11pt)
+#pagebreak()
+
+= Fractional (negative) power feedback
+
+Faster covergence will be found if we use negative power.
+However, this will need infinite gain (infinite energy).
+So, it is impossible for physical implementation.
+Simulations are carried out with a satutated power function
+for the infinite gain is not possible to simulate.
+
+#main2
+
+
 
 
 #pagebreak()
