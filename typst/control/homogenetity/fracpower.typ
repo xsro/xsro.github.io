@@ -1,6 +1,6 @@
 #import "@preview/cetz:0.2.0"
 
-#let plot_fun(func,y-tick-step:none)={
+#let plot_fun(func,y-tick-step:none,domain: (-2, 2),y-label:$dot(x)$,x-label:$x$)={
   cetz.canvas({
     import cetz.plot
     import cetz.draw: *
@@ -9,9 +9,10 @@
       axis-style: "school-book", 
       x-tick-step: 1, y-tick-step: y-tick-step, 
       {
-        plot.add(domain: (-2, 2), func,style: (stroke: red))
+        plot.add(domain: domain, func,style: (stroke: red))
       },
-      y-label:$dot(x)$
+      y-label:y-label,
+      x-label:x-label
       )
   })
 }
@@ -43,7 +44,8 @@
       {
         plot.add(out)
       },
-      y-label:$dot(x)$
+      y-label:$x$,
+      x-label:$t$,
       )
   })
 }
@@ -159,4 +161,6 @@
 
 #set page(width: auto,height: auto,margin: 1cm)
 #main
+#pagebreak()
 #main2
+#pagebreak()

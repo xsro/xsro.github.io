@@ -1,6 +1,12 @@
-#set page(width: 210mm,height: auto,margin: 1cm)
+#let header=[
+  #set text(gray,size:0.3cm)
+  built with #link("https://typst.app","typst") 
+  by #link("https://xsro.github.io/about","liu")
+  at: #datetime.today().display()
+  ]
+#set page(width: 210mm,height: auto,margin: 1cm,header:header)
+
 #text(size: 1cm)[Illustrations for Control Theory]
-#text(size:0.5cm)[build at: #datetime.today().display()]
 #outline()
 #pagebreak()
 
@@ -37,7 +43,7 @@ Convergence requirements and analysis can be found at
 #main()
 #pagebreak()
 
-= Fractional power feedback
+= Fractional Power Feedback
 
 From @polyakov_generalized_2020, we can find solutions of the system
 $dot(x)=-x^(v)$ has some good properties.
@@ -62,7 +68,7 @@ $
 #set text(size:11pt)
 #pagebreak()
 
-= Fractional (negative) power feedback
+= Fractional (negative) Power Feedback
 
 Faster covergence will be found if we use negative power.
 However, this will need infinite gain (infinite energy).
@@ -71,10 +77,26 @@ Simulations are carried out with a satutated power function
 for the infinite gain is not possible to simulate.
 
 #main2
+#pagebreak()
 
+= Prescribed Time Stability by Time-varying Gain
 
+Generally prescribed/preassigned/pre-appointed time stability is 
+reached by time-varying gain (time-varying scaling function, time-base generator).
+Following table gives the basic example, we see that
+the solution for the first case is the same as $dot(x)=-"sign"(x)$.
+@songPrescribedtimeControlIts2023 .
 
+The system is:
+$
+dot(x)=-mu_2(t) x\
+mu_1(t)=cases(
+  k_1/(T-t)^h+k_2 quad 0<t<T,
+  0 quad t>=T),
+$ with $T> 1$ to be prescribed and $k_1>0,k_2>0,h>0$.\
 
+#import "homogenetity/timevaryinggain.typ": main_tvg
+#main_tvg
 #pagebreak()
 
 
