@@ -13,16 +13,7 @@
   }
 }
 
-#let profiles=(
-  (T:2,h:1,k1:1,k2:0,step:0.01),
-  (T:2,h:1,k1:2,k2:0,step:0.01),
-  (T:2,h:1,k1:1/2,k2:0,step:0.01),
-  (T:2,h:2,k1:1/2,k2:0,step:0.01,sat:10),
-  (T:2,h:-1,k1:1/2,k2:0,step:0.01),
-  (T:2,h:-3,k1:1/2,k2:0,step:0.01),
-)
-
-#let table_eles={
+#let table_eles(profiles)={
   let eles=()
   for p in profiles{
     eles.push($T=#p.T,h=#p.h,k_1=#p.k1$)
@@ -70,13 +61,39 @@
   }
   eles
 }
+
+#let profiles1=(
+  (T:2,h:1,k1:1,k2:0,step:0.01),
+  (T:2,h:1,k1:2,k2:0,step:0.01),
+  (T:2,h:1,k1:1/2,k2:0,step:0.01),
+)
 #let main_tvg=figure(
   table(
     columns: (auto,auto,auto,auto),
     ..([system],$mu(t)$,"numerical solution","stability"),
-    ..table_eles
-    )
+    ..table_eles(profiles1)
+    ),
+    caption:[
+      time-varying gain control with prescribed time stability
+    ]
+)
+
+#let profiles2=(
+  (T:2,h:2,k1:1/2,k2:0,step:0.01,sat:10),
+  (T:2,h:-1,k1:1/2,k2:0,step:0.01),
+  (T:2,h:-3,k1:1/2,k2:0,step:0.01),
+)
+
+#let main_tvg2=figure(
+  table(
+    columns: (auto,auto,auto,auto),
+    ..([system],$mu(t)$,"numerical solution","stability"),
+    ..table_eles(profiles2)
+    ),
+    caption: [time-varying gain control with similar form without stability 
+    #footnote([the first simulation is quite "ill"])]
 )
 
 #set text(size:7pt)
 #main_tvg
+#main_tvg2
