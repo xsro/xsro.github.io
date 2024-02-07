@@ -1,4 +1,9 @@
-#import "fracpower.typ": plot_fun,ode_plot,sat
+#import "@preview/cetz:0.2.0"
+#import cetz.plot
+#import cetz.draw: *
+
+#import "lib.typ": ode,sat,sign
+
 
 #let mu1(t,T:1,h:1,k1:1,k2:0)={
   if t>=T {
@@ -7,41 +12,70 @@
     k1/calc.pow(T - t,h)+k2
   }
 }
+
+#let profiles=(
+  (T:2,h:1,k1:1,k2:0,step:0.01),
+  (T:2,h:1,k1:2,k2:0,step:0.01),
+  (T:2,h:1,k1:1/2,k2:0,step:0.01),
+  (T:2,h:2,k1:1/2,k2:0,step:0.01,sat:10),
+  (T:2,h:-1,k1:1/2,k2:0,step:0.01),
+  (T:2,h:-3,k1:1/2,k2:0,step:0.01),
+)
+
+#let table_eles={
+  let eles=()
+  for p in profiles{
+    eles.push($T=#p.T,h=#p.h,k_1=#p.k1$)
+    let mu0=(t)=>mu1(t,T:p.T,h:p.h,k1:p.k1,k2:p.k2)
+    let pic=cetz.canvas({
+      plot.plot(
+        size: (2,2),
+        axis-style: "school-book", 
+        x-tick-step: 1, y-tick-step: none, 
+        {
+          plot.add(domain: (0,2), mu0,style: (stroke: green))
+        },
+        y-label:$mu(t)$,
+        x-label:$t$
+        )
+      })
+    eles.push(pic)
+
+    let rhs=(t,x)=>(-mu0(t)*x)
+    if ("sat" in p){
+      rhs=(t,x)=>(-sat(mu0(t)*x,p.sat))
+    }
+    let (xout,dxout)=ode(rhs,4,1,p.step)
+    let odepic=cetz.canvas({
+      plot.plot(
+        size: (4,2),
+        axis-style: "school-book", 
+        x-tick-step: 1, y-tick-step:none,
+        {
+          plot.add(xout,label:$x$)
+          plot.add(dxout,label:$dot(x)$)
+        },
+        y-label:$x$,
+        x-label:$t$,
+        )
+    })
+    eles.push(odepic)
+    if p.h == 1{
+      eles.push([Prescribed Time\ Stable with $T$])
+    }
+    else{
+      eles.push([unstable \ x(t)=#xout.at(-1).at(1) \ $t>=T$])
+    }
+
+  }
+  eles
+}
 #let main_tvg=figure(
   table(
     columns: (auto,auto,auto,auto),
-    [system],$mu(t)$,"numerical solution","stability",
-    //1/(t-T)
-    [
-      $T=1,h=1,k_1=1,k_2=0$
-    ],
-    plot_fun(mu1,domain:(0,4),y-label:$mu_1(t)$,x-label:$t$),
-    ode_plot((t,x)=>-mu1(t)*x,2,1,0.01),
-    [prescribed time\ stability\ convergence time\  is $T$],
-    //
-    [
-      $T=1,h=2,k_1=1,k_2=0$ and the control signal $mu_2(t)x$ is saturated with $2$
-    ],
-    plot_fun(t=>mu1(t,T:1,h:2,k2:0),domain:(0,4),y-label:$mu_1(t)$,x-label:$t$),
-    ode_plot((t,x)=>-sat(mu1(t,T:1,h:2,k2:0)*x,2),2,1,0.001),
-    [prescribed time\ stability\ convergence time\  is $T$],
-    //
-    [
-      $T=1,h=1/2,k_1=1,k_2=0$ and the control signal $mu_2(t)x$ is saturated with $2$
-    ],
-    plot_fun(t=>mu1(t,T:1,h:1/2,k2:0),domain:(0,4),y-label:$mu_1(t)$,x-label:$t$),
-    ode_plot((t,x)=>-sat(mu1(t,T:1,h:1/2,k2:0)*x,2),2,1,0.001),
-    [prescribed time\ stability\ convergence time\  is $T$],
-    //
-    [
-      $T=2,h=-2,k_1=1,k_2=0$
-    ],
-    plot_fun(t=>mu1(t,T:2,h:-2,k2:0),domain:(0,4),y-label:$mu_1(t)$,x-label:$t$),
-    ode_plot((t,x)=>-mu1(t,T:2,h:-2,k2:0)*x,4,1,0.001),
-    [prescribed time\ stability\ convergence time\  is $T$],
-  ), 
-  caption:[time-varying gain for single integrator, $dot(x)=-mu(t)x$,
-    $mu(t)=k_1/(T-t)^h+k_2, t in (0,T]$],
+    ..([system],$mu(t)$,"numerical solution","stability"),
+    ..table_eles
+    )
 )
 
 #set text(size:7pt)

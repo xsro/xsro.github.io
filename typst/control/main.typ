@@ -89,11 +89,22 @@ the solution for the first case is the same as $dot(x)=-"sign"(x)$.
 
 The system is:
 $
-dot(x)=-mu_2(t) x\
-mu_1(t)=cases(
-  k_1/(T-t)^h+k_2 quad 0<t<T,
+dot(x)=-mu(t) x
+,
+mu(t)=cases(
+  k_1/(T-t)^h quad 0<t<T,
   0 quad t>=T),
 $ with $T> 1$ to be prescribed and $k_1>0,k_2>0,h>0$.\
+The analytical solution with $h!=1$ can be found easily as:
+$
+x(t)=x(0)exp(-k_1/(-h+1)(T^(-h+1)-(T-t)^(-h+1)))\
+x(t)=x(0)exp(-k_1/(-h+1) T^(-h+1)), t in [T,infinity)
+$.
+The analytical solution with $h=1$ can be found easily as:
+$
+x(t)=x(0)-k_1 t, t in [0,T) \
+x(t)=0, t in [T,infinity)
+$.
 
 #import "homogenetity/timevaryinggain.typ": main_tvg
 #main_tvg

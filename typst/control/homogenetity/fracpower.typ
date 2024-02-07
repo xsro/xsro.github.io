@@ -17,23 +17,9 @@
   })
 }
 
-#let ode(func,tfinal,x0,step)={
-  let t=0.
-  let x=x0
-  let out=((t,x),)
-  while t < tfinal{
-    let k1=func(t,x)
-    let k2=func(t+step/2,x+step/2*k1)
-    let k3=func(t+step/2,x+step/2*k2)
-    let k4=func(t+step,x+step*k3)
-    t=t+step
-    x=x+step/6*(k1+2*k2+2*k3+k4)
-    out.push((t,x))
-  }
-  out
-}
+#import "lib.typ": ode,sat,sign
 #let ode_plot(func,tfinal,x0,step)={
-  let out=ode(func,tfinal,x0,step)
+  let (xout,dxout)=ode(func,tfinal,x0,step)
   cetz.canvas({
     import cetz.plot
     import cetz.draw: *
@@ -42,7 +28,7 @@
       axis-style: "school-book", 
       x-tick-step: 1, y-tick-step: none, 
       {
-        plot.add(out)
+        plot.add(xout)
       },
       y-label:$x$,
       x-label:$t$,
@@ -50,13 +36,6 @@
   })
 }
 
-#let sign(a)={
-  if calc.abs(a)==0{
-    0
-  }else{
-    a/calc.abs(a)
-  }
-}
 #let fractionalpower(x,v)={
   if x==0 {
     0
@@ -111,15 +90,9 @@
   caption: [fractional power feedback $dot(x)=-"sign"(x)|x|^v, v>=0$]
 )
 
-#let sat(a,threhold)={
-  if calc.abs(a)>threhold {
-    sign(a)*threhold
-  }else{
-    a
-  }
-}
+#let main2sat=4
 #let sat_fractional_power(x,v)={
-  sat(fractionalpower(x,v),10)
+  sat(fractionalpower(x,v),main2sat)
 }
 
 #let main2=figure(
@@ -156,7 +129,7 @@
     [Finite time],
     ),
   caption: [fractional power feedback $dot(x)=-"sign"(x)|x|^v, v<0$, 
-  the right-hand side function is satutated with threhold $10$]
+  the right-hand side function is satutated with threhold $#main2sat$]
 )
 
 #set page(width: auto,height: auto,margin: 1cm)
