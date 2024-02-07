@@ -112,6 +112,10 @@ $
 x(t)=x(0)exp(-k_1/(-h+1)(T^(-h+1)-(T-t)^(-h+1)))\
 x(t)=x(0)exp(-k_1/(-h+1) T^(-h+1)), t in [T,infinity)
 $.
+These system can be nearly stable but we can always observe some error.
 #main_tvg2
+#pagebreak()
+
+
 #bibliography("ref.bib",style: "gb-7714-2015-author-date")
 

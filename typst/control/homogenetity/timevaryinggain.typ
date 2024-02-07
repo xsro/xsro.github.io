@@ -16,7 +16,7 @@
 #let table_eles(profiles)={
   let eles=()
   for p in profiles{
-    eles.push($T=#p.T,h=#p.h,k_1=#p.k1$)
+    eles.push($T=#p.T,\ h=#p.h,\ k_1=#p.k1$)
     let mu0=(t)=>mu1(t,T:p.T,h:p.h,k1:p.k1,k2:p.k2)
     let pic=cetz.canvas({
       plot.plot(
