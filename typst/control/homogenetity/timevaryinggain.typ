@@ -37,7 +37,7 @@
       $T=2,h=-2,k_1=1,k_2=0$
     ],
     plot_fun(t=>mu1(t,T:2,h:-2,k2:0),domain:(0,4),y-label:$mu_1(t)$,x-label:$t$),
-    ode_plot((t,x)=>-mu1(t,T:2,h:-2,k2:0)*x,4,1,0.01),
+    ode_plot((t,x)=>-mu1(t,T:2,h:-2,k2:0)*x,4,1,0.001),
     [prescribed time\ stability\ convergence time\  is $T$],
   ), 
   caption:[time-varying gain for single integrator, $dot(x)=-mu(t)x$,
