@@ -1,13 +1,10 @@
-#let header=[
-  #set text(gray,size:0.3cm)
-  built with #link("https://typst.app","typst") 
-  by #link("https://xsro.github.io/about","liu")
-  at: #datetime.today().display()
-  ]
-#set page(width: 210mm,height: auto,margin: 1cm,header:header)
+#set page(paper:"presentation-16-9",margin: 1cm)
+#set text(size:0.5cm)
 #set math.equation(numbering: "(1)")
+#set heading(numbering: "1.1")
+#set figure.caption(position: top)
 #text(size: 1cm)[Sliding Mode Control for Integrator Systems]
-#outline()
+#outline(indent: 1cm)
 #pagebreak()
 
 #set figure.caption(position: top)

@@ -1,16 +1,14 @@
-= First-Order Sliding Mode Controllers
+= Control Single Integrator System
 
-#box(height: 210/16*9mm,
- columns(2, gutter: 11pt)[
+#columns(2, gutter: 11pt)[
    #set par(justify: true)
    Consider the fisrt order system $dot(x)=u+delta$,
   $delta$ is the bounded disturbance $|delta|<C$.
   The first control law is 
   $
-  dot(x)=u=-k"sign"x 
+  u=-k"sign"x 
   $<single_integrator_sign>
   where $k>C$.
-
   Select 
   $
   V=1/2 x^2.
@@ -18,10 +16,10 @@
   Calculate the derivative along the system trajectory:
   $
   dot(V)
-  &=x dot(x)\
-  &=x (-k"sign"x+delta)\
-  &=-k|x|+x delta\
-  &<= -k|x|+|x| |delta|\
+  &=x dot(x)
+  =x (-k"sign"x+delta)\
+  &=-k|x|+x delta
+  <= -k|x|+|x| |delta|\
   &<=-(k-C)|x|<=0
   $<single_integrator_sign_dV>
 
@@ -52,20 +50,79 @@
     t_r<=2sqrt(V(0))/a
   $
  ]
-)
 
 #pagebreak()
+== SMC Chattering Elimination: Quasi-Sliding Mode
 
-= SMC Chattering Elimination: Quasi-Sliding Mode
 In many practical control systems, including DC motors and aircraft control, 
 it is important to avoid control chattering by providing continuous/smooth signals.
 One obvious solution to make the control function continuous/smooth is to approximate the discontinuous function $v(sigma)=-rho "sign" (sigma)$ by some continuous/smooth function.
 For instance, it could be replaced by a "sigmoid function".
-#import "smc/quasi-sliding.typ":sigmoid
-#sigmoid()
-#pagebreak()
 
-= SMC Chattering Attenuation: Asymptotic Sliding Mode
+#import "@preview/cetz:0.2.0"
+
+
+#let plot_sign()={
+  cetz.canvas({
+  import cetz.plot
+  import cetz.draw: *
+  plot.plot(size: (2,2),axis-style: "school-book", x-tick-step: none, y-tick-step: none, {
+    plot.add(domain: (-3, 0), x=>-1,style: (stroke: red))
+    plot.add(domain: (0, 3), x=>1,style: (stroke: red))
+    plot.add(((0,0),),mark:"o",mark-style:(stroke:red,fill: red))
+  })
+})
+}
+
+#let plot_signv(func)={
+  cetz.canvas({
+  import cetz.plot
+  import cetz.draw: *
+  plot.plot(size: (2,2),axis-style: "school-book", x-tick-step: none, y-tick-step: none, {
+    plot.add(domain: (-3, 3), func,style: (stroke: red))
+  })
+})
+}
+
+#figure(
+  table(
+    columns: 6,
+    [], 
+    $"sign"(x)$, $"sat"(x/epsilon)$, 
+    $x/(abs(x)+epsilon)$,$tanh(x)$,$(1-e^(-T x))/(1+e^(-T x))$,
+    [continuity],
+    [discontinuous], [continuous], [smooth #footnote("I am not sure about this")],[smooth],[smooth],
+    [],
+    [#plot_sign()],
+    [
+      #let sat(a)={
+        if calc.abs(a)>1{
+          a/calc.abs(a)
+        }else{
+          a
+        }
+      }
+      #plot_signv(x=>sat(x/0.5))
+      $epsilon=0.5$
+    ],
+    [
+      #plot_signv(x=>x/(calc.abs(x)+0.5))
+      $epsilon=0.5$
+    ],
+    [
+      #plot_signv(x=>calc.tanh(x))
+    ],
+    [
+      #plot_signv(x=>(1-calc.exp(-5*x))/(1+calc.exp(-5*x)),)
+      $T=5$
+    ],
+  ),
+  caption: [replaced $"sign"$ by a “sigmoid function”],
+)
+
+
+#pagebreak()
+== SMC Chattering Attenuation: Asymptotic Sliding Mode
 
 #box(height: 210/16*9mm,
  columns(2, gutter: 11pt)[
@@ -91,8 +148,7 @@ For instance, it could be replaced by a "sigmoid function".
 ])
 
 #pagebreak()
-
-= Integral Sliding Mode Control
+== Integral Sliding Mode Control
 
 #box(height: 210/16*9mm,
  columns(2, gutter: 11pt)[
@@ -130,7 +186,7 @@ For instance, it could be replaced by a "sigmoid function".
 ])
 
 #pagebreak()
-= Super Twist Algorithm (STA)
+== Super Twist Algorithm (STA)
 
 #box(height: 210/16*9mm,
  columns(2, gutter: 11pt)[
