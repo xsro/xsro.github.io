@@ -10,9 +10,11 @@ template = "about.html"
 
 # 外部资源 External Resources 
 
-## 使用图表梳理知识点 [Illustrations for Control Theory](/print/control.pdf)
+## 个人笔记
 
-[![](/print/control-1.png)](/print/control.pdf)
+- 积分器系统控制技术[Control-for-Integrator-Systems](/print/Control-for-Integrator-Systems.pdf)：使用滑模控制控制单积分、双积分系统，同时介绍了一些关于Filippov解的知识，同时附带介绍了一下预设时间控制
+
+
 
 ## Notes on Nonlinear Control [nlct](/print/nlct.pdf)
 

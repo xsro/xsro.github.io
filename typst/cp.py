@@ -13,11 +13,8 @@ TYPYST_FILES="""
 nlct/main.typ
 nlct.pdf
 
-control/main.typ
-control.pdf
-
-control/main.typ
-control-{n}.png
+Control-for-Integrator-Systems/main.typ
+Control-for-Integrator-Systems.pdf
 """
 
 def parse_args():
