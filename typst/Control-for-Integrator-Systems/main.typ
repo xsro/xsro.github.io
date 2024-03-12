@@ -16,17 +16,19 @@
 //part 1
 #include "1linear.typ"
 
+//part 4 PTC
+#include "4PTC.typ"
+
 // part 2
 #include "2single.typ"
 
 //part 3
 #include "3double.typ"
 
-//part 4 PTC
-#include "4PTC.typ"
-
 //part 5
 #include "5Filippov.typ"
+
+#align(center+horizon,text(blue,size:3cm)[THANKS])
 
 
 

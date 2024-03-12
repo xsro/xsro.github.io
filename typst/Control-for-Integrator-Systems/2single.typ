@@ -196,8 +196,18 @@ For instance, it could be replaced by a "sigmoid function".
   dot(w)=b "sign"(x)
   $
 
-  - The super-twisting control is a *second-order* sliding mode control, since it drives both $sigma arrow 0$ and $dot(sigma) arrow 0$ in finite time. 
+  - The super-twisting control is a *second-order* sliding mode control, since it drives both $sigma arrow 0$ and $dot(sigma) arrow 0$ in finite time. (Second-Order Sliding Mode or 2-SM means the control law drives the sliding variable and its derivative to zero in *finite time*)
   - The super-twisting control is *continuous*.
+
+  The parameters $c$ and $b$ are quite difficult to select.
+  The parameters given by @shtesselSlidingModeControl2014 are 
+  $
+  c=1.5 sqrt(C), b=1.1 C
+  $
+  @SEEBER2017241 gives a condition
+  $
+  b > C , c > sqrt(b + C)
+  $
  ]
 )
 
