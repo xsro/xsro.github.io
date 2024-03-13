@@ -69,6 +69,7 @@
 )
 #let main_tvg=figure(
   table(
+    align: horizon,
     columns: (auto,auto,auto,auto),
     ..([system],$mu(t)$,"numerical solution","stability"),
     ..table_eles(profiles1)
@@ -76,22 +77,6 @@
     caption:[
       time-varying gain control with prescribed time stability
     ]
-)
-
-#let profiles2=(
-  (T:2,h:2,k1:1/2,k2:0,step:0.01,sat:10),
-  (T:2,h:-1,k1:1/2,k2:0,step:0.01),
-  (T:2,h:-3,k1:1/2,k2:0,step:0.01),
-)
-
-#let main_tvg2=figure(
-  table(
-    columns: (auto,auto,auto,auto),
-    ..([system],$mu(t)$,"numerical solution","stability"),
-    ..table_eles(profiles2)
-    ),
-    caption: [time-varying gain control with similar form without stability 
-    #footnote([the first simulation is quite "ill"])]
 )
 
 
@@ -114,7 +99,7 @@ mu(t)=cases(
 $ with $T> 1$ to be prescribed and $k_1>0,k_2>0,h=1$.\
 The analytical solution with $h=1$ can be found easily as:
 $
-x(t)=x(0)((T- t)/T)^k_1, t in [0,T) \
+x(t)=x(0)((T- t)/T)^(k_1), t in [0,T) \
 x(t)=0, t in [T,infinity)
 $.
 
@@ -122,11 +107,26 @@ $.
 #pagebreak()
 == Discussion: Time-varying Gain with different power
 
+
 The analytical solution with $h!=1$ can be found easily as:
 $
 x(t)=x(0)exp(-k_1/(-h+1)(T^(-h+1)-(T-t)^(-h+1)))\
 x(t)=x(0)exp(-k_1/(-h+1) T^(-h+1)), t in [T,infinity)
 $.
 These system can be nearly stable but we can always observe some error.
-#main_tvg2
+#let profiles2=(
+  // (T:2,h:2,k1:1/2,k2:0,step:0.01,sat:10),  //the first simulation is quite "ill"
+  (T:2,h:-1,k1:1/2,k2:0,step:0.01),
+  (T:2,h:-3,k1:1/2,k2:0,step:0.01),
+)
+
+#figure(
+  table(
+    align: horizon,
+    columns: (auto,auto,auto,auto),
+    ..([system],$mu(t)$,"numerical solution","stability"),
+    ..table_eles(profiles2)
+    ),
+    caption: [time-varying gain control with similar form without stability ]
+)
 #pagebreak()

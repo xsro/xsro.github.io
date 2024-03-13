@@ -23,7 +23,7 @@
   &<=-(k-C)|x|<=0
   $<single_integrator_sign_dV>
 
-  This implies $x arrow 0$( LaSalle's invariance principle) and $dot(x) arrow 0$ (Barbalat's lemma).
+  This implies $x arrow 0$(Lyapunov direct method) and $dot(x) arrow 0$ (Barbalat's lemma).
   If so, $-k "sign"(x)+delta arrow 0$?
 
   This differential equation should be understood in *Pilippov sense*.
@@ -39,15 +39,15 @@
   $
   dot(V)(t)<=-(k-C) sqrt(2V(t))
   $
-  Let $a=-(k-C)sqrt(2)$ and integrate it. we get
+  Let $a=(k-C)sqrt(2)$ and integrate it. we get
   $
     (d V(t))/sqrt(V(t))<=-a d t \
     2 sqrt(V(t)) - 2 sqrt(V(0))<=-a t\
    sqrt(V(t))<=sqrt(V(0))-a/2 t\
   $
-  Consequently, $V(t)$ reaches zero in a ﬁnite time tr that is bounded by
+  Consequently, $V(t)$ reaches zero in a finite time $t_r$ that is bounded by
   $
-    t_r<=2sqrt(V(0))/a
+    t_r<=2sqrt(V(0))/a=(|x(0)|)/(k-C)
   $
  ]
 
@@ -86,6 +86,7 @@ For instance, it could be replaced by a "sigmoid function".
 
 #figure(
   table(
+    align: horizon,
     columns: 6,
     [], 
     $"sign"(x)$, $"sat"(x/epsilon)$, 
