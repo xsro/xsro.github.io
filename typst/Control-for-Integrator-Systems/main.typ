@@ -1,14 +1,23 @@
 #set page(paper:"presentation-16-9",margin: 1cm)
 #set text(size:0.5cm)
-#set math.equation(numbering: "(1)")
-#set heading(numbering: "1.1")
 #set figure.caption(position: top)
+#set heading(numbering: "1.1")
+#set math.equation(
+  numbering: "(1)",
+  supplement: none,
+)
+#show ref: it => {
+  // provide custom reference for equations
+  if it.element != none and it.element.func() == math.equation {
+    // optional: wrap inside link, so whole label is linked
+    link(it.target)[(#it)]
+  } else {
+    it
+  }
+}
+
 #text(size: 1cm)[Sliding Mode Control for Integrator Systems]
 #outline(indent: 1cm)
-#pagebreak()
-
-#set figure.caption(position: top)
-
 #bibliography("ref.bib",style: "gb-7714-2015-author-date")
 
 #pagebreak()
