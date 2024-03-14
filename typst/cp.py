@@ -25,10 +25,10 @@ def parse_args():
     parser.add_argument('--watch', action="store_true", help='watch files')
     return parser.parse_args()
 
-def make_command(src:Path,dst:Path,bin="typst",fonts=None,):
+def make_command(src:Path,dst:Path,bin="typst",fonts=None,watch=False):
     if bin is None:
         bin="typst"
-    cmd=[str(bin),"compile"]
+    cmd=[str(bin),"watch" if watch else "compile"]
     if fonts is not None:
         cmd.append("--font-path")
         cmd.append(str(fonts))
@@ -59,15 +59,32 @@ if __name__=="__main__":
         font_path=typst_code.joinpath("assets","fonts")
     
     print(bin,font_path)
+
+    
+    cmds=[]
     for f in chunk_list(files,3):
         src=TYPST_ROOT.joinpath(f[1])
         dst=PRINT_ROOT.joinpath(f[2])
-        cmd=make_command(src,dst,bin=bin,fonts=font_path)
-        print("run"," ".join(cmd))
+        cmd=make_command(src,dst,bin=bin,fonts=font_path,watch=args.watch)
+        cmds.append(cmd)
+    if args.watch:
+        for i,cmd in enumerate(cmds):
+            print(f"[{i}] {cmd}")
+        a=input("input the number of command to exec: ")
         try:
+            idx=int(a)
+            cmd=cmds[idx]
             subprocess.run(cmd)
         except Exception as e:
             print(e)
+            exit()
+    else:
+        for i,cmd in enumerate(cmds):
+            print(f"[{i}] run {cmd}")
+            try:
+                subprocess.run(cmd)
+            except Exception as e:
+                print(e)
     
 
 

@@ -22,6 +22,9 @@
 
 #pagebreak()
 
+#let sig(x,v)=$lr(⌊#x⌉)^#v$
+
+
 //part 1
 #include "1linear.typ"
 
@@ -33,6 +36,8 @@
 
 //part 3
 #include "3double.typ"
+
+#include "6highorder.typ"
 
 //part 5
 #include "5Filippov.typ"

@@ -32,8 +32,13 @@
   $
   sigma=v+c |x|^(1/2) "sign"(x)
   $
+  We call this 2-SM(Second Order Sliding Mode)
 
   == Second Order Sliding Mode Control 
+
+The $n$-th Order Sliding Mode Control means 
+the relative degree of the sliging variable system is $n$ 
+and the controller drives the system variable to zero in *finite time*.
 
   Twisting Control is the typical controller charaterized by
   $
@@ -46,9 +51,9 @@
 
 
 #pagebreak()
-== Robust Integral Sign Error 
+== Robust Integral Sign Error for Double Integrator
 #columns()[
-  @xianContinuousAsymptoticTracking2004 gives the RISE control for double integrator.
+  @xianContinuousAsymptoticTracking2004 gives the RISE control for high-order integrator.
   Consider the system 
   $
   dot.double(x)=u-f
@@ -58,13 +63,13 @@
 
   Define $
   e_1=-x\
-  e_2=dot(e)_1 +e_1
+  e_2=dot(e)_1 +e_1=-dot(x)-x
   $
   The final control law is 
   $
   u =&(k_s+1)e_2(t)-(k_s+1)e_2(0)\
      &+integral_0^t (k_s+1) alpha e_2(tau) + beta "sign" e_2(tau) d tau\
-  $ where $beta > norm(N_d(t))+1/alpha norm(dot(N)_d)$ and $alpha > 1/2$ and 
+  $ where $beta > norm(N_d (t))+1/alpha norm(dot(N)_d (t))$ and $alpha > 1/2$ and 
   the control gain $k_s$ is selected sufficiently large relative to the system initial conditions.
   
   Take the derivative of $u$:
@@ -73,7 +78,7 @@
                &+ (k_s+1) alpha e_2(t) + beta "sign" e_2(t) \
             = &  (k_s +1)  r+beta "sign" (e_2)
   $
-  where $r=dot(e)_2+alpha e_2=dot.double(e)_1+(1+alpha)dot(e)_1+alpha e_1$.
+  where $r=dot(e)_2+alpha e_2=dot.double(e)_1+(1+alpha)dot(e)_1+alpha e_1=$.
   
   Then
   $
@@ -89,8 +94,14 @@
   where $L:=r(N_d -beta "sgn" (e_2))$ and $P=xi_b - integral_0^t L(tau) d tau$
   $
   dot(V)
-  &=e_2 dot(e)_2 + e_1 dot(e)_1+ r dot(r) -L\
-  &=-e_1^2-alpha e_2^2 +e_1 e_2 -r^2 + r tilde(N)-k_s r^2
+  =&e_2 dot(e)_2 + e_1 dot(e)_1+ r dot(r) -L\
+  =&e_2 (r-alpha e_2)-e_1 (e_2-e_1)\
+   &+ r (-e_2 -((k_s+1)r+beta "sign"(e_2))+N)\
+    &-r(N_d -beta "sign"(e_2))\
+  =&-e_1^2-alpha e_2^2 +e_1 e_2  + r tilde(N)-(k_s+1) r^2\
+  =&-e_1^2-alpha e_2^2 +1/2 e_1^2+1/2  e_2^2  + |r| rho(norm(z))norm(z)-(k_s+1) r^2\
+  <= & -lambda_3 norm(z)^2 + abs(r) rho(norm(z)) norm(z) -k_s r^2\
+  <= & -(lambda_3 - (rho^2(norm(z)))/(4 k_s)) norm(z)^2
   $
 
 ]

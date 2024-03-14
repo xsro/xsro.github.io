@@ -213,3 +213,36 @@ For instance, it could be replaced by a "sigmoid function".
 )
 
 #pagebreak()
+== RISE for single integrator
+
+#columns(2)[
+  Here we follow the design of RISE @xianContinuousAsymptoticTracking2004 and apply them to single integrator.
+  $
+    dot(x)=u+delta
+  $ where $delta in cal(C)^2$ 
+
+  The main idea of RISE is using a Lyapunov function contains $delta$.
+  Let $L=(alpha x+dot(x))(dot(delta)-beta "sign"(x))$, we calculate 
+  $
+    V&=1/2 (alpha x+dot(x))^2+xi_b-P\
+    dot(V)&=(alpha x+dot(x))(alpha dot(x)+dot(u)+dot(delta))-L\
+    &=(alpha x+dot(x))(alpha dot(x)+dot(u)+dot(delta)-dot(delta)+beta "sign"(x))\
+  $
+
+]
+$
+  P=&integral_0^t L(tau) d tau\
+  =&integral_0^t alpha x(dot(delta)-beta "sign"(x)) d tau
+  +integral_0^t dot(x)(dot(delta)-beta "sign"(x)) d tau\
+  =&integral_0^t alpha x(dot(delta)-beta "sign"(x)) d tau
+  +x dot(delta)|_0^t - integral_0^t x dot.double(delta)d tau
+  -integral_0^t dot(x)beta "sign"(x)d tau\
+  =&integral_0^t alpha x(dot(delta)-1/alpha dot.double(delta))-alpha beta |x| d tau
+  +x dot(delta) |_0^t
+  -beta abs(x)|_0^t\
+  <=&xi_b := integral_0^t alpha abs(x) (abs(dot(delta))+1/alpha abs(dot.double(delta))+beta) d tau
+  +abs(x(t)) (abs(dot(delta)(t))-beta)
+  -x(0) dot(delta)(0)+beta abs(x(0))
+  
+  $
+#pagebreak()
