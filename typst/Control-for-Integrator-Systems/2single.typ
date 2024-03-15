@@ -184,6 +184,11 @@ For instance, it could be replaced by a "sigmoid function".
 
   Advantage: We can set $z(0)$ to keep $s(0)=0$, The system is starting from  auxiliary sliding surface.
 
+  - Elimination of Reaching Phase: A regular SMC goes through a reaching phase where the system trajectory converges to the sliding surface. ISMC eliminates this phase entirely. The system state always starts on the sliding surface, simplifying control design.
+
+  - Improved Robustness:  ISMC extends this robustness to the entire state space, making the system less sensitive to uncertainties.
+
+  - Guaranteed Stability: Once the sliding mode is achieved, ISMC guarantees the system's stability. This provides a strong theoretical foundation for the control performance.
 ])
 
 #pagebreak()
@@ -193,7 +198,7 @@ For instance, it could be replaced by a "sigmoid function".
  columns(2, gutter: 11pt)[
   $
   dot(x)=u+delta \
-  u=c |x|^(1/2) "sign"(x)+w\
+  u=-c |x|^(1/2) "sign"(x)-w\
   dot(w)=b "sign"(x)
   $
 
@@ -209,6 +214,36 @@ For instance, it could be replaced by a "sigmoid function".
   $
   b > C , c > sqrt(b + C)
   $
+  #import "lib/ode-dict.typ":ode45,get_signal
+  #import "lib/ode.typ":sign
+  #let x0=(x:1,w:0)
+  #let rhs(t,x)={
+    let C=1 
+    let delta=C*calc.sin(t)
+    let c=1.5 *calc.sqrt(C)
+    let b=1.1 *C
+    let u=-c*calc.sqrt(calc.abs(x.x))*sign(x.x)-x.w
+    let dx=(x:u+delta,w:b *sign(x.x));
+    dx.insert("u",u)
+    dx
+  }
+  #let (xout,dxout)=ode45(rhs,10,(x:1,w:0),0.05)
+  #import "@preview/cetz:0.2.0"
+  #import cetz.plot
+  #import cetz.draw: *
+  #cetz.canvas({
+      plot.plot(
+        size: (8,2),
+        axis-style: "school-book", 
+        x-tick-step: 1, y-tick-step:1,
+        {
+          plot.add(get_signal(xout,"x"),label:$x$)
+          plot.add(get_signal(dxout,"u"),label:$u$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    })
  ]
 )
 
@@ -227,10 +262,46 @@ For instance, it could be replaced by a "sigmoid function".
     V&=1/2 (alpha x+dot(x))^2+xi_b-P\
     dot(V)&=(alpha x+dot(x))(alpha dot(x)+dot(u)+dot(delta))-L\
     &=(alpha x+dot(x))(alpha dot(x)+dot(u)+dot(delta)-dot(delta)+beta "sign"(x))\
+    &=(alpha x+dot(x))(alpha dot(x)+dot(u)+beta "sign"(x))\
   $
-
-]
-$
+  so we design
+  $
+   dot(u)=-alpha dot(x) -beta "sign"(x)-k_s alpha (alpha x+dot(x) ) \
+   u=-(k_s+1)alpha x(t)+(k_s+1)alpha x(0) - w\
+   dot(w)=k_s alpha^2 x+ beta "sign"(x)
+  $
+  #import "lib/ode-dict.typ":ode45,get_signal
+  #import "lib/ode.typ":sign
+  #let x0=(x:1,w:0)
+  #let rhs(t,x)={
+    let alpha=1;
+    let ks=20;
+    let beta=1+1/alpha +0.1
+    let delta=calc.sin(t)
+    let u=-(ks+1)*alpha*((x.x)-(x0.x))-(x.w);
+    let dw=ks*alpha*alpha *(x.x)+beta *sign(x.x);
+    let dx=(x:u+delta,w:dw);
+    dx.insert("u",u)
+    dx
+  }
+  #let (xout,dxout)=ode45(rhs,16,(x:1,w:0),0.01)
+  #import "@preview/cetz:0.2.0"
+  #import cetz.plot
+  #import cetz.draw: *
+  #cetz.canvas({
+      plot.plot(
+        size: (10,2),
+        axis-style: "school-book", 
+        x-tick-step: 5, y-tick-step:1,
+        {
+          plot.add(get_signal(xout,"x"),label:$x$)
+          plot.add(get_signal(dxout,"u"),label:$u$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    })
+  #text(size:9pt,$
   P=&integral_0^t L(tau) d tau\
   =&integral_0^t alpha x(dot(delta)-beta "sign"(x)) d tau
   +integral_0^t dot(x)(dot(delta)-beta "sign"(x)) d tau\
@@ -240,9 +311,10 @@ $
   =&integral_0^t alpha x(dot(delta)-1/alpha dot.double(delta))-alpha beta |x| d tau
   +x dot(delta) |_0^t
   -beta abs(x)|_0^t\
-  <=&xi_b := integral_0^t alpha abs(x) (abs(dot(delta))+1/alpha abs(dot.double(delta))+beta) d tau
+  <=&xi_b := integral_0^t alpha abs(x) (abs(dot(delta))+1/alpha abs(dot.double(delta))-beta) d tau
   +abs(x(t)) (abs(dot(delta)(t))-beta)
   -x(0) dot(delta)(0)+beta abs(x(0))
-  
-  $
+  $)
+]
+
 #pagebreak()

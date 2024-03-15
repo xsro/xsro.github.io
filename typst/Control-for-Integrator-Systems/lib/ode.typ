@@ -1,3 +1,4 @@
+// solve ode equation with single state
 #let ode(func,tfinal,x0,step)={
   let t=0.
   let x=x0
