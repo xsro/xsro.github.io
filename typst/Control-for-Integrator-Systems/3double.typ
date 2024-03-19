@@ -13,47 +13,153 @@
   is reduce the order of system.
   Take the double integrator system for example,
   $
-  cases(dot(x)=v,dot(v)=u+d)
+  dot.double(x)=u+d
   $
   The disturbance $d$ here is called *matched disturbance*
   which can be eliminated by SMC.
 
   Define a *sliding variable* 
   $
-  sigma=v+c x.
+  sigma=dot(x)+c x.
   $
   Calculate the derivative 
   $
-  dot(sigma)=dot(v)+c dot(x)=u+d + c v
+  dot(sigma)=dot.double(x)+c dot(x)=u+d + c v
   $<eq:sliding_surface>
   Design the control input as $u=-c v -k "sign" (sigma)$.
   The dynamic of the sliding variable is 
   $
-  dot(sigma)=-k "sign" (sigma)+delta
-  $.
+  dot(sigma)=-k "sign" (sigma)+delta.
+  $
   This means the system state *reaches* the surface $sigma=0$ in finite time.
   Then the system state *slides* in the surface.
 
-  if we need the system converges in finite time, we can desgin the sliding surface @eq:sliding_surface as 
-  $
-  sigma=v+c |x|^(1/2) "sign"(x)
-  $
-  We call this 2-SM(Second Order Sliding Mode)
+  #let rhs(t,x)={
+    let delta=calc.sin(t)
+    let c=1
+    let sigma=c*x.x1+x.x2
+    let rho=1.1
+    let u=-rho*sign(sigma)-c*(x.x2)
+    let dx=(x1:x.x2,x2:u+delta)
+    dx.insert("sigma",sigma)
+    dx.insert("delta",-delta)
+    dx.insert("u",u)
+    dx
+  }
+  #let (xout,dxout)=ode45(rhs,10,(x1:2,x2:1),0.01,record_step:0.1)
 
-  == Second Order Sliding Mode Control 
+  The first simulation shows $x$ converges asymptotically.
+  #cetz.canvas({
+      plot.plot(
+        size: (8,2),
+        axis-style: "school-book", 
+        x-tick-step: 5, y-tick-step:1,
+        {
+          plot.add(get_signal(xout,"x1"),label:$x$)
+          plot.add(get_signal(xout,"x2"),label:$dot(x)$)
+          plot.add(get_signal(dxout,"sigma"),label:$sigma$)
+          // plot.add(get_signal(dxout,"u"),label:$u$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    })
+    
+    If we need the system converges in finite time, we can desgin the sliding surface @eq:sliding_surface as 
+    $
+    sigma=v+c |x|^(1/2) "sign"(x)
+    $
+    We call this 2-SM(Second Order Sliding Mode)
+    #let rhs(t,x)={
+    let delta=calc.sin(t)
+    let c=1
+    let sigma=c*sign(x.x1)*calc.sqrt(calc.abs(x.x1))+x.x2
+    let rho=1.1
+    let u=-rho*sign(sigma)-c*(x.x2)
+    let dx=(x1:x.x2,x2:u+delta)
+    dx.insert("sigma",sigma)
+    dx.insert("delta",-delta)
+    dx.insert("u",u)
+    dx
+  }
+  #let (xout,dxout)=ode45(rhs,10,(x1:2,x2:1),0.01,record_step:0.1)
 
-The $n$-th Order Sliding Mode Control means 
-the relative degree of the sliging variable system is $n$ 
-and the controller drives the system variable to zero in *finite time*.
+  #cetz.canvas({
+      plot.plot(
+        size: (8,2),
+        axis-style: "school-book", 
+        x-tick-step: 5, y-tick-step:1,
+        {
+          plot.add(get_signal(xout,"x1"),label:$x$)
+          plot.add(get_signal(xout,"x2"),label:$dot(x)$)
+          plot.add(get_signal(dxout,"sigma"),label:$sigma$)
+          // plot.add(get_signal(dxout,"u"),label:$u$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    })
+  // #xout.at(-1).at(1).x1
+]
+
+#pagebreak()
+== Second Order Sliding Mode Control 
+
+  The $n$-th Order Sliding Mode Control means 
+  the relative degree of the sliging variable system is $n$ 
+  and the controller drives the system variable to zero in *finite time*.
+
+  Consider the system
+  $
+  dot.double(x)=delta+g(x,t)u
+  $
+  where $abs(delta)<=C$ and $abs(g(x,t)) in [K_m,K_M]$.
 
   Twisting Control is the typical controller charaterized by
   $
   u=-k_1 "sign" (x) -k_2 "sign" (v)
   $
-  where $(k_1 + k_2) K_m -C > (r_1-r_2) K_M+C$,\
-  $(r_1-r_2) K_m >C$.
+  where $(k_1 + k_2) K_m -C > (k_1-k_2) K_M+C$,
+  $(k_1-k_2) K_m >C$.
 
-]
+  #let rhs(t,x)={
+    let delta=calc.sin(t)
+    let k1=6;let k2=2
+    let u=-k1*sign(x.x1)-k2*sign(x.x2)
+    let dx=(x1:x.x2,x2:u+delta)
+    dx.insert("delta",-delta)
+    dx.insert("u",u)
+    dx
+  }
+  #let (xout,dxout)=ode45(rhs,10,(x1:2,x2:1),0.005,record_step:0.02)
+
+  The first simulation shows $x$ converges asymptotically.
+  #table(columns: (auto,auto),stroke: none,
+    cetz.canvas({
+      plot.plot(
+        size: (8,2),
+        axis-style: "school-book", 
+        x-tick-step: 5, y-tick-step:1,
+        {
+          plot.add(get_signal(xout,"x1"),label:$x$)
+          plot.add(get_signal(xout,"x2"),label:$dot(x)$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    }),
+    cetz.canvas({
+      plot.plot(
+        size: (8,2),
+        axis-style: "school-book", 
+        x-tick-step: 5, y-tick-step:3,
+        {
+          plot.add(get_signal(dxout,"u"),label:$u$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    }))
 
 #pagebreak()
 == Robust Integral Sign Error for Double Integrator

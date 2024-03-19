@@ -6,7 +6,7 @@
 
 = Control Single Integrator System
 
-== Robustness of $dot(x)=-"sign"(x)+delta$
+== Robustness of $dot(x)=-k "sign"(x)+delta$
 
 #columns(2, gutter: 11pt)[
   #set par(justify: true)
