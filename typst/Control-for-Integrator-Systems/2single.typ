@@ -297,12 +297,89 @@ For instance, it could be replaced by a "sigmoid function".
 
   Advantage: We can set $z(0)$ to keep $s(0)=0$, The system is starting from  auxiliary sliding surface.
 
-  - Elimination of Reaching Phase: A regular SMC goes through a reaching phase where the system trajectory converges to the sliding surface. ISMC eliminates this phase entirely. The system state always starts on the sliding surface, simplifying control design.
-
+  - Elimination of Reaching Phase: The system state always starts on the sliding surface, simplifying control design.
   - Improved Robustness:  ISMC extends this robustness to the entire state space, making the system less sensitive to uncertainties.
-
   - Guaranteed Stability: Once the sliding mode is achieved, ISMC guarantees the system's stability. This provides a strong theoretical foundation for the control performance.
 ])
+
+#pagebreak()
+#columns(2)[
+  The first simulation demonstrates the traditional SMC is sensitive to  disturbance in reaching phase.
+  #let rhs(t,x)={
+    let delta=sign(calc.sin(10*t)-0.5)
+    let u=-1.1*sign(x.x)
+    let T=0.1
+    let dx=(x:u+delta,uf:(u -(x.uf))/T)
+    dx.insert("u",u)
+    dx.insert("delta",-delta)
+    dx
+  }
+  #let (xout,dxout)=ode45(rhs,10,(x:4,uf:0),0.01,record_step:0.01)
+  #cetz.canvas({
+      plot.plot(
+        size: (8,2),
+        axis-style: "school-book", 
+        x-tick-step: 5, y-tick-step:1,
+        {
+          plot.add(get_signal(xout,"x"),label:$x$)
+          plot.add(get_signal(xout,"uf"),label:$u_"filtered"$)
+          plot.add(get_signal(dxout,"u"),label:$u$)
+          plot.add(get_signal(dxout,"delta"),label:$-delta$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    })
+
+  The second one uses integral SMC is
+  #let rhs(t,x)={
+    let delta=sign(calc.sin(10*t)-0.5)
+    let rho1=3
+    let k=1
+    let s=(x.x)-(x.z)
+    let u1=-rho1*sign(s)
+    let u2=-k*x.x
+    let u=u1+u2
+    let T=0.1
+    let dx=(x:u+delta,z:u2)
+    dx.insert("s",s)
+    dx.insert("u1",u1)
+    dx.insert("u2",u2)
+    dx.insert("u",u)
+    dx.insert("delta",-delta)
+    dx
+  }
+  #let (xout,dxout)=ode45(rhs,10,(x:4,z:4),0.01,record_step:0.01)
+
+  #cetz.canvas({
+      plot.plot(
+        size: (8,2),
+        axis-style: "school-book", 
+        x-tick-step: 5, y-tick-step:1,
+        {
+          plot.add(get_signal(xout,"x"),label:$x$)
+          plot.add(get_signal(dxout,"s"),label:$s$)
+          plot.add(get_signal(dxout,"delta"),label:$-delta$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    })
+    #cetz.canvas({
+      plot.plot(
+        size: (8,2),
+        axis-style: "school-book", 
+        x-tick-step: 5, y-tick-step:3,
+        {
+          plot.add(get_signal(dxout,"u1"),label:$u_1$)
+          plot.add(get_signal(dxout,"u2"),label:$u_2$)
+          plot.add(get_signal(dxout,"u"),label:$u$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    })
+ ]
 
 #pagebreak()
 == Super Twist Algorithm (STA)
@@ -337,6 +414,7 @@ For instance, it could be replaced by a "sigmoid function".
     let u=-c*calc.sqrt(calc.abs(x.x))*sign(x.x)-x.w
     let dx=(x:u+delta,w:b *sign(x.x));
     dx.insert("u",u)
+    dx.insert("delta",delta)
     dx
   }
   #let (xout,dxout)=ode45(rhs,10,(x:1,w:0),0.05)
@@ -349,6 +427,19 @@ For instance, it could be replaced by a "sigmoid function".
         {
           plot.add(get_signal(xout,"x"),label:$x$)
           plot.add(get_signal(dxout,"u"),label:$u$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    })
+  #cetz.canvas({
+      plot.plot(
+        size: (8,2),
+        axis-style: "school-book", 
+        x-tick-step: 1, y-tick-step:1,
+        {
+          plot.add(get_signal(xout,"w"),label:$w$)
+          plot.add(get_signal(dxout,"delta"),label:$delta$)
         },
         y-label:"value",
         x-label:"time",
