@@ -1,8 +1,16 @@
+#import "lib/ode-dict.typ":ode45,get_signal
+#import "lib/ode.typ":sign
+#import "@preview/cetz:0.2.0"
+#import cetz.plot
+#import cetz.draw: *
+
 = Control Single Integrator System
 
+== Robustness of $dot(x)=-"sign"(x)+delta$
+
 #columns(2, gutter: 11pt)[
-   #set par(justify: true)
-   Consider the fisrt order system $dot(x)=u+delta$,
+  #set par(justify: true)
+  Consider the fisrt order system $dot(x)=u+delta$,
   $delta$ is the bounded disturbance $|delta|<C$.
   The first control law is 
   $
@@ -31,8 +39,46 @@
   the solution satisfy the *Pilippov DI* (Pilippov Differential Inclusion) of the differential equation.
 
   We use the concept of *Equivalent Control* describes this feature, that is ,$"sign"x=delta$.
-  Use a low pass filter, we can say $"LPF"("sign"(x))approx delta$
+  Use a low pass filter, we can say $"LPF"("sign"(x))approx delta$.
 
+  For example, the following low pass filter is used in simulation, 
+  $
+    U_"filtered"(s)/U(s)=1/(T s +1 )\
+    T dot(u)_"filtered"+u_"filtered"=u
+  $
+
+  #let rhs(t,x)={
+    let delta=calc.sin(t)
+    let u=-1.1*sign(x.x)
+    let T=0.1
+    let dx=(x:u+delta,uf:(u -(x.uf))/T)
+    dx.insert("u",u)
+    dx.insert("delta",-delta)
+    dx
+  }
+  #let (xout,dxout)=ode45(rhs,10,(x:1,uf:0),0.01,record_step:0.01)
+
+  #cetz.canvas({
+      plot.plot(
+        size: (8,2),
+        axis-style: "school-book", 
+        x-tick-step: 5, y-tick-step:1,
+        {
+          plot.add(get_signal(xout,"x"),label:$x$)
+          plot.add(get_signal(xout,"uf"),label:$u_"filtered"$)
+          plot.add(get_signal(dxout,"u"),label:$u$)
+          plot.add(get_signal(dxout,"delta"),label:$-delta$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    })
+ ]
+
+#pagebreak()
+== Finite-time convergence of  $dot(x)=-k"sign"(x)+delta$
+
+#columns(2)[
   Another important feature of this system is finite-time stability.
   From @single_integrator_sign_V and @single_integrator_sign_dV,
   we have 
@@ -49,7 +95,35 @@
   $
     t_r<=2sqrt(V(0))/a=(|x(0)|)/(k-C)
   $
- ]
+
+  #cetz.canvas({
+      plot.plot(
+        size: (6,2),
+        axis-style: "school-book", 
+        x-tick-step: 2, y-tick-step:1,
+        {
+          for i in (1,2,3){
+            let rhs(t,x)={
+            let delta=calc.sin(t)
+            let u=-1.1*sign(x.x)
+            let T=0.1
+            let dx=(x:u+delta,uf:(u -(x.uf))/T)
+            dx.insert("u",u)
+            dx.insert("delta",-delta)
+            dx
+          }
+          let (xout,dxout)=ode45(rhs,6,(x:i,uf:0),0.01,record_step:0.01)
+          plot.add(get_signal(xout,"x"),label:$x(0)=#i$)
+          }
+          
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    })
+]
+
+
 
 #pagebreak()
 == SMC Chattering Elimination: Quasi-Sliding Mode
@@ -58,9 +132,6 @@ In many practical control systems, including DC motors and aircraft control,
 it is important to avoid control chattering by providing continuous/smooth signals.
 One obvious solution to make the control function continuous/smooth is to approximate the discontinuous function $v(sigma)=-rho "sign" (sigma)$ by some continuous/smooth function.
 For instance, it could be replaced by a "sigmoid function".
-
-#import "@preview/cetz:0.2.0"
-
 
 #let plot_sign()={
   cetz.canvas({
@@ -121,7 +192,6 @@ For instance, it could be replaced by a "sigmoid function".
   caption: [replaced $"sign"$ by a “sigmoid function”],
 )
 
-
 #pagebreak()
 == SMC Chattering Attenuation: Asymptotic Sliding Mode
 
@@ -131,6 +201,7 @@ For instance, it could be replaced by a "sigmoid function".
   Let $|dot(delta)|<=C_1$. Define $s=x+c dot(x)$. 
   The control law is given by 
   $
+  dot(x)=u+delta\
   dot(u)=v\
   v=-rho "sign"(s)-1/c u
   $
@@ -146,6 +217,48 @@ For instance, it could be replaced by a "sigmoid function".
             &<=-(c rho - C-c C_1)|s| 
   $
   $s$ converges to zero in finite time while $x$ converges to zero asymptotically.
+
+  #let rhs(t,s)={
+    let C1=1 // upper bound of disturbance 
+    let C2=1 // upper bound of derivative of disturbance
+    let c=1
+    let delta=C1 * calc.sin(C2/C1*t)
+    let rho=3
+    let x=s.x;let u=s.u;
+    let dx=(u)+delta
+    let s=x+c *(dx)
+    let v=-rho*sign(s)-1/c*(u)
+    let dx=(x:dx,u:v,s:s)
+    dx
+  }
+  #let (xout,dxout)=ode45(rhs,10,(x:1,u:0.),0.01,record_step:0.01)
+
+  #cetz.canvas({
+      plot.plot(
+        size: (10,2),
+        axis-style: "school-book", 
+        x-tick-step: 5, y-tick-step:1,
+        {
+          plot.add(get_signal(xout,"x"),label:$x$)
+          plot.add(get_signal(dxout,"s"),label:$s$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    })
+  #cetz.canvas({
+      plot.plot(
+        size: (10,2),
+        axis-style: "school-book", 
+        x-tick-step: 5, y-tick-step:2,
+        {
+          plot.add(get_signal(dxout,"u"),label:$v$)
+          plot.add(get_signal(xout,"u"),label:$u$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    })
 ])
 
 #pagebreak()
@@ -214,8 +327,7 @@ For instance, it could be replaced by a "sigmoid function".
   $
   b > C , c > sqrt(b + C)
   $
-  #import "lib/ode-dict.typ":ode45,get_signal
-  #import "lib/ode.typ":sign
+
   #let x0=(x:1,w:0)
   #let rhs(t,x)={
     let C=1 
@@ -228,9 +340,7 @@ For instance, it could be replaced by a "sigmoid function".
     dx
   }
   #let (xout,dxout)=ode45(rhs,10,(x:1,w:0),0.05)
-  #import "@preview/cetz:0.2.0"
-  #import cetz.plot
-  #import cetz.draw: *
+
   #cetz.canvas({
       plot.plot(
         size: (8,2),
@@ -270,8 +380,6 @@ For instance, it could be replaced by a "sigmoid function".
    u=-(k_s+1)alpha x(t)+(k_s+1)alpha x(0) - w\
    dot(w)=k_s alpha^2 x+ beta "sign"(x)
   $
-  #import "lib/ode-dict.typ":ode45,get_signal
-  #import "lib/ode.typ":sign
   #let x0=(x:1,w:0)
   #let rhs(t,x)={
     let alpha=1;

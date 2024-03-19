@@ -1,3 +1,9 @@
+#import "lib/ode-dict.typ":ode45,get_signal
+#import "lib/ode.typ":sign
+#import "@preview/cetz:0.2.0"
+#import cetz.plot
+#import cetz.draw: *
+
 = Control Algorithm for Double Integrator
 
 == Conventional Sliding Mode Control 
@@ -48,7 +54,6 @@ and the controller drives the system variable to zero in *finite time*.
   $(r_1-r_2) K_m >C$.
 
 ]
-
 
 #pagebreak()
 == Robust Integral Sign Error for Double Integrator

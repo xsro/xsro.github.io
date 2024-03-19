@@ -1,5 +1,5 @@
 // solve ode equation with states expressed with dictionary
-#let ode45(func,tfinal,x0,step,record_step:0.2)={
+#let ode45(func,tfinal,x0,step,record_step:0.1)={
   let t=0. //initial time
   let x=x0 //initial state
   let xout=((t,x),)
