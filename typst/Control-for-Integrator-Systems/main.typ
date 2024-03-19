@@ -23,9 +23,6 @@
 
 #pagebreak()
 
-#let sig(x,v)=$lr(⌊#x⌉)^#v$
-
-
 //part 1
 #include "1linear.typ"
 

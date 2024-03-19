@@ -1,5 +1,5 @@
 #import "lib/ode-dict.typ":ode45,get_signal
-#import "lib/ode.typ":sign
+#import "lib/notation.typ":sig,sign
 #import "@preview/cetz:0.2.0"
 #import cetz.plot
 #import cetz.draw: *
@@ -65,26 +65,40 @@
         )
     })
     
-    If we need the system converges in finite time, we can desgin the sliding surface @eq:sliding_surface as 
-    $
-    sigma=v+c |x|^(1/2) "sign"(x)
-    $
-    We call this 2-SM(Second Order Sliding Mode)
-    #let rhs(t,x)={
-    let delta=calc.sin(t)
-    let c=1
-    let sigma=c*sign(x.x1)*calc.sqrt(calc.abs(x.x1))+x.x2
-    let rho=1.1
-    let u=-rho*sign(sigma)-c*(x.x2)
-    let dx=(x1:x.x2,x2:u+delta)
-    dx.insert("sigma",sigma)
-    dx.insert("delta",-delta)
-    dx.insert("u",u)
-    dx
-  }
-  #let (xout,dxout)=ode45(rhs,10,(x1:2,x2:1),0.01,record_step:0.1)
+    
+]
+#pagebreak()
+== Terminal SMC
+#columns(2)[
+  If we need the system converges in finite time, we can desgin the sliding surface @eq:sliding_surface as 
+  $
+  sigma=dot(x)+c⌊x⌉^(q)\
+  dot(sigma)=dot.double(x)+q c ⌊x⌉^(q-1))=u+delta + q c ⌊x⌉^(q-1))
+  $
+  and the corresponding control law is 
+  $
+  u=-rho "sign" (sigma) -q c ⌊x⌉^(q-1))
+  $
+  We call this 2-SM(Second Order Sliding Mode).
 
-  #cetz.canvas({
+  When $q<1$,  the term $⌊x⌉^(q-1))$ is singular.
+  #colbreak()
+    #for q in (1/2,2){
+      let rhs(t,x)={
+      let delta=calc.sin(t)
+      let c=1
+      let sigma=c*sig(x.x1,q)+x.x2
+      let rho=1.1
+      let u=-rho*sign(sigma)-c*q*sig(x.x1,q - 1)
+      let dx=(x1:x.x2,x2:u+delta)
+      dx.insert("sigma",sigma)
+      dx.insert("delta",-delta)
+      dx.insert("u",u)
+      dx
+    }
+    let (xout,dxout)=ode45(rhs,20,(x1:2,x2:1),0.01,record_step:0.02)
+    [q=#q]
+    cetz.canvas({
       plot.plot(
         size: (8,2),
         axis-style: "school-book", 
@@ -99,9 +113,8 @@
         x-label:"time",
         )
     })
-  // #xout.at(-1).at(1).x1
+  }
 ]
-
 #pagebreak()
 == Second Order Sliding Mode Control 
 
