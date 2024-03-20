@@ -13,8 +13,11 @@ TYPYST_FILES="""
 nlct/main.typ
 nlct.pdf
 
-Control-for-Integrator-Systems/main.typ
+Control-for-Integrator-Systems/part1.typ
 Control-for-Integrator-Systems.pdf
+
+Control-for-Integrator-Systems/part2.typ
+Control-for-Integrator-Systems-part2.pdf
 """
 
 def parse_args():
@@ -79,12 +82,29 @@ if __name__=="__main__":
             print(e)
             exit()
     else:
-        for i,cmd in enumerate(cmds):
+        from multiprocessing.dummy import Pool
+        import time
+
+        def run_typst(conf):
+            i,cmd=conf
             print(f"[{i}] run {cmd}")
             try:
                 subprocess.run(cmd)
             except Exception as e:
                 print(e)
+
+        time1 = time.time()
+        datalist = []  #创建参数列表
+        for i in range(10):
+            datalist.append(i)
+            
+        pool = Pool(10)  #创建10个子线程
+        result = pool.map(run_typst,enumerate(cmds))  # 参数列表长度为10 所以要执行10个任务
+        pool.close()
+        pool.join()  #等待所有子线程执行完毕后退出，在此之前要执行 .close 方法
+        time2 = time.time()
+        print(f"spend {time2-time1}s to compile typst")  #从开始到结束所用的时间
+
     
 
 
