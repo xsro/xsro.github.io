@@ -15,6 +15,8 @@ template = "about.html"
 使用滑模控制控制单积分、双积分系统，同时介绍了一些关于Filippov解的知识以及预设时间控制的概念。
 积分器系统是最简单的控制对象之一，通过控制这样的系统可以得到许多非常有意思的控制效果。
 
+[Control-for-Integrator-Systems-part2](/print/Control-for-Integrator-Systems-part2.pdf)介绍适用于高阶积分器系统的滑模控制技术。
+
 
 
 ## Notes on Nonlinear Control [nlct](/print/nlct.pdf)
