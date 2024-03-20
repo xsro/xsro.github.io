@@ -455,7 +455,7 @@ For instance, it could be replaced by a "sigmoid function".
   Here we follow the design of RISE @xianContinuousAsymptoticTracking2004 and apply them to single integrator.
   $
     dot(x)=u+delta
-  $ where $delta in cal(C)^2$ 
+  $ where #text(red)[$delta in cal(C)^2$ (both $abs(delta)$ and $abs(dot(delta))$ is bounded).]
 
   The main idea of RISE is using a Lyapunov function contains $delta$.
   Let $L=(alpha x+dot(x))(dot(delta)-beta "sign"(x))$, we calculate 
@@ -480,7 +480,9 @@ For instance, it could be replaced by a "sigmoid function".
     let u=-(ks+1)*alpha*((x.x)-(x0.x))-(x.w);
     let dw=ks*alpha*alpha *(x.x)+beta *sign(x.x);
     let dx=(x:u+delta,w:dw);
+    dx.insert("werror",x.w -delta)
     dx.insert("u",u)
+    dx.insert("delta",-delta)
     dx
   }
   #let (xout,dxout)=ode45(rhs,16,(x:1,w:0),0.01)
@@ -489,12 +491,26 @@ For instance, it could be replaced by a "sigmoid function".
   #import cetz.draw: *
   #cetz.canvas({
       plot.plot(
-        size: (10,2),
+        size: (8,2),
         axis-style: "school-book", 
         x-tick-step: 5, y-tick-step:1,
         {
           plot.add(get_signal(xout,"x"),label:$x$)
           plot.add(get_signal(dxout,"u"),label:$u$)
+          plot.add(get_signal(dxout,"delta"),label:$-delta$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    })
+  #cetz.canvas({
+      plot.plot(
+        size: (8,2),
+        axis-style: "school-book", 
+        x-tick-step: 5, y-tick-step:5,
+        {
+          plot.add(get_signal(dxout,"werror"),label:$w-delta$)
+          plot.add(get_signal(xout,"w"),label:$w$)
         },
         y-label:"value",
         x-label:"time",

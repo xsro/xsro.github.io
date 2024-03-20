@@ -85,34 +85,34 @@
   #colbreak()
     #for q in (1/2,2){
       let rhs(t,x)={
-      let delta=calc.sin(t)
-      let c=1
-      let sigma=c*sig(x.x1,q)+x.x2
-      let rho=1.1
-      let u=-rho*sign(sigma)-c*q*sig(x.x1,q - 1)
-      let dx=(x1:x.x2,x2:u+delta)
-      dx.insert("sigma",sigma)
-      dx.insert("delta",-delta)
-      dx.insert("u",u)
-      dx
-    }
-    let (xout,dxout)=ode45(rhs,20,(x1:2,x2:1),0.01,record_step:0.02)
-    [q=#q]
-    cetz.canvas({
-      plot.plot(
-        size: (8,2),
-        axis-style: "school-book", 
-        x-tick-step: 5, y-tick-step:1,
-        {
-          plot.add(get_signal(xout,"x1"),label:$x$)
-          plot.add(get_signal(xout,"x2"),label:$dot(x)$)
-          plot.add(get_signal(dxout,"sigma"),label:$sigma$)
-          // plot.add(get_signal(dxout,"u"),label:$u$)
-        },
-        y-label:"value",
-        x-label:"time",
-        )
-    })
+        let delta=calc.sin(t)
+        let c=1
+        let sigma=c*sig(x.x1,q)+x.x2
+        let rho=1.1
+        let u=-rho*sign(sigma)-c*q*sig(x.x1,q - 1)
+        let dx=(x1:x.x2,x2:u+delta)
+        dx.insert("sigma",sigma)
+        dx.insert("delta",-delta)
+        dx.insert("u",u)
+        dx
+      }
+      let (xout,dxout)=ode45(rhs,20,(x1:2,x2:1),0.01,record_step:0.02)
+      [q=#q]
+      cetz.canvas({
+        plot.plot(
+          size: (8,2),
+          axis-style: "school-book", 
+          x-tick-step: 5, y-tick-step:1,
+          {
+            plot.add(get_signal(xout,"x1"),label:$x$)
+            plot.add(get_signal(xout,"x2"),label:$dot(x)$)
+            plot.add(get_signal(dxout,"sigma"),label:$sigma$)
+            // plot.add(get_signal(dxout,"u"),label:$u$)
+          },
+          y-label:"value",
+          x-label:"time",
+          )
+        })
   }
 ]
 #pagebreak()
@@ -228,6 +228,51 @@
   <= & -(lambda_3 - (rho^2(norm(z)))/(4 k_s)) norm(z)^2
   $
 
+  #let rhs(t,x)={
+    let delta=calc.sin(t)
+    let c=1
+    let e1=- x.x1
+    let e2=-x.x2 - x.x1
+    let ks=1
+    let e20=-3
+    let alpha=1
+    let beta=1
+    let u=(ks+1)*e2 - (ks+1)*e20+x.w;
+    let dw=(ks+1)*alpha*e2+beta*sign(e2)
+    let dx=(x1:x.x2,x2:u+delta,w:dw)
+    dx.insert("delta",-delta)
+    dx.insert("u",u)
+    dx
+  }
+  #colbreak()
+  #let (xout,dxout)=ode45(rhs,20,(x1:2,x2:1,w:0),0.01,record_step:0.02)
+  #cetz.canvas({
+    plot.plot(
+      size: (8,3),
+      axis-style: "school-book", 
+      x-tick-step: 5, y-tick-step:1,
+      {
+        plot.add(get_signal(xout,"x1"),label:$x$)
+        plot.add(get_signal(xout,"x2"),label:$dot(x)$)
+      },
+      y-label:"value",
+      x-label:"time",
+      )
+    })
+    #cetz.canvas({
+    plot.plot(
+      size: (8,3),
+      axis-style: "school-book", 
+      x-tick-step: 5, y-tick-step:3,
+      {
+        plot.add(get_signal(dxout,"delta"),label:$-delta$)
+        plot.add(get_signal(dxout,"u"),label:$u$)
+        plot.add(get_signal(xout,"w"),label:$w$)
+      },
+      y-label:"value",
+      x-label:"time",
+      )
+    })
 ]
 
 
