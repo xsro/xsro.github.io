@@ -5,7 +5,7 @@
   $
   sigma^((r))=u+delta.
   $
-  Nested Aliding Controllers are given by 
+  Nested Sliding Controllers are given by 
   $
   u&=-alpha Psi_(r-1,r)(sigma,dot(sigma),dots,sigma^((r-1)))\
   Psi_(0,r)&="sign"(sigma)\

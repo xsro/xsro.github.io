@@ -26,6 +26,7 @@
 #pagebreak()
 
 
+#include "7homo.typ"
 #include "6highorder.typ"
 
 

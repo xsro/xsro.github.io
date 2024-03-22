@@ -6,9 +6,10 @@
 
 = Control Single Integrator System
 
-== Robustness of $dot(x)=-k "sign"(x)+delta$
+== Bang-Bang Control $dot(x)=-k"sign"(x)+delta$
 
 #columns(2, gutter: 11pt)[
+
   #set par(justify: true)
   Consider the fisrt order system $dot(x)=u+delta$,
   $delta$ is the bounded disturbance $|delta|<C$.
@@ -36,17 +37,23 @@
 
   This differential equation should be understood in *Pilippov sense*.
   The solution here is not a classical(continuously differentiable) solution but a absolutely continuous solution.
-  the solution satisfy the *Pilippov DI* (Pilippov Differential Inclusion) of the differential equation.
+  the solution satisfy the *Pilippov DI* (Pilippov Differential Inclusion) associated with the differential equation.
+  The DI is 
+  $
+  dot(x) in F(t,x)+[-C,C]\
+  F(t,x)=cases(
+    k &"if" x<0,
+    [-k,k] &"if" x=0,
+    -k &"if" x>0
+  )
+  $
+  This means when $x>0$, we have $dot(x)<0$, and when $x<0$, we have $dot(x)>0$.
+  The system must converges to $x=0$.
 
-  We use the concept of *Equivalent Control* describes this feature, that is ,$"sign"x=delta$.
+  We also use the concept of *Equivalent Control* describes this feature.
   Use a low pass filter, we can say $"LPF"("sign"(x))approx delta$.
 
   For example, the following low pass filter is used in simulation, 
-  $
-    U_"filtered"(s)/U(s)=1/(T s +1 )\
-    T dot(u)_"filtered"+u_"filtered"=u
-  $
-
   #let rhs(t,x)={
     let delta=calc.sin(t)
     let u=-1.1*sign(x.x)
@@ -73,12 +80,13 @@
         x-label:"time",
         )
     })
- ]
+  The filter is
+  $
+    U_"filtered"(s)/U(s)=1/(T s +1 )\
+    T dot(u)_"filtered"+u_"filtered"=u
+  $
+  === Finite-time convergence
 
-#pagebreak()
-== Finite-time convergence of  $dot(x)=-k"sign"(x)+delta$
-
-#columns(2)[
   Another important feature of this system is finite-time stability.
   From @single_integrator_sign_V and @single_integrator_sign_dV,
   we have 
@@ -415,6 +423,48 @@ For instance, it could be replaced by a "sigmoid function".
     let dx=(x:u+delta,w:b *sign(x.x));
     dx.insert("u",u)
     dx.insert("delta",delta)
+    dx
+  }
+  #let (xout,dxout)=ode45(rhs,10,(x:1,w:0),0.05)
+
+  #cetz.canvas({
+      plot.plot(
+        size: (8,2),
+        axis-style: "school-book", 
+        x-tick-step: 1, y-tick-step:1,
+        {
+          plot.add(get_signal(xout,"x"),label:$x$)
+          plot.add(get_signal(dxout,"u"),label:$u$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    })
+  #cetz.canvas({
+      plot.plot(
+        size: (8,2),
+        axis-style: "school-book", 
+        x-tick-step: 1, y-tick-step:1,
+        {
+          plot.add(get_signal(xout,"w"),label:$w$)
+          plot.add(get_signal(dxout,"delta"),label:$delta$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    })
+
+    #let x0=(x:1,w:0)
+  #let rhs(t,x)={
+    let C=0.1 
+    let delta1=C*(calc.sin(2*t))
+    let delta2=C*calc.cos(t)
+    let c=1.5 *calc.sqrt(C)
+    let b=1.1 *C
+    let u=-c*calc.sqrt(calc.abs(x.x))*sign(x.x)-x.w
+    let dx=(x:u+delta1,w:b *sign(x.x)+delta2);
+    dx.insert("u",u)
+    dx.insert("delta",delta1)
     dx
   }
   #let (xout,dxout)=ode45(rhs,10,(x:1,w:0),0.05)

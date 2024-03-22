@@ -46,7 +46,7 @@
     dx.insert("u",u)
     dx
   }
-  #let (xout,dxout)=ode45(rhs,10,(x1:2,x2:1),0.01,record_step:0.1)
+  #let (xout,dxout)=ode45(rhs,10,(x1:2,x2:1),0.01,record_step:0.01)
 
   The first simulation shows $x$ converges asymptotically.
   #cetz.canvas({
@@ -58,7 +58,7 @@
           plot.add(get_signal(xout,"x1"),label:$x$)
           plot.add(get_signal(xout,"x2"),label:$dot(x)$)
           plot.add(get_signal(dxout,"sigma"),label:$sigma$)
-          // plot.add(get_signal(dxout,"u"),label:$u$)
+          plot.add(get_signal(dxout,"u"),label:$u$)
         },
         y-label:"value",
         x-label:"time",
