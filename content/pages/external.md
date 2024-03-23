@@ -10,12 +10,13 @@ template = "about.html"
 
 # 外部资源 External Resources 
 
-## 积分器系统控制 Sliding Mode Control for Integrator Systems [Control-for-Integrator-Systems](/print/Control-for-Integrator-Systems.pdf)
+## 积分器系统控制笔记  Sliding Mode Control for Integrator Systems 
 
-使用滑模控制控制单积分、双积分系统，同时介绍了一些关于Filippov解的知识以及预设时间控制的概念。
 积分器系统是最简单的控制对象之一，通过控制这样的系统可以得到许多非常有意思的控制效果。
 
-[Control-for-Integrator-Systems-part2](/print/Control-for-Integrator-Systems-part2.pdf)介绍适用于高阶积分器系统的滑模控制技术。
+- [Control-for-Integrator-Systems](/print/Control-for-Integrator-Systems.pdf) 使用滑模控制控制单积分、双积分系统，同时介绍了一些关于预设时间控制的概念。
+- [Control-for-Integrator-Systems-2](/print/Control-for-Integrator-Systems-2.pdf)介绍适用于高阶积分器系统的滑模控制技术。
+- [Control-for-Integrator-Systems-3](/print/Control-for-Integrator-Systems-3.pdf)介绍适用于非连续系统的一些知识，包括Filippov，集值系统等
 
 
 

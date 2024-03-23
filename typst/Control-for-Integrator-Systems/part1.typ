@@ -17,7 +17,9 @@
   }
 }
 
-#text(size: 1cm)[Sliding Mode Control for Integrator Systems]
+#text(rgb("#005826"),size: 1cm)[*Sliding Mode Control for Integrator Systems*]\
+#text(black,size: 0.8cm)[*part 1*: SMC for single integrators and double integrators]
+
 #outline(indent: 1cm)
 #bibliography("ref.bib",style: "gb-7714-2015-author-date")
 
@@ -30,8 +32,6 @@
 #include "2single.typ"
 
 #include "3double.typ"
-
-#include "5Filippov.typ"
 
 #align(center+horizon,text(blue,size:3cm)[THANKS])
 

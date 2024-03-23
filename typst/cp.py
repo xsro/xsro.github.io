@@ -17,7 +17,10 @@ Control-for-Integrator-Systems/part1.typ
 Control-for-Integrator-Systems.pdf
 
 Control-for-Integrator-Systems/part2.typ
-Control-for-Integrator-Systems-part2.pdf
+Control-for-Integrator-Systems-2.pdf
+
+Control-for-Integrator-Systems/part3.typ
+Control-for-Integrator-Systems-3.pdf
 """
 
 def parse_args():
