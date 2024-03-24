@@ -143,8 +143,6 @@ For instance, it could be replaced by a "sigmoid function".
 
 #let plot_sign()={
   cetz.canvas({
-  import cetz.plot
-  import cetz.draw: *
   plot.plot(size: (2,2),axis-style: "school-book", x-tick-step: none, y-tick-step: none, {
     plot.add(domain: (-3, 0), x=>-1,style: (stroke: red))
     plot.add(domain: (0, 3), x=>1,style: (stroke: red))
@@ -155,8 +153,6 @@ For instance, it could be replaced by a "sigmoid function".
 
 #let plot_signv(func)={
   cetz.canvas({
-  import cetz.plot
-  import cetz.draw: *
   plot.plot(size: (2,2),axis-style: "school-book", x-tick-step: none, y-tick-step: none, {
     plot.add(domain: (-3, 3), func,style: (stroke: red))
   })
@@ -536,9 +532,6 @@ For instance, it could be replaced by a "sigmoid function".
     dx
   }
   #let (xout,dxout)=ode45(rhs,16,(x:1,w:0),0.01)
-  #import "@preview/cetz:0.2.0"
-  #import cetz.plot
-  #import cetz.draw: *
   #cetz.canvas({
       plot.plot(
         size: (8,2),

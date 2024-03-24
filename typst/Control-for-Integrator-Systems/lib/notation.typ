@@ -6,3 +6,5 @@
   }
 }
 #let sig(x,q)=sign(x)*calc.pow(calc.abs(x),q)
+#let sigl=$⌊$
+#let sigr=$⌉$
