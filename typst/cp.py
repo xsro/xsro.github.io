@@ -28,7 +28,7 @@ def parse_args():
     parser.add_argument('--bin', type=str, help='my typst binary to run')
     parser.add_argument('--dev', type=str, help='path to source code of typst')
     parser.add_argument('--font-path', type=str, help='path to load fonts')
-    parser.add_argument('--watch', action="store_true", help='watch files')
+    parser.add_argument('-w','--watch', action="store_true", help='watch files')
     return parser.parse_args()
 
 def make_command(src:Path,dst:Path,bin="typst",fonts=None,watch=False):
@@ -45,13 +45,12 @@ def make_command(src:Path,dst:Path,bin="typst",fonts=None,watch=False):
 if __name__=="__main__":
     TYPST_ROOT=Path(__file__).parent
     PRINT_ROOT=TYPST_ROOT.parent.joinpath("static","print")
-    if PRINT_ROOT.exists():
-        shutil.rmtree(PRINT_ROOT)
-    PRINT_ROOT.mkdir(parents=True)
-    files=TYPYST_FILES.splitlines()
+
+    #process command line arguments
     args=parse_args()
     print(args)
 
+    #if the path of typst source code is passed via --dev build and use it
     bin=args.bin
     font_path=args.font_path
     if args.dev is not None:
@@ -63,16 +62,17 @@ if __name__=="__main__":
             bin=typst_code.joinpath("target","release","typst")
             subprocess.run(["chmod","+x",str(bin)])
         font_path=typst_code.joinpath("assets","fonts")
-    
-    print(bin,font_path)
+    print(f"using {bin} and font from {font_path}")
 
-    
+    # format the command to run
+    files=TYPYST_FILES.splitlines()
     cmds=[]
     for f in chunk_list(files,3):
         src=TYPST_ROOT.joinpath(f[1])
         dst=PRINT_ROOT.joinpath(f[2])
         cmd=make_command(src,dst,bin=bin,fonts=font_path,watch=args.watch)
         cmds.append(cmd)
+    
     if args.watch:
         for i,cmd in enumerate(cmds):
             print(f"[{i}] {cmd}")
@@ -85,6 +85,10 @@ if __name__=="__main__":
             print(e)
             exit()
     else:
+        if PRINT_ROOT.exists():
+            shutil.rmtree(PRINT_ROOT)
+        PRINT_ROOT.mkdir(parents=True)
+        
         from multiprocessing.dummy import Pool
         import time
 
