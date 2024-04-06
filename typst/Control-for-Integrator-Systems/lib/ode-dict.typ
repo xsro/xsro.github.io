@@ -1,5 +1,5 @@
 // solve ode equation with states expressed with dictionary
-#let ode45(func,tfinal,x0,step,record_step:0.1)={
+#let ode45(func,tfinal,x0,step,record_step:0.1,force_update:())={
   let t=0. //initial time
   let x=x0 //initial state
   let xout=((t,x),)
@@ -19,7 +19,12 @@
     let k4=func(t+step,dict_biop(x,k3,(x,d)=>x+step*d))
     t=t+step
     for (key, value) in x0 {
-      x.at(key)=x.at(key)+step/6*(k1.at(key)+2*k2.at(key)+2*k3.at(key)+k4.at(key))
+      if key in force_update{
+        x.at(key)=k1.at(key)
+      }
+      else{
+        x.at(key)=x.at(key)+step/6*(k1.at(key)+2*k2.at(key)+2*k3.at(key)+k4.at(key))
+      }
     }
     if t>recorded_time+record_step{
       xout.push((t,x))

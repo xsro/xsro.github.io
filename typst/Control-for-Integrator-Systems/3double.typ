@@ -1,5 +1,5 @@
 #import "lib/ode-dict.typ":ode45,get_signal
-#import "lib/notation.typ":sig,sign
+#import "lib/notation.typ":sig,sign,sigl,sigr
 #import "@preview/cetz:0.2.0"
 #import cetz.plot
 #import cetz.draw: *
@@ -130,7 +130,7 @@
 
   Twisting Control is the typical controller charaterized by
   $
-  u=-k_1 "sign" (x) -k_2 "sign" (v)
+  u=-k_1 "sign" (x) -k_2 "sign" (dot(x))
   $
   where $(k_1 + k_2) K_m -C > (k_1-k_2) K_M+C$,
   $(k_1-k_2) K_m >C$.
@@ -146,7 +146,6 @@
   }
   #let (xout,dxout)=ode45(rhs,10,(x1:2,x2:1),0.005,record_step:0.02)
 
-  The first simulation shows $x$ converges asymptotically.
   #table(columns: (auto,auto),stroke: none,
     cetz.canvas({
       plot.plot(
@@ -174,6 +173,119 @@
         )
     }))
 
+#pagebreak()
+== Second Order Sliding Mode Control: Suboptimal Algorithm
+
+  Consider the system
+  $
+  dot.double(x)=delta+g(x,t)u
+  $
+  where $abs(delta)<=C$ and $abs(g(x,t)) in [K_m,K_M]$.
+
+  The so-called *suboptimal* controller is given by 
+  $
+  u=-k_1 "sign" (x-(x^*)/2) +k_2 "sign" (x^*)
+  $
+  where $
+  k_1-k_2>C/(K_m),quad
+  k_1 + k_2 > (4C+K_M (k_1-k_2))/(3 K_m),
+  $
+  and $x^*$ is the value of $x$ detected at the last time whien $dot(x)$ was equal to $0$.
+  #let xstar=0;
+  #let rhs(t,x)={
+    let delta=calc.sin(t)
+    let k1=3;let k2=1
+    let xstar=x.xstar
+    if calc.abs(x.x2) < 0.01{
+      xstar=x.x1
+    }
+
+    let u=-k1*sign(x.x1 - xstar/2)+k2*sign(xstar)
+    let dx=(x1:x.x2,x2:u+delta,xstar:xstar)
+    dx.insert("delta",-delta)
+    dx.insert("u",u)
+    dx
+  }
+  #let (xout,dxout)=ode45(rhs,10,(x1:2,x2:1,xstar:0),0.005,record_step:0.02,force_update:("xstar"))
+
+  #table(columns: (auto,auto),stroke: none,
+    cetz.canvas({
+      plot.plot(
+        size: (8,2),
+        axis-style: "school-book", 
+        x-tick-step: auto, y-tick-step:1,
+        {
+          plot.add(get_signal(xout,"x1"),label:$x$)
+          plot.add(get_signal(xout,"x2"),label:$dot(x)$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    }),
+    cetz.canvas({
+      plot.plot(
+        size: (8,2),
+        axis-style: "school-book", 
+        x-tick-step: 5, y-tick-step:3,
+        {
+          plot.add(get_signal(dxout,"u"),label:$u$)
+          plot.add(get_signal(xout,"xstar"),label:$x^*$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    }))
+
+#pagebreak()
+== Second Order Sliding Mode Control : Quasi-Continuous Control Algorithm 
+
+An important class of controllers comprises the recently proposed so-called quasicontinuous controllers, featuring control continuous everywhere except the 2-sliding manifold
+$x=dot(x)=0$.
+$
+u=-alpha 
+(dot(x)+beta sigl x sigr^(1/2))
+/(abs(dot(x))+beta abs(x)^(1/2))
+$
+  #let rhs(t,x)={
+    let delta=calc.sin(t)
+    let alpha=6;let beta=2
+    let num=x.x2+beta*sig(x.x1,1/2)
+    let den=calc.abs(x.x2)+beta*calc.sqrt(calc.abs(x.x1))
+    let u=-alpha*num/den;
+    let dx=(x1:x.x2,x2:u+delta)
+    dx.insert("delta",-delta)
+    dx.insert("u",u)
+    dx
+  }
+  #let (xout,dxout)=ode45(rhs,10,(x1:2,x2:1),0.005,record_step:0.02)
+
+  #table(columns: (auto,auto),stroke: none,
+    cetz.canvas({
+      plot.plot(
+        size: (8,3),
+        axis-style: "school-book", 
+        x-tick-step: 5, y-tick-step:1,
+        {
+          plot.add(get_signal(xout,"x1"),label:$x$)
+          plot.add(get_signal(xout,"x2"),label:$dot(x)$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    }),
+    cetz.canvas({
+      plot.plot(
+        size: (8,3),
+        axis-style: "school-book", 
+        x-tick-step: 5, y-tick-step:3,
+        {
+          plot.add(get_signal(dxout,"u"),label:$u$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    }))
+    
 #pagebreak()
 == Robust Integral Sign Error for Double Integrator
 #columns()[
