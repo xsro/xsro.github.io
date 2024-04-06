@@ -1,5 +1,4 @@
-#import "lib/ode-dict.typ":ode45,get_signal
-#import "lib/notation.typ":sig,sign,sigl,sigr
+#import "lib/lib.typ":ode45,get_signal,op,sig
 #import "@preview/cetz:0.2.0"
 #import cetz.plot
 #import cetz.draw: *
@@ -39,7 +38,7 @@
     let c=1
     let sigma=c*x.x1+x.x2
     let rho=1.1
-    let u=-rho*sign(sigma)-c*(x.x2)
+    let u=-rho*op.sign(sigma)-c*(x.x2)
     let dx=(x1:x.x2,x2:u+delta)
     dx.insert("sigma",sigma)
     dx.insert("delta",-delta)
@@ -87,9 +86,9 @@
       let rhs(t,x)={
         let delta=calc.sin(t)
         let c=1
-        let sigma=c*sig(x.x1,q)+x.x2
+        let sigma=c*op.sig(x.x1,q)+x.x2
         let rho=1.1
-        let u=-rho*sign(sigma)-c*q*sig(x.x1,q - 1)
+        let u=-rho*op.sign(sigma)-c*q*op.sig(x.x1,q - 1)
         let dx=(x1:x.x2,x2:u+delta)
         dx.insert("sigma",sigma)
         dx.insert("delta",-delta)
@@ -138,7 +137,7 @@
   #let rhs(t,x)={
     let delta=calc.sin(t)
     let k1=6;let k2=2
-    let u=-k1*sign(x.x1)-k2*sign(x.x2)
+    let u=-k1*op.sign(x.x1)-k2*op.sign(x.x2)
     let dx=(x1:x.x2,x2:u+delta)
     dx.insert("delta",-delta)
     dx.insert("u",u)
@@ -200,7 +199,7 @@
       xstar=x.x1
     }
 
-    let u=-k1*sign(x.x1 - xstar/2)+k2*sign(xstar)
+    let u=-k1*op.sign(x.x1 - xstar/2)+k2*op.sign(xstar)
     let dx=(x1:x.x2,x2:u+delta,xstar:xstar)
     dx.insert("delta",-delta)
     dx.insert("u",u)
@@ -243,13 +242,13 @@ An important class of controllers comprises the recently proposed so-called quas
 $x=dot(x)=0$.
 $
 u=-alpha 
-(dot(x)+beta sigl x sigr^(1/2))
+(dot(x)+beta sig( x )^(1/2))
 /(abs(dot(x))+beta abs(x)^(1/2))
 $
   #let rhs(t,x)={
     let delta=calc.sin(t)
     let alpha=6;let beta=2
-    let num=x.x2+beta*sig(x.x1,1/2)
+    let num=x.x2+beta*op.sig(x.x1,1/2)
     let den=calc.abs(x.x2)+beta*calc.sqrt(calc.abs(x.x1))
     let u=-alpha*num/den;
     let dx=(x1:x.x2,x2:u+delta)
@@ -350,7 +349,7 @@ $
     let alpha=1
     let beta=1
     let u=(ks+1)*e2 - (ks+1)*e20+x.w;
-    let dw=(ks+1)*alpha*e2+beta*sign(e2)
+    let dw=(ks+1)*alpha*e2+beta*op.sign(e2)
     let dx=(x1:x.x2,x2:u+delta,w:dw)
     dx.insert("delta",-delta)
     dx.insert("u",u)

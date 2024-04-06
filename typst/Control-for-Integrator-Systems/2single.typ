@@ -1,5 +1,4 @@
-#import "lib/ode-dict.typ":ode45,get_signal
-#import "lib/ode.typ":sign
+#import "lib/lib.typ":ode45,get_signal,op
 #import "@preview/cetz:0.2.0"
 #import cetz.plot
 #import cetz.draw: *
@@ -56,7 +55,7 @@
   For example, the following low pass filter is used in simulation, 
   #let rhs(t,x)={
     let delta=calc.sin(t)
-    let u=-1.1*sign(x.x)
+    let u=-1.1*op.sign(x.x)
     let T=0.1
     let dx=(x:u+delta,uf:(u -(x.uf))/T)
     dx.insert("u",u)
@@ -113,7 +112,7 @@
           for i in (1,2,3){
             let rhs(t,x)={
             let delta=calc.sin(t)
-            let u=-1.1*sign(x.x)
+            let u=-1.1*op.sign(x.x)
             let T=0.1
             let dx=(x:u+delta,uf:(u -(x.uf))/T)
             dx.insert("u",u)
@@ -231,7 +230,7 @@ For instance, it could be replaced by a "sigmoid function".
     let x=s.x;let u=s.u;
     let dx=(u)+delta
     let s=x+c *(dx)
-    let v=-rho*sign(s)-1/c*(u)
+    let v=-rho*op.sign(s)-1/c*(u)
     let dx=(x:dx,u:v,s:s)
     dx
   }
@@ -310,8 +309,8 @@ For instance, it could be replaced by a "sigmoid function".
 #columns(2)[
   The first simulation demonstrates the traditional SMC is sensitive to  disturbance in reaching phase.
   #let rhs(t,x)={
-    let delta=sign(calc.sin(10*t)-0.5)
-    let u=-1.1*sign(x.x)
+    let delta=op.sign(calc.sin(10*t)-0.5)
+    let u=-1.1*op.sign(x.x)
     let T=0.1
     let dx=(x:u+delta,uf:(u -(x.uf))/T)
     dx.insert("u",u)
@@ -337,11 +336,11 @@ For instance, it could be replaced by a "sigmoid function".
 
   The second one uses integral SMC is
   #let rhs(t,x)={
-    let delta=sign(calc.sin(10*t)-0.5)
+    let delta=op.sign(calc.sin(10*t)-0.5)
     let rho1=3
     let k=1
     let s=(x.x)-(x.z)
-    let u1=-rho1*sign(s)
+    let u1=-rho1*op.sign(s)
     let u2=-k*x.x
     let u=u1+u2
     let T=0.1
@@ -415,8 +414,8 @@ For instance, it could be replaced by a "sigmoid function".
     let delta=C*calc.sin(t)
     let c=1.5 *calc.sqrt(C)
     let b=1.1 *C
-    let u=-c*calc.sqrt(calc.abs(x.x))*sign(x.x)-x.w
-    let dx=(x:u+delta,w:b *sign(x.x));
+    let u=-c*calc.sqrt(calc.abs(x.x))*op.sign(x.x)-x.w
+    let dx=(x:u+delta,w:b *op.sign(x.x));
     dx.insert("u",u)
     dx.insert("delta",delta)
     dx
@@ -457,8 +456,8 @@ For instance, it could be replaced by a "sigmoid function".
     let delta2=C*calc.cos(t)
     let c=1.5 *calc.sqrt(C)
     let b=1.1 *C
-    let u=-c*calc.sqrt(calc.abs(x.x))*sign(x.x)-x.w
-    let dx=(x:u+delta1,w:b *sign(x.x)+delta2);
+    let u=-c*calc.sqrt(calc.abs(x.x))*op.sign(x.x)-x.w
+    let dx=(x:u+delta1,w:b *op.sign(x.x)+delta2);
     dx.insert("u",u)
     dx.insert("delta",delta1)
     dx
@@ -524,7 +523,7 @@ For instance, it could be replaced by a "sigmoid function".
     let beta=1+1/alpha +0.1
     let delta=calc.sin(t)
     let u=-(ks+1)*alpha*((x.x)-(x0.x))-(x.w);
-    let dw=ks*alpha*alpha *(x.x)+beta *sign(x.x);
+    let dw=ks*alpha*alpha *(x.x)+beta *op.sign(x.x);
     let dx=(x:u+delta,w:dw);
     dx.insert("werror",x.w -delta)
     dx.insert("u",u)

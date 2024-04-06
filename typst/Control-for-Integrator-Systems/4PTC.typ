@@ -2,7 +2,7 @@
 #import cetz.plot
 #import cetz.draw: *
 
-#import "lib/ode.typ": ode,sat,sign
+#import "lib/lib.typ":  op,sig,ode
 
 
 #let mu1(t,T:1,h:1,k1:1,k2:0)={

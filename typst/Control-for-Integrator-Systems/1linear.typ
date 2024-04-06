@@ -1,4 +1,5 @@
 #import "@preview/cetz:0.2.0"
+#import "lib/lib.typ": ode45,get_signal,op
 
 #let plot_fun(func,y-tick-step:none,domain: (-2, 2),y-label:$dot(x)$,x-label:$x$)={
   cetz.canvas({
@@ -17,9 +18,9 @@
   })
 }
 
-#import "lib/ode.typ": ode,sat,sign
+
 #let ode_plot(func,tfinal,x0,step)={
-  let (xout,dxout)=ode(func,tfinal,x0,step)
+  let (xout,dxout)=ode45((t,x)=>(value:func(t,x.value)),tfinal,(value:x0),step)
   cetz.canvas({
     import cetz.plot
     import cetz.draw: *
@@ -28,20 +29,13 @@
       axis-style: "school-book", 
       x-tick-step: 1, y-tick-step: none, 
       {
-        plot.add(xout)
+        // plot.add(xout)
+        plot.add(get_signal(xout,"value"),label:$x$)
       },
       y-label:$x$,
       x-label:$t$,
       )
   })
-}
-
-#let fractionalpower(x,v)={
-  if x==0 {
-    0
-  }else{
-    sign(x)*calc.pow(calc.abs(x),v)
-  }
 }
 
 = Linear feedback for single integrator and variants
@@ -103,8 +97,8 @@ $
     [stability],
     //
     $dot(x)=-x^(0)=-"sign"(x)$,
-    plot_fun(x=>-fractionalpower(x,0)),
-    ode_plot((t,x)=>-fractionalpower(x,0),10,1,0.1),
+    plot_fun(x=>-op.sig(x,0)),
+    ode_plot((t,x)=>-op.sig(x,0),10,1,0.1),
     [
       when $x(0)>0$\
       $x(t)=cases(
@@ -114,8 +108,8 @@ $
     [Finite time\ if $v<1$],
     //
     $dot(x)=-x^(1/3)$,
-    plot_fun(x=>-fractionalpower(x,1/3)),
-    ode_plot((t,x)=>-fractionalpower(x,1/3),10,1,0.1),
+    plot_fun(x=>-op.sig(x,1/3)),
+    ode_plot((t,x)=>-op.sig(x,1/3),10,1,0.1),
     [
       when $x(0)>0$\
       $x(t)=cases(
@@ -125,14 +119,14 @@ $
     [Finite time\ if $v<1$],
     //
     $dot(x)=-x^(1)=-x$,
-    plot_fun(x=>-fractionalpower(x,1)),
-    ode_plot((t,x)=>-fractionalpower(x,1),10,1,0.1),
+    plot_fun(x=>-op.sig(x,1)),
+    ode_plot((t,x)=>-op.sig(x,1),10,1,0.1),
     $x=x(0)e^(-t)$,
     [Exponential\ if $=1$],
     //
     $dot(x)=-x^(3)$,
-    plot_fun(x=>-fractionalpower(x,3)),
-    ode_plot((t,x)=>-fractionalpower(x,3),10,1,0.1),
+    plot_fun(x=>-op.sig(x,3)),
+    ode_plot((t,x)=>-op.sig(x,3),10,1,0.1),
     $x(t)=(x(0)^(-2)+2t)^(-1/2)$,
     [(practical)\ Fixed time\ if $v>1$ #footnote("converges to a neighborhood of the origin in a ﬁxed time independent of the initial condition.")],
     ),
@@ -141,7 +135,7 @@ $
 
 #let main2sat=4
 #let sat_fractional_power(x,v)={
-  sat(fractionalpower(x,v),main2sat)
+  op.sat(op.sig(x,v),main2sat)
 }
 
 #pagebreak()

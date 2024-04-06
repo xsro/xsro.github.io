@@ -1,5 +1,4 @@
-#import "lib/ode-dict.typ":ode45,get_signal
-#import "lib/notation.typ":sig,sigl,sigr,sign
+#import "lib/lib.typ":ode45,get_signal,op,sig
 #import "@preview/cetz:0.2.0"
   #import cetz.plot
   #import cetz.draw: *
@@ -42,7 +41,7 @@ Tranditionally, a linear feedback can stabilize high-order system without robust
 #table(columns:(auto,auto,auto),align: center+horizon,
   [],$x^((4))=u$,$x^((4))=u+10*sin(t)$,
   [linear\ feedback],..highorder(x=>-(x.x1)-4*(x.x2)-6*(x.x3)-4*(x.x4)),
-  [relay SMC\ feedback],..highorder(x=>-10*sign(x.x1+2*sig(x.x2,4/3)+2*sig(x.x3,2)+sig(x.x4,4))),
+  [relay SMC\ feedback],..highorder(x=>-10*op.sign(x.x1+2*op.sig(x.x2,4/3)+2*op.sig(x.x3,2)+op.sig(x.x4,4))),
   )
 
 

@@ -1,5 +1,4 @@
-#import "lib/ode-dict.typ":ode45,get_signal
-#import "lib/notation.typ":sig,sigl,sigr
+#import "lib/lib.typ":ode45,get_signal,op,sig
 #import "@preview/cetz:0.2.0"
   #import cetz.plot
   #import cetz.draw: *
@@ -126,8 +125,8 @@ Many lliteratures like @polyakov_generalized_2020
   - The _fixed-time_ stabilizing controller can be selected *locally homogeneous* in the  form:
   $
   u_"FxT"(x)=cases(
-    -sigl x sigr^(1/2)quad& abs(x)<=1,
-    -sigl x sigr^(3/2)quad& abs(x)>1,
+    -sig( x )^(1/2)quad& abs(x)<=1,
+    -sig( x )^(3/2)quad& abs(x)>1,
   ). 
   $
   The system will be stabilized within 4 second, that is $x(t)=0,forall space t>=4 space forall x_0 in RR$
@@ -135,13 +134,13 @@ Many lliteratures like @polyakov_generalized_2020
   #for x0 in (0.5,10){
     let rhs(t,x)={
     let k=1
-    let dxfxt=-sig(x.xfxt,1/2)
+    let dxfxt=-op.sig(x.xfxt,1/2)
     if calc.abs(x.xfxt)>1 {
-      dxfxt=-sig(x.xfxt,3/2)
+      dxfxt=-op.sig(x.xfxt,3/2)
     }
     let dx=(
       xlinear:-k*x.xlinear,
-      xft:-k*sig(x.xft,1/2),
+      xft:-k*op.sig(x.xft,1/2),
       xfxt:k*dxfxt
     )
     dx
