@@ -116,7 +116,7 @@ Many lliteratures like @polyakov_generalized_2020
   which guarantees an asymptotic(exponential) convergence to the origin of any trajectory of the closed-loop system: $abs(x(t))=e^(-t)abs(x_0)$.
   - The *globally homogeneous* feedback is 
   $
-  u_"FT"(x)=-sqrt(abs(x))"sign"(x).
+  u_"FT"(x)=-sqrt(abs(x))"sgn"(x).
   $
   This algorithm stabilizes the system at the origin in a _finite time_:
   $

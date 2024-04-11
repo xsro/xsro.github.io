@@ -9,3 +9,4 @@
 
 // notation for sig ⌊⌋ ⌈⌉
 #let sig(a)=$lr(⌊#a⌉)$
+#let sgn(a)=$"sgn"lr((#a))$

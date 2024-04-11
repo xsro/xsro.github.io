@@ -28,7 +28,7 @@ def parse_args():
     parser.add_argument('--bin', type=str, help='my typst binary to run')
     parser.add_argument('--dev', type=str, help='path to source code of typst')
     parser.add_argument('--font-path', type=str, help='path to load fonts')
-    parser.add_argument('-w','--watch', action="store_true", help='watch files')
+    parser.add_argument('-w','--watch', type=str, help='watch file', nargs='?', const="none")
     return parser.parse_args()
 
 def make_command(src:Path,dst:Path,bin="typst",fonts=None,watch=False):
@@ -66,25 +66,41 @@ if __name__=="__main__":
 
     # format the command to run
     files=TYPYST_FILES.splitlines()
-    cmds=[]
-    for f in chunk_list(files,3):
-        src=TYPST_ROOT.joinpath(f[1])
-        dst=PRINT_ROOT.joinpath(f[2])
-        cmd=make_command(src,dst,bin=bin,fonts=font_path,watch=args.watch)
-        cmds.append(cmd)
     
     if args.watch:
-        for i,cmd in enumerate(cmds):
-            print(f"[{i}] {cmd}")
-        a=input("input the number of command to exec: ")
-        try:
-            idx=int(a)
-            cmd=cmds[idx]
-            subprocess.run(cmd)
-        except Exception as e:
-            print(e)
+        cmd=None
+        if Path(args.watch).exists():
+            for f in chunk_list(files,3):
+                src=TYPST_ROOT.joinpath(f[1])
+                if src.resolve()==Path(args.watch).resolve():
+                    dst=PRINT_ROOT.joinpath(f[2])
+                    cmd=make_command(src,dst,bin=bin,fonts=font_path,watch=True)
+        else:
+            cmds=[]
+            for i,f in enumerate(chunk_list(files,3)):
+                src=TYPST_ROOT.joinpath(f[1])
+                dst=PRINT_ROOT.joinpath(f[2])
+                print(f"[{i}] watch {src} to {dst}")
+                cmd=make_command(src,dst,bin=bin,fonts=font_path,watch=True)
+                cmds.append(cmd)
+            a=input("input the number of command to exec: ")
+            try:
+                idx=int(a)
+                cmd=cmds[idx]
+            except Exception as e:
+                print(e)
+                exit()
+        if cmd is None:
             exit()
+        print(cmd)
+        subprocess.run(cmd)
     else:
+        cmds=[]
+        for f in chunk_list(files,3):
+            src=TYPST_ROOT.joinpath(f[1])
+            dst=PRINT_ROOT.joinpath(f[2])
+            cmd=make_command(src,dst,bin=bin,fonts=font_path,watch=False)
+            cmds.append(cmd)
         if PRINT_ROOT.exists():
             shutil.rmtree(PRINT_ROOT)
         PRINT_ROOT.mkdir(parents=True)
