@@ -390,9 +390,8 @@ For instance, it could be replaced by a "sigmoid function".
 #box(height: 210/16*9mm,
  columns(2, gutter: 11pt)[
   $
-  dot(x)=u+delta \
-  u=-c |x|^(1/2) "sign"(x)-w\
-  dot(w)=b "sign"(x)
+  dot(x)=-c |x|^(1/2) "sign"(x)-w+delta_1\
+  dot(w)=b "sign"(x)+delta_2
   $
 
   - The super-twisting control is a *second-order* sliding mode control, since it drives both $sigma arrow 0$ and $dot(sigma) arrow 0$ in finite time. (Second-Order Sliding Mode or 2-SM means the control law drives the sliding variable and its derivative to zero in *finite time*)
