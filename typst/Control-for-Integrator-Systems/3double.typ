@@ -313,7 +313,7 @@ $
                &+ (k_s+1) alpha e_2(t) + beta "sign" e_2(t) \
             = &  (k_s +1)  r+beta "sign" (e_2)
   $
-  where $r=dot(e)_2+alpha e_2=dot.double(e)_1+(1+alpha)dot(e)_1+alpha e_1=$.
+  where $r=dot(e)_2+alpha e_2=dot.double(e)_1+(1+alpha)dot(e)_1+alpha e_1$.
   
   Then
   $

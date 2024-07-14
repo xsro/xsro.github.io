@@ -2,7 +2,7 @@
 #import cetz.plot
 #import cetz.draw: *
 
-#import "lib/lib.typ":  op,sig,ode
+#import "lib/lib.typ":  op,sig,ode,ode45,get_signal
 
 
 #let mu1(t,T:1,h:1,k1:1,k2:0)={
@@ -105,6 +105,52 @@ $.
 
 #main_tvg
 #pagebreak()
+
+== Robust Prescribed Time Stabiliztion of Single Integrator Systems
+
+The system is:
+$
+dot(x)=cases(
+  - k_1/(T-t) x   & quad 0<t<T,
+  - k_1 "sign"(x) & quad t>=T)
+$ with $T> 1$ to be prescribed and $k_1>0,k_2>0,h=1$.\
+
+  #let rhs(t,x)={
+    let delta=calc.sin(t)
+    let u=0 
+    let T=5
+    if t < T{
+      u=-1.1*1/(T - t)*(x.x)
+    }
+    else{
+      u=-1.1*op.sign(x.x)
+      }
+    let T=0.1
+    let dx=(x:u+delta,uf:(u -(x.uf))/T)
+    dx.insert("u",u)
+    dx.insert("delta",-delta)
+    dx
+  }
+  #let (xout,dxout)=ode45(rhs,10,(x:1,uf:0),0.01,record_step:0.01)
+
+  #cetz.canvas({
+      plot.plot(
+        size: (8,2),
+        axis-style: "school-book", 
+        x-tick-step: 5, y-tick-step:1,
+        {
+          plot.add(get_signal(xout,"x"),label:$x$)
+          // plot.add(get_signal(xout,"uf"),label:$u_"filtered"$)
+          plot.add(get_signal(dxout,"u"),label:$u$)
+          // plot.add(get_signal(dxout,"delta"),label:$-delta$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+    })
+
+#pagebreak()
+
 == Discussion: Time-varying Gain with different power
 
 
