@@ -1,0 +1,52 @@
+考虑如下一般的非线性系统：
+\begin{equation}
+	\dot{x} = f(x) + g(x)u + d(x,t)
+\end{equation}
+其中，$x\in \mathbb{R}^{n}$表示系统的状态向量，$f(x)\in \mathbb{R}^{n}$是系统的非线性函数部分，$g(x)\in \mathbb{R}^{n\times m}$为输入矩阵，$u\in \mathbb{R}^{m}$是控制输入向量，$d(x,t)\in \mathbb{R}^{n}$代表外部干扰以及未建模动态等不确定性因素。
+
+定义滑模面函数为：
+\begin{equation}
+	s(x) = Cx
+\end{equation}
+其中，$C\in \mathbb{R}^{m\times n}$为合适的常数矩阵，使得滑模面满足一定的可达性与稳定性要求。
+
+超螺旋滑模控制律通常设计为：
+\begin{equation}
+	u = -\alpha \vert s \vert^{\frac{1}{2}} \text{sgn}(s) - \beta \int_{0}^{t} \text{sgn}(s(\tau))d\tau
+\end{equation}
+式中，$\alpha > 0$和$\beta > 0$为待确定的控制增益参数，$\text{sgn}(\cdot)$是符号函数，其定义如下：
+\[
+\text{sgn}(s)=\left\{
+\begin{array}{ll}
+	1, & s > 0 \\
+	0, & s = 0 \\
+	-1, & s < 0
+\end{array}
+\right.
+\]
+该控制律通过两项的综合作用，驱使系统状态在有限时间内到达滑模面，并沿着滑模面渐近稳定，同时抑制外部干扰的影响。
+
+这里以一个二阶单输入单输出（SISO）系统为例展示超螺旋滑模控制的仿真实现，系统方程如下：
+\begin{equation}
+	\begin{cases}
+		\dot{x}_{1} = x_{2} \\
+		\dot{x}_{2} = -x_{1} - 0.5x_{2} + u + d(t)
+	\end{cases}
+\end{equation}
+其中，$d(t) = 0.2\sin(2t)$表示外部干扰。
+
+设定滑模面为：
+\begin{equation}
+	s = x_{2} + \lambda x_{1}
+\end{equation}
+这里取 $\lambda = 1$。
+
+控制律设计为：
+\begin{equation}
+	u = -\alpha \vert s \vert^{\frac{1}{2}} \text{sgn}(s) - \beta \int_{0}^{t} \text{sgn}(s(\tau))d\tau
+\end{equation}
+取 $\alpha = 2$，$\beta = 1$。
+
+以下是使用MATLAB软件实现该仿真的代码示例：
+
+仿真结果能够直观展示超螺旋滑模控制下系统状态的变化以及控制输入的情况，验证其在抑制干扰、实现稳定控制方面的有效性。
