@@ -1,0 +1,26 @@
+\chapter{连续控制系统}
+
+
+\section{非光滑Lyapunov 方法（Dini导数）}
+
+使用Dini导数表示的非光滑系统李亚普诺夫方法见书\cite{roucheStabilityTheoryLiapunov1977}。
+Dini导数可以用于计算连续但是不可导的函数的导数，因此常用于非光滑系统的分析。
+Dini导数的定义为：
+
+\begin{definition}[Dini导数]
+  \citefrom{\cite[p 659 in proof of theorem 3.4]{khalilNonlinearSystems}}
+  The \textbf{upper Dini derivative}, which is also called an upper right-hand derivative, of continuous function  is defined by 
+  \begin{equation}
+    D^+ v(t) = \limsup_{h\to 0^+} \frac{v(t+h)-v(t)}{h}
+  \end{equation}
+  where $\limsup_{n\to\infty}$ (the limit superior).
+\end{definition}
+这里的$\limsup$是上极限，形象地理解是，函数$y=\sin(x)$在无穷处是没有极限的，但是在无穷远处是有上极限$\limsup_{x\to\infty} \sin(x)=1$和下极限$\liminf_{x\to\infty} \sin(x)=-1$的。
+
+\begin{lemma}[非光滑版本的 LaSalle 不变集原理]
+  \citefrom{最早出自\cite[Theorem 2]{lasalleStabilityTheoryOrdinary1968}
+  也见于\cite[p 243]{roucheStabilityTheoryLiapunov1977}}
+  % yuSecondorderConsensusMultiagent2017
+  Let $x(t)$ be a solution of $\dot{x} = f(x)$ with $x(0) = x_0 \in \RR^k$, where \tR{$f: U \to \RR^k$ is continuous} with an open subset $U$ of $R^k$, and let $V: U \to R$ be a locally Lipschitz function such that $D^+V(x(t)) ≤ 0$, where $D^+$ denotes the upper Dini derivative. 
+  Then, with denoting the positive limit set as $\lambda^+(x_0)$, $\lambda^+(x_0)\cup U$ is contained in the union of all solutions that remain in $S = \{x \in U : D^+V(x(t)) = 0\}$.
+\end{lemma}

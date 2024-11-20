@@ -1,0 +1,79 @@
+\chapter{非线性系统：右端Lipschtz连续}
+
+一般的非线性自治系统可以用如下方程表示：
+\begin{equation}\label{eq:nonlinear}
+    \dot{x}=f(t,x).
+\end{equation}
+其中,$x$为系统状态，$t\geq 0$为时间。
+$f(t,x)$ 是关于时间$t$分段连续的，关于状态$x$是局部Lipschitz连续的。
+is \strong{piecewise continuous in $t$} and \strong{locally Lipshitz in $x$} over the domain of interest
+
+
+经典非线性系统的解存在性和唯一性需要微分方程右端Lipschitz连续，
+一个使用较多的数学表述是khalil的非线性控制的\textbf{引理1.3}：
+
+\begin{quote}
+设\(f(t,x)\)关于\(t\)是\textbf{分段连续}的，
+并且对所有\(t\ge t_0\)，在关于\(x\)的区域\(D\subset \mathbb{R}^n\)上\(f(t,x)\)是局部\textbf{Lipschitz连续}的。
+设\(W\)是\(D\)中的一个紧子集，\(x_0\in W\)，并进一步设 \[
+\dot{x}=f(t,x),x(t_0)=x_0
+\] 的解\(t\ge t_0\)时都在\(W\)内，那么这个解是\(t\ge t_0\)的唯一解。
+\end{quote}
+
+    $f(t,x)$ is piecewise continuous in $t$ on interval $J\subset \RR$ 
+    if for every bounded subinterval $J_0\subset J$, 
+    $f$ is continuous in $t$ for all $t\in J_0$, 
+    except, possibly, 
+    at a finite number of points where $f$ may have finite-jump discontinuities.
+
+    $f(t,x)$ is \textcolor{blue}{locally Lipschitz} in $x$ \textcolor{red}{at a point $x_0$} 
+    if there is a neighborhood $N(x_0,r)=\{x\in \RR^n \big| \norm{x-x_0}<r\}$ 
+    where $f(t,x)$ satisfies the Lipschitz condition
+    \[\norm{f(t,x)-f(t,y)}\le \norm{x-y},L>0\] 
+
+    A function $f(t,x)$ is \textcolor{blue}{locally Lipschitz} in $x$ 
+    \textcolor{purple}{on a domain} (open and connected set) $D\subset\RR^n$ 
+    if it is locally Lipschitz at every point $x_0\in D$
+
+    \begin{lemma}[lemma 1.1 \cite{khalilNonlinearControl2015}]
+        Let $f(t,x)$ be piecewise continuous in $t$ and \strong{locally} Lipschitz 
+        in $x$ at $x_0$,
+        for all $t\in [t_0,t_1]$.
+        Then, there is $\delta >0$ such that the state equation $\dot{x}=f(t,x)$,
+         with $x(t_0)=x_0$,
+        has a unique solution over $[t_0,t_0+\delta]$.
+    \end{lemma}
+
+    \begin{lemma}[lemma 1.3]
+        Let $f(t,x)$ be piecewise continuous in $t$ and 
+        \strong{locally Lipschitz} in $x$ for all $t\in [t_0,\infty)$
+        and all $x$ in a domain $D\subset \RR^n$.
+        Let $W$ be a compact subset of $D$, 
+        and suppose that every solution of 
+        \[\dot{x}=f(t,x), x(t_0)=x_0\]
+        with $x_0\in W$ lies entirely in $W$. 
+        Then, there is a unique solution that is defined for all $t\ge t_0$
+    \end{lemma}
+
+    \begin{theorem}[Lyapunov's theorem (3.3)]
+        If there is $V(x)$ such that 
+            \begin{itemize}
+                \item[1] $V(0)=0$
+                \item[2] $V(x)>0, \ \forall \ x \in D \ with\ x\neq 0$
+                \item[3] $\dot{V}(x) \le 0, \forall\ x\in D$
+            \end{itemize}
+            then the origin is \strong{stable}
+
+        Moreover, If 
+        \[\dot{V}(x)<0,\ \forall \ x\in D \ with\ x\neq 0\]
+        then the origin is \strong{asymptotically stable}
+
+        Furthermore, if $V(x)>0, \forall \ x\neq 0$,
+        \[\norm{x}\to \infty \rightarrow V(x) \to \infty\]
+        and $\dot{V}(x)<0,\forall\ x\neq 0$, then the origin is \strong{globally asymptotically stable}
+    \end{theorem} 
+
+    \begin{theorem}[Lyapunov's Theorem]
+        The origin is stable if there is a continuously differentiable positive definite function $V(x)$ so that $\dot{V}(x)$ is negative definite. 
+        It is globally asymptotically stable if the conditions for asymptotic stable hold globally and ${V}(x)$ is radially unbounded.
+    \end{theorem}

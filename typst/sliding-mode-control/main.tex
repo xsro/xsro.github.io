@@ -1,0 +1,56 @@
+\documentclass[UTF8]{ctexbook}
+%\includeonly{body/sta}
+
+\usepackage[margin={2.5cm,1.5cm}]{geometry}
+
+\usepackage{xcolor}
+\usepackage[]{hyperref}
+\usepackage{graphicx} % 用于插入图片（仿真展示可能用到）
+\usepackage{caption} % 图片标题相关设置
+\usepackage{subcaption} % 处理子图情况
+\usepackage{makecell}
+
+\usepackage{amsmath} % 用于数学公式排版
+\usepackage{amssymb} % 补充数学符号
+\newcommand{\sgn}[1]{\mathop{\mathrm{sgn}} (#1)}
+\newcommand{\sig}[1]{\mathop{\mathrm{sig}} (#1)}
+\usepackage{amsthm}
+\newtheorem{theorem}{定理}
+\newtheorem{definition}{定义}
+\newtheorem{lemma}{引理}
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+\newcommand\normx[1]{\Vert#1\Vert}
+\newcommand{\NN}[0]{\mathbb{N}}
+\newcommand{\RR}[0]{\mathbb{R}}
+
+\newcommand{\Sgn}{\operatorname{Sgn}}
+\newcommand{\sat}{\operatorname{sat}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\dd}{\operatorname{d}}
+
+
+\usepackage[backend=biber, style=apa,url=false]{biblatex} % 指定后端为biber，引用样式为APA格式
+\addbibresource{main_biber.bib} 
+%\addbibresource{F:\\biblatex.bib} 
+\newcommand{\citefrom}[1]{\textcolor{gray}{#1}\\}
+\newcommand\tR{\textcolor{red}}
+
+\title{滑模控制学习笔记}
+\author{xsro@foxmail.com}
+\date{\today}
+
+\begin{document}
+	
+
+	\maketitle
+	\tableofcontents
+	
+	\include{body/pre}
+	\include{body/nonlinear}
+    \include{body/continuous}
+    \include{body/bounded}
+	
+	\include{body/sta}
+	
+	\printbibliography % 打印参考文献列表
+\end{document}

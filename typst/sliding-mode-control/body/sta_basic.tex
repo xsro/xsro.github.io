@@ -1,0 +1,45 @@
+考虑如下简单的二阶双积分器系统：
+\begin{equation}
+	\begin{cases}
+		\dot{x}_{1} = x_{2} \\
+		\dot{x}_{2} = u + d(t)
+	\end{cases}
+\end{equation}
+其中，$x=[x_1,x_2]^T \in \mathbb{R}^{2}$表示系统的状态向量，
+$u\in \mathbb{R}$是控制输入向量，
+$d(x,t)\in \mathbb{R}$代表外部干扰以及未建模动态等不确定性因素。
+
+定义滑模面函数为：
+\begin{equation}
+	s=c x_1+x_2
+\end{equation}
+其中，$c \in \mathbb{R}$为合适的常数，使得滑模面满足一定的可达性与稳定性要求。
+
+对滑模变量求导得，$\dot{s}=c x_2+ u+d(t)$
+超螺旋滑模控制律通常设计为：
+\begin{equation}
+	\begin{cases}
+		\dot{s}=-k_1  \sig{s}^{1/2}+w\\
+		\dot{w}=-k_2 \sgn{s}
+	\end{cases}
+\end{equation}
+式中，$k_1 > 0$和$k_2 > 0$为待确定的控制增益参数，$\sgn{s}$是符号函数。
+该控制律通过两项的综合作用，驱使系统状态在有限时间内到达滑模面，并沿着滑模面渐近稳定，同时抑制外部干扰的影响。
+
+于是，最后的滑模控制率为：
+\begin{equation}
+	u = -k_1 \sig{s}^{1/2} + w -c x_2
+\end{equation}
+
+这里以一个二阶单输入单输出（SISO）系统为例展示超螺旋滑模控制的仿真实现，
+其中，$d(t) = 0.1\sin(2t)$表示外部干扰。
+取滑模参数$c=1$,格库塔四阶方法仿真代码见\url{https://github.com/xsro/xsro.github.io/blob/zola/typst/sliding-mode-control/simulation/sta.py}，
+如果需要更加精确的仿真可以参见\cite{livneProperDiscretizationHomogeneous2014}.
+仿真效果如图\ref{fig basic sta}所示。
+可以发现系统稳定后$w(t)+d(t)=0$，系统的积分部分达到了观测扰动的作用。
+\begin{figure}
+	\centering
+	\includegraphics[height=6cm]{simulation/out/sta_0.18_0.2}
+	\caption{STA算法rk4仿真，$k1=0.18$, $k_2=0.2$, $d=0.1 \sin(t)$.}
+	\label{fig basic sta}
+\end{figure}

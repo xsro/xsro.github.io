@@ -1,0 +1,38 @@
+
+
+\begin{enumerate}
+	\item 知乎： 关于超螺旋滑模算法的完整证明过程 \url{https://zhuanlan.zhihu.com/p/672355794}
+	\item CSDN： 超螺旋滑模控制详细介绍（全网独家） \url{https://blog.csdn.net/qq_41811966/article/details/134869940}
+\end{enumerate}
+
+\subsection{稳定性条件概览}
+
+考虑如下的STA误差方程：
+\begin{equation}
+	\begin{cases}
+		\dot{s}=-k_1 \sig{s}^{1/2}+\varphi\\
+		\dot{\varphi}=-k_2 \sgn{s}+\dot{\omega}
+	\end{cases}
+\end{equation}
+
+\begin{table}[!htb]
+	\centering
+	\begin{tabular}{c|c}
+		\hline
+		参数条件  & 出处 
+		\\\hline    
+		$k_1 >0$,
+		$k_2>\|\dot{\omega}\|_\infty$& 
+		\makecell{	
+			引自多体文献\cite{fengFinitetimeDistributedConvex2020}，\\
+			可参考单体文献\cite{morenoStrictLyapunovFunctions2012}(en)，\\
+			\cite[第五章]{YangGaoJieHuaMoKongZhiLiLunJiQiZaiQianQuDongXiTongZhongDeYingYongYanJiu2016}(zh)
+		}
+		\\\hline
+		$k_1 >\sqrt{6} k_2$,
+		$k_2>\|\dot{\omega}\|_\infty$&
+		改写自多体文献\cite{chenDistributedFinitetimeDifferentiator2024}
+		\\\hline
+	\end{tabular}
+	\caption{STA收敛条件对比}
+\end{table}
