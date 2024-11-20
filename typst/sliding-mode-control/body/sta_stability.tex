@@ -7,32 +7,57 @@
 
 \subsection{稳定性条件概览}
 
-考虑如下的STA误差方程：
+为了尽可能地兼顾一般性和行文简便，这里将\eqref{eq sta s}写为：
 \begin{equation}
 	\begin{cases}
-		\dot{s}=-k_1 \sig{s}^{1/2}+\varphi\\
-		\dot{\varphi}=-k_2 \sgn{s}+\dot{\omega}
+		\dot{s}=-k_1 \sig{s}^{1/2}+w+\varrho_1\\
+		\dot{w}=-k_2 \sgn{s}+\varrho_2
 	\end{cases}
 \end{equation}
+这里$\varrho_1,\varrho_2$分别为第一通道和第二通道的扰动。
 
 \begin{table}[!htb]
 	\centering
 	\begin{tabular}{c|c}
 		\hline
 		参数条件  & 出处 
-		\\\hline    
+		\\\hline  
+		\makecell{
+		当 $\varrho_2=0$ 时，$k_1>0$并且 $k_2>0$ ，\\
+		当 $\varrho_2>0$ 时，通过算法\ref{algo sta moreno}确定
+		}
+		&
+			\makecell{
+			引自\cite[algorithm 1]{morenoStrictLyapunovFunctions2012}，\\
+			\cite[第五章]{YangGaoJieHuaMoKongZhiLiLunJiQiZaiQianQuDongXiTongZhongDeYingYongYanJiu2016}
+		}
+		\\\hline
 		$k_1 >0$,
 		$k_2>\|\dot{\omega}\|_\infty$& 
-		\makecell{	
-			引自多体文献\cite{fengFinitetimeDistributedConvex2020}，\\
-			可参考单体文献\cite{morenoStrictLyapunovFunctions2012}(en)，\\
-			\cite[第五章]{YangGaoJieHuaMoKongZhiLiLunJiQiZaiQianQuDongXiTongZhongDeYingYongYanJiu2016}(zh)
-		}
+		引自多体文献\cite{fengFinitetimeDistributedConvex2020}，
+		有误
 		\\\hline
 		$k_1 >\sqrt{6} k_2$,
 		$k_2>\|\dot{\omega}\|_\infty$&
-		改写自多体文献\cite{chenDistributedFinitetimeDifferentiator2024}
+		改写自多体文献\cite{chenDistributedFinitetimeDifferentiator2024}，
+		不够保守
 		\\\hline
 	\end{tabular}
-	\caption{STA收敛条件对比}
+	\caption{STA收敛条件对比，在第一通道无扰动$\varrho_1=0$的参数对比}
 \end{table}
+
+\begin{algo}\label{algo sta moreno}
+	\begin{enumerate}
+		\item  选择正常数$(\beta,\gamma)$ 使得 $0<\beta<1,\gamma>1$
+		\item 找到满足下列不等式的正常数 $\chi,\alpha$
+		\begin{equation}
+			\chi-\frac{2}{\gamma}\alpha
+			>\alpha^2-\beta (1+\chi)\alpha+\frac14 (1+\chi)^2
+		\end{equation}
+		\item 选取增益参数为
+		\begin{equation}
+			k_1=\chi \sqrt{\frac{2\gamma}{(1-\beta)\alpha}}\sqrt{L},\quad 
+			k_2=\frac{\beta+1}{1-\beta}L
+		\end{equation}
+	\end{enumerate}
+\end{algo}
