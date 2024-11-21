@@ -56,16 +56,7 @@ def rk4(func,tspan,x0,args,h=0.01):
         x[:,i+1]=x[:,i]+h*(k1+2*k2+2*k3+k4)/6
     return Sol(t,x,signals)
 
-def outdir(filename):
-    import os
-    folder=os.path.join(os.path.dirname(__file__),"out")
-    if not os.path.exists(folder):
-        os.makedirs(folder)
-    outpath=os.path.join(folder,filename)
-    return outpath
-
-#%%
-if __name__=="__main__":
+def main_basic(outdir=None):
     for k1 in [0.17,0.18]:
         p=STAParams()
         p.k1=k1
@@ -83,7 +74,13 @@ if __name__=="__main__":
             ax.legend()
             ax.grid()
         plt.tight_layout()
-        plt.savefig(outdir(f"sta_{p.k1}_{p.k2}.png"))
-        plt.show()
+        if outdir is not None: 
+            plt.savefig(outdir(f"sta_{p.k1}_{p.k2}.png"))
+
+
+#%%
+if __name__=="__main__":
+    main_basic()
+    plt.show()
 
 # %%

@@ -56,7 +56,7 @@ def outdir(filename):
     return outpath
 
 
-if __name__=="__main__":
+def main_proper_discretization(outdir=None):
 #%%
     p=STAParams()
     x0=np.array([1.,0.])
@@ -72,25 +72,9 @@ if __name__=="__main__":
         plt.legend()
         plt.grid()
     plt.tight_layout()
+    if outdir is not None:
+        plt.savefig(outdir("step.pdf"))
+
+if __name__=="__main__":
+    main_proper_discretization()
     plt.show()
-    
-
-    # fig=plt.figure()
-    # for i,step in enumerate([0.1,0.01,0.005]):
-    #     sol=rk4(sta, [0,2000], x0, args=(p,),h=step)
-    #     ax=fig.add_subplot(3,1,i+1)
-    #     ax.plot(sol.t, sol.y[0])
-    #     ax.set_ylabel("$x_1$")
-    # plt.subplot(2,1,2)
-    # plt.plot(sol.t, sol.y[1])
-    # plt.ylabel("$x_2$")
-    # plt.grid()
-    # plt.suptitle("$k_1={},k_2={},\\|\\omega\\|\\leq{}$".format(p.k1,p.k2,p.dw))
-    # plt.savefig(outdir(f"sta_x12_{step}.png"), dpi = 300)
-
-    # plt.figure()
-    # plt.plot(sol.y[0], sol.y[1])
-    # plt.grid()
-    # plt.savefig(outdir(f"sta_phase_{step}.png"), dpi = 300)
-    # plt.show()
-# %%

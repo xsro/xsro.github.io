@@ -22,9 +22,10 @@
 
 \begin{table}[!htb]
 	\centering
-	\begin{tabular}{c|c}
+	\begin{tabular}{c|c|c}
 		\hline
-		参数条件  & 出处 \\\hline
+		code & 参数条件  & 出处 \\\hline
+		Levant1998 &
 		$k_1\geq 2\sqrt{L\frac{k_2+L}{k_2-L}}$, $k_2>L$ &
 		\makecell{
 			条件由\cite[eq 6]{levantRobustExactDifferentiation1998}给出，\\
@@ -35,7 +36,8 @@
 			$k_2=4L$
 			也有较好的收敛效果。
 		}
-		\\\hline  
+		\\\hline 
+		Moreno2012 &
 		\makecell{
 		当 $\varrho_2=0$ 时，$k_1>0$并且 $k_2>0$ ，\\
 		当 $\varrho_2>0$ 时，通过算法\ref{algo sta moreno}确定
@@ -46,20 +48,34 @@
 			\cite[第五章]{YangGaoJieHuaMoKongZhiLiLunJiQiZaiQianQuDongXiTongZhongDeYingYongYanJiu2016}
 		}
 		\\\hline
+		Moreno2014 &
+		$k_1>\sqrt{\frac{2}{k_1-L}}$,$k_2>L$
+		&
+		\cite{morenoStrictLyapunovFunctions2014}
+		\\\hline
+		Feng2020 &
 		$k_1 >0$,
 		$k_2>L$& 
 		引自多体文献\cite{fengFinitetimeDistributedConvex2020}，
-		文献中给出的$k_1$范围应为笔误。
+		%文献中给出的$k_1$范围应为笔误。
 		\\\hline
+		Chen2024 &
 		$k_1 >\sqrt{\frac{-2L^2+5k_2L+11k_2^2}{k_2-L}} $,
 		$k_2>L$&
-		改写自多体文献\cite{chenDistributedFinitetimeDifferentiator2024}，
-		不够保守
+		改写自多体文献\cite{chenDistributedFinitetimeDifferentiator2024}
 		\\\hline
 	\end{tabular}
 	\caption{STA收敛条件对比，在第一通道无扰动$\varrho_1=0$，$|\varrho_2|\leq L$的参数对比}
 	\label{table sta gain selection}
 \end{table}
+从表中可以发现，$k_1$的条件与$k_2$和$L$都有关系，直观可以从图\ref{fig sta gain selection}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[height=6cm]{simulation/out/k1-k2}
+	\caption{不同文献中关于STA算法增益选取的讨论，途中x标记为\ref{fig basic sta}所使用的稳定的参数$L=0.1,k_1=0.18,k_2=0.2$，可以发现目前文献中的参数选取标准仍然是保守的。}
+	\label{fig sta gain selection}
+\end{figure}
 
 \begin{algo}\label{algo sta moreno}
 	\begin{enumerate}
