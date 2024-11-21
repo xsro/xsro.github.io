@@ -1,5 +1,4 @@
-
-
+除了本章所引用参考文献外，网络上也有一些关于STA算法的讨论，主要摘录如下：
 \begin{enumerate}
 	\item 知乎： 关于超螺旋滑模算法的完整证明过程 \url{https://zhuanlan.zhihu.com/p/672355794}
 	\item CSDN： 超螺旋滑模控制详细介绍（全网独家） \url{https://blog.csdn.net/qq_41811966/article/details/134869940}
@@ -53,6 +52,14 @@
 		&
 		\cite{morenoStrictLyapunovFunctions2014}
 		\\\hline
+		Seeber2017&
+		$k_1>\sqrt{k_2+L}$,$k_2>L$ &
+		\makecell{
+		\cite{seeberStabilityProofWellestablished2017}\\
+		\cite{colottiNewConvergenceConditions2022}拓展到带有时变增益的情形
+		}
+		\\\hline
+		%----------------------------------------
 		Feng2020 &
 		$k_1 >0$,
 		$k_2>L$& 
@@ -68,12 +75,13 @@
 	\caption{STA收敛条件对比，在第一通道无扰动$\varrho_1=0$，$|\varrho_2|\leq L$的参数对比}
 	\label{table sta gain selection}
 \end{table}
-从表中可以发现，$k_1$的条件与$k_2$和$L$都有关系，直观可以从图\ref{fig sta gain selection}
+从表中可以发现，$k_1$的条件与$k_2$和$L$都有关系，直观可以从图\ref{fig sta gain selection}看出取值范围的大致界限。
+途中，可以明显看到当$k_2$较大的时候，$k_1$可以取到小于$k_2$的值。
 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[height=6cm]{simulation/out/k1-k2}
-	\caption{不同文献中关于STA算法增益选取的讨论，途中x标记为\ref{fig basic sta}所使用的稳定的参数$L=0.1,k_1=0.18,k_2=0.2$，可以发现目前文献中的参数选取标准仍然是保守的。}
+	\caption{不同文献中关于STA算法增益选取的讨论，图中x标记为\ref{fig basic sta}所使用的稳定的参数$L=0.1,k_1=0.18,k_2=0.2$，可以发现目前文献中的参数选取标准仍然是保守的。}
 	\label{fig sta gain selection}
 \end{figure}
 
@@ -92,3 +100,12 @@
 		\end{equation}
 	\end{enumerate}
 \end{algo}
+
+\section{严格Lyapunov函数的稳定性证明}
+
+本节内容改编自\cite{morenoStrictLyapunovFunctions2014}
+
+
+\section{高阶滑模和高阶微分器}
+
+\cite{morenoSurveyHighorderSlidingmode2023}给出了高阶情况的Lyapunov法证明方法。
