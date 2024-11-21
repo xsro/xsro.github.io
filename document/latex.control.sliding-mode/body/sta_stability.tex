@@ -24,7 +24,17 @@
 	\centering
 	\begin{tabular}{c|c}
 		\hline
-		参数条件  & 出处 
+		参数条件  & 出处 \\\hline
+		$k_1\geq 2\sqrt{L\frac{k_2+L}{k_2-L}}$, $k_2>L$ &
+		\makecell{
+			条件由\cite[eq 6]{levantRobustExactDifferentiation1998}给出，\\
+			但是文中也说到，这个条件只是充分不是必要的，\\
+			比如$k_1=1\sqrt{L}$,
+			$k_2=1.1L$ 或者 \\
+			$k_1=0.5*\sqrt{L}$,
+			$k_2=4L$
+			也有较好的收敛效果。
+		}
 		\\\hline  
 		\makecell{
 		当 $\varrho_2=0$ 时，$k_1>0$并且 $k_2>0$ ，\\
@@ -37,17 +47,17 @@
 		}
 		\\\hline
 		$k_1 >0$,
-		$k_2>\|\dot{\omega}\|_\infty$& 
+		$k_2>L$& 
 		引自多体文献\cite{fengFinitetimeDistributedConvex2020}，
-		有误
+		文献中给出的$k_1$范围应为笔误。
 		\\\hline
-		$k_1 >\sqrt{6} k_2$,
-		$k_2>\|\dot{\omega}\|_\infty$&
+		$k_1 >\sqrt{\frac{-2L^2+5k_2L+11k_2^2}{k_2-L}} $,
+		$k_2>L$&
 		改写自多体文献\cite{chenDistributedFinitetimeDifferentiator2024}，
 		不够保守
 		\\\hline
 	\end{tabular}
-	\caption{STA收敛条件对比，在第一通道无扰动$\varrho_1=0$的参数对比}
+	\caption{STA收敛条件对比，在第一通道无扰动$\varrho_1=0$，$|\varrho_2|\leq L$的参数对比}
 	\label{table sta gain selection}
 \end{table}
 
