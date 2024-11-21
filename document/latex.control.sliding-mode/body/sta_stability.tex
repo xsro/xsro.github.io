@@ -15,6 +15,10 @@
 	\end{cases}
 \end{equation}
 这里$\varrho_1,\varrho_2$分别为第一通道和第二通道的扰动。
+事实上，这里的第一通道扰动可以合并到第二通道，
+即记$w'=w+\varrho_1$这样$\dot{w}'=\dot{w}+\dot{\varrho_1}=-k_2 \sgn{s}+\varrho_2+\dot{\varrho_1}$.
+于是，系统可以转化为$\varrho_1'=0$, $\varrho_2'=\varrho_2+\dot{\varrho}_1$.
+因此，表\ref{table sta gain selection}给出了已有文献对增益选择的要求。
 
 \begin{table}[!htb]
 	\centering
@@ -44,6 +48,7 @@
 		\\\hline
 	\end{tabular}
 	\caption{STA收敛条件对比，在第一通道无扰动$\varrho_1=0$的参数对比}
+	\label{table sta gain selection}
 \end{table}
 
 \begin{algo}\label{algo sta moreno}

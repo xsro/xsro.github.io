@@ -20,7 +20,7 @@ $d(x,t)\in \mathbb{R}$代表外部干扰以及未建模动态等不确定性因�
 \begin{equation}\label{eq sta s}
 	\begin{cases}
 		\dot{s}=-k_1  \sig{s}^{1/2}+w\\
-		\dot{w}=-k_2 \sgn{s}
+		\dot{w}=-k_2 \sgn{s}-\dot{d}(t)
 	\end{cases}
 \end{equation}
 式中，$k_1 > 0$和$k_2 > 0$为待确定的控制增益参数，$\sgn{s}$是符号函数。
@@ -32,7 +32,7 @@ $d(x,t)\in \mathbb{R}$代表外部干扰以及未建模动态等不确定性因�
 
 最后的滑模控制率为：
 \begin{equation}
-	u = -k_1 \sig{s}^{1/2} + w -c x_2
+	u = -k_1 \sig{s}^{1/2} + w + d(t) -c x_2
 \end{equation}
 
 这里以一个二阶单输入单输出（SISO）系统为例展示超螺旋滑模控制的仿真实现，

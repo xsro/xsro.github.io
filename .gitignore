@@ -1,5 +1,4 @@
-
 public
 _*/
 static/print/
-typst/**/*.pdf
+.DS_store
