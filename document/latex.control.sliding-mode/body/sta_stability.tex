@@ -27,7 +27,7 @@
 		Levant1998 &
 		$k_1\geq 2\sqrt{L\frac{k_2+L}{k_2-L}}$, $k_2>L$ &
 		\makecell{
-			条件由\cite[eq 6]{levantRobustExactDifferentiation1998}给出，\\
+			条件由\cite[eq 6]{levantRobustExactDifferentiation1998}给出并使用几何方法证明，\\
 			但是文中也说到，这个条件只是充分不是必要的，\\
 			比如$k_1=1\sqrt{L}$,
 			$k_2=1.1L$ 或者 \\
@@ -37,14 +37,11 @@
 		}
 		\\\hline 
 		Moreno2012 &
-		\makecell{
-		当 $\varrho_2=0$ 时，$k_1>0$并且 $k_2>0$ ，\\
-		当 $\varrho_2>0$ 时，通过算法\ref{algo sta moreno}确定
-		}
+			$k_1>2\sqrt{k_2-\sqrt{k_2^2-L^2}}$, $k_2>L$
 		&
 			\makecell{
-			引自\cite[algorithm 1]{morenoStrictLyapunovFunctions2012}，\\
-			\cite[第五章]{YangGaoJieHuaMoKongZhiLiLunJiQiZaiQianQuDongXiTongZhongDeYingYongYanJiu2016}
+			原文为算法\ref{algo sta moreno}\cite[algorithm 1]{morenoStrictLyapunovFunctions2012}，\\
+			由\cite{seeberStabilityProofWellestablished2017}推导得到本条件
 		}
 		\\\hline
 		Moreno2014 &
@@ -58,6 +55,11 @@
 		\cite{seeberStabilityProofWellestablished2017}\\
 		\cite{colottiNewConvergenceConditions2022}拓展到带有时变增益的情形
 		}
+		\\\hline
+		Seeber2018 &
+		充要条件，较复杂见参考文献
+		&
+		几何证明，\cite{seeberNecessarySufficientStability2018}
 		\\\hline
 		%----------------------------------------
 		Feng2020 &
@@ -76,7 +78,7 @@
 	\label{table sta gain selection}
 \end{table}
 从表中可以发现，$k_1$的条件与$k_2$和$L$都有关系，直观可以从图\ref{fig sta gain selection}看出取值范围的大致界限。
-途中，可以明显看到当$k_2$较大的时候，$k_1$可以取到小于$k_2$的值。
+图中，可以明显看到当$k_2$较大的时候，$k_1$可以取到小于$k_2$的值。
 
 \begin{figure}[!htb]
 	\centering
@@ -86,6 +88,8 @@
 \end{figure}
 
 \begin{algo}\label{algo sta moreno}
+	当 $\varrho_2=0$ 时，$k_1>0$并且 $k_2>0$ ，
+	当 $\varrho_2>0$ 时，通过以下规则确定
 	\begin{enumerate}
 		\item  选择正常数$(\beta,\gamma)$ 使得 $0<\beta<1,\gamma>1$
 		\item 找到满足下列不等式的正常数 $\chi,\alpha$
