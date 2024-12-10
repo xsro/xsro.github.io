@@ -106,52 +106,107 @@
 \end{algo}
 
 \section{严格Lyapunov函数的稳定性证明}
-l
-本节内容改编自\cite{morenoStrictLyapunovFunctions2014}，这是我目前最能看懂的证明，原文按照由简单到复杂的思路行文，我这里直接讨论非homogeneous的情况，希望可以给学习STA的朋友移除这个大山。
 
-\subsection{}
+%本节展示多维情况下的证明方法，
+%内容主要来自\cite{nageshMultivariableSupertwistingSliding2014,basinMultivariableContinuousFixedtime2017}.文中Remark 3 说到这里的$k_2$ 主要为了抑制扰动，只要$k_2>\Delta$即可抑制住扰动，所以该证明还是太保守。
 
-
-
-
-\section{高阶滑模和高阶微分器}
-
-\cite{morenoSurveyHighorderSlidingmode2023}给出了高阶情况的Lyapunov法证明方法。
-同时该文献将算法拓展到了更加一般的情况（幂指数从1/2变为0到1的数，同时添加了线性环节）。
 
 \begin{proposition}
-	考虑STA系统
+	\cite[Proposition 1]{morenoStrictLyapunovFunctions2014}
+	考虑多输入多输出的STA系统，其中$s,w\in\RR^n$
 	\begin{equation}
-		\dot{s}=-\sig{s}^{1/2}+w\quad 
-		\dot{w}=-\sgn{s}+\delta(t),\quad 
-		|\delta(t)|<\Delta
+		\dot{s}=-k_1 \sig{s}^{1/2}+w,\quad 
+		\dot{w}=-k_2 \sgn{s}+\delta(t),\quad 
+		|\delta(t)|<\Delta.
 	\end{equation}
-	其中， 增益的选择为$k_1>\frac{\sqrt{2}\nu^{1/2}}{\sqrt{k_2-\Delta}}$, $k_2>\Delta$, 其中$\nu>1$.
+	其中， 增益的选择为$k_2>\Delta$,$k_1>\sqrt{2k_1}$.
 \end{proposition}
 
 \begin{proof}
-	定义一个微分同胚
-	\begin{equation}
-		\chi^T=[\chi_1,\chi_2]\quad
-		\chi_1=\sig{s}^{1/2}  \quad
-		\chi_2=\sig{s}^{1/2}-w
-	\end{equation}
-	于是，转换后的微分方程可以写为：
-	\begin{equation}
-		\dot{\chi}_1=1/2 \norm{s}^{-1/2}\dot{s} 
-		=-1/2 \norm{s} \chi_2 \quad 
-		\dot{\chi}_2=-1/2 \norm{s} \chi_2  -\dot{w}
-	\end{equation}
 	
 	选取Lyapunov 函数为
+	\begin{equation}
+		\label{eq V zeta}
+		V=\zeta^T P \zeta + (\gamma_1 +\gamma_2)k_2 |s|\quad 
+		P=\frac12 \begin{bmatrix}
+			\gamma_2 k_1^2  & -\gamma_2 k_1\\
+			-\gamma_2 k_1 & (\gamma_1+\gamma_2)\\
+		\end{bmatrix}
+		\quad 
+		\zeta =\begin{bmatrix}
+			\sig{s}^{1/2}\\
+			w
+		\end{bmatrix}
+	\end{equation}
+	这里把$w$作为一个状态，这样做不太合适，因为我们可以从仿真中看到，$w$其实并不是趋于零得量，
+	他是某种意义上得对$\delta(t)$的一个有偏差的估计量，所以我们需要使用另一种表达形式：
 	\begin{equation}
 		V=\chi^T R \chi + (\gamma_1 +\gamma_2)k_2 |s|\quad 
 		R=\frac12 \begin{bmatrix}
 			\gamma_1 k_1^2  & -\gamma_1 k_1\\
 			-\gamma_1 k_1 & (\gamma_1+\gamma_2)\\
+		\end{bmatrix}\quad 
+		\chi=\begin{bmatrix}
+			\sig{s}^{1/2}\\
+			\sig{s}^{1/2}-w
 		\end{bmatrix}
 	\end{equation}
-	其中，$R$
+	在求导的时候，实际上还是使用\eqref{eq V zeta}的展开形式更加直观，所以这里将它展开为：
+	\begin{gather*}
+		V=V_1+V_2\\
+		V_1=\frac12 \gamma_2 k_1^2 |s|
+		+ \frac12(\gamma_1+\gamma_2) w^2
+		-\gamma_2 k_1 \sig{s}^{1/2}w
+		\\
+		V_2=(\gamma_1+\gamma_2)k_2 |s|
+	\end{gather*}
+	求导得：
+	\begin{align*}
+		\dot{V}_1
+		&=\tR{\frac12 \gamma_2 k_1^2 \sgn{s}\dot{s}}
+		+(\gamma_1+\gamma_2) w \dot{w}
+		-\gamma_2 k_1 \sig{s}^{1/2}\dot{w}
+		\tR{-\gamma_2 k_1 \frac12 |s|^{-1/2}w\dot{s}}
+		\\
+		&=\tR{\frac12 \gamma_2 k_1 |s|^{-1/2} (k_1\sig{s}^{1/2}-w)\dot{s}}
+		+\left((\gamma_1+\gamma_2) w -\gamma_2 k_1 \sig{s}^{1/2}\right)\dot{w}
+		\\
+		&=\tR{-\frac12 \gamma_2 k_1 |s|^{-1/2} |\chi_2|^2}
+		+\left(-(\gamma_1+\gamma_2) \chi_2 +\gamma_1 k_1 \sig{s}^{1/2}\right)(-k_2\sgn{s}+\delta(t))
+	\end{align*}
+	\begin{align*}
+		\dot{V}_2=(\gamma_1+\gamma_2)k_2  \sgn{s}\dot{s}
+		=-(\gamma_1+\gamma_2)k_2  \sgn{s}\chi_2
+	\end{align*}
+	这里注意要把关于$w$的部分都作为$\chi_2$的一部分提出来
+	\begin{align*}
+		\dot{V}
+		&=\tR{-\frac12 \gamma_2 k_1 |s|^{-1/2} |\chi_2|^2}
+		-\gamma_1 k_1 (k_2-\sgn{s} \delta(t))|s|^{1/2}
+		\tB{-(\gamma_1+\gamma_2)\chi_2 \delta(t)}
+		\\
+		&=\tR{-\frac12 \gamma_2 k_1 |s|^{-1/2} |\chi_2|^2}
+		-\gamma_1 k_1 (k_2-\Delta)|s|^{1/2}
+		\tB{+(\gamma_1+\gamma_2)|\chi_2| \Delta}
+	\end{align*}
+	对\tR{红色}部分使用杨氏不等式可得，对于任意的$\mu>0$有
+	\begin{equation}
+		|s|^{-1/2}\chi_2^2\geq 
+		-\mu^{-1}|s|^{1/2}
+		+2{\mu^{-1/2}}|\chi_2|
+	\end{equation}
+	于是，可以得到表达式
+	\begin{equation}
+		\dot{V}\leq 
+		-\left(
+			\gamma_1 (k_2-\Delta)-\frac12 \gamma_2 \mu^{-1}
+		\right)
+		k_1 |s|^{1/2}
+		-\left( \gamma_2 \mu^{-1/2}k_1-(\gamma_1+\gamma_2)\Delta\right)
+		|\chi_2|
+	\end{equation}
+	
+	
 	\begin{quote}
 		微分同胚英文是“diffeomorphism”。理解微分同胚可以从以下方面入手：
 		
@@ -162,4 +217,13 @@ l
 	
 	
 \end{proof}
+
+
+
+
+
+\section{高阶滑模和高阶微分器}
+
+\cite{morenoSurveyHighorderSlidingmode2023}给出了高阶情况的Lyapunov法证明方法。
+同时该文献将算法拓展到了更加一般的情况（幂指数从1/2变为0到1的数，同时添加了线性环节）。
 
