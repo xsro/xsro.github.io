@@ -1,6 +1,21 @@
 \section{符号约定}
 
-本文常用的符号为符号函数和sig 函数，对于标量其定义为：
+\subsection{分数幂奇函数}
+本文常用的符号为符号函数和sig 函数，对于标量，其几何意义为符号函数，对于标量其定义为：
 \begin{equation}
-    \sgn{x}
+    \sig{x}^0=\sgn{x}=\begin{cases}
+    	1   & x>0\\
+    	-1 & x<0\\
+    	0  & x=0\\
+    \end{cases}
 \end{equation}
+基于此，我们定义$\sig{x}^q=|x|^q \sgn{x}$.
+
+类似的，相关定义可以拓展到向量形式，其几何意义为向量$\vec{x}$的单位向量：
+\begin{equation}
+	\sig{\vec{x}}^0=\sgn{\vec{x}}=\begin{cases}
+		\frac{\vec{x}}{\norm{\vec{x}}}, & \norm{\vec{x}}\neq 0\\
+		\vec{0}   & \norm{\vec{x}}=0
+	\end{cases}
+\end{equation}
+基于此，我们定义$\sig{\vec{x}}^q=\|\vec{x}\|^q \sgn{\vec{x}}$.

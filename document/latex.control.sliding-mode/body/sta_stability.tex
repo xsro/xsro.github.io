@@ -106,10 +106,60 @@
 \end{algo}
 
 \section{严格Lyapunov函数的稳定性证明}
+l
+本节内容改编自\cite{morenoStrictLyapunovFunctions2014}，这是我目前最能看懂的证明，原文按照由简单到复杂的思路行文，我这里直接讨论非homogeneous的情况，希望可以给学习STA的朋友移除这个大山。
 
-本节内容改编自\cite{morenoStrictLyapunovFunctions2014}
+\subsection{}
+
+
 
 
 \section{高阶滑模和高阶微分器}
 
 \cite{morenoSurveyHighorderSlidingmode2023}给出了高阶情况的Lyapunov法证明方法。
+同时该文献将算法拓展到了更加一般的情况（幂指数从1/2变为0到1的数，同时添加了线性环节）。
+
+\begin{proposition}
+	考虑STA系统
+	\begin{equation}
+		\dot{s}=-\sig{s}^{1/2}+w\quad 
+		\dot{w}=-\sgn{s}+\delta(t),\quad 
+		|\delta(t)|<\Delta
+	\end{equation}
+	其中， 增益的选择为$k_1>\frac{\sqrt{2}\nu^{1/2}}{\sqrt{k_2-\Delta}}$, $k_2>\Delta$, 其中$\nu>1$.
+\end{proposition}
+
+\begin{proof}
+	定义一个微分同胚
+	\begin{equation}
+		\chi^T=[\chi_1,\chi_2]\quad
+		\chi_1=\sig{s}^{1/2}  \quad
+		\chi_2=\sig{s}^{1/2}-w
+	\end{equation}
+	于是，转换后的微分方程可以写为：
+	\begin{equation}
+		\dot{\chi}_1=1/2 \norm{s}^{-1/2}\dot{s} 
+		=-1/2 \norm{s} \chi_2 \quad 
+		\dot{\chi}_2=-1/2 \norm{s} \chi_2  -\dot{w}
+	\end{equation}
+	
+	选取Lyapunov 函数为
+	\begin{equation}
+		V=\chi^T R \chi + (\gamma_1 +\gamma_2)k_2 |s|\quad 
+		R=\frac12 \begin{bmatrix}
+			\gamma_1 k_1^2  & -\gamma_1 k_1\\
+			-\gamma_1 k_1 & (\gamma_1+\gamma_2)\\
+		\end{bmatrix}
+	\end{equation}
+	其中，$R$
+	\begin{quote}
+		微分同胚英文是“diffeomorphism”。理解微分同胚可以从以下方面入手：
+		
+		从几何角度看，两个流形（比如曲线、曲面等几何对象）如果是微分同胚的，那么它们在“光滑”的意义下是一样的。它是一种特殊的同胚映射。同胚简单说就是一种连续的双射（一一对应），并且它的逆映射也是连续的。而微分同胚在此基础上还要求这个映射和它的逆映射都是可微的（光滑的）。
+		
+		例如，一个圆和一个椭圆在拓扑意义下是同胚的，它们可以通过连续变形从一个得到另一个。如果这个变形过程是光滑的，而且逆变形过程也是光滑的，那么它们就是微分同胚的。
+	\end{quote}
+	
+	
+\end{proof}
+
