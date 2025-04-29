@@ -1,12 +1,10 @@
----
-author: xsro
-title: 常用代理与镜像设置方法
-date: "2022-10-04"
-description: 个人整理的一些常用代理与镜像设置方法
-tags: ["proxy"]
-categories: ["常用技术速查"]
-math: true
----
++++
+title = "常用代理与镜像设置方法"
+date = 2022-10-04
+[taxonomies]
+tags = ["proxy"]
+categories = ["常用技术速查"]
++++
 
 ## GIT
 

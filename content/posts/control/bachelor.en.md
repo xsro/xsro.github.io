@@ -1,10 +1,10 @@
----
-title: "A look-back of automation"
-date: 2021-09-23T01:25:12+08:00
-tags: ["Control Theory"]
-categories: ["Study notes"]
-draft: false
----
++++
+title = "A look-back of automation"
+date = 2021-09-23
+[taxonomies]
+tags = ["Control Theory"]
+categories = ["学习笔记", "控制理论"]
++++
 
 # Keep fighting, boys and girls from automation 🤖
 
@@ -68,5 +68,5 @@ If we want to find a job, we can do software engineer, hardware engineer, roboti
 - [弱电和强电的正确英文翻译是什么【全心网络】 (ruodian6.com)](https://www.ruodian6.com/496.html)
 - [Intelligent control - Wikipedia](https://en.wikipedia.org/wiki/Intelligent_control)
 - Block diagram of a feedback control system is from Figure 1.1 of [Control System Basics | Ledin Engineering, Inc.](https://ledin.com/control-systems-basics/)
-- map of control theory is from: https://engineeringmedia.com/map-of-control
-- map of ai is from: [The Map of Artificial Intelligence (2020)](https://medium.com/swlh/the-map-of-artificial-intelligence-2020-2c4f446f4e43)
+- map of control theory is from = https://engineeringmedia.com/map-of-control
+- map of ai is from = [The Map of Artificial Intelligence (2020)](https://medium.com/swlh/the-map-of-artificial-intelligence-2020-2c4f446f4e43)

@@ -1,6 +1,7 @@
 baseURL: "https://xsro.github.io/"
 title: xsro
-paginate: 5
+pagination:
+  pagerSize: 5
 theme: PaperMod
 
 enableInlineShortcodes: true
@@ -170,6 +171,19 @@ markup:
 #         lineNos: true
 #         # noClasses: false
 #         style: monokai
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+          - - \[
+            - \]
+          - - $$
+            - $$
+          inline:
+          - - \(
+            - \)
+        enable: true
+
 
 privacy:
   vimeo:
