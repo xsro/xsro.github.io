@@ -23,8 +23,8 @@ Filippov解的思路是不再只考虑向量场上的各个点，
 
 <!-- more -->
 
-![](/print/control-3.png)
-![](/print/control-4.png)
+![](/print/Control-4.png)
+![](/print/Control-5.png)
 
 ## Caratheodory解
 ### 数学定义

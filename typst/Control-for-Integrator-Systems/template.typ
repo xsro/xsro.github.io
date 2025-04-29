@@ -10,15 +10,6 @@
 
   #pagebreak()
   #set page(
-    footer: 
-      text(gray,size:0.4cm)[
-        #part
-        #h(1fr)
-        #counter(page).display(
-          "1/1",
-          both: true,
-        )
-      ],
     header: link("https://xsro.github.io/print/Control-for-Integrator-Systems.pdf",text(gray,size:0.2cm)[xsro.github.io (#datetime.today().display())])
   )
 

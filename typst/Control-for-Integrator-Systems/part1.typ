@@ -7,7 +7,7 @@
 
 #include "1linear.typ"
 
-#include "4PTC.typ"
+//#include "4PTC.typ"
 
 #include "2single.typ"
 

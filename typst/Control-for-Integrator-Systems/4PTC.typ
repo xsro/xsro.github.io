@@ -1,5 +1,5 @@
-#import "@preview/cetz:0.2.0"
-#import cetz.plot
+#import "@preview/cetz:0.3.4"
+#import "@preview/cetz-plot:0.1.1": plot, chart
 #import cetz.draw: *
 
 #import "lib/lib.typ":  op,sig,ode,ode45,get_signal
@@ -131,7 +131,7 @@ $ with $T> 1$ to be prescribed and $k_1>0,k_2>0,h=1$.\
     dx.insert("delta",-delta)
     dx
   }
-  #let (xout,dxout)=ode45(rhs,10,(x:1,uf:0),0.01,record_step:0.01)
+  #let (xout,dxout)=ode45(rhs,10,(x:1,uf:0),0.1,record_step:0.01)
 
   #cetz.canvas({
       plot.plot(

@@ -1,9 +1,9 @@
-#import "@preview/cetz:0.2.0"
+#import "@preview/cetz:0.3.4"
+#import "@preview/cetz-plot:0.1.1": plot, chart
 #import "lib/lib.typ": ode45,get_signal,op
 
 #let plot_fun(func,y-tick-step:none,domain: (-2, 2),y-label:$dot(x)$,x-label:$x$)={
   cetz.canvas({
-    import cetz.plot
     import cetz.draw: *
     plot.plot(
       size: (2,1),
@@ -22,7 +22,6 @@
 #let ode_plot(func,tfinal,x0,step)={
   let (xout,dxout)=ode45((t,x)=>(value:func(t,x.value)),tfinal,(value:x0),step)
   cetz.canvas({
-    import cetz.plot
     import cetz.draw: *
     plot.plot(
       size: (4,1),

@@ -28,11 +28,11 @@ Some exercises are mentioned in the textbook's mainbody.
 So I organize some solutions here for reference.
 Only a little solutions is presented in this supplement.
 They are
-#locate(loc => {
-    for e in query(<exercise>, loc) [
-      #link(e.location())[#e.value]
-    ]
-}).
+// #locate(loc => {
+//     for e in query(<exercise>, loc) [
+//       #link(e.location())[#e.value]
+//     ]
+// }).
 
 
 #let part(short:"1",long:"1",body)={

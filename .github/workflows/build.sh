@@ -1,6 +1,6 @@
 PROJECT_ROOT=`pwd -P`
 
-# compile typst
-git clone  https://github.com/typst/typst _typst
-
-python3 doc/typst/cp.py --dev _typst
+wget https://github.com/typst/typst/releases/download/v0.13.1/typst-x86_64-unknown-linux-musl.tar.xz -O /tmp/typst.tar.xz
+tar -xf /tmp/typst.tar.xz -C /tmp/typst
+export PATH=$PATH:/tmp/typst/typst-x86_64-unknown-linux-musl/bin"
+python typst/cp.py

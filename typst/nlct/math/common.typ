@@ -1,4 +1,4 @@
-#import "@preview/ctheorems:0.1.0": *
+#import "@preview/ctheorems:1.1.3": *
 
 #set heading(numbering: "1.1.")
 
