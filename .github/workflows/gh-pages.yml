@@ -63,6 +63,9 @@ jobs:
             hugo-
       - name: Configure Git
         run: git config core.quotepath false
+      - name: build typst
+        run: |
+          sh .github/build.sh
       - name: Build with Hugo
         run: |
           hugo \
