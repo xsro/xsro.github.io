@@ -65,7 +65,7 @@ jobs:
         run: git config core.quotepath false
       - name: build typst
         run: |
-          sh .github/workflows/build.sh
+          bash .github/workflows/build.sh
       - name: Build with Hugo
         run: |
           hugo \

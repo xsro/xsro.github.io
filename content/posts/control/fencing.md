@@ -1,14 +1,20 @@
 ---
 title: "Singleton-free fencing"
-date: 2021-12-28T10:32:39+08:00
+date: 2025-04-30
 tags: ["Control Theory"]
 categories: ["Control system simulation"]
 ---
 
 ## Fencing
 
-![](/fence/rect.gif)
+Fig. 4
 
-![](/fence/line_break.gif)
+![](/fence/rect.gif){style="width: 100%;"}
 
-![](/fence/line_nobreak.gif)
+Fig. 6 (a)
+
+![](/fence/line_nobreak.gif){style="width: 100%;"}
+
+Fig. 6 (b)
+
+![](/fence/line_break.gif){style="width: 100%;"}
