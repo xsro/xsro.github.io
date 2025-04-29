@@ -29,6 +29,9 @@ Config=[
 
 import os
 from pathlib import Path
+dst=Path(__file__).parent.parent.joinpath("static/print")
+if not dst.exists():
+    os.makedirs(dst)
 for conf in Config:
     name = conf["name"]
     path = Path(__file__).parent.joinpath(conf["path"])
@@ -36,7 +39,7 @@ for conf in Config:
     print(f"Generating {name}...")
     for i in out:
         print(f"  Generating {i}...")
-        outfile= Path(__file__).parent.parent.joinpath("static/print").joinpath(i)
+        outfile= dst.joinpath(i)
         os.system(f"typst compile {path} {outfile}")
         print(f"  Generated {i}.")
     print(f"Generated {name}.")

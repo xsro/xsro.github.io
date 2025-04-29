@@ -1,6 +1,7 @@
 +++
 title = "通过坐标平移实现非完整约束系统的反馈线性化Wheeled Robot Feedback Linearization"
 date = 2023-10-09T21:43:59+08:00
+math = true
 [taxonomies]
 tags = ["非完整约束", "反馈线性化", "小车",]
 categories = ["控制应用"]
