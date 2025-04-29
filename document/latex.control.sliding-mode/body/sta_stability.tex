@@ -205,6 +205,30 @@
 		-\left( \gamma_2 \mu^{-1/2}k_1-(\gamma_1+\gamma_2)\Delta\right)
 		|\chi_2|
 	\end{equation}
+	为了保证V导数负定，首先我们的$\gamma_1,\gamma_2$是可以任意选取的，所以这里选择
+	\begin{equation*}
+		\gamma_2=\frac{2\mu}{\nu }(k_2 -\Delta) \gamma_1,\nu>1
+	\end{equation*}
+	于是，我们有
+	\begin{equation}
+		\dot{V}\leq 
+		-\frac{\nu-1}{\nu}\left(\gamma_1 (k_2-\Delta)\right)
+		k_1 |s|^{1/2}
+		-\left( \gamma_2 \mu^{-1/2}k_1-(\gamma_1+\gamma_2)\Delta\right)
+		|\chi_2|
+	\end{equation}
+	基于此，我们可以指导要使得整个系统的V导数负定，只需要
+	\begin{equation}
+		k_2>\Delta,\quad 
+		k_1>\frac{(\gamma_1+\gamma_2)\Delta\mu^{1/2}}{\gamma_2}
+		=\frac{1+\frac{2\mu}{\nu }(k_2 -\Delta) }{\frac{2\mu}{\nu }(k_2 -\Delta) }\Delta \mu^{1/2}
+	\end{equation}
+	因为$\mu$可以任意选取，因此，$k1$只需要大于右侧最小值$\min_{\mu>0} \frac{1+\frac{2\mu}{\nu }(k_2 -\Delta) }{\frac{2\mu}{\nu }(k_2 -\Delta) }\Delta \mu^{1/2}$，
+	其最小值点在$\mu=\mu^*=\frac{\nu}{2(k_2-\Delta)}$，
+	于是有
+	\begin{equation}
+		k_1> \sqrt{\frac{2\nu}{k_2 -\Delta}}\Delta
+	\end{equation}
 	
 	
 	\begin{quote}

@@ -14,7 +14,8 @@
 \usepackage{amsmath} % 用于数学公式排版
 \usepackage{amssymb} % 补充数学符号
 \newcommand{\sgn}[1]{\mathop{\mathrm{sgn}} (#1)}
-\newcommand{\sig}[1]{\mathop{\mathrm{sig}} (#1)}
+%\newcommand{\sig}[1]{\mathop{\mathrm{sig}} (#1)}
+\newcommand{\sig}[1]{\lfloor #1 \rceil}
 \usepackage{amsthm}
 \newtheorem{theorem}{定理}
 \newtheorem{definition}{定义}
