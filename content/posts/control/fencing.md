@@ -6,8 +6,6 @@ tags: ["Control Theory"]
 categories: ["Control system simulation"]
 ---
 
-## Singleton-free fencing control of unknown maneuver target
-
 The dynamic figures of our paper **Singleton-free fencing control of unknown maneuver target** are presented below.
 
 ### Fig. 4
