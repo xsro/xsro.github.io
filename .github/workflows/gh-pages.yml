@@ -71,7 +71,6 @@ jobs:
       - name: build typst
         run: |
           bash .github/workflows/build.sh
-          typst fonts
 
       - name: Build with Hugo
         run: |

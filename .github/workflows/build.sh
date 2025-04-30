@@ -5,3 +5,4 @@ mkdir -p /tmp/typst
 tar -xf /tmp/typst.tar.xz -C /tmp/typst
 export PATH="$PATH:/tmp/typst/typst-x86_64-unknown-linux-musl/"
 python typst/cp.py
+typst fonts
