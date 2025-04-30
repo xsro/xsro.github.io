@@ -63,9 +63,16 @@ jobs:
             hugo-
       - name: Configure Git
         run: git config core.quotepath false
+
+      - name: Install Noto fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk
       - name: build typst
         run: |
           bash .github/workflows/build.sh
+          typst fonts
+
       - name: Build with Hugo
         run: |
           hugo \
