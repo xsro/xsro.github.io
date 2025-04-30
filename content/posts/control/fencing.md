@@ -1,20 +1,23 @@
 ---
 title: "Singleton-free fencing"
 date: 2025-04-30
+aliases: ["/f/"]
 tags: ["Control Theory"]
 categories: ["Control system simulation"]
 ---
 
 ## Fencing
 
-Fig. 4
+The dynamic figures of our paper **Singleton-free fencing control of unknown maneuver target**
 
-![](/fence/rect.gif){style="width: 100%;"}
+### Fig. 4
 
-Fig. 6 (a)
+![](/fence/rect.gif)
 
-![](/fence/line_nobreak.gif){style="width: 100%;"}
+### Fig. 6 (a)
 
-Fig. 6 (b)
+![](/fence/line_nobreak.gif)
 
-![](/fence/line_break.gif){style="width: 100%;"}
+### Fig. 6 (b)
+
+![](/fence/line_break.gif)
