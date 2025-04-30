@@ -1,14 +1,14 @@
 ---
-title: "Singleton-free fencing"
+title: "Singleton-free fencing control of unknown maneuver target"
 date: 2025-04-30
 aliases: ["/f/"]
 tags: ["Control Theory"]
 categories: ["Control system simulation"]
 ---
 
-## Fencing
+## Singleton-free fencing control of unknown maneuver target
 
-The dynamic figures of our paper **Singleton-free fencing control of unknown maneuver target**
+The dynamic figures of our paper **Singleton-free fencing control of unknown maneuver target** are presented below.
 
 ### Fig. 4
 
