@@ -123,8 +123,34 @@ see @cortesDiscontinuousDynamicalSystems2008
     "Filippov",
     "absolutely continuous",
      [$X: RR^d arrow RR^d$ is measurable and locally essentially bounded ],
-     [essentially one-sided Lipschitz on $B(x, epsilon)$],
+     [Prosition 4&5],
   ),
   caption:[conditions of solutions to $dot(x)=X(x(t))$]
 )
+
+
+*Proposition 4*
+
+
+Let $X: RR^d arrow RR^d$ be measurable and locally essentially bounded. 
+Assume that, for all $x \in RR^d$, there exists $epsilon.alt > 0$ such that $X$ is essentially one-sided Lipschitz on $B(x, epsilon.alt)$. 
+Then, for all $x_0 in RR^d$, there exists a unique Filippov solution of (10) with initial condition $x(0) = x_0$.
+
+*Proposition 5*
+
+Let $X: RR^d arrow RR^d$ be a piecewise
+continuous vector field, with $RR^d =
+D_1 union D_2$. Let $S_X = "bdry"(D_1) =
+"bdry"(D_2)$ be the set of points at
+which $X$ is discontinuous, and
+assume that $S_X$ is a $C^2$-manifold.
+Furthermore, assume that, for
+$i in {1,2}$, $X|_(overline(D_i))$ is continuously dif-
+ferentiable on $D_i$ and $X|_(overline(D_1)) - X|_(overline(D_2))$
+is continuously differentiable on
+$S_X$. If, for each $x \in S_X$, either
+$X|_(overline(D_1))(x)$ points into $D_2$ or $X|_(overline(D_2))(x)$
+points into $D_1$, then there exists a
+unique Filippov solution of (10)
+starting from each initial condition.
 #pagebreak()
