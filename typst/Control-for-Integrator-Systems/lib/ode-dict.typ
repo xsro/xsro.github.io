@@ -35,7 +35,7 @@
   (xout,dxout)
 }
 
-#let get_signal(data,key)={
+#let get_signal(data,key,lims:())={
   let out=((data.at(0).at(0),data.at(0).at(1).at(key)),)
   for kv in data{
     out.push((kv.at(0),kv.at(1).at(key)))

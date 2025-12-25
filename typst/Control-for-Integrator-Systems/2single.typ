@@ -36,7 +36,9 @@
   We cannot use Barbalat's lemma for $dot(x)$ is not *uniformly continuous*.
   So can we have $-k "sign"(x)+delta arrow 0$?
 
-  We also use the concept of *Equivalent Control* @shtesselSlidingModeControl2014 describes this feature.
+=== Equivalent Control
+
+  First, we can use the concept of *Equivalent Control* @shtesselSlidingModeControl2014 describes this feature.
   Use a low pass filter, we can say $"LPF"(k "sign"(x))approx delta$.
 
   For example, the following low pass filter is used in simulation, 
@@ -81,20 +83,23 @@
   the solution satisfy the *Filippov DI* (Filippov Differential Inclusion) associated with the differential equation.
   The DI is 
   $
-  dot(x) in F(t,x)+[-C,C]\
+  dot(x) in F(t,x)+delta(t)\
   F(t,x)=cases(
     k &"if" x<0,
     [-k,k] &"if" x=0,
     -k &"if" x>0
   )
-  $
+  $<a>
   This means when $x>0$, we have $dot(x)<0$, and when $x<0$, we have $dot(x)>0$.
-  The system must converges to $x=0$.
+  The system must converges to $x=0$ and $dot(x)=0$.
+  We have $dot(x)=0$ satify the Differential Inclusion @a.
+  We can not say $k "sign"(x)=delta(t)$.
+  We say the time average satifies: $⟨k "sign"(x)⟩=delta(t)$.
 
-  In this sense, we can only get $dot(x) in [-k-C,k+C]$.
+  In sliding mode, the discontinuous term does not converge pointwise to the disturbance; its average effect cancels it, which is captured by Filippov's convexification.
 
 
-
+  // #colbreak()
   === Finite-time convergence
 
   Another important feature of this system is finite-time stability.

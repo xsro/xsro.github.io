@@ -106,11 +106,14 @@ $.
 #main_tvg
 #pagebreak()
 
+
 == Robust Prescribed Time Stabiliztion of Single Integrator Systems
+
+#text(size: 30pt,fill: red,"This page may not be correct, sorry!")
 
 The system is:
 $
-dot(x)=cases(
+dot(x)=delta(t) + cases(
   - k_1/(T-t) x   & quad 0<t<T,
   - k_1 "sign"(x) & quad t>=T)
 $ with $T> 1$ to be prescribed and $k_1>0,k_2>0,h=1$.\
@@ -131,18 +134,19 @@ $ with $T> 1$ to be prescribed and $k_1>0,k_2>0,h=1$.\
     dx.insert("delta",-delta)
     dx
   }
-  #let (xout,dxout)=ode45(rhs,10,(x:1,uf:0),0.1,record_step:0.01)
+  #let (xout,dxout)=ode45(rhs,10,(x:1,uf:0),0.1,record_step:0.1)
 
   #cetz.canvas({
       plot.plot(
-        size: (8,2),
+        size: (8,4),
         axis-style: "school-book", 
-        x-tick-step: 5, y-tick-step:1,
+        y-min: -3,  
+        y-max: 4,  
         {
           plot.add(get_signal(xout,"x"),label:$x$)
-          // plot.add(get_signal(xout,"uf"),label:$u_"filtered"$)
           plot.add(get_signal(dxout,"u"),label:$u$)
-          // plot.add(get_signal(dxout,"delta"),label:$-delta$)
+          // plot.add(get_signal(dxout,"uf"),label:$u_f$)
+          plot.add(get_signal(dxout,"delta"),label:$-delta$)
         },
         y-label:"value",
         x-label:"time",
