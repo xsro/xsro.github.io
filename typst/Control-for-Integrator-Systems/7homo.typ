@@ -47,13 +47,13 @@ Many lliteratures like @polyakov_generalized_2020
   3. $"deg" A B ="deg" A +"deg" B$
   4. $"deg" A/B="deg" A -"deg" B$
   5. $"deg" lambda A ="deg" A$
-  6. $"deg" diff/(diff x_i) A  ="deg" A -"deg" x_i$ if $diff/(diff x_i) A$ is not identical zero
+  6. $"deg" partial/(partial x_i) A  ="deg" A -"deg" x_i$ if $partial/(partial x_i) A$ is not identical zero
   To verify the last equality it can be seen that 
   $
-  diff/(diff kappa^m_i x_i) A(d_k x)&=
-  kappa^(-m_i) diff/(diff  x_i) kappa^("deg" A) A(x)\ 
+  partial/(partial kappa^m_i x_i) A(d_k x)&=
+  kappa^(-m_i) partial/(partial  x_i) kappa^("deg" A) A(x)\ 
   &=
-  kappa^("deg" A -m_i) diff/(diff  x_i) A(x)
+  kappa^("deg" A -m_i) partial/(partial  x_i) A(x)
   $
 
   The last equality tells that for a systme $dot(x)=f(x)$, we have $dot(x)_i=f_i(x)$.

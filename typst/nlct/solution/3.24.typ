@@ -6,7 +6,7 @@
   Suppose that $V(t,0)=0$ for all $t >= 0$ and 
   $
   V(t,x) >= c_1||x||^2;
-  norm((diff V)/(diff x)(t,x)) <= c_4 norm(x),
+  norm((partial V)/(partial x)(t,x)) <= c_4 norm(x),
   forall 
   (t,x) in [0,infinity) times D
   $
@@ -15,7 +15,7 @@
   $x=0$
   
   + Show that $V(t,x) <= 1/2 c_4 norm(x)^2$ for all $x in D$. \
-   Hint: Use the representation $V(t,x)=integral_0^1 (diff V)/(diff x) (t,sigma x) d sigma x $
+   Hint: Use the representation $V(t,x)=integral_0^1 (partial V)/(partial x) (t,sigma x) d sigma x $
   + Show that the constants $c_1$ and $x_4$ must satisfy $2 c_1 <= c_4$
   + Show that $W(t,x)=sqrt(V(t,x))$ satisfies the Lipschitz condition
   $
@@ -29,8 +29,8 @@
 #solve(1)
 
 $
-V(t,x)=integral_0^1 (diff V)/(diff V)(t,sigma x) d x 
-<= integral_0^1 norm((diff V)/(diff x)(t,sigma x)) norm(x) d sigma 
+V(t,x)=integral_0^1 (partial V)/(partial V)(t,sigma x) d x 
+<= integral_0^1 norm((partial V)/(partial x)(t,sigma x)) norm(x) d sigma 
 <= integral_0^1 c_4 sigma  d sigma norm(x)^2 
 <= 1/2 c_4 norm(x)^2
 $
@@ -51,16 +51,16 @@ we must have $c_1<=1/2 c_4$
 Consider two ponts $x_1$ and $x_2$ such that $alpha x_1 + (1-alpha)x_2 != 0$
 for all $0<=alpha<=1$; that is, 
 the orgin does not lie on the line connecting $x_1$ and $x_2$.
-The Jacobian $[diff W \/ diff x]$ is defined for every $x=alpha x_1 + (1-alpha )x_2$ and given by 
+The Jacobian $[partial W \/ partial x]$ is defined for every $x=alpha x_1 + (1-alpha )x_2$ and given by 
 $
-(diff W)/(diff x)(t,x)=1/(2 sqrt(V(t,x))) (diff V)/(diff x)(t,x)
+(partial W)/(partial x)(t,x)=1/(2 sqrt(V(t,x))) (partial V)/(partial x)(t,x)
 $
 By the mean value theorem, there is $alpha^* in (0,1)$
 such that, with $z=alpha^* x_1+(1-alpha^*)x_2$
 $
 W(t,x_2)-W(t,x_1)
-=(diff W)/(diff x)(t,z) (x_2-x_1)
-= 1/(2 sqrt(V(t,z))) (diff V)/(diff x)(t,z)(x_2-x_1)
+=(partial W)/(partial x)(t,z) (x_2-x_1)
+= 1/(2 sqrt(V(t,z))) (partial V)/(partial x)(t,z)(x_2-x_1)
 $
 Hence 
 $

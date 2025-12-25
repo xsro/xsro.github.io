@@ -46,27 +46,27 @@ the second propery is not satisfied.*
 If we use the Euclidean norm and the second definition of the signum function,
 we have 
 $
-(diff)/(diff x_i)norm(bold(x))
-=(diff)/(diff x_i)sqrt(sum_(i=1)^n x_i^2)
-=1/2 (sum_(i=1)^n x_i^2)^(-1/2) (diff)/(diff x_i) sum_(i=1)^n x_i^2
+(partial)/(partial x_i)norm(bold(x))
+=(partial)/(partial x_i)sqrt(sum_(i=1)^n x_i^2)
+=1/2 (sum_(i=1)^n x_i^2)^(-1/2) (partial)/(partial x_i) sum_(i=1)^n x_i^2
 =1/2 (sum_(i=1)^n x_i^2)^(-1/2) 2 x_i
 =x_i/norm(bold(x)) \
-(diff)/(diff bold(x))norm(bold(x))
+(partial)/(partial bold(x))norm(bold(x))
 =lr([
-  (diff)/(diff x_1)norm(bold(x)),
-  (diff)/(diff x_2)norm(bold(x)),
+  (partial)/(partial x_1)norm(bold(x)),
+  (partial)/(partial x_2)norm(bold(x)),
   dots,
-  (diff)/(diff x_n)norm(bold(x))
+  (partial)/(partial x_n)norm(bold(x))
   ])
 =bold(x)^T/norm(bold(x))
 =("sgn"(bold(x)))^T\
-(diff)/(diff bold(x))sig(bold(x))^0
-=(diff)/(diff bold(x))bold(x)norm(bold(x))
+(partial)/(partial bold(x))sig(bold(x))^0
+=(partial)/(partial bold(x))bold(x)norm(bold(x))
 =lr([
-  (diff)/(diff x_1)norm(bold(x)),
-  (diff)/(diff x_2)norm(bold(x)),
+  (partial)/(partial x_1)norm(bold(x)),
+  (partial)/(partial x_2)norm(bold(x)),
   dots,
-  (diff)/(diff x_n)norm(bold(x))
+  (partial)/(partial x_n)norm(bold(x))
   ])
 =bold(x)^T/norm(bold(x))\
 $
@@ -74,8 +74,8 @@ $
 Generally, when use the Euclidean norm,
 We can calculate the derivatives as 
 $
-(diff)/(diff bold(x))norm(bold(x))^q
-=q* norm(bold(x))^(q-1) (diff)/(diff bold(x)) norm(bold(x))
+(partial)/(partial bold(x))norm(bold(x))^q
+=q* norm(bold(x))^(q-1) (partial)/(partial bold(x)) norm(bold(x))
 =q* norm(bold(x))^(q-1) ("sgn"(bold(x)))^T
 =q (sig(bold(x))^(q-1))^T
 $

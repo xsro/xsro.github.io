@@ -15,8 +15,8 @@
   + For each $U in cal(A)$ there exists a homeomorphism $phi:U arrow phi(U) subset RR^n$, 
     which is called a coordinate chart, denoted by $(U,phi)$.
   + Moreover, if for two coordinate charts:
-    $(U,phi)$ and $(V,Psi)$, if $U sect V$ is not empty, 
-    then both $Psi circle.small phi^(-1): phi(U sect V) arrow Psi(U sect V)$ and $phi circle.small Psi^(-1):Psi(U sect V) arrow phi(U sect V)$ 
+    $(U,phi)$ and $(V,Psi)$, if $U inter V$ is not empty, 
+    then both $Psi circle.small phi^(-1): phi(U inter V) arrow Psi(U inter V)$ and $phi circle.small Psi^(-1):Psi(U inter V) arrow phi(U inter V)$ 
     are $C^r(C^infinity,C^omega)$. such two coordinate charts are said to be consistent.
   + If a coordinate chart, $W$, is consistent with all charts in $cal(A)$,
     then $W in cal(A)$.
