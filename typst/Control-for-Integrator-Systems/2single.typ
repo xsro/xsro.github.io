@@ -31,26 +31,13 @@
   &<=-(k-C)|x|<=0
   $<single_integrator_sign_dV>
 
-  This implies $x arrow 0$(Lyapunov direct method) and $dot(x) arrow 0$ (Barbalat's lemma).
-  If so, $-k "sign"(x)+delta arrow 0$?
+  This implies $x arrow 0$(Lyapunov direct method).
+  But we cannot say $dot(x) arrow 0$.
+  We cannot use Barbalat's lemma for $dot(x)$ is not *uniformly continuous*.
+  So can we have $-k "sign"(x)+delta arrow 0$?
 
-  This differential equation should be understood in *Pilippov sense*.
-  The solution here is not a classical(continuously differentiable) solution but a absolutely continuous solution.
-  the solution satisfy the *Pilippov DI* (Pilippov Differential Inclusion) associated with the differential equation.
-  The DI is 
-  $
-  dot(x) in F(t,x)+[-C,C]\
-  F(t,x)=cases(
-    k &"if" x<0,
-    [-k,k] &"if" x=0,
-    -k &"if" x>0
-  )
-  $
-  This means when $x>0$, we have $dot(x)<0$, and when $x<0$, we have $dot(x)>0$.
-  The system must converges to $x=0$.
-
-  We also use the concept of *Equivalent Control* describes this feature.
-  Use a low pass filter, we can say $"LPF"("sign"(x))approx delta$.
+  We also use the concept of *Equivalent Control* @shtesselSlidingModeControl2014 describes this feature.
+  Use a low pass filter, we can say $"LPF"(k "sign"(x))approx delta$.
 
   For example, the following low pass filter is used in simulation, 
   #let rhs(t,x)={
@@ -84,6 +71,30 @@
     U_"filtered"(s)/U(s)=1/(T s +1 )\
     T dot(u)_"filtered"+u_"filtered"=u
   $
+
+  #colbreak()
+
+  === Filippov solution 
+
+  This differential equation should be understood in *Filippov sense* @cortesDiscontinuousDynamicalSystems2008.
+  The solution here is not a classical(continuously differentiable) solution but a absolutely continuous solution.
+  the solution satisfy the *Filippov DI* (Filippov Differential Inclusion) associated with the differential equation.
+  The DI is 
+  $
+  dot(x) in F(t,x)+[-C,C]\
+  F(t,x)=cases(
+    k &"if" x<0,
+    [-k,k] &"if" x=0,
+    -k &"if" x>0
+  )
+  $
+  This means when $x>0$, we have $dot(x)<0$, and when $x<0$, we have $dot(x)>0$.
+  The system must converges to $x=0$.
+
+  In this sense, we can only get $dot(x) in [-k-C,k+C]$.
+
+
+
   === Finite-time convergence
 
   Another important feature of this system is finite-time stability.
@@ -194,6 +205,105 @@ For instance, it could be replaced by a "sigmoid function".
   ),
   caption: [replaced $"sign"$ by a “sigmoid function”],
 )
+
+
+
+*Sacrifice the key property of finite-time convergence to ensure that the designed control law is continuous within a finite time interval.*
+Some liturature will use a function $f(x,epsilon)=x/(|x|+epsilon)$ with a vanishing function $epsilon(t)=e^(-t)$.
+In a specified time $T$, we we know $epsilon>0$ so the controller output is continuous in finite time and can robust to the disturbance when $t arrow infinity$.
+
+
+#pagebreak()
+=== SMC Chattering Elimination: Quasi-Sliding Mode Simulation
+
+$dot(x)=-1.1*"sign"(x)+"sin"(t)$  
+The control input $u$ is discontinuous 
+#let rhs(t,x)={
+  let delta=calc.sin(t)
+  let u=-1.1*op.sign(x.x)
+  let dx=(x:u+delta)
+  dx.insert("u",u)
+  dx.insert("delta",-delta)
+  dx
+}
+#let (xout,dxout)=ode45(rhs,20,(x:1),0.01,record_step:0.01)
+
+#cetz.canvas({
+  plot.plot(
+    size: (18,2),
+    axis-style: "school-book", 
+    x-tick-step: 5, y-tick-step:1,
+    {
+      plot.add(get_signal(xout,"x"),label:$x$)
+      plot.add(get_signal(dxout,"u"),label:$u$)
+      plot.add(get_signal(dxout,"delta"),label:$-delta$)
+    },
+    y-label:"value",
+    x-label:"t",
+    )
+  })
+
+$dot(x)=-1.1*(x)/(abs(x)+epsilon)+"sin"(t)$,
+$epsilon=0.01$
+The control input $u$ is continous and uniformly continous. ($dot(u)=-1.1 epsilon/(abs(x)+epsilon)^2 <= 1.1 * 1/epsilon$)
+
+#let rhs(t,x)={
+  let delta=calc.sin(t)
+  let eps=0.01
+  let u=-1.1*x.x/(calc.abs(x.x)+eps)
+  let dx=(x:u+delta)
+  dx.insert("u",u)
+  dx.insert("delta",-delta)
+  dx
+}
+#let (xout,dxout)=ode45(rhs,20,(x:1),0.01,record_step:0.01)
+
+#cetz.canvas({
+  plot.plot(
+    size: (18,2),
+    axis-style: "school-book", 
+    x-tick-step: 5, y-tick-step:1,
+    {
+      plot.add(get_signal(xout,"x"),label:$x$)
+      plot.add(get_signal(dxout,"u"),label:$u$)
+      plot.add(get_signal(dxout,"delta"),label:$-delta$)
+    },
+    y-label:"value",
+    x-label:"t",
+    )
+  })
+
+
+$dot(x)=-1.1*(x)/(abs(x)+epsilon)+"sin"(t)$,
+$epsilon=e^(-t)$ The control input $u$ is continuous but *not uniformly continous*
+
+#let rhs(t,x)={
+  let delta=calc.sin(t)
+  let eps=calc.exp(-t)
+  let u=-1.1*x.x/(calc.abs(x.x)+eps)
+  let dx=(x:u+delta)
+  dx.insert("u",u)
+  dx.insert("delta",-delta)
+  dx.insert("eps",eps)
+  dx
+}
+#let (xout,dxout)=ode45(rhs,20,(x:1),0.01,record_step:0.01)
+
+#cetz.canvas({
+  plot.plot(
+    size: (18,2),
+    axis-style: "school-book", 
+    x-tick-step: 5, y-tick-step:1,
+    {
+      plot.add(get_signal(xout,"x"),label:$x$)
+      plot.add(get_signal(dxout,"u"),label:$u$)
+      plot.add(get_signal(dxout,"delta"),label:$-delta$)
+      plot.add(get_signal(dxout,"eps"),label:$epsilon=e^(-t)$)
+    },
+    y-label:"value",
+    x-label:"t",
+    )
+  })
 
 #pagebreak()
 == SMC Chattering Attenuation: Asymptotic Sliding Mode
