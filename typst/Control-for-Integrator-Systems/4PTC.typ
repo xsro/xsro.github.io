@@ -116,7 +116,7 @@ $
 dot(x)=delta(t) + cases(
   - k_1/(T-t) x   & quad 0<t<T,
   - k_1 "sign"(x) & quad t>=T)
-$ with $T> 1$ to be prescribed and $k_1>0,k_2>0,h=1$.\
+$ with $T> 1$ to be prescribed and $k_1>sup_t abs(delta(t))$.\
 
   #let rhs(t,x)={
     let delta=calc.sin(t)
