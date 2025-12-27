@@ -6,7 +6,7 @@ draft: false
 
 # 👋xsro
 
-I am a student in Control Theory.
+I am a student studying system analysis, control theory and numerical simulation.
 In last few years, I study topics like robust control, optimal control and CACSD.
 
 Glad to see you in this glorious time, enjoying technology's development.
