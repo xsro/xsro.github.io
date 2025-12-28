@@ -1,10 +1,13 @@
 +++
 title = "边界层（正则化）解收敛于Filippov滑模解的严格证明"
 date = 2025-12-25
+math = true
 [taxonomies]
 tags = ["控制理论", "滑模控制"]
 categories = ["学术推导"]
 +++
+
+> **以下内容 由AI 生成** 
 
 以下是**边界层（正则化）解收敛于Filippov滑模解**的**严谨、符合期刊发表标准的解释与证明框架**，包含**明确假设条件**与**权威参考文献**。
 Below is a **rigorous, publication-level explanation and proof sketch** of why **boundary-layer (regularized) solutions converge to Filippov sliding solutions**, together with **precise assumptions** and **standard references**.
