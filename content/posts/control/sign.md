@@ -98,7 +98,7 @@ $$
 $$
 
 在经典解的理解下，从逐点角度（pointwise）分析：
-* $\operatorname{sgn}(s) \in \\{-1,+1\\}$
+* $\operatorname{sgn}(s) \in \{-1,+1\}$
 * $\delta(t) \in [-\bar{\delta},\bar{\delta}]$
 因此显然有：
 $

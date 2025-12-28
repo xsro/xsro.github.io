@@ -182,6 +182,8 @@ markup:
           inline:
           - - \(
             - \)
+          - - $
+            - $
         enable: true
 
 
