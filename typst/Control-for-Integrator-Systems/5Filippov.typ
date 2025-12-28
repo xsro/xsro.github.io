@@ -148,7 +148,7 @@ Furthermore, assume that, for
 $i in {1,2}$, $X|_(overline(D_i))$ is continuously dif-
 ferentiable on $D_i$ and $X|_(overline(D_1)) - X|_(overline(D_2))$
 is continuously differentiable on
-$S_X$. If, for each $x \in S_X$, either
+$S_X$. If, for each $x in S_X$, either
 $X|_(overline(D_1))(x)$ points into $D_2$ or $X|_(overline(D_2))(x)$
 points into $D_1$, then there exists a
 unique Filippov solution of (10)

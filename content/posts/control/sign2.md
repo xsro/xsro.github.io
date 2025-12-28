@@ -1,6 +1,7 @@
 +++
 title = "边界层（正则化）解收敛于Filippov滑模解的严格证明"
 date = 2025-12-25
+draft = true
 math = true
 [taxonomies]
 tags = ["控制理论", "滑模控制"]
