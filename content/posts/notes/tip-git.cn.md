@@ -1,7 +1,6 @@
 +++
 title = "Git常用拓展知识"
 date = 2021-07-25
-[taxonomies]
 categories = ["常用技术速查"]
 tags = ["git"]
 +++

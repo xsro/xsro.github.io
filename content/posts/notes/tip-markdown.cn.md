@@ -1,7 +1,6 @@
 +++
 title = "Markdown 常用拓展语法参考"
 date = 2021-07-25
-[taxonomies]
 tags = ["markdown"]
 categories = ["常用技术速查"]
 +++

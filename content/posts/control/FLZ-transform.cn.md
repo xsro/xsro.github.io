@@ -2,7 +2,6 @@
 title = "傅里叶、拉普拉斯、Z变换这一串"
 date = 2021-08-30
 math = true
-[taxonomies]
 tags = ["数学推导", "变换域分析"]
 categories = ["学习笔记", "控制理论"]
 +++

@@ -1,7 +1,6 @@
 +++
 title = "自动化专业学习回顾"
 date = 2021-09-23
-[taxonomies]
 tags = ["提要", "自动化专业"]
 categories = ["学习笔记", "控制理论"]
 +++

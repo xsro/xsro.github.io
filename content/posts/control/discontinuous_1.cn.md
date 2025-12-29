@@ -1,10 +1,10 @@
 +++
 title = "非连续动态系统分析——连续性定义与连续可微的classical解"
 date = 2024-01-13
-aliases = ["/control-theory-discontinuous/"]
-[taxonomies]
-tags = ["控制理论","非光滑"]
-categories = ["非连续动态系统分析"]
+aliases = [ "/control-theory-discontinuous/"]
+math = true
+tags = ["控制理论", "非光滑"]
+categories = ["非连续动态系统分析", "控制理论"]
 +++
 
 非线性动态系统理论是滑模控制的重要理论基础，也是我学习滑模的最大障碍。

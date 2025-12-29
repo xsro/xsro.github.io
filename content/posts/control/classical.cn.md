@@ -1,7 +1,6 @@
 +++
 title = "自动控制原理提要"
 date = 2021-09-02
-[taxonomies]
 tags = ["提要", "自动控制原理"]
 categories = ["学习笔记", "控制理论"]
 +++

@@ -2,13 +2,12 @@
 title = "非连续动态系统分析——绝对连续的Caratheodory解和Filippov解"
 date = 2024-01-14
 math = true
-aliases = ["/control-theory-discontinuous-notation/"]
-[taxonomies]
-tags = ["控制理论","非光滑"]
-categories = ["非连续动态系统分析"]
+aliases = [ "/control-theory-discontinuous-notation/"]
+tags = ["控制理论", "非光滑"]
+categories = ["非连续动态系统分析", "控制理论"]
 +++
 
-[前文](../control-theory-discontinuous)已经说明了在考虑非连续的向量场的时候，classical解具有非常大的局限性。
+[前文](../discontinuous_1)已经说明了在考虑非连续的向量场的时候，classical解具有非常大的局限性。
 为了处理微分方程的不连续部分，
 我们首先放宽解必须始终沿着向量场方向的要求。
 数学中对应的就是**绝对连续的Caratheodory解**。

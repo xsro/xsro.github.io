@@ -2,9 +2,8 @@
 title = "经典滑模控制趋近律收敛性的理解"
 date = 2025-12-25
 math = true
-[taxonomies]
-tags = ["控制"]
-categories = ["控制理论"]
+tags = ["控制理论", "非光滑"]
+categories = ["非连续动态系统分析", "控制理论"]
 +++
 
 # 经典滑模控制趋近律收敛性的理解

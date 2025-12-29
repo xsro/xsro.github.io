@@ -1,7 +1,6 @@
 +++
 title = "控制系统中的分离原理"
 date = 2024-11-29
-[taxonomies]
 tags = ["控制"]
 categories = ["控制理论"]
 +++

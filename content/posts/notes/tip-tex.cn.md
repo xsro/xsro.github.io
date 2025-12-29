@@ -1,9 +1,8 @@
 +++
 title = "我的latex工作流"
 date = 2023-10-13
-[taxonomies]
-tags = ["latex","排版工具"]
-categories = ["常用技术速查"]
+tags = ["latex", "排版工具"]
+categories = [ "常用技术速查" ]
 +++
 
 # 我的latex工作流

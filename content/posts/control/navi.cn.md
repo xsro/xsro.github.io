@@ -1,7 +1,6 @@
 +++
 title = "控制相关资源导航"
 date = 2021-10-03
-[taxonomies]
 tags = ["控制"]
 categories = ["常用技术速查", "控制理论"]
 +++
