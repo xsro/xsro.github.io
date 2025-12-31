@@ -1,5 +1,5 @@
 +++
-title = "非连续动态系统分析——连续性定义与连续可微的classical解"
+title = "非连续动态系统分析1——连续性定义与连续可微的classical解"
 date = 2024-01-13
 aliases = [ "/control-theory-discontinuous/"]
 math = true

@@ -1,5 +1,5 @@
 +++
-title = "非连续动态系统分析——绝对连续的Caratheodory解和Filippov解"
+title = "非连续动态系统分析2——绝对连续的Caratheodory解和Filippov解"
 date = 2024-01-14
 math = true
 aliases = [ "/control-theory-discontinuous-notation/"]
