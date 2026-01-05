@@ -33,11 +33,11 @@ categories = ["非连续动态系统分析", "控制理论"]
 > Filippov 微分包含的解的所有广为人知的性质(existence,extendability etc)但是不包含唯一性(uniqueness)
 
 1. 知乎讨论：请问filippov解大概是什么意思？是怎么定义的？有什么作用？ <https://www.zhihu.com/question/55951952>
-1. 主要是翻译的这个文献：CORTES J. Discontinuous dynamical systems[J/OL]. IEEE Control Systems Magazine, 2008, 28(3): 36-73. DOI:10.1109/MCS.2008.919306.
-1. HAN Z, CAI X, HUANG J. Theory of control systems described by differential inclusions[M/OL]. Berlin, Heidelberg: Springer Berlin Heidelberg, 2016[2023-12-17]. http://link.springer.com/10.1007/978-3-662-49245-1. DOI:10.1007/978-3-662-49245-1.
+2. 主要是翻译的这个文献：CORTES J. Discontinuous dynamical systems[J/OL]. IEEE Control Systems Magazine, 2008, 28(3): 36-73. DOI:10.1109/MCS.2008.919306.
+3. HAN Z, CAI X, HUANG J. Theory of control systems described by differential inclusions[M/OL]. Berlin, Heidelberg: Springer Berlin Heidelberg, 2016[2023-12-17]. http://link.springer.com/10.1007/978-3-662-49245-1.
 
 
-## 回顾：经典非线性系统解的条件
+## 回顾1：经典非线性系统解的条件
 
 经典非线性系统的解存在性和唯一性需要微分方程右端Lipschitz连续，
 一个使用较多的数学表述是khalil的非线性控制的**引理1.3**：
@@ -50,7 +50,7 @@ $$
 $$
 > 的解$t\ge t_0$时都在$W$内，那么这个解是$t\ge t_0$的唯一解。
 
-## 回顾：连续性
+## 回顾2：连续性
 
 那么什么是Lipschitz连续呢，各种连续的关系又是什么呢，我们讨论的非连续动态微分方程又如何定义呢？
 为了简便，这里用的是函数来叙述，如果是多变量函数或者泛函需要使用范数替代绝对值。
@@ -98,16 +98,16 @@ $$
 
 绝对连续表示函数的光滑性质，比连续和一致连续条件都要严格，比Lipschitz条件宽松，是一类极为重要的函数。绝对连续函数几乎处处可微，是它的导函数的广义原函数。
 
-> 设$f(x)$是$[a,b]$上的函数，若对任意$\epsilon>0$，存在$\delta>0$使得对于
-> $[a,b]$中的任意一组分点：
-$$
-a_1<b_1\leq a_2 <b_2 \leq \dots \leq a_n < b_n,
-$$
-> 只要$\sum_{i=1}^n(b_i-a_i)<\delta$，便有
-$$
+设$f(x)$是$[a,b]$上的函数，若对任意$\epsilon>0$，存在$\delta>0$使得对于
+$[a,b]$中的任意一组分点：
+\[
+a_1 < b_1\leq a_2 < b_2 \leq \dots \leq a_n < b_n,
+\]
+只要$\sum_{i=1}^n(b_i-a_i)<\delta$，便有
+\[
 \sum_{i=1}^n|f(b_i)-f(a_i)|<\epsilon
-$$
-> 则称$f(x)$是$[a,b]$上**绝对连续**函数，或称$f(x)$在$[a,b]$上绝对连续。
+\]
+则称$f(x)$是$[a,b]$上**绝对连续**函数，或称$f(x)$在$[a,b]$上绝对连续。
 
 等价的，如果存在一个Lebesgue可积函数$\kappa:[a,b]\to \mathbb{R}$
 使得下式成立，那么$\gamma$是一个绝对连续函数。
@@ -115,7 +115,7 @@ $$
 \gamma(t)=\gamma(a)+\int^t_a \kappa(s)d s,\quad t\in [a,b]
 $$
 
-
+![](/images/relationship-of-continuity.webp)
 
 > 对于函数$f(x)$，如果存在一个常数L，使得对$f(x)$定义域上（可为实数也可以为复数）的任意两个值满足如下条件：
 $$
@@ -124,7 +124,7 @@ $$
 > 那么称函数$f(x)$满足Lipschitz连续条件，并称L为$f(x)$的lipschitz常数。
 
 - 从局部看：我们可以取两个充分接近的点，如果这个时候斜率的极限存在的话，这个斜率的极限就是这个点的导数。也就是说函数可导，又是Lipschitz连续，那么导数有界。反过来，如果可导函数，导数有界，可以推出函数Lipschitz连续。
-- 从整体看：Lipschitz连续要求函数在无限的区间上不能有超过线性的增长，所以这些x^{2}和e^{2}函数在无限区间上不是Lipschitz连续的。
+- 从整体看：Lipschitz连续要求函数在无限的区间上不能有超过线性的增长，所以这些$x^{2}$和$e^{2}$函数在无限区间上不是Lipschitz连续的。
 
 > 对于函数$f(x)$，如果存在一个非负常数$C,\alpha$，
 > 使得对$f(x)$定义域上（可为实数也可以为复数）的任意两个值满足如下条件：

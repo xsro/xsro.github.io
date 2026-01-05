@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0" version="24.7.8">
+  <diagram name="第 1 页" id="Bz0tRCTy6id8WhQAwUk8">
+    <mxGraphModel dx="729" dy="523" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="700" pageHeight="400" math="1" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="fZozLzj9L5zvxFCatYk7-1" value="" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="20" width="670" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="fZozLzj9L5zvxFCatYk7-2" value="一致连续" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=31;fontFamily=宋体;" parent="1" vertex="1">
+          <mxGeometry x="30" y="180" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fZozLzj9L5zvxFCatYk7-3" value="" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="110" y="35" width="570" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="fZozLzj9L5zvxFCatYk7-4" value="" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="199" y="63" width="470" height="274.25" as="geometry" />
+        </mxCell>
+        <mxCell id="fZozLzj9L5zvxFCatYk7-5" value="" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="329" y="87.88" width="331" height="224.5" as="geometry" />
+        </mxCell>
+        <mxCell id="fZozLzj9L5zvxFCatYk7-6" value="绝对连续" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=31;fontFamily=宋体;" parent="1" vertex="1">
+          <mxGeometry x="120" y="180" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fZozLzj9L5zvxFCatYk7-7" value="Lipschitz" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=31;fontFamily=Times New Roman;" parent="1" vertex="1">
+          <mxGeometry x="240" y="154.5" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fZozLzj9L5zvxFCatYk7-8" value="可导" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=31;fontFamily=宋体;" parent="1" vertex="1">
+          <mxGeometry x="350" y="179.75" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fZozLzj9L5zvxFCatYk7-9" value="存在广义导数" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="210" y="130" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fZozLzj9L5zvxFCatYk7-10" value="有界函数的Lebsgue积分" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="90" y="234.5" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="etCzMorDikYzwBmqCjcS-1" value="连续" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=31;fontFamily=宋体;" parent="1" vertex="1">
+          <mxGeometry x="230" y="200" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zW5IoCH9EgjZO30Jg0A_-1" value="" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="390" y="119.68" width="260" height="150.13" as="geometry" />
+        </mxCell>
+        <mxCell id="HXV8dW_2_OZPN5Ebk8jr-1" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="515" y="139.75" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="HXV8dW_2_OZPN5Ebk8jr-2" value="光滑" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=31;fontFamily=宋体;" parent="1" vertex="1">
+          <mxGeometry x="520" y="160" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zW5IoCH9EgjZO30Jg0A_-3" value="\(C^\infty\)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" parent="1" vertex="1">
+          <mxGeometry x="495" y="190" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="zW5IoCH9EgjZO30Jg0A_-4" value="连续可导" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=30;fontFamily=宋体;" parent="1" vertex="1">
+          <mxGeometry x="389" y="150" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="zW5IoCH9EgjZO30Jg0A_-5" value="\(C^1\)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=25;" parent="1" vertex="1">
+          <mxGeometry x="409" y="195" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="h6oVtYsztx8w3psUh_Ab-1" value="\(C^0\)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="40" y="240" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
