@@ -1,5 +1,5 @@
 +++
-title = "非连续动态系统分析1——连续性定义与连续可微的classical解"
+title = "非连续动态系统分析1——连续性等相关定义的回顾"
 date = 2024-01-13
 aliases = [ "/control-theory-discontinuous/"]
 math = true
@@ -15,22 +15,20 @@ categories = ["非连续动态系统分析", "控制理论"]
 
 ## 前言
 
-最近在看滑模控制的文章，其中对于非连续系统的论述多有不解，比如如下Filippov微分包含到底是什么，
-结合一下材料，打算整理一下所学内容
+最近在看滑模控制的文章，其中对于非连续系统的论述多有不解，比如如下Filippov微分包含到底是什么意思，
 
 > **定义 2.2**
 > A  $\dot{x}\in F(x), x\in R^n$,
 > is called a *Filippov differential inclusion* 
-> 当一个向量场（vector-set field）$F(x)$具有如下性质的时候，
-> 称一个微分包含（differential inclusion）
 > 
 > 1. noempty 非空, 
 > 1. closed+locally bounded=compact 紧集（有界闭集）, 
-> 1. convex 图集,
+> 1. convex 凸集,
 > 
 > and the set-value map $F$ is upper-semi-continuous(the maximal distance of the point of $F(x)$ and $F(y)$vanishes when $x\to y$).Solutions are defined as absolutely continuous functions of time satisfying the inclusion almost everywhere.
-> 
-> Filippov 微分包含的解的所有广为人知的性质(existence,extendability etc)但是不包含唯一性(uniqueness)
+
+我也经常听到“Filippov 微分包含的解的所有广为人知的性质(existence,extendability etc)但是不包含唯一性(uniqueness)”，结合以下材料，打算整理一下所学内容：
+
 
 1. 知乎讨论：请问filippov解大概是什么意思？是怎么定义的？有什么作用？ <https://www.zhihu.com/question/55951952>
 2. 主要是翻译的这个文献：CORTES J. Discontinuous dynamical systems[J/OL]. IEEE Control Systems Magazine, 2008, 28(3): 36-73. DOI:10.1109/MCS.2008.919306.
@@ -81,257 +79,92 @@ $$
 ![https://calcworkshop.com/limits/limits-and-continuity/](/images/4-types-of-discontinuity.png)
 
 
-### 区间连续与区间一致连续
+### 区间上连续相关的概念
 
-如果在区间上每一点都连续，就称函数在该区间上连续，如果区间包括端点，那么在右端点连续是指左连续，在左端点连续是指右连续。
+以下借助豆包回顾一下区间上连续相关的概念
 
-> 设函数$f(x)$在区间$I$上有定义. 如果对于任意给定的正数$\epsilon$，总存在正数
-> $\delta$，是的对于区间$I$上的任意两点$x_1,x_2$，当$|x_1-x_2|<\delta$时，
-> 有
-$$
-|f(x_1)-f(x_2)|<\epsilon
-$$
-> 那么称函数$f(x)$在区间$I$上**一致连续**。
+#### 1. 连续（Continuous）
+设\(f: [a,b] \to \mathbb{R}\)，对任意\(x_0 \in [a,b]\)，\(\forall \epsilon > 0\)，\(\exists \delta > 0\)（依赖于\(x_0\)和\(\epsilon\)），当\(|x - x_0| < \delta\)时，有\(|f(x) - f(x_0)| < \epsilon\)。
+
+#### 2. 一致连续（Uniformly Continuous）
+设\(f: [a,b] \to \mathbb{R}\)，\(\forall \epsilon > 0\)，\(\exists \delta > 0\)（仅依赖于\(\epsilon\)，不依赖于\(x_0\)），对任意\(x_1, x_2 \in [a,b]\)，当\(|x_1 - x_2| < \delta\)时，有\(|f(x_1) - f(x_2)| < \epsilon\)。
+
+#### 3. 绝对连续（Absolutely Continuous）
+设\(f: [a,b] \to \mathbb{R}\)，\(\forall \epsilon > 0\)，\(\exists \delta > 0\)，对任意有限个互不重叠的开区间\(\{(x_i, y_i)\}_{i=1}^n\)，当\(\sum_{i=1}^n (y_i - x_i) < \delta\)时，有\(\sum_{i=1}^n |f(y_i) - f(x_i)| < \epsilon\)。
+
+#### 4. Lipschitz连续（Lipschitz Continuous）
+设\(f: [a,b] \to \mathbb{R}\)，存在常数\(L > 0\)（Lipschitz常数），对任意\(x_1, x_2 \in [a,b]\)，有\(|f(x_1) - f(x_2)| \leq L |x_1 - x_2|\)。
+
+#### 5. 可导（Differentiable）
+设\(f: [a,b] \to \mathbb{R}\)，对任意\(x_0 \in (a,b)\)，极限\(f'(x_0) = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}\)存在；闭区间端点处指单侧导数存在。
+
+#### 6. 连续可导（Continuously Differentiable，\(C^1\)）
+\(f\)在\([a,b]\)上可导，且导数\(f': [a,b] \to \mathbb{R}\)是连续函数。
+
+#### 7. 光滑（Smooth，\(C^\infty\)）
+\(f\)在\([a,b]\)上任意阶导数都存在且连续。
 
 
-### 绝对连续、Lipschitz连续、Hölder连续
+### 区间上连续相关的概念的关系
 
-绝对连续表示函数的光滑性质，比连续和一致连续条件都要严格，比Lipschitz条件宽松，是一类极为重要的函数。绝对连续函数几乎处处可微，是它的导函数的广义原函数。
-
-设$f(x)$是$[a,b]$上的函数，若对任意$\epsilon>0$，存在$\delta>0$使得对于
-$[a,b]$中的任意一组分点：
+在闭区间\([a,b]\)上的实值函数中，**严格强弱递进关系**为：
 \[
-a_1 < b_1\leq a_2 < b_2 \leq \dots \leq a_n < b_n,
+\boxed{光滑（C^\infty）\subset 连续可导（C^1）\subset 可导 \subset 连续}
 \]
-只要$\sum_{i=1}^n(b_i-a_i)<\delta$，便有
 \[
-\sum_{i=1}^n|f(b_i)-f(a_i)|<\epsilon
+\boxed{Lipschitz连续 \subset 绝对连续 \subset 一致连续 \subset 连续}
 \]
-则称$f(x)$是$[a,b]$上**绝对连续**函数，或称$f(x)$在$[a,b]$上绝对连续。
 
-等价的，如果存在一个Lebesgue可积函数$\kappa:[a,b]\to \mathbb{R}$
-使得下式成立，那么$\gamma$是一个绝对连续函数。
-$$
-\gamma(t)=\gamma(a)+\int^t_a \kappa(s)d s,\quad t\in [a,b]
-$$
-
-![](/images/relationship-of-continuity.webp)
-
-> 对于函数$f(x)$，如果存在一个常数L，使得对$f(x)$定义域上（可为实数也可以为复数）的任意两个值满足如下条件：
-$$
-|f(x_1)-f(x_2)|\leq L|x_1-x_2|
-$$
-> 那么称函数$f(x)$满足Lipschitz连续条件，并称L为$f(x)$的lipschitz常数。
-
-- 从局部看：我们可以取两个充分接近的点，如果这个时候斜率的极限存在的话，这个斜率的极限就是这个点的导数。也就是说函数可导，又是Lipschitz连续，那么导数有界。反过来，如果可导函数，导数有界，可以推出函数Lipschitz连续。
-- 从整体看：Lipschitz连续要求函数在无限的区间上不能有超过线性的增长，所以这些$x^{2}$和$e^{2}$函数在无限区间上不是Lipschitz连续的。
-
-> 对于函数$f(x)$，如果存在一个非负常数$C,\alpha$，
-> 使得对$f(x)$定义域上（可为实数也可以为复数）的任意两个值满足如下条件：
-$$
-|f(x_1)-f(x_2)|\leq C|x_1-x_2|^\alpha
-$$
-> 那么称函数$f(x)$满足Hölder连续条件。
-> 当$\alpha=0$时表示有界，当$\alpha=1$时表示满足Lipschitz条件
-
-### 区间上连续性的关系
-
-- 绝对连续一定一致连续，反正不一定。
-- 连续可微一定绝对连续，反之不一定
-- 局部Lipschitz连续一定绝对连续，反之不一定。
-
-如下$f_1(x)$一致连续但是不绝对连续:
-$$
-f_1(x)=\begin{cases}
-    0, &x=0\\
-    x \sin\frac{\pi}{x}, &0 < x\leq 1
-    \end{cases}
-$$
-
-如下绝对值函数$f_2(x)$绝对连续但是在0处不连续可微
-$$
-f_2(x)=|x|, x\in [-1,1]
-$$
-
-如下根号函数绝对连续但是在0处不是局部Lipschitz连续的
-$$
-f_3(t)=\sqrt(t),t\in [0,0]
-$$
+1. 两类关系的唯一交集：**可导且导数有界的函数**同时属于\(C^1\)（若导数连续）和Lipschitz连续，是控制理论中最常用的函数类（如四旋翼线性化模型的状态方程）；
+2. 无包含关系的核心边界：Lipschitz连续不蕴含可导（如\(|x|\)），可导不蕴含一致连续（如\(x^2\)在\(\mathbb{R}\)上）；
+3. 应用优先级：轨迹规划优先选择光滑函数（保证高阶导数连续），非线性控制优先验证Lipschitz条件（保证稳定性），积分型Lyapunov函数需基于绝对连续函数构造。
 
 
-#### 连续函数不一定
+#### 1. 一致连续 ⊂ 连续（一致连续⇒连续，反之不真）
+- **逻辑推导**：一致连续的\(\delta\)不依赖于具体点\(x_0\)，自然满足连续的“点态\(\delta\)”要求，故一致连续是更强的条件。
+- **定理支撑**：Heine-Cantor定理——闭区间\([a,b]\)上的连续函数必一致连续（此时二者等价）；但开区间/无界区间上，连续≠一致连续。
+- **反例（连续但不一致连续）**：\(f(x) = \frac{1}{x}\)在\((0,1)\)上连续。取\(\epsilon = 1\)，对任意\(\delta > 0\)，取\(x_1 = \frac{\delta}{2}\)，\(x_2 = \frac{\delta}{4}\)（满足\(|x_1 - x_2| = \frac{\delta}{4} < \delta\)），但\(|f(x_1) - f(x_2)| = \frac{2}{\delta}\)，当\(\delta < 2\)时，\(\frac{2}{\delta} > 1 = \epsilon\)，故不一致连续。
+- **控制理论应用**：四旋翼轨迹规划中，若采用开区间定义的轨迹函数，需验证一致连续性以保证姿态平滑过渡。
 
-### 光滑函数
+#### 2. 绝对连续 ⊂ 一致连续（绝对连续⇒一致连续，反之不真）
+- **逻辑推导**：绝对连续的条件包含“区间和可控性”，取单个区间\((x_1, x_2)\)时，即满足一致连续的定义，故绝对连续更强。
+- **反例（一致连续但不绝对连续）**：Cantor函数\(C(x)\)（三分集上构造的单调不减函数）。其在\([0,1]\)上一致连续（单调有界函数必一致连续），但对任意\(\delta > 0\)，可构造有限个互不重叠的区间，其长度和小于\(\delta\)，但函数值差之和为1（超过任意\(\epsilon < 1\)），故不绝对连续。
+- **控制理论应用**：绝对连续保证Newton-Leibniz公式成立（\(f(x) = f(a) + \int_a^x f'(t)dt\)），是积分型Lyapunov函数设计的基础。
 
-光滑函数（英语：Smooth function）在数学中特指无穷可导的函数，不存在尖点，也就是说所有的有限阶导数都存在。例如，指数函数就是光滑的，因为指数函数的导数是指数函数本身。
+#### 3. Lipschitz连续 ⊂ 绝对连续（Lipschitz连续⇒绝对连续，反之不真）
+- **逻辑推导**：设\(f\) Lipschitz连续（常数\(L\)），对任意\(\epsilon > 0\)，取\(\delta = \frac{\epsilon}{L}\)。若\(\sum (y_i - x_i) < \delta\)，则\(\sum |f(y_i) - f(x_i)| \leq L \sum (y_i - x_i) < L \cdot \frac{\epsilon}{L} = \epsilon\)，满足绝对连续定义。
+- **反例（绝对连续但非Lipschitz连续）**：\(f(x) = \sqrt{x}\)在\([0,1]\)上绝对连续。其导数\(f'(x) = \frac{1}{2\sqrt{x}}\)在\(x \to 0^+\)时无界，故不存在全局Lipschitz常数\(L\)（假设存在\(L\)，则\(\frac{1}{2\sqrt{x}} \leq L\)对所有\(x \in (0,1]\)成立，矛盾）。
+- **控制理论应用**：Lipschitz条件是非线性系统（如四旋翼动力学模型）稳定性分析的核心假设，可通过Backstepping控制设计保证闭环系统鲁棒性。
 
-若一函数是连续的，则称其为$C^{0}$函数；
-若函数存在导函数，且其导函数连续，则称为连续可导，记为$C^1$函数；
-若一函数n阶可导，并且其n阶导函数连续，则为$C^{n}$函数（$n\geq 1$）。
-而光滑函数是对所有n都属于$C^{n}$函数，特称其为$C^{\infty }$函数。
+#### 4. 可导与连续性的关系：可导⇒连续，但与一致/绝对/Lipschitz连续无直接包含
+- **逻辑推导**：可导函数在导数存在点满足\(\lim_{x \to x_0} (f(x) - f(x_0)) = \lim_{x \to x_0} f'(x_0)(x - x_0) = 0\)，故必连续；但可导不蕴含更强的连续性，更强的连续性也不蕴含可导。
+- **反例1（Lipschitz连续但不可导）**：\(f(x) = |x|\)在\([-1,1]\)上Lipschitz连续（\(L=1\)），但在\(x=0\)处左导数为-1、右导数为1，导数不存在。
+- **反例2（可导但非一致连续）**：\(f(x) = x^2\)在\(\mathbb{R}\)上可导（\(f'(x)=2x\)），但对\(\epsilon=1\)，取\(x_1 = n\)，\(x_2 = n + \frac{1}{2n}\)（\(n \in \mathbb{N}^+\)），则\(|x_1 - x_2| = \frac{1}{2n}\)可任意小，但\(|f(x_1) - f(x_2)| = 2n \cdot \frac{1}{2n} + (\frac{1}{2n})^2 = 1 + \frac{1}{4n^2} > \epsilon\)，故不一致连续（更非Lipschitz连续）。
+- **关键关联**：仅当\(f\)可导且导数\(f'\)在\([a,b]\)上有界时，\(f\)才是Lipschitz连续（Lipschitz常数\(L = \sup_{x \in [a,b]} |f'(x)|\)，由中值定理证明）。
+- **控制理论应用**：四旋翼控制器设计中，常假设动力学模型的非线性项满足Lipschitz条件，若模型可导且导数有界，可直接验证该条件。
 
-## 不一定连续可微的解 
-Beyond Continuously Differentiable Solutions 
+#### 5. 连续可导（\(C^1\)）⊂ 可导（可导⇏连续可导）
+- **逻辑推导**：连续可导要求导数存在且连续，是可导的更强条件；可导函数的导数可能不连续。
+- **反例（可导但非连续可导）**：
+  \[
+  f(x) = \begin{cases} 
+  x^2 \sin\frac{1}{x}, & x \neq 0, \\
+  0, & x = 0.
+  \end{cases}
+  \]
+  其导数为：
+  \[
+  f'(x) = \begin{cases} 
+  2x \sin\frac{1}{x} - \cos\frac{1}{x}, & x \neq 0, \\
+  0, & x = 0.
+  \end{cases}
+  \]
+  当\(x \to 0\)时，\(\cos\frac{1}{x}\)震荡无极限，故\(f'(x)\)在\(x=0\)处不连续，\(f\)非\(C^1\)。
+- **控制理论应用**：\(C^1\)函数保证四旋翼轨迹的角速度连续，避免姿态突变导致的控制震荡。
 
-考虑如下的动态系统
-$$
-\dot{x}(t)=\mathcal{X}(x(t))\ x(t_0)=x_0
-\tag{7}
-$$
-其中$x\in \mathbb{R}^d$， $d$为一个正整数，
-并且$\mathcal{X}:\mathbb{R}^d \to \mathbb{R}^d$ **不需要连续**。
-我们称**连续可微的解$t \mapsto x(t)$为经典（classical）解**。
-显然，如果$\mathcal{X}$连续，那么方程所有解都是classical的。
-不失一般性，我们认为$t_0=0$，并且只考虑$t>0$的情况。
-
-> 连续可微Continuously differentiable，用泛函表示就是函数$f\in C^1$，意味着函数的导数是连续的，当然可微保证其本身也是连续的。
-
-**Caratheodory解**是classical解的一般化。
-粗略地说，Caratheodory解是满足微分方程(7)的Lebesgue积分形式(8)的绝对连续曲线
-$$
-x(t)=x(t_0)+\int_{t_0}^t X(x(s)) ds,\quad t>t_0
-\tag{8}
-$$
-通过使用积分形式(8)，Caratheodory解不再要求方程解必须所有时间都沿着向量场的方向。
-也就是说，微分方程(7)need bot be satisfied on a set of measure zero.
-
-**Filippov解**使用微分包含式（differential inclusion）来替换微分方程(7)右侧
-$$
-\dot{x}(t)\in \mathcal{F} (x(t))
-$$
-其中$\mathcal{F}:\mathbb{F}^d \to \mathfrak{B}(\mathbb{F}^d)$，
-$\mathfrak{B}(\mathbb{R}^d)$为d维实数空间$\mathbb{R}^d$的所有子集的集合。
-Filippov解是绝对连续曲线。
-对于任意给定的状态$x$，Filippov解不只关注向量场在$x$处的值，
-Filippov解的思想是引入由向量场中$x$的领域决定的一组**方向集合**。
-文献中常常使用集值映射（set-value map），
-也就是说这种映射的值是一个集合，而不像标准的函数（映射）的值只有一个。
-
-> An ordinary differential inclusion says the derivative must lie in a specified set, which may also depend on the function and independent variable. 
-
-Caratheodory解和Filippov解都不能完全解决非连续动态系统的问题，
-围绕存在的问题由**Sample-and-hold**解以及其他的一些描述方法。
+#### 6. 光滑（\(C^\infty\)）⊂ 连续可导（\(C^1\)）（\(C^1\)⇏\(C^\infty\)）
+- **逻辑推导**：光滑函数要求任意阶导数存在且连续，是\(C^1\)的更强条件；\(C^1\)函数可能高阶不可导。
+- **例子（\(C^1\)但非光滑）**：\(f(x) = |x|^3\)在\(\mathbb{R}\)上二阶可导（\(f''(x) = 6|x|\)），但三阶导数在\(x=0\)处不存在，故仅为\(C^2\)，非\(C^\infty\)。
+- **控制理论应用**：光滑函数（如\(e^x\)、多项式轨迹）常用于四旋翼滑模控制的切换函数设计，可消除抖振。
 
 
-## 解的存在性和唯一性
-
-对于常微分方程而言，向量场如果只连续不能保证解的唯一性。
-我们说解的一个性质弱，表示不是所有解满足这一性质。
-我们说解的一个性质强，表示所有解满足这一性质。
-所以设计控制器的思路可以是
-
-1. 设计控制器并考虑控制器下的闭环系统
-1. 用一个集值映射将每一个状态映射到允许的输入产生的所有向量的集合，并将这个映射与控制系统关联起来，（原文表述如下）
-
-> associate with the control system the set-valued map that assigns each state to the set of all vectors generated by the allowable inputs and consider the resulting differential inclusion.
-
-### classical 解的存在性
-
-考虑微分方程：
-$$
-\dot{x}(t)=X(x(t)),\quad x(0)=x_0
-\tag{10}
-$$
-其中$X:\mathbb{R}^d \to \mathbb{R}^d$是一个向量场。
-如果$0=X(x_e)$，那么点$x_e\in \mathbb{R}^d$是(10)的一个平衡点。
-在$[0,t_1]$上一个(10)的classical解是一个连续可微的映射$x:[0,t_1]\to\mathbb{R}^d$。
-不失一般性，我们只考虑从时间$t_0=0$开始的解。
-如果解$t\mapsto x(t)$ 不能在时间上延申（extend），
-也就是说解不是定义域内更大的一个时间区间上的解的截断，
-那么称该解为最大解（maximal solution）。
-最大解的定义暗示了解的区间只能是$[0,T),T>0$或$[0,\infty)$。
-
-Peano’s theorem 说明了连续的向量场可以保证classical解存在：
-
-> (Proposition 1) 令$X:\mathbb{R}^d\to \mathbb{R}^d$是连续向量场。
-> 于是，对于所有$x_0\in\mathbb{R}^d$，
-> **存在**一个(10)的classical解，该解满足$x(0)=x_0$
-
-### classical 解的唯一性
-
-> (Proposition 2)  令$x:\mathbb{R}^d\to\mathbb{R}^d$连续，
-> 假设对于所有的$x\in\mathbb{R}^d$，
-> 存在一个$\epsilon>0$使得$X$是在状态$x$的$\epsilon$领域$B(x,\epsilon)$上单侧Lipschitz连续。
-> 然后，对于所有$x_0\in \mathbb{R}^d$，存在一个起始于$x(0)=x_0$的(10)的**唯一的**classical 解
-
-### classical 解存在性和唯一性示例
-
-下面的例子说明如果向量场不连续，那么(10)可能不存在经典解
-
-> 考虑如下向量场：$X:\mathbb{R}\to\mathbb{R}$ 
-$$
-X(x)=\begin{cases}
-    -1, & x>0\\
-    1 , & x\leq 0
-\end{cases}
-$$
-> 显然在$x=0$处该函数不连续。
-> 假设存在一个连续可微的解满足$\dot{x}(t)=X(x(t))$和$x(0)=0$。
-> 然后$\dot{x}(0)=X(x(0))=X(0)=1$，
-> 于是，对于所有的充分小的时间$t$，$x(t)>0$ 并且$\dot{x}(t)=X(x(t))=-1$，
-> 这与$t\mapsto \dot{x}(t)$连续矛盾。
-> 所以，不存在classical 解。
-
-下面的例子说明如果向量场不连续，那么(10)也可能存在经典解。
-
-> 考虑向量场$X:\mathbb{R}\to\mathbb{R}$
-$$
-X(x)=-\mathrm{sign}(x)=\begin{cases}
--1, & x>0,\\
-0,   & x=0,\\
-1,   & x<0,
-\end{cases}
-$$
-> 唯一最大解为：
-$$
-\begin{aligned}
-    &x(t)=x(0)-t, 
-    t\in [0,x(0)) 
-    &\textrm{if}
-    \ x(0)>0, \\
-    &x(t)=0,  t\in [0,\infty)
-    &\textrm{if}\ x(0)=0 
-   \\
-    &x(t)=x(0)+t,  t\in [0,-x(0))
-    &\textrm{if}\ 
-    x(0)<0,
-\end{aligned}
-$$
-
-下面例子说明连续但是不是单侧Lipschitz连续的向量场可能有多个classical解
-
-> 考虑向量场$X:\mathbb{R}\to\mathbb{R}$
-$$
-X(s)=\sqrt{|x|}
-$$
-> 这个向量场处处连续，并在$\mathbb{R}/\{0\}$局部Lipschitz连续，
-> 但是在零处不局部连续，在零的领域也不单侧Lipschitz连续。
-> 从$x(0)=0$开始，该动态系统有许多最大解，具体而言为：
-> 对所有$a>0$，$x_a:[0,\infty)\to \mathbb{R}$，表达式为：
-$$
-x_a(t)=\begin{cases}
-0, & 0\leq t \leq a,\\
-(t-a)^2/4, & t\geq a
-\end{cases}
-$$
-
-下面例子说明连续但是不是单侧Lipschitz连续的向量场只有一个classical解
-> 考虑向量场$X:\mathbb{R}\to\mathbb{R}$
-$$
-X(s)=\begin{cases}
--x \mathrm{log} x, & x>0\\
-0,                            & x=0,\\
-x \mathrm{log}(-x),& x<0,
-\end{cases}
-$$
-> 唯一最大解为：
-$$
-\begin{aligned}
-    &x(t)=-\exp(\log (-x(0)) \exp(t)), 
-    &\textrm{if}\ x(0)<0 \\
-    &x(t)=0, 
-    &\textrm{if}\ x(0)=0 \\
-    &x(t)=\exp(\log x(0) \exp(-t)), 
-    &\textrm{if}\ x(0)>0
-\end{aligned}
-$$
