@@ -109,32 +109,56 @@ $.
 
 == Robust Prescribed Time Stabiliztion of Single Integrator Systems
 
-#text(size: 30pt,fill: red,"This page may not be correct, sorry!")
+#columns(2)[
+  As is well known, for a linear system $dot(x)=-k x + delta$ where $delta$ is an unknown bounded input and $x$ is the system state.
 
-The system is:
-$
-dot(x)=delta(t) + cases(
-  - k_1/(T-t) x   & quad 0<t<T,
-  - k_1 "sign"(x) & quad t>=T)
-$ with $T> 1$ to be prescribed and $k_1>sup_t abs(delta(t))$.\
+  From the BIBO stability theorem, we can see that a larger $k$ can make $x$ converge to a smaller vicinity of the origin.
+  This motivates the design of a high-gain controller.
+  So it's a open problem to bring PT to SMC.
+  Combining the PT controller with the SMC controller, we can design a controller such that:
+  $
+  dot(x)=delta(t) + cases(
+    - k_1/(T-t) x - k_2 "sign"(x)   & quad 0<t<T,
+    - k_2 "sign"(x) & quad t>=T)
+  $ with $T> 0$ to be prescribed and $k_2>sup_t abs(delta(t))$.
+
+  Consider $V=1/2 x^2$, we have $dot(V)=x dot(x)$.
+  When $t<T$, $dot(V)=x delta -k_1/(T-t) x^2 -k_2 abs(x)<=-(k_2-abs(delta))abs(x)-k_1/(T-t) x^2 <= -k_1/(T-t)2 V(t)$. 
+  The system is PT stable with convergence time smaller than $T$.
+
+
+  The simulation is carried out with a saturation $k_1=k_2=2$, $T=3$.
+  We use a saturation on $1/(T-t)$ with threshold as $10$.
+
+
+  #let sat(x,xm)={
+    let y=x;
+    if x>xm {
+      y=xm
+    }
+    if x < -xm{
+      y=-xm
+    }
+    y
+  }
 
   #let rhs(t,x)={
-    let delta=calc.sin(t)
-    let u=0 
-    let T=5
+    let delta=calc.sin(1/2*calc.pi*t)
+    let k1=2
+    let k2=2
+    let T=3
+
+    let u=-k2*op.sign(x.x)
     if t < T{
-      u=-1.1*1/(T - t)*(x.x)
+      u=u -2*sat(1/(T - t),100)*(x.x)
     }
-    else{
-      u=-1.1*op.sign(x.x)
-      }
     let T=0.1
     let dx=(x:u+delta,uf:(u -(x.uf))/T)
     dx.insert("u",u)
     dx.insert("delta",-delta)
     dx
   }
-  #let (xout,dxout)=ode45(rhs,10,(x:1,uf:0),0.1,record_step:0.1)
+  #let (xout,dxout)=ode45(rhs,10,(x:1,uf:0),0.01,record_step:0.1)
 
   #cetz.canvas({
       plot.plot(
@@ -152,6 +176,13 @@ $ with $T> 1$ to be prescribed and $k_1>sup_t abs(delta(t))$.\
         x-label:"time",
         )
     })
+
+  Robust PT controller mainly consider vanishing disturbances like @liStochasticNonlinearPrescribedtime2022 @liPrescribedTimeOutputFeedbackControl2023
+  @liPrescribedtimeMeannonovershootingControl2023.
+
+  Another method is using ISMC, which avoids the reaching phase of sliding mode control at the cost of requiring the initial state.
+]
+
 
 #pagebreak()
 

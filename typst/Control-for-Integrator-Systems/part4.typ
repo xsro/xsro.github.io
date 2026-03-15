@@ -5,22 +5,4 @@
   part:[*part 1*: SMC for single integrators and double integrators]
 )
 
-#include "1linear.typ"
-
-#include "2single.typ"
-
-#include "3double.typ"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#include "4PTC.typ"
