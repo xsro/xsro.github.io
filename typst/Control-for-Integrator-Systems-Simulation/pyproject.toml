@@ -8,4 +8,5 @@ dependencies = [
     "cbor2>=5.8.0",
     "matplotlib>=3.10.8",
     "numpy>=2.4.3",
+    "scipy>=1.17.1",
 ]
