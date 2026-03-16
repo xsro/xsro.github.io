@@ -5,5 +5,5 @@
   part:[*part 3*: Noncontinuous Control Theory]
 )
 
-#include "5Filippov.typ"
+#include "part3/5Filippov.typ"
 

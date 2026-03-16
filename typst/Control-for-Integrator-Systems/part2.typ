@@ -5,8 +5,8 @@
   part:[*part 2*: Second and High Order Sliding Mode Control]
 )
 
-#include "9signum.typ"
-#include "8sta.typ"
-#include "7homo.typ"
-#include "6highorder.typ"
+#include "part2/9signum.typ"
+#include "part2/8sta.typ"
+#include "part2/7homo.typ"
+#include "part2/6highorder.typ"
 

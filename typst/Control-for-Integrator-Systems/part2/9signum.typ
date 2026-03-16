@@ -1,4 +1,4 @@
-#import "lib/lib.typ":sig
+#import "../lib/lib.typ":sig
 = Notations of *sgn* and *sig*
 
 In homogeneous theory and high order sliding mode, 

@@ -1,4 +1,4 @@
-#import "lib/lib.typ":sig,sgn
+#import "../lib/lib.typ":sig,sgn
 
 = Super Twisting Control
 
