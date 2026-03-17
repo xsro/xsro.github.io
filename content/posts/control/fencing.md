@@ -6,7 +6,7 @@ tags: ["Control Theory"]
 categories: ["Control system simulation"]
 ---
 
-The dynamic version of figures in our paper **Singleton-free fencing control of unknown maneuver target** are presented below.
+The `gif`-format figures in our paper **Singleton-free fencing control of unknown maneuver target** are presented below.
 
 ### Fig. 4
 
