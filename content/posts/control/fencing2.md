@@ -6,8 +6,19 @@ tags: ["Control Theory"]
 categories: ["Control system simulation"]
 ---
 
-The dynamic figure in our paper is presented below.
+The dynamic figures are presented below in `gif` and `webp` format.
 
-### Fig. 3
+### Fig. 3 
 
-![](/fence/2026a1.gif)
+[gif](/fence/2026a1.gif) [webp](/fence/2026a1.webp)
+
+![](/fence/2026a1.webp)
+
+
+### Fig. 9 
+
+[gif](/fence/2026a2.gif) [webp](/fence/2026a2.webp)
+
+![](/fence/2026a2.webp)
+
+
