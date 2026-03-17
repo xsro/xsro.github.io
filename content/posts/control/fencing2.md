@@ -1,7 +1,7 @@
 ---
 title: "Dynamic figures of XXX"
 date: 2025-04-30
-aliases: ["/f/"]
+aliases: ["/f/2/"]
 tags: ["Control Theory"]
 categories: ["Control system simulation"]
 ---
