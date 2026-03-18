@@ -68,51 +68,78 @@
 ]
 #pagebreak()
 == Terminal SMC
-#columns(2)[
-  If we need the system converges in finite time, we can desgin the sliding surface @eq:sliding_surface as 
-  $
-  sigma=dot(x)+c⌊x⌉^(q)\
-  dot(sigma)=dot.double(x)+q c ⌊x⌉^(q-1))=u+delta + q c ⌊x⌉^(q-1))
-  $
-  and the corresponding control law is 
-  $
-  u=-rho "sign" (sigma) -q c ⌊x⌉^(q-1))
-  $
-  We call this 2-SM(Second Order Sliding Mode).
 
-  When $q<1$,  the term $⌊x⌉^(q-1))$ is singular.
-  #colbreak()
-    #for q in (1/2,2){
-      let rhs(t,x)={
-        let delta=calc.sin(t)
-        let c=1
-        let sigma=c*op.sig(x.x1,q)+x.x2
-        let rho=1.1
-        let u=-rho*op.sign(sigma)-c*q*op.sig(x.x1,q - 1)
-        let dx=(x1:x.x2,x2:u+delta)
-        dx.insert("sigma",sigma)
-        dx.insert("delta",-delta)
-        dx.insert("u",u)
-        dx
-      }
-      let (xout,dxout)=ode45(rhs,20,(x1:2,x2:1),0.01,record_step:0.02)
-      [q=#q]
-      cetz.canvas({
-        plot.plot(
-          size: (8,2),
-          axis-style: "school-book", 
-          x-tick-step: 5, y-tick-step:1,
-          {
-            plot.add(get_signal(xout,"x1"),label:$x$)
-            plot.add(get_signal(xout,"x2"),label:$dot(x)$)
-            plot.add(get_signal(dxout,"sigma"),label:$sigma$)
-            // plot.add(get_signal(dxout,"u"),label:$u$)
-          },
-          y-label:"value",
-          x-label:"time",
-          )
-        })
+#let sig(x)="⌊"+x+"⌉"
+#columns(2)[
+  For $dot.double(x)=u+delta(t)$, we can design SM manifold as 
+  $sigma=dot(x)+c⌊x⌉^(q)$ and its derivative is 
+  $
+  dot(sigma)=dot.double(x)+q c sig(x)^(q-1)=u+delta + q c sig(x)^(q-1)
+  $
+  where $sig(x)=abs(x)"sign"(x)$.
+  Then, the corresponding control law is 
+  $
+  u=-k "sign" (sigma) -q c ⌊x⌉^(q-1), k>sup_(t>=0) abs(delta(t))
+  $
+
+  - $0<q<1$: finite-time, but the term $⌊x⌉^(q-1)$ causes singularity
+  - $q=1$: exponentially stable and non-singular 
+  - $q>1$: asymptotically stable and non-singular 
+
+  @FENG20022159
+  To achieve finite-time convergence without singularity, non-singular terminal sliding mode controller (NTSMC) is proposed.
+  Design the sliding mode surface $sigma = x + 1/alpha ⌊dot(x)⌉^p$ ($1<p<2$), its derivative is
+  $
+    dot(sigma)
+    &= dot(x) + 1/alpha p sig(dot(x))^(p-1) dot.double(x)
+    = dot(x) + 1/alpha p sig(dot(x))^(p-1) (u+delta)\
+    &= -k"sign"(sigma) +1/alpha p sig(dot(x))^(p-1)delta
+  $
+  where $dot(x) + 1/alpha p sig(dot(x))^(p-1) (u)=-k"sign"(sigma)$.
+  Then, the controller is
+  $
+    u=-alpha/p sig(dot(x))^(1-p) (dot(x)+k "sign"(sigma)).
+  $
+  $k$ should be sufficiently large $k>1/alpha p abs(dot(x)(t))^(p-1) abs(delta(t))$. 
+
+  *Hint*: condition $p>1$ guarantees $k>1/alpha p abs(dot(x)(t))^(p-1) abs(delta(t))$ valid. condition $p<2$ guarantees finite-time stability in sliding surface.
+
+  #let plot_one(q,sat)={
+    let rhs(t,x)={
+      let delta=calc.sin(t)
+      let c=1
+      let sigma=c*op.sig(x.x1,q)+x.x2
+      let rho=1.1
+      let u=-rho*op.sign(sigma)-c*q*op.sat(op.sig(x.x1,q - 1),sat)
+      let dx=(x1:x.x2,x2:u+delta)
+      dx.insert("sigma",sigma)
+      dx.insert("delta",-delta)
+      dx.insert("u",u)
+      dx
+    }
+    let (xout,dxout)=ode45(rhs,20,(x1:2,x2:1),0.01,record_step:0.02)
+    cetz.canvas({
+      plot.plot(
+        size: (8,2),
+        axis-style: "school-book", 
+        x-tick-step: 5, y-tick-step:1,
+        {
+          plot.add(get_signal(xout,"x1"),label:$x$)
+          plot.add(get_signal(xout,"x2"),label:$dot(x)$)
+          plot.add(get_signal(dxout,"sigma"),label:$sigma$)
+          // plot.add(get_signal(dxout,"u"),label:$u$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+      })
   }
+
+  q=1/2, singularity problem causes the system panick
+  #plot_one(1/2,float.inf)
+
+  q=1/2, saturation value $1$ used outside $sig(x)^(q-1)$
+  #plot_one(1/2,1)
 ]
 #pagebreak()
 == Second Order Sliding Mode Control 
