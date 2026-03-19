@@ -15,6 +15,7 @@
 == Conventional Sliding Mode Control 
 
 #columns(2,gutter: 21pt)[
+  
   The basic idea of Sliding Mode Control 
   is reduce the order of system.
   Take the double integrator system for example,
@@ -76,7 +77,6 @@
 #pagebreak()
 == Terminal SMC
 
-#let sig(x)="⌊"+x+"⌉"
 #columns(2)[
   === Terminal SMC
   
@@ -175,7 +175,7 @@
 
 
 #pagebreak()
-== Second Order Sliding Mode Control 
+= Second Order Sliding Mode Control 
 
   The $n$-th Order Sliding Mode Control means 
   the relative degree of the sliging variable system is $n$ 
