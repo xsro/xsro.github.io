@@ -37,7 +37,7 @@
   The dynamic of the sliding variable is 
   $
   dot(sigma)=-k "sign" (sigma)+delta.
-  $
+  $<eq_smc>
   This means the system state *reaches* the surface $sigma=0$ in finite time.
   Then the system state *slides* in the surface.
 
@@ -57,22 +57,37 @@
 
   The first simulation shows $x$ converges asymptotically.
   #cetz.canvas({
-      plot.plot(
-        size: (8,2),
-        axis-style: "school-book", 
-        x-tick-step: 5, y-tick-step:1,
-        {
-          plot.add(get_signal(xout,"x1"),label:$x$)
-          plot.add(get_signal(xout,"x2"),label:$dot(x)$)
-          plot.add(get_signal(dxout,"sigma"),label:$sigma$)
-          plot.add(get_signal(dxout,"u"),label:$u$)
-        },
-        y-label:"value",
-        x-label:"time",
-        )
-    })
+    plot.plot(
+      size: (8,2),
+      axis-style: "school-book", 
+      x-tick-step: 5, y-tick-step:1,
+      {
+        plot.add(get_signal(xout,"x1"),label:$x$)
+        plot.add(get_signal(xout,"x2"),label:$dot(x)$)
+        plot.add(get_signal(dxout,"sigma"),label:$sigma$)
+        plot.add(get_signal(dxout,"u"),label:$u$)
+      },
+      y-label:"value",
+      x-label:"time",
+      )
+  })
     
-    
+  == Order of SMC
+
+  There are two consistent definitions for the order of sliding mode:
+  - *relative degree*: the order of the lowest derivative of $sigma$ in which $u$ appears explicitly.
+  - *discontinuity order* (I recommend): the order of the lowest discontinuous derivative of $sigma$ along the sliding motion.
+
+  Higher-order sliding modes produce smoother control signals and significantly reduce chattering.
+
+  #table(
+    columns: 3,
+    rows: 3,
+    [Order], [Condition], [Algorithm],
+    [1], [$s=0$, $dot(s)$ discontinuous], [SMC #ref(<eq_smc>)],
+    [2], [$s,dot(s)=0$, $dot.double(s)$ discontinuous], [STA,Twisting],
+    [n], [$s,dots,s^((n-1))=0$, $s^((n))$ discontinuous], [HOSM],
+  )
 ]
 #pagebreak()
 == Terminal SMC
@@ -120,7 +135,7 @@
   === Prescribed-time NTSMC
 
   Using Time-varying gain (TVG), NTSMC can be prescribed-time stable. 
-  #footnote()[see #cite(<Shi10665914>), it adopts a non-singular TVG with a parameter $T_s$ in (14). 
+  #footnote()[see #cite(<Shi10665914>), it adopts a non-singular TVG with a parameter $T_s$ in #cite(<Shi10665914>)'s eq (14). 
   For simplicity, we use a singular one here.]
   TVG:
   $mu(t)=T_p/(T_p-t)$, $t in [0,T_p)$.
@@ -149,7 +164,7 @@
       dx.insert("u",u)
       dx
     }
-    let (xout,dxout)=ode45(rhs,20,(x1:2,x2:1),0.01,record_step:0.02)
+    let (xout,dxout)=ode45(rhs,20,(x1:2,x2:1),0.01,record_step:0.1)
     cetz.canvas({
       plot.plot(
         size: (8,2),
