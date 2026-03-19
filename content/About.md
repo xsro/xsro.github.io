@@ -42,3 +42,12 @@ This is a printable version of the notes for the course *Nonlinear Systems and C
 It includes some additional material, such as mathematics for control like differential geometry, and some solutions for the ref74(khalil's nonlinear systems 3rd edition).
 I originally collect this to provide a supplement for the course, 
 but it is not yet complete.
+
+### Notes on Sliding Mode Control for Integrator Systems 
+
+Integrator systems are among the simplest control plants, and controlling such systems can yield many highly interesting control effects.
+
+- [Control-for-Integrator-Systems](/print/Control-for-Integrator-Systems.pdf) employs sliding-mode control for a single integrator and introduces several concepts related to fixed-time control.
+- [Control-for-Integrator-Systems-2](/print/Control-for-Integrator-Systems-2.pdf) applies sliding-mode control to a double integrator.
+- [Control-for-Integrator-Systems-3](/print/Control-for-Integrator-Systems-3.pdf) presents sliding-mode control techniques suitable for high-order integrator systems.
+- [Control-for-Integrator-Systems-4](/print/Control-for-Integrator-Systems-4.pdf) introduces fundamentals related to discontinuous systems, including Filippov solutions and set-valued systems.

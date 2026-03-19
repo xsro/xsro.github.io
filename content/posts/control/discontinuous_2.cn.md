@@ -23,10 +23,6 @@ Filippov解的思路是不再只考虑向量场上的各个点，
 本文序号和内容整理自：CORTES J. Discontinuous dynamical systems[J/OL]. IEEE Control Systems Magazine, 2008, 28(3): 36-73. DOI:10.1109/MCS.2008.919306.
 <!-- more -->
 
-![](/print/Control-4.png)
-![](/print/Control-5.png)
-
-
 ## 不一定连续可微的解 
 Beyond Continuously Differentiable Solutions 
 

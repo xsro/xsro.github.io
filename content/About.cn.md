@@ -13,7 +13,7 @@ draft: false
 
 - (2015-2018) 选修物地
 - (2018-2022) 自动化, [自动化学院、人工智能学院][college], [南京邮电大学][njupt]
-- (2022-) 航空宇航科学与技术, [山中大学][sysusz]
+- (2022-) 航空宇航科学与技术, [中山大学][sysusz]
 
 [njupt]: http://www.njupt.edu.cn/ "NJUPT"
 [college]: http://coa.njupt.edu.cn "College of Automation & College of Artificial Intellegence"
@@ -32,9 +32,10 @@ draft: false
 
 积分器系统是最简单的控制对象之一，通过控制这样的系统可以得到许多非常有意思的控制效果。
 
-- [Control-for-Integrator-Systems](/print/Control-for-Integrator-Systems.pdf) 使用滑模控制控制单积分、双积分系统，同时介绍了一些关于预设时间控制的概念。
-- [Control-for-Integrator-Systems-2](/print/Control-for-Integrator-Systems-2.pdf)介绍适用于高阶积分器系统的滑模控制技术。
-- [Control-for-Integrator-Systems-3](/print/Control-for-Integrator-Systems-3.pdf)介绍适用于非连续系统的一些知识，包括Filippov，集值系统等
+- [Control-for-Integrator-Systems](/print/Control-for-Integrator-Systems.pdf) 使用滑模控制控制单积分，同时介绍了一些关于预设时间控制的概念。
+- [Control-for-Integrator-Systems-2](/print/Control-for-Integrator-Systems-2.pdf) 使用滑模控制控制双积分。
+- [Control-for-Integrator-Systems-3](/print/Control-for-Integrator-Systems-3.pdf) 介绍适用于高阶积分器系统的滑模控制技术。
+- [Control-for-Integrator-Systems-3](/print/Control-for-Integrator-Systems-4.pdf) 介绍适用于非连续系统的一些知识，包括Filippov，集值系统等
 
 
 ### 笔记与代码分享

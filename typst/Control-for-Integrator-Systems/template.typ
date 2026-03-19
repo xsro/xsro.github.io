@@ -5,6 +5,9 @@
     #text(rgb("#005826"),size: 1cm,title)
 
     #text(black,size: 0.8cm,part)
+
+    #text(black,size: 0.4cm,)[#link("https://xsro.github.io/print/Control-for-Integrator-Systems.pdf")]
+
   ]
 
 

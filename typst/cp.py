@@ -9,22 +9,26 @@ Config=[
     {
         "name": "Control-for-Integrator-Systems",
         "path": "Control-for-Integrator-Systems/part1.typ",
-        "out":[
-            "Control-for-Integrator-Systems.pdf"
-        ]},
+        "out":["Control-for-Integrator-Systems.pdf"]
+    },
     {
         "name": "Control-for-Integrator-Systems",
         "path": "Control-for-Integrator-Systems/part2.typ",
-        "out":[
-            "Control-for-Integrator-Systems-2.pdf"
-        ]},
+        "out":["Control-for-Integrator-Systems-2.pdf"]
+    },
     {
         "name": "Control-for-Integrator-Systems",
         "path": "Control-for-Integrator-Systems/part3.typ",
+        "out":["Control-for-Integrator-Systems-3.pdf"]
+    },
+    {
+        "name": "Control-for-Integrator-Systems",
+        "path": "Control-for-Integrator-Systems/part4.typ",
         "out":[
-            "Control-for-Integrator-Systems-3.pdf",
+            "Control-for-Integrator-Systems-4.pdf",
             r"Control-{p}.png"
-        ]}
+        ]
+    }
 ]
 
 import os

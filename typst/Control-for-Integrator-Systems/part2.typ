@@ -150,8 +150,39 @@
   // #footnote(cite(<Shi10665914>,form:"full"))
 ]
 
-#pagebreak()
-#let plot_one(q,sat)={
+  #pagebreak()
+  #let plot_one(xout,dxout,y-tick-step)={
+    let fig1=cetz.canvas({
+      plot.plot(
+        size: (8,2),
+        axis-style: "school-book", 
+        x-tick-step: 5, y-tick-step:1,
+        {
+          plot.add(get_signal(xout,"x1"),label:$x$)
+          plot.add(get_signal(xout,"x2"),label:$dot(x)$)
+          plot.add(get_signal(dxout,"sigma"),label:$sigma$)
+        },
+        y-label:"value",
+        x-label:"time",
+        )
+      })
+    let fig2=cetz.canvas({
+    plot.plot(
+      size: (8,2),
+      axis-style: "school-book", 
+      x-tick-step: 5, y-tick-step:y-tick-step,
+      {
+        plot.add(get_signal(xout,"x1"),label:$x$)
+        plot.add(get_signal(dxout,"u"),label:$u$)
+      },
+      y-label:"value",
+      x-label:"time",
+      )
+    })
+    table(columns: (auto,auto),stroke: none,fig1,fig2)
+  }
+
+  #let plot_tsmc(q,sat,y-tick-step)={
     let rhs(t,x)={
       let delta=calc.sin(t)
       let c=1
@@ -165,28 +196,32 @@
       dx
     }
     let (xout,dxout)=ode45(rhs,20,(x1:2,x2:1),0.01,record_step:0.1)
-    cetz.canvas({
-      plot.plot(
-        size: (8,2),
-        axis-style: "school-book", 
-        x-tick-step: 5, y-tick-step:1,
-        {
-          plot.add(get_signal(xout,"x1"),label:$x$)
-          plot.add(get_signal(xout,"x2"),label:$dot(x)$)
-          plot.add(get_signal(dxout,"sigma"),label:$sigma$)
-          // plot.add(get_signal(dxout,"u"),label:$u$)
-        },
-        y-label:"value",
-        x-label:"time",
-        )
-      })
+    plot_one(xout,dxout,y-tick-step)
   }
 
-  q=1/2, singularity problem causes the system panick
-  #plot_one(1/2,float.inf)
+  #let plot_ntsmc(alpha,p,k,y-tick-step)={
+    let rhs(t,x)={
+      let delta=calc.sin(t)
+      let sigma=x.x1+1/alpha*op.sig(x.x2,p)
+      let u=-1*(alpha/p*op.sig(x.x2,2-p)+k*op.sign(sigma))
+      let dx=(x1:x.x2,x2:u+delta)
+      dx.insert("sigma",sigma)
+      dx.insert("delta",-delta)
+      dx.insert("u",u)
+      dx
+    }
+    let (xout,dxout)=ode45(rhs,20,(x1:2,x2:1),0.01,record_step:0.1)
+    plot_one(xout,dxout,y-tick-step)
+  }
 
-  q=1/2, saturation value $1$ used outside $sig(x)^(q-1)$
-  #plot_one(1/2,1)
+  TSMC with q=1/2, singularity problem causes the system panick
+  #plot_tsmc(1/2,float.inf,20)
+
+  TSDM with q=1/2, saturation value $1$ used outside $sig(x)^(q-1)$
+  #plot_tsmc(1/2,1,2)
+
+  NTSMC with $alpha=1$, $p=1.5$, $k=1$
+  #plot_ntsmc(1,1.5,1,2)
 
 
 #pagebreak()
