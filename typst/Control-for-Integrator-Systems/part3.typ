@@ -7,8 +7,8 @@
 
 
 #import "./lib/lib.typ":ode45,get_signal,op,sig
-#import "@preview/cetz:0.3.4"
-#import "@preview/cetz-plot:0.1.1": plot, chart
+#import "@preview/cetz:0.4.2"
+#import "@preview/cetz-plot:0.1.3": plot, chart
 #import cetz.draw: *
 
 = Homogeneity 

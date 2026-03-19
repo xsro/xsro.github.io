@@ -5,8 +5,8 @@
   part:[*part 1*: SMC for single-integrators with time-critical stability]
 )
 
-#import "@preview/cetz:0.3.4"
-#import "@preview/cetz-plot:0.1.1": plot, chart
+#import "@preview/cetz:0.4.2"
+#import "@preview/cetz-plot:0.1.3": plot, chart
 #import "./lib/lib.typ":ode45,get_signal,op,ode,sig
 
 #import cetz.draw: *
@@ -17,7 +17,7 @@
     plot.plot(
       size: (2,1),
       axis-style: "school-book", 
-      x-tick-step: 1, y-tick-step: y-tick-step, 
+      x-tick-step: 2, y-tick-step: y-tick-step, 
       {
         plot.add(domain: domain, func,style: (stroke: red))
       },
@@ -999,7 +999,7 @@ $epsilon=e^(-t)$ The control input $u$ is continuous but *not uniformly continou
         axis-style: "school-book", 
         x-tick-step: 1, y-tick-step: none, 
         {
-          plot.add(domain: (0,2), mu0,style: (stroke: green))
+          plot.add(domain: (0,1.9), mu0,style: (stroke: green))
         },
         y-label:$mu(t)$,
         x-label:$t$
@@ -1055,43 +1055,7 @@ $epsilon=e^(-t)$ The control input $u$ is continuous but *not uniformly continou
 )
 
 
-= Time-critical control with time-varying Gain
-
 = Stability Definitions in Control Theory
-
-// 稳定性定义列表（带编号+加粗标题）
-#let a=[
-  (
-    name: "Asymptotic Stability",
-    zh: "渐近稳定性",
-    def: "A system is asymptotically stable if all trajectories starting near the equilibrium converge to it as time goes to infinity.",
-    feature: "Converges to equilibrium, but the convergence time is infinite (no finite-time guarantee)."
-  ),
-  (
-    name: "Exponential Stability",
-    zh: "指数稳定性",
-    def: "A system is exponentially stable if the equilibrium is asymptotically stable and the system state decays to zero at an exponential rate.",
-    feature: "Faster convergence than asymptotic stability, but still requires infinite time (error decays exponentially)."
-  ),
-  (
-    name: "Finite-time Stability",
-    zh: "有限时间稳定性",
-    def: "A system is finite-time stable if the system state reaches the equilibrium exactly at some finite settling time and remains there afterward.",
-    feature: "Converges to zero in finite time, but the settling time depends on initial conditions."
-  ),
-  (
-    name: "Fixed-time Stability",
-    zh: "固定时间稳定性",
-    def: "A system is fixed-time stable if it is finite-time stable and the settling time is bounded by a constant, independent of initial conditions.",
-    feature: "Upgraded version of finite-time stability; settling time has an upper bound and is independent of initial values."
-  ),
-  (
-    name: "Prescribed-time Stability",
-    zh: "预置时间稳定性",
-    def: "A system is prescribed-time stable if the settling time can be arbitrarily preassigned by the designer in advance, regardless of initial conditions.",
-    feature: "Settling time can be manually specified in advance by the designer, independent of the system and initial values."
-  )
-]
 
 #list(
   "Asymptotic / Exponential: Infinite-time convergence",
@@ -1099,6 +1063,93 @@ $epsilon=e^(-t)$ The control input $u$ is continuous but *not uniformly continou
   "Fixed-time: Finite convergence time (upper bounded, independent of initial conditions)",
   "Prescribed-time: Convergence time can be preassigned arbitrarily"
 )
+
+#align(center)[
+  
+
+#table(
+  columns: (auto, auto, auto),
+  inset: 10pt,
+  align: horizon,
+  table.header(
+    [Stability], [Controller], [Convergence time],
+  ),
+  [Exponential],
+  $dot(x)=-x$,
+  $T arrow infinity$,
+  "Finite time",
+  $dot(x)=-"sign"(x)$,
+  $T<=abs(x(0))/k$,
+  [Fixed-time],
+  [$dot(x)=-sig(x)^p-sig(x)^q$,$0<p<1$,$q>1$],
+  $T$,
+  "Predefined time",
+  $dot(x)=-mu(t) x, mu(t)=max{1/(T_p-t),0}$,
+  $T=T_p$,
+)
+
+]
+
+
+#pagebreak()
+
+== Finite time stability
+
+#columns(2)[
+  Consider the following:
+  $
+    dot(x) = g(t, x), quad x(0) = x_0
+  $<nonlinear_system>
+  where $x in RR^n$ and $g : RR_+ times RR^n -> RR^n$ is a nonlinear function, which can be discontinuous. 
+  The solutions of (1) are understood in the sense of Filippov. Assume the origin is an equilibrium point of @nonlinear_system.
+
+  *Definition 1 (@BhatS0363012997321358):*
+  The origin of @nonlinear_system is said to be globally finite-time stable if it is globally asymptotically stable and any solution $x(t, x_0)$ of @nonlinear_system reaches the equilibria at some finite time moment, i.e., $x(t, x_0) = 0$, $forall t >= T(x_0)$, where $T : RR^n arrow RR_+ union {0}$ is the settling-time function.
+
+  The finite-time stability property may exhibit homogeneous systems with negative degree [16], [20]. 
+  Any solution of the system $dot{x} = -x^(1/3)$, $x \in RR$ converges to the origin in finite time $T(x_0) := (3/2)root(3, | x_0 |^2)$.
+
+  *Definition 2:*
+  The origin of @nonlinear_system is said to be fixed-time stable if it is globally finite-time stable and the settling-time function $T(x_0)$ is bounded, i.e., $exists T_(max) > 0 : T(x_0) <= T_(max)$, $forall x_0 in RR^n$.
+
+  The origin of $dot(x) = -x^(1/3) - x^3$, $x in RR$ is fixed-time stable, since it is globally finite-time stable and $
+  x(t, x_0) = 0$ for $forall t >= 2.5$ and $forall x_0 in RR$.
+
+  ---
+
+  *Definition 3:*
+  The set $M$ is said to be globally finite-time attractive for @nonlinear_system if any solution $x(t, x_0)$ of @nonlinear_system reaches $M$ in some finite time moment $t = T(x_0)$ and remains there $forall t <= T(x_0)$, $T : RR^n arrow RR_+ union {0}$ is the settling-time function.
+]
+
+#pagebreak()
+#columns(2)[
+== Fixed time stability
+
+*Definition 4:*
+The set \($M$\) is said to be fixed-time attractive for @nonlinear_system if it is globally finite-time attractive and the settling-time function $T(x_0)$ is globally bounded by some number $T_(max) > 0$.
+
+Denote by $D^* phi(t)$ the upper right-hand derivative of a function $phi(t)$,
+$
+  D^* phi(t) : = limsup_(h -> + 0) (phi(t + h) - phi(t))/h .
+$
+
+  Lemma 1: @Polyakov6104367
+  If there exists a continuous radially unbounded function $V: RR^n arrow RR_+ union {0}$ such that  
+  1) $V(x) = 0 arrow.double x in M$;  
+  2) any solution $x(t)$ of (1) satisfies the inequality  
+  $
+  D^*V(x(t)) <= -(alpha V^p (x(t)) + beta V^q (x(t)))^k
+  $ 
+  for some $alpha, beta, p, q, k > 0$ with $p k < 1$, $q k > 1$,  
+  then the set $M subset RR^n$ is globally fixed-time attractive for @nonlinear_system, and  
+  $
+  T(x_0) <= 1/(alpha^k(1-p k)) + 1/beta^k(q k-1)),
+  forall x_0 in RR^n.
+  $
+]
+
+
+
 
 #pagebreak()
 
@@ -1113,10 +1164,10 @@ the solution for the first case is the same as $dot(x)=-"sign"(x)$.
 The system is:
 $
 dot(x)=-mu(t) x
-,
+,quad 
 mu(t)=cases(
-  k_1/(T-t)^h quad 0<t<T,
-  0 quad t>=T),
+  k_1/(T-t)^h quad & 0 < t < T ,
+  0 quad &t>=T),
 $ with $T> 1$ to be prescribed and $k_1>0,k_2>0,h=1$.\
 The analytical solution with $h=1$ can be found easily as:
 $
@@ -1207,13 +1258,16 @@ $.
 
 #pagebreak()
 
-== Discussion: Time-varying Gain with different power
+== Discussion: Time-varying Gain with $h<0$
 
 
-The analytical solution with $h!=1$ can be found easily as:
+The analytical solution with $dot(x)=-k_1(T-t)^(-h) x$ and $-h>0$ can be found easily as:
 $
-x(t)=x(0)exp(-k_1/(-h+1)(T^(-h+1)-(T-t)^(-h+1)))\
-x(t)=x(0)exp(-k_1/(-h+1) T^(-h+1)), t in [T,infinity)
+x(t)=x(0)exp(-k_1/(-h+1)(T^(-h+1)-(T-t)^(-h+1))) ,
+t in [0,T)
+quad 
+x(t)=x(0)exp(-k_1/(-h+1) T^(-h+1)), 
+t in [T,infinity)
 $.
 These system can be nearly stable but we can always observe some error.
 #let profiles2=(
