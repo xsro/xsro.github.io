@@ -34,7 +34,7 @@ languages:
         subtitle: "👋I am a student👨‍🎓 studing Automation🤖️ and Control Theory⚙️"
         buttons:
           - name: 📚
-            url: /cn/posts/
+            url: /posts/
           # - name: Tags
           #   url: tags
           - name: 📒

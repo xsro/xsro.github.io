@@ -6,14 +6,14 @@
 
     #text(black,size: 0.8cm,part)
 
-    #text(black,size: 0.4cm,)[#link("https://xsro.github.io/print/Control-for-Integrator-Systems.pdf")]
+    #text(black,size: 0.4cm,)[#link("https://xsro.github.io/posts/release/Control-for-Integrator-Systems/")]
 
   ]
 
 
   #pagebreak()
   #set page(
-    header: link("https://xsro.github.io/print/Control-for-Integrator-Systems.pdf",text(gray,size:0.2cm)[xsro.github.io (#datetime.today().display())])
+    header: link("https://xsro.github.io/posts/release/Control-for-Integrator-Systems/",text(gray,size:0.2cm)[xsro.github.io (#datetime.today().display())])
   )
 
   #set text(size:0.5cm)
