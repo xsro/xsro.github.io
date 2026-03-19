@@ -1,5 +1,5 @@
 ---
-title: "Simulate Dynamic Matrix Control with Simupy"
+title: "Notes on Control for Integrator Systems"
 date: 2026-03-19
 tags: ["Control Theory"]
 categories: ["Release"]
