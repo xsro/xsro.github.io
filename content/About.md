@@ -15,11 +15,11 @@ Glad to see you in this glorious time, enjoying technology's development.
 
 - (2015-2018) physics and geography in Senior High School
 - (2018-2022) Automation, [College of Automation][college] in [Nanjing University of Posts and Telecommunications][njupt]
-- (2022-) Aeronautics, [Sun Yet-sun University][sysusz]
+- (2022-) Aeronautics, [Sun Yat-sen University][sysusz]
 
 [njupt]: http://www.njupt.edu.cn/ "NJUPT"
 [college]: http://coa.njupt.edu.cn "College of Automation & College of Artificial Intellegence"
-[sysusz]: https://saa.sysu.edu.cn/ "School of Aeronautics and Astronautics"
+[sysusz]: https://saa.sysu.edu.cn/en/basic/72 "School of Aeronautics and Astronautics"
 
 ## Contact
 
