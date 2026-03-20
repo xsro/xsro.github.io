@@ -136,15 +136,14 @@
   === Prescribed-time NTSMC
 
   Using Time-varying gain (TVG), NTSMC can be prescribed-time stable. 
-  #footnote()[see #cite(<Shi10665914>), it adopts a non-singular TVG with a parameter $T_s$ in #cite(<Shi10665914>)'s eq (14). 
-  For simplicity, we use a singular one here.]
+  #footnote()[#cite(<Shi10665914>,form:"full")  (Note: it adopts a non-singular TVG with a parameter $T_s$ in its eq (14).) ]
   TVG:
   $mu(t)=T_p/(T_p-t)$, $t in [0,T_p)$.
   SM manifold: 
-  $sigma=x+(k_1 mu(t))^(-p)dot(x)^(p/q)$.
+  $sigma=x+(k_1 mu(t))^(-p)dot(x)^p$ with $p in (0,1)$.
   Final controller:
   $
-    u=-(k_1^p mu^(p/1)(t)1/p dot(x)^(2-p)-dot(mu)/mu dot(x)+k_2 mu^(1+p) "sign"(sigma)+k_3 sigma)
+    u=-(k_1^p mu^(p)(t)1/p dot(x)^(2-p)-dot(mu)/mu dot(x)+k_2 mu^(1+p) "sign"(sigma)+k_3 sigma)
   $
   
 
