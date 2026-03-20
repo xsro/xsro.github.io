@@ -2,7 +2,8 @@
 
 #show: template.with(
   title:[*Sliding Mode Control*],
-  part:[*part 2*: SMC for high order systems ]
+  part_no: 3,
+  part:[SMC for high order systems ]
 )
 
 

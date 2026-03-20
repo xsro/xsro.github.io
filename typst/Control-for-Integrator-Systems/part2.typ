@@ -2,7 +2,8 @@
 
 #show: template.with(
   title:[*Sliding Mode Control*],
-  part:[*part 2*: SMC for double-integrators ]
+  part_no: 2,
+  part:[SMC for double-integrators ]
 )
 
 #import "./lib/lib.typ":ode45,get_signal,op,sig,sgn

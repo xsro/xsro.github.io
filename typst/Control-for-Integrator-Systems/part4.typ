@@ -2,7 +2,8 @@
 
 #show: template.with(
   title:[*Sliding Mode Control*],
-  part:[*part 3*: Noncontinuous Control Theory]
+  part_no: 4,
+  part:[Noncontinuous Control Theory],
 )
 
 = Discontinuous System Theory

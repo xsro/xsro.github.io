@@ -2,7 +2,8 @@
 
 #show: template.with(
   title:[*Sliding Mode Control*],
-  part:[*part 1*: SMC for single-integrators with time-critical stability]
+  part_no: 1,
+  part:[SMC for single-integrators with time-critical stability]
 )
 
 #import "@preview/cetz:0.4.2"
