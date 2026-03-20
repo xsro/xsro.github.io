@@ -671,31 +671,12 @@ $epsilon=e^(-t)$ The control input $u$ is continuous but *not uniformly continou
 #pagebreak()
 == Integral Sliding Mode Control
 
-#box(height: 210/16*9mm,
- columns(2, gutter: 11pt)[
-  Assuming the initial conditions are known,
-  we can split the control with
+#columns(2, gutter: 11pt)[
+  Defined the integral SM manifold $s=x - z$ with $dot(z)=-k x$, then its derivative is $dot(s)=dot(x)+k x=u+delta + k x$.
+  So the controller is 
   $
-  dot(x)=u+delta \
-  u=u_1+u_2=-rho_1 "sign" (s)-k x
+    u=-rho "sign"(s)- k x
   $
-  The auxiliary sliding variable is designed as
-  $
-  cases(s=x-z,dot(z)=u_2=-k x,)
-  $
-  then
-  $
-  dot(s)=dot(x)-dot(z)=u+delta-u_2=u_1-delta
-  $
-  Select 
-  $
-  u_1=-rho_1 "sign" (s)
-  $
-  Then 
-  $
-  s=0 arrow.double x=z arrow.double u_2=dot(z)=dot(x)
-  $
-  So design $u_2=-k x$ such that $dot(x)=-k x$
 
   Now we will address the issue of starting the auxiliary sliding mode from the very beginning without any reaching phase. In order to achieve it we have to enforce the initial condition $s(0)=0 $
   $
@@ -707,10 +688,9 @@ $epsilon=e^(-t)$ The control input $u$ is continuous but *not uniformly continou
   - Elimination of Reaching Phase: The system state always starts on the sliding surface, simplifying control design.
   - Improved Robustness:  ISMC extends this robustness to the entire state space, making the system less sensitive to uncertainties.
   - Guaranteed Stability: Once the sliding mode is achieved, ISMC guarantees the system's stability. This provides a strong theoretical foundation for the control performance.
-])
 
-#pagebreak()
-#columns(2)[
+  *Tips*: see @PTISMC
+
   The first simulation demonstrates the traditional SMC is sensitive to  disturbance in reaching phase.
   #let rhs(t,x)={
     let delta=op.sign(calc.sin(10*t)-0.5)
@@ -786,6 +766,7 @@ $epsilon=e^(-t)$ The control input $u$ is continuous but *not uniformly continou
         x-label:"time",
         )
     })
+    // *Tips*: see @PTISMC
  ]
 
 #pagebreak()
@@ -1181,6 +1162,7 @@ $.
 
 
 == Robust Prescribed Time Stabiliztion of Single Integrator Systems
+<PTISMC>
 
 #columns(2)[
   As is well known, for a linear system $dot(x)=-k x + delta$ where $delta$ is an unknown bounded input and $x$ is the system state.
@@ -1250,8 +1232,10 @@ $.
         )
     })
 
-  Robust PT controller mainly consider vanishing disturbances like @liStochasticNonlinearPrescribedtime2022 @liPrescribedTimeOutputFeedbackControl2023
-  @liPrescribedtimeMeannonovershootingControl2023.
+  @songTimevaryingFeedbackRegulation2017 proves the PT converge in $t in [0,T)$.
+  The controller for $t in [T,0)$ is not designed.
+  Some existing results consider a vanishing disturbances like @liStochasticNonlinearPrescribedtime2022. //also  @liPrescribedTimeOutputFeedbackControl2023 @liPrescribedtimeMeannonovershootingControl2023
+  The similar design and analysis of this controller can be found in @yangPrescribedtimeRobustControl2023.
 
   Another method is using ISMC, which avoids the reaching phase of sliding mode control at the cost of requiring the initial state.
 ]
