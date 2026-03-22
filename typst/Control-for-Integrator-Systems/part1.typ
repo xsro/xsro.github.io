@@ -1104,8 +1104,8 @@ $epsilon=e^(-t)$ The control input $u$ is continuous but *not uniformly continou
 ]
 
 #pagebreak()
-#columns(2)[
 == Fixed time stability
+#columns(2)[
 
 *Definition 4:*
 The set \($M$\) is said to be fixed-time attractive for @nonlinear_system if it is globally finite-time attractive and the settling-time function $T(x_0)$ is globally bounded by some number $T_(max) > 0$.
@@ -1167,9 +1167,6 @@ $.
 #columns(2)[
   As is well known, for a linear system $dot(x)=-k x + delta$ where $delta$ is an unknown bounded input and $x$ is the system state.
 
-  From the BIBO stability theorem, we can see that a larger $k$ can make $x$ converge to a smaller vicinity of the origin.
-  This motivates the design of a high-gain controller.
-  So it's a open problem to bring PT to SMC.
   Combining the PT controller with the SMC controller, we can design a controller such that:
   $
   dot(x)=delta(t) + cases(
@@ -1232,10 +1229,11 @@ $.
         )
     })
 
+  The similar design and analysis of this controller can be found in @yangPrescribedtimeRobustControl2023.
   @songTimevaryingFeedbackRegulation2017 proves the PT converge in $t in [0,T)$.
   The controller for $t in [T,0)$ is not designed.
   Some existing results consider a vanishing disturbances like @liStochasticNonlinearPrescribedtime2022. //also  @liPrescribedTimeOutputFeedbackControl2023 @liPrescribedtimeMeannonovershootingControl2023
-  The similar design and analysis of this controller can be found in @yangPrescribedtimeRobustControl2023.
+  
 
   Another method is using ISMC, which avoids the reaching phase of sliding mode control at the cost of requiring the initial state.
 ]
