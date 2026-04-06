@@ -6,6 +6,8 @@ tags: ["Control Theory"]
 categories: ["Control system simulation"]
 ---
 
+This page is moving to <https://sysusz422.github.io/f/>
+
 The `gif`-format figures in our paper **Singleton-free fencing control of unknown maneuver target** are presented below.
 
 ### Fig. 4
